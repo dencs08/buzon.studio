@@ -1,0 +1,53 @@
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+header {
+    transition: top 0.3s;
+    z-index: 99999 !important;
+}
+
+nav {
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    opacity: 0;
+    pointer-events: none;
+    background-color: #111111c0;
+
+    &.is-active {
+        // opacity: 1;
+        pointer-events: all;
+        z-index: 100;
+    }
+
+    .wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        opacity: 1;
+        background: rgba(255, 255, 255, 0);
+
+        ul {
+            list-style: none;
+            li {
+                a {
+                    font-size: clamp(2rem, 6vw, 5rem);
+
+                    &.active {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+
+        .nav-contact {
+            font-size: clamp(1.2rem, 1.1vw, 3rem);
+        }
+    }
+    .nav-number {
+        font-size: 0.8rem;
+    }
+}
