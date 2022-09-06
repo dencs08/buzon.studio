@@ -52,8 +52,6 @@ export default {
         Column,
     },
 };
-
-console.log(window.APP_NAME);
 </script>
 
 <style>

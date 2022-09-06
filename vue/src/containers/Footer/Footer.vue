@@ -26,11 +26,11 @@
                                 {{ phone }}
                             </h4>
 
-                            <div class="footer-social-icons mt-3 mt-md-2">
+                            <div
+                                class="footer-social-icons mt-3 md:mt-5 space-x-2 md:space-x-4"
+                            >
                                 <a href="/start">
-                                    <div
-                                        class="inline-block me-md-2 mx-1 mx-md-0 link-primary"
-                                    >
+                                    <div class="inline-block link-primary">
                                         <img
                                             src="../../assets/images/logos/favicon/buzonstudio_favicon_white.svg"
                                             alt="logotyp buzonstudio"
@@ -39,9 +39,7 @@
                                 </a>
 
                                 <a :href="fb" rel="noreferrer" target="_blank">
-                                    <div
-                                        class="inline-block me-md-2 mx-1 mx-md-0 link-primary"
-                                    >
+                                    <div class="inline-block link-primary">
                                         <img
                                             src="../../assets/images/social/fb.svg"
                                             alt="buzonstudio facebook"
@@ -50,9 +48,7 @@
                                 </a>
 
                                 <a :href="ig" rel="noreferrer" target="_blank">
-                                    <div
-                                        class="inline-block me-md-2 mx-1 mx-md-0 link-primary"
-                                    >
+                                    <div class="inline-block link-primary">
                                         <img
                                             src="../../assets/images/social/ig.svg"
                                             alt="buzonstudio instagram"
@@ -61,7 +57,7 @@
                                 </a>
                             </div>
 
-                            <div class="footer-links uppercase mt-4 fw-light">
+                            <div class="footer-links uppercase mt-12 fw-light">
                                 <ul>
                                     <li class="my-2">
                                         <a href="/start" class="underline-dark"
@@ -95,7 +91,7 @@
                     <div
                         data-gs
                         data-gs_fromBottom
-                        class="font-family-header uppercase text-center md:text-left pt-5 space-y-2 md:space-y-0"
+                        class="font-family-header uppercase text-center md:text-left mt-14 space-y-2 md:space-y-0"
                     >
                         <div class="block md:inline-block mr-0 md:mr-4">
                             <a

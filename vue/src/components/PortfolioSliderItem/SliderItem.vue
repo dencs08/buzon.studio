@@ -1,12 +1,12 @@
 <template>
     <a cursor-expand href="/portfolio/name">
         <div
-            class="track-item relative mx-auto mb-6 md:mr-20 md:inline-block lg:mb-0 lg:w-5/12 link-activate-wrapper"
+            class="track-item relative mb-6 ml-5 md:mr-20 md:inline-block lg:mb-0 lg:w-5/12 link-activate-wrapper"
         >
             <div>
                 <div class="whitespace-normal relative">
                     <h3
-                        class="font-family-header my-0 link-bracket-display link-move absolute top-[68%] left-[5%] z-[2] w-[80%]"
+                        class="font-family-header my-0 link-bracket-display link-move absolute top-[68%] left-[2%] z-[2] w-[80%]"
                     >
                         name
                     </h3>
