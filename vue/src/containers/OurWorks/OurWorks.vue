@@ -13,9 +13,27 @@
                 slide-track
                 class="slide-track w-full overflow-hidden whitespace-nowrap bg-transparent cursor-grab"
             >
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
+                <SliderItem
+                    title="NAME1"
+                    paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis magnam delectus aliquid, officiis quibusdam."
+                    :category="['test1', 'test2', 'test3']"
+                    src="src/assets/images/portfolio/danfit/danfit_portfolio.jpg"
+                    path="/portfolio/test1"
+                />
+                <SliderItem
+                    title="NAME13"
+                    paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis magnam delectus aliquid, officiis quibusdam"
+                    :category="['test14', 'test24', 'test34']"
+                    src="src/assets/images/portfolio/bielanypark/bielanypark_portfolio.jpg"
+                    path="/portfolio/test2"
+                />
+                <SliderItem
+                    title="NAME12"
+                    paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis magnam delectus aliquid, officiis quibusdam"
+                    :category="['test13', 'test23', 'test33']"
+                    src="src/assets/images/portfolio/komb/komb_portfolio.jpg"
+                    path="/portfolio/test3"
+                />
             </div>
         </div>
         <div class="portfolio-btn-container container">
