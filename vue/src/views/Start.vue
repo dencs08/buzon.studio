@@ -1,33 +1,33 @@
 <script>
 import {
-    heroSection,
-    ourWorksSection,
-    aboutUsSection,
-    whyUsSection,
-    contactUsSection,
-    collabsSection,
-    footerSection,
+    Hero,
+    OurWorks,
+    AboutUs,
+    WhyUs,
+    ContactUs,
+    Collabs,
+    Footer,
 } from "../containers";
 export default {
     name: "Start",
     components: {
-        heroSection,
-        ourWorksSection,
-        aboutUsSection,
-        whyUsSection,
-        contactUsSection,
-        collabsSection,
-        footerSection,
+        Hero,
+        OurWorks,
+        AboutUs,
+        WhyUs,
+        ContactUs,
+        Collabs,
+        Footer,
     },
 };
 </script>
 
 <template>
-    <heroSection />
-    <ourWorksSection />
-    <aboutUsSection />
-    <whyUsSection />
-    <contactUsSection />
-    <collabsSection />
-    <footerSection />
+    <Hero />
+    <OurWorks />
+    <AboutUs />
+    <WhyUs />
+    <ContactUs />
+    <Collabs />
+    <Footer />
 </template>
