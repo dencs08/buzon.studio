@@ -4,6 +4,8 @@ import {
     ourWorksSection,
     aboutUsSection,
     whyUsSection,
+    contactUsSection,
+    collabsSection,
     footerSection,
 } from "../containers";
 export default {
@@ -13,6 +15,8 @@ export default {
         ourWorksSection,
         aboutUsSection,
         whyUsSection,
+        contactUsSection,
+        collabsSection,
         footerSection,
     },
 };
@@ -23,5 +27,7 @@ export default {
     <ourWorksSection />
     <aboutUsSection />
     <whyUsSection />
+    <contactUsSection />
+    <collabsSection />
     <footerSection />
 </template>
