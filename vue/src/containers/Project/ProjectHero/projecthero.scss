@@ -1,0 +1,28 @@
+#landing-page {
+    padding-top: clamp(90px, 10vw, 600px);
+    margin-bottom: clamp(50px, 20vw, 600px);
+
+    .image-wrapper {
+        width: clamp(130px, 100%, 100%);
+        height: auto;
+
+        aspect-ratio: 16/9;
+
+        transition: filter 0.25s ease 0.25s;
+
+        overflow: hidden;
+
+        &:hover {
+            filter: brightness(110%) saturate(110%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease 0s;
+        }
+    }
+}
