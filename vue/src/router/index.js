@@ -2,10 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import DefaultLayout from '../Layouts/DefaultLayout.vue'
 
-import Start from '../views/Start.vue'
-import Portfolio from '../views/Portfolio.vue'
-import Oferta from '../views/Oferta.vue'
-import Kontakt from '../views/Kontakt.vue'
+import { Start, Portfolio, Oferta, Kontakt, Prywatnosc, Projekt, NotFound } from '../views'
 
 const routes = [
     {
@@ -33,6 +30,18 @@ const routes = [
         name: 'Kontakt',
         component: Kontakt
     },
+    {
+        path: '/portfolio/:name',
+        name: 'Projekt',
+        component: Projekt
+    },
+    {
+        path: '/polityka',
+        name: 'Prywatnosc',
+        component: Prywatnosc
+    },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+
 ]
 
 const router = createRouter({
