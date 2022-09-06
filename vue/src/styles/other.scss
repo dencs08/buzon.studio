@@ -1,0 +1,12 @@
+//locomotive fixes
+[data-scroll-section] {
+    perspective: 1px;
+}
+
+.c-scrollbar_thumb {
+    background-color: $font-color-primary !important;
+    opacity: 0.3;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+}

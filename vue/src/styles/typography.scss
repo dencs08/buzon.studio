@@ -1,3 +1,42 @@
+h1 {
+    font-family: $font-family-header;
+    font-size: clamp(1.75rem, 11.5vw, 12rem);
+    line-height: clamp(1.75rem, 10vw, 10rem);
+    margin: 0;
+
+    font-weight: 300;
+}
+
+h2 {
+    font-size: clamp(1rem, 1.6vw, 3rem);
+    font-family: $font-family-secondary;
+    color: $font-color-tertiary;
+}
+
+h3 {
+    font-size: clamp(1.8rem, 3.25vw, 5rem);
+
+    line-height: 1.25em;
+}
+
+h4 {
+    font-size: clamp(1rem, 1vw, 2rem);
+
+    color: $font-color-fourth;
+
+    font-weight: 400;
+}
+
+p {
+    font-weight: 300;
+    font-size: clamp(0.75rem, 1.75vw, 1rem);
+}
+
+a {
+    text-decoration: none;
+    color: $font-color-primary;
+}
+
 .font-family-primary {
     font-family: $font-family-primary !important;
 }
