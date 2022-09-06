@@ -4,7 +4,7 @@
             <div class="flex items-center">
                 <a href="/start">
                     <img
-                        src=""
+                        src="../../assets/images/logos/buzonstudio_white_cropped.svg"
                         class="h-[50px]"
                         alt="buzonstudio logo (branding)"
                     />
