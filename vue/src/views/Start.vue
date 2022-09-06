@@ -1,10 +1,18 @@
 <script>
-import { heroSection, ourWorksSection, footerSection } from "../containers";
+import {
+    heroSection,
+    ourWorksSection,
+    aboutUsSection,
+    whyUsSection,
+    footerSection,
+} from "../containers";
 export default {
     name: "Start",
     components: {
         heroSection,
         ourWorksSection,
+        aboutUsSection,
+        whyUsSection,
         footerSection,
     },
 };
@@ -13,5 +21,7 @@ export default {
 <template>
     <heroSection />
     <ourWorksSection />
+    <aboutUsSection />
+    <whyUsSection />
     <footerSection />
 </template>
