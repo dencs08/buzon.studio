@@ -1,0 +1,13 @@
+#landing-page {
+    height: clamp(75vh, 90vh, 100vh);
+}
+
+@media (max-width: $md-screen-size) {
+    #landing-page {
+        height: auto;
+
+        h2 {
+            font-size: clamp(0.7rem, 2.2vw, 1.5rem);
+        }
+    }
+}
