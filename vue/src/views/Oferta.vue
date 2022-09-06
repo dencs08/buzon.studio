@@ -1,7 +1,21 @@
 <template>
-    <h1>Oferta</h1>
+    <TypedHero />
+    <WhyUs />
+    <OurProcess />
+    <Collabs />
+    <Footer />
 </template>
 
 <script>
-export default { name: "Oferta" };
+import { TypedHero, WhyUs, OurProcess, Collabs, Footer } from "../containers";
+export default {
+    name: "Oferta",
+    components: {
+        TypedHero,
+        WhyUs,
+        OurProcess,
+        Collabs,
+        Footer,
+    },
+};
 </script>
