@@ -1,10 +1,10 @@
 <script>
-import heroSection from "../containers/Hero/Hero.vue";
-import footerSection from "../containers/Footer/Footer.vue";
+import { heroSection, ourWorksSection, footerSection } from "../containers";
 export default {
     name: "Start",
     components: {
         heroSection,
+        ourWorksSection,
         footerSection,
     },
 };
@@ -12,5 +12,6 @@ export default {
 
 <template>
     <heroSection />
+    <ourWorksSection />
     <footerSection />
 </template>
