@@ -8,14 +8,14 @@
                     <h3
                         class="font-family-header my-0 link-bracket-display link-move absolute top-[68%] left-[2%] z-[2] w-[80%]"
                     >
-                        name
+                        {{ title }}
                     </h3>
                     <a
-                        href="/portfolio/name"
+                        :href="path"
                         class="portfolio-image-wrapper inline-block overflow-hidden"
                     >
                         <img
-                            src="../../assets/images/portfolio/komb/komb_portfolio.jpg"
+                            :src="src"
                             alt="tworzenie logo i brandingu dla marki danfit"
                             class="img-slider w-full h-full object-cover"
                         />
@@ -24,13 +24,14 @@
                         <p
                             class="font-family-primary font-color-secondary mt-0 mb-2"
                         >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ipsam omnis magnam delectus aliquid, officiis
-                            quibusdam.
+                            {{ paragraph }}
                         </p>
-                        <span class="font-family-primary font-color-dark"
-                            >Strona Internetowa</span
+                        <span
+                            v-for="item in category"
+                            class="font-family-primary font-color-dark"
                         >
+                            {{ item }},
+                        </span>
                     </div>
                 </div>
             </div>
@@ -38,7 +39,17 @@
     </a>
 </template>
 
-<script></script>
+<script>
+export default {
+    props: {
+        title: String,
+        paragraph: String,
+        category: Array,
+        src: String,
+        path: String,
+    },
+};
+</script>
 
 <style>
 @import "./slideritem.scss";
