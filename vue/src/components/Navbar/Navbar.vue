@@ -1,5 +1,5 @@
 <template>
-    <header g-component="Navbar" data-header class="fixed">
+    <header g-component="Navbar" data-header class="fixed z-[9999]">
         <div class="px-1 md:px-3 w-screen flex grow h-[100px]">
             <div class="flex items-center">
                 <a href="/start">
