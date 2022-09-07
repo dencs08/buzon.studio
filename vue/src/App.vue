@@ -1,3 +1,8 @@
+<template>
+    <navbar />
+    <router-view></router-view>
+</template>
+
 <script>
 import navbar from "./components/Navbar/Navbar.vue";
 export default {
@@ -5,12 +10,8 @@ export default {
         navbar,
     },
 };
-import "./styles/app.scss";
 </script>
 
-<template>
-    <navbar />
-    <router-view></router-view>
-</template>
-
-<style scoped></style>
+<style lang="scss">
+@import "./styles/app.scss";
+</style>

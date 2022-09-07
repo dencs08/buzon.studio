@@ -53,7 +53,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "./ourprocess.scss";
-@import "../../styles/typography.scss";
 </style>

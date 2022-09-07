@@ -2,4 +2,8 @@
     <router-view></router-view>
 </template>
 
-<script></script>
+<script>
+// import "../styles/app.scss";
+</script>
+
+<style></style>

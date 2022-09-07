@@ -163,6 +163,6 @@
 
 <script></script>
 
-<style>
+<style scoped>
 @import "./emailform.scss";
 </style>

@@ -32,6 +32,6 @@
 
 <script></script>
 
-<style>
+<style scoped>
 @import "./Hero.scss";
 </style>

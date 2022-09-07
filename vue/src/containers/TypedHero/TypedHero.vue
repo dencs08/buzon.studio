@@ -20,6 +20,6 @@
 
 <script></script>
 
-<style>
+<style scoped>
 @import "./typedhero.scss";
 </style>

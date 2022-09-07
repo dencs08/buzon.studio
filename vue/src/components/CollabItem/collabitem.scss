@@ -1,0 +1,16 @@
+#clients {
+    .client-logo {
+        width: clamp(125px, 100%, 350px) !important;
+        img {
+            width: clamp(65px, 100%, 200px);
+        }
+    }
+}
+
+@media (max-width: $md-screen-size) {
+    #clients {
+        .client-logo {
+            width: clamp(65px, 100%, 200px) !important;
+        }
+    }
+}

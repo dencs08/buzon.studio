@@ -26,6 +26,6 @@
 
 <script></script>
 
-<style>
+<style scoped>
 @import "./contactus.scss";
 </style>

@@ -1,19 +1,7 @@
-#clients {
-    .client-logo {
-        width: clamp(125px, 100%, 350px) !important;
-        img {
-            width: clamp(65px, 100%, 200px);
-        }
-    }
-}
-
 @media (max-width: $md-screen-size) {
     #clients {
         h2 {
             font-size: clamp(0.75rem, 3vw, 1.1rem);
-        }
-        .client-logo {
-            width: clamp(65px, 100%, 200px) !important;
         }
     }
 }

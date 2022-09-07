@@ -17,28 +17,43 @@ const routes = [
     },
     {
         path: '/portfolio',
-        name: 'Portfolio',
-        component: Portfolio
+        // name: 'Portfolio',
+        component: DefaultLayout,
+        children: [
+            { path: '/portfolio', name: 'Portfolio', component: Portfolio }
+        ]
     },
     {
         path: '/oferta',
-        name: 'Oferta',
-        component: Oferta
+        // name: 'Oferta',
+        component: DefaultLayout,
+        children: [
+            { path: '/oferta', name: 'Oferta', component: Oferta }
+        ]
     },
     {
         path: '/kontakt',
-        name: 'Kontakt',
-        component: Kontakt
+        // name: 'Kontakt',
+        component: DefaultLayout,
+        children: [
+            { path: '/kontakt', name: 'Kontakt', component: Kontakt }
+        ]
     },
     {
         path: '/portfolio/:name',
-        name: 'Projekt',
-        component: Projekt
+        // name: 'Projekt',
+        component: DefaultLayout,
+        children: [
+            { path: '/portfolio/:name', name: 'Projekt', component: Projekt }
+        ]
     },
     {
         path: '/polityka',
-        name: 'Prywatnosc',
-        component: Prywatnosc
+        // name: 'Prywatnosc',
+        component: DefaultLayout,
+        children: [
+            { path: '/polityka', name: 'Prywatnosc', component: Prywatnosc }
+        ]
     },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 

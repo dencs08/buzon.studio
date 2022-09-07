@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-// Fonts
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap");
@@ -15,7 +15,7 @@
 @import "links";
 @import "other";
 
-//main rules
+/* main rules*/
 *,
 *::before,
 *::after {
@@ -38,12 +38,12 @@ body {
     color: $font-color-primary;
     font-family: $font-family-primary;
     overflow-x: hidden;
-    // overflow-y: hidden;
+    /* overflow-y: hidden; */
     background-color: $body-bg !important;
-    // background-image: url("/images/bg_img.png") !important;
-    // background-position: center !important;
-    // background-repeat: no-repeat !important;
-    // background-size: cover !important;
+    /*background-image: url("/images/bg_img.png") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important; */
 }
 
 hr {

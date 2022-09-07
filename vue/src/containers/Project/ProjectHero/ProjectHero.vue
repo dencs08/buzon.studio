@@ -17,6 +17,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "./projecthero.scss";
 </style>
