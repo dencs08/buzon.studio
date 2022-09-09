@@ -1,5 +1,7 @@
 #offer {
     .contact {
         width: fit-content;
+
+        font-size: clamp(1rem, 1.4vw, 3rem);
     }
 }

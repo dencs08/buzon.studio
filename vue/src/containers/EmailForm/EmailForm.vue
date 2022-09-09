@@ -1,7 +1,7 @@
 <template>
     <section id="Contact">
-        <div class="container text-center mb:md-12 md:mb-36">
-            <div>
+        <div class="container text-center mb-12 md:mb-32">
+            <div class="mb-10">
                 <h3>Co możemy dla Ciebie zrobić?</h3>
             </div>
 
@@ -16,7 +16,7 @@
                     <div>
                         <div class="control-group-error">
                             <h3
-                                class="control-group-error-text font-color-dark text-center"
+                                class="control-group-error-text font-color-dark text-center hidden"
                             >
                                 Wybierz conajmniej jedną z poniższych opcji:
                             </h3>

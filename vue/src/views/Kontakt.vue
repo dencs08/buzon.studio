@@ -1,6 +1,6 @@
 <template>
     <section id="landing-page">
-        <div class="container pt-32">
+        <div class="container pt-32 section-mb">
             <h1 class="leading-[100%]">Zacznijmy owocną współpracę!</h1>
 
             <h2 class="mb-5">
