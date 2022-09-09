@@ -9,9 +9,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap");
 
 @import "_variables";
+@import "typography";
 @import "utilities";
 @import "buttons";
-@import "typography";
 @import "links";
 @import "other";
 
@@ -36,6 +36,7 @@ body {
     padding: 0;
 
     color: $font-color-primary;
+
     font-family: $font-family-primary;
     overflow-x: hidden;
     /* overflow-y: hidden; */

@@ -33,13 +33,17 @@
         </div>
 
         <div class="container">
-            <div class="link-activate-wrapper contact">
-                <a href="/kontakt" class="underline-primary font-color-primary"
-                    >Napisz do nas
-                </a>
-                <a href="/kontakt" class="font-color-dark">
-                    i stwórzmy coś razem
-                </a>
+            <div class="contact">
+                <span class="link-activate-wrapper-paragraph">
+                    <a
+                        href="/kontakt"
+                        class="underline-primary font-color-primary"
+                        >Napisz do nas
+                    </a>
+                    <span class="font-color-darker">
+                        i stwórzmy coś razem
+                    </span>
+                </span>
             </div>
         </div>
     </section>

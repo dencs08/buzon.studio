@@ -130,6 +130,37 @@
     }
 }
 
+.link-activate-wrapper-paragraph {
+    transition: color 0.3s;
+
+    span {
+        transition: color 0.3s;
+    }
+
+    &:hover {
+        .link-bracket-display {
+            &::after {
+                color: $primary-color !important;
+                opacity: 1;
+            }
+        }
+        .underline {
+            color: $primary-color !important;
+            &:before {
+                background-color: $primary-color !important;
+                width: 90%;
+            }
+        }
+        .link-move {
+            transform: translateX(6%);
+        }
+        color: $font-color-primary !important;
+        span {
+            color: $font-color-primary !important;
+        }
+    }
+}
+
 .link-arrow .section-header {
     font-size: clamp(1.3rem, 2vw, 1.9rem);
 }
