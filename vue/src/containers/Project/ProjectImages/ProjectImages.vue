@@ -16,6 +16,6 @@
 
 <script></script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "./projectimages.scss";
 </style>

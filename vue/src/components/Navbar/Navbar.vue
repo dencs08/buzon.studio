@@ -111,6 +111,6 @@
 
 <script></script>
 
-<style>
+<style lang="scss">
 /* @import "./navbar.scss"; */
 </style>

@@ -56,6 +56,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import "./portfoliofullpage.scss";
 </style>

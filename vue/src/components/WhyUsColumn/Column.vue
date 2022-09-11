@@ -1,7 +1,7 @@
 <template>
     <div class="px-0 md:px-3 lg:px-5 mb-4 md:mb-0 link-activate-wrapper">
         <a href="/oferta">
-            <div class="offer-wrapper">
+            <div class="offer-wrapper relative">
                 <div class="flex justify-center">
                     <img src="../../assets/images/branding2.jpg" alt="" />
                 </div>
@@ -38,6 +38,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "./column.scss";
 </style>

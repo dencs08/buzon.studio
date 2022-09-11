@@ -90,6 +90,6 @@
 
 <script></script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "./projectinfo.scss";
 </style>
