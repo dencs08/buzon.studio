@@ -33,18 +33,12 @@
         </div>
 
         <div class="container">
-            <div class="contact">
-                <span class="link-activate-wrapper-paragraph">
-                    <a
-                        href="/kontakt"
-                        class="underline-primary font-color-primary"
-                        >Napisz do nas
-                    </a>
-                    <span class="font-color-darker">
-                        i stwórzmy coś razem
-                    </span>
-                </span>
-            </div>
+            <a href="/kontakt" class="link-activate-wrapper-paragraph contact">
+                <a href="/kontakt" class="underline-primary font-color-primary"
+                    >Napisz do nas
+                </a>
+                <span class="font-color-darker"> i stwórzmy coś razem </span>
+            </a>
         </div>
     </section>
 </template>

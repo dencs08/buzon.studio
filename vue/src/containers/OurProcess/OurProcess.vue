@@ -29,17 +29,15 @@
                     />
                 </div>
             </div>
-            <div class="link-activate-wrapper contact font-color-dark">
-                <a href="/kontakt"
-                    >Jeśli jesteś zainteresowany
-                    <a
-                        href="/kontakt"
-                        class="underline-primary font-color-primary"
-                    >
-                        zdzwońmy się
-                    </a>
+
+            <a href="/kontakt" class="link-activate-wrapper-paragraph">
+                <span class="font-color-darker">
+                    Jeśli jesteś zainteresowany
+                </span>
+                <a href="/kontakt" class="underline-primary font-color-primary"
+                    >zdzwońmy się
                 </a>
-            </div>
+            </a>
         </div>
     </section>
 </template>
