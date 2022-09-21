@@ -3,30 +3,53 @@
     display: inline-block;
     position: relative;
 
-    transition: all 0.5s;
+    transition: color 0.5s;
 
-    &:hover {
-        color: $primary-color !important;
+    &:before,
+    &:after {
+        content: "";
+
+        position: absolute;
+
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0px;
+
+        display: block;
+
+        height: 1px;
+    }
+
+    &:after {
+        width: 0;
+        left: 0;
+
+        // transition: width 0.3s 0s, left 0.3s 0s, background-color 0.3s 0s;
     }
 
     &:before {
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0px;
-        content: "";
-        display: block;
-        height: 1px;
-        left: 0%;
-        position: absolute;
-        transition: width 0.3s ease 0s, left 0.3s ease 0s,
-            background-color 0.3s ease 0s;
         width: 100%;
+        right: 0;
+
+        // transition: width 0.3s 0.25s, left 0.3s 0.25s,
+        // background-color 0.3s 0.25s;
     }
 
-    &:hover:before {
-        width: 90%;
-        left: 0;
+    &:hover {
+        color: $primary-color !important;
 
-        background-color: $primary-color !important;
+        &:before {
+            width: 0% !important;
+            right: 0;
+
+            // transition: 0.3s;
+        }
+
+        &:after {
+            width: 100% !important;
+            left: 0;
+
+            // transition: 0.3s 0.25s;
+        }
     }
 }
 
