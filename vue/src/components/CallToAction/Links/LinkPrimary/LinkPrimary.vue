@@ -9,7 +9,7 @@
         class="link-primary"
         @mouseover="animationStart"
         @animationend="animationEnd"
-        >{{ text }}</a
+        ><span :class="{ 'point-link': point }">{{ text }}</span></a
     >
 </template>
 
@@ -28,6 +28,9 @@ export default {
             type: Boolean,
         },
         secondary: {
+            type: Boolean,
+        },
+        point: {
             type: Boolean,
         },
     },

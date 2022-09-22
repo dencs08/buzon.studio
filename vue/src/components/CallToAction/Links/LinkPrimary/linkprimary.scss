@@ -140,6 +140,26 @@
 //     }
 // }
 
+.point-link {
+    &::after {
+        display: inline-block;
+
+        font-weight: inherit;
+
+        margin-left: 0.35em;
+
+        content: "\2192";
+
+        transition: transform 0.275s ease 0.05s;
+    }
+
+    &:hover {
+        &::after {
+            transform: translateX(38.2%);
+        }
+    }
+}
+
 .link-bracket-display {
     // @extend .link-arrow;
     // &::after {
