@@ -12,13 +12,14 @@
                             Zostańmy w kontakcie
                         </h3>
                     </a>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <a
-                                href="mailto:{{email}}?subject = Oferta&body = Wiadomość"
-                                class="underline-primary mail-link fw-medium font-color-secondary"
-                                >{{ email }}</a
-                            >
+                    <div>
+                        <div>
+                            <LinkPrimary
+                                :href="`mailto:${email}?subject = Oferta&body = Wiadomość`"
+                                :text="email"
+                                :secondary="true"
+                                class="mail-link fw-medium font-color-secondary"
+                            />
 
                             <h4
                                 class="phone-number font-color-dark fw-medium mb-2 mt-2"
@@ -58,30 +59,34 @@
                             </div>
 
                             <div class="footer-links uppercase mt-12 fw-light">
-                                <ul>
-                                    <li class="my-2">
-                                        <a href="/start" class="underline-dark"
-                                            >start</a
-                                        >
+                                <ul class="space-y-2">
+                                    <li>
+                                        <LinkPrimary
+                                            href="/start"
+                                            text="start"
+                                            :secondary="true"
+                                        />
                                     </li>
-                                    <li class="my-2">
-                                        <a href="/oferta" class="underline-dark"
-                                            >oferta</a
-                                        >
+                                    <li>
+                                        <LinkPrimary
+                                            href="/oferta"
+                                            text="oferta"
+                                            :secondary="true"
+                                        />
                                     </li>
-                                    <li class="my-2">
-                                        <a
+                                    <li>
+                                        <LinkPrimary
                                             href="/portfolio"
-                                            class="underline-dark"
-                                            >portfolio</a
-                                        >
+                                            text="portfolio"
+                                            :secondary="true"
+                                        />
                                     </li>
-                                    <li class="my-2">
-                                        <a
+                                    <li>
+                                        <LinkPrimary
                                             href="/kontakt"
-                                            class="underline-dark"
-                                            >kontakt</a
-                                        >
+                                            text="kontakt"
+                                            :secondary="true"
+                                        />
                                     </li>
                                 </ul>
                             </div>
@@ -94,11 +99,12 @@
                         class="font-family-header uppercase text-center md:text-left mt-14 space-y-2 md:space-y-0"
                     >
                         <div class="block md:inline-block mr-0 md:mr-4">
-                            <a
+                            <LinkPrimary
                                 href="/polityka"
-                                class="underline-dark font-color-dark"
-                                >Polityka prywatności</a
-                            >
+                                text="Polityka prywatności"
+                                :secondary="true"
+                                class="font-color-dark"
+                            />
                         </div>
                         <div class="block md:inline-block">
                             <span class="cursor-pointer font-color-dark"
@@ -127,6 +133,9 @@ let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
 let fb = import.meta.env.VITE_FB;
 let ig = import.meta.env.VITE_IG;
+
+import { LinkPrimary } from "../../components";
+
 export default {
     data() {
         return {
@@ -136,6 +145,10 @@ export default {
             fb: fb,
             ig: ig,
         };
+    },
+
+    components: {
+        LinkPrimary,
     },
 };
 </script>
