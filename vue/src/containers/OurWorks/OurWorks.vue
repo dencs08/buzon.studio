@@ -38,21 +38,23 @@
         </div>
         <div class="portfolio-btn-container container">
             <div>
-                <a
+                <LinkPrimary
                     href="/portfolio"
-                    class="link-primary underline-primary link-arrow my-4 text-uppercase fw-medium"
-                    >Więcej prac</a
-                >
+                    text="Więcej prac"
+                    :primary="true"
+                    class="link-primary link-arrow my-4 uppercase"
+                />
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import { SliderItem } from "../../components";
+import { SliderItem, LinkPrimary } from "../../components";
 export default {
     components: {
         SliderItem,
+        LinkPrimary,
     },
 };
 </script>

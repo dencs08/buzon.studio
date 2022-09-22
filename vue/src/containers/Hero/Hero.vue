@@ -7,28 +7,34 @@
                 <span class="link-activate-wrapper-paragraph">
                     Jesteśmy kreatywnym studio w branży IT zajmującym sie
                     dostarczniem najlepszych
-                    <a
+                    <LinkPrimary
                         href="/portfolio"
-                        class="link-primary underline-primary fw-bold"
-                        >produktów</a
-                    >
+                        text="produktów"
+                        :primary="true"
+                        class="font-medium"
+                    />
                 </span>
                 i
-                <a href="/oferta" class="link-primary underline-primary fw-bold"
-                    >usług</a
-                >
+                <LinkPrimary
+                    href="/oferta"
+                    text="usług"
+                    :primary="true"
+                    class="font-medium"
+                />
                 <span class="link-activate-wrapper-paragraph">
                     IT. Tworzymy strony internetowe, wizualizacje, branding,
                     marketing online i inne produkty cyfrowe z pomocą metody
                     <span
                         data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
                         class="text-highlight cursor-pointer"
-                        ><a
-                            href="/oferta"
-                            class="link-primary underline-primary"
-                            >All-in-One.</a
-                        ></span
                     >
+                        <LinkPrimary
+                            href="/oferta"
+                            text="All-in-One."
+                            :primary="true"
+                            class="font-medium"
+                        />
+                    </span>
                 </span>
             </h2>
             <!-- <x-arrow/> -->
@@ -36,7 +42,14 @@
     </section>
 </template>
 
-<script></script>
+<script>
+import { LinkPrimary } from "../../components";
+export default {
+    components: {
+        LinkPrimary,
+    },
+};
+</script>
 
 <style lang="scss" scoped>
 @import "./Hero.scss";

@@ -34,19 +34,22 @@
                 <span class="font-color-darker">
                     Jeśli jesteś zainteresowany
                 </span>
-                <a href="/kontakt" class="underline-primary font-color-primary"
-                    >zdzwońmy się
-                </a>
+                <LinkPrimary
+                    href="/kontakt"
+                    text="zdzwońmy się."
+                    :primary="true"
+                />
             </a>
         </div>
     </section>
 </template>
 
 <script>
-import { OurProcessItem } from "../../components";
+import { OurProcessItem, LinkPrimary } from "../../components";
 export default {
     components: {
         OurProcessItem,
+        LinkPrimary,
     },
 };
 </script>

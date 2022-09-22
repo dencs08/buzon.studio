@@ -6,6 +6,7 @@
             'underline-secondary': secondary,
             animating: isAnimating,
         }"
+        class="link-primary"
         @mouseover="animationStart"
         @animationend="animationEnd"
         >{{ text }}</a

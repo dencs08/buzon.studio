@@ -34,20 +34,24 @@
 
         <div class="container">
             <a href="/kontakt" class="link-activate-wrapper-paragraph contact">
-                <a href="/kontakt" class="underline-primary font-color-primary"
-                    >Napisz do nas
-                </a>
-                <span class="font-color-darker"> i stwórzmy coś razem </span>
+                <LinkPrimary
+                    href="/kontakt"
+                    text="Napisz do nas"
+                    :primary="true"
+                    class=""
+                />
+                <span class="font-color-darker"> i stwórzmy coś razem.</span>
             </a>
         </div>
     </section>
 </template>
 
 <script>
-import { Column } from "../../components";
+import { Column, LinkPrimary } from "../../components";
 export default {
     components: {
         Column,
+        LinkPrimary,
     },
 };
 </script>
