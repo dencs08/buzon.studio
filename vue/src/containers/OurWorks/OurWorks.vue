@@ -42,6 +42,7 @@
                     href="/portfolio"
                     text="Więcej prac"
                     :primary="true"
+                    :point="true"
                     class="link-primary link-arrow my-4 uppercase"
                 />
             </div>
