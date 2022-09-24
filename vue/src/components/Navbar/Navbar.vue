@@ -5,7 +5,7 @@
                 <a href="/start">
                     <img
                         src="../../assets/images/logos/buzonstudio_white_cropped.svg"
-                        class="h-[50px]"
+                        class="h-[35px] sm:h-[40px] md:h-[50px]"
                         alt="buzonstudio logo (branding)"
                     />
                 </a>
