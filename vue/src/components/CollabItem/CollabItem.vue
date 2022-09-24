@@ -1,6 +1,6 @@
 <template>
-    <div class="mx-auto flex justify-center items-center">
-        <div class="client-logo m-0 py-0">
+    <div class="m-auto flex justify-center items-center">
+        <div class="client-logo m-0 py-0 px-1 sm:px-3 lg:px-4">
             <img
                 :src="img"
                 alt="branding (logotyp) danfit"
