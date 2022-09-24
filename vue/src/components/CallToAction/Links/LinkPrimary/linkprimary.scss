@@ -6,7 +6,7 @@
 
     text-decoration: none;
 
-    transition: color 0.5s;
+    // transition: color 0.5s;
 
     &:after,
     &:before {
@@ -47,11 +47,11 @@
 
 .animating {
     &:after {
-        animation: swooshAfter 0.2s 0.3s;
+        animation: swooshAfter 0.2s ease-out 0.3s;
     }
 
     &:before {
-        animation: swooshBefore 0.5s;
+        animation: swooshBefore 0.6s ease-out;
     }
 }
 
@@ -103,42 +103,10 @@
 }
 
 .link-primary {
-    transition: color 0.275s ease 0s;
     &:hover {
         color: $primary-color;
     }
 }
-
-.link-primary img {
-    transition: transform 0.275s ease 0s, filter 0.5s;
-    &:hover {
-        filter: invert(69%) sepia(87%) saturate(450%) hue-rotate(90deg)
-            brightness(233%) contrast(80%);
-        transform: scale(1.1);
-    }
-}
-
-// .link-arrow {
-//     &::after {
-//         // color: $primary-color !important;
-
-//         display: inline-block;
-
-//         font-weight: 300;
-
-//         margin-left: 0.35em;
-
-//         content: "\2192"; //
-
-//         transition: transform 0.275s ease-out 0.05s;
-//     }
-
-//     &:hover {
-//         &::after {
-//             transform: translateX(38.2%);
-//         }
-//     }
-// }
 
 .point-link {
     &::after {
@@ -148,9 +116,9 @@
 
         margin-left: 0.35em;
 
-        content: "\2192";
+        content: "\279D";
 
-        transition: transform 0.275s ease 0.05s;
+        transition: transform 0.275s ease-out 0.05s;
     }
 
     &:hover {
@@ -161,12 +129,12 @@
 }
 
 .link-bracket-display {
-    // @extend .link-arrow;
-    // &::after {
-    //     content: "}" !important; //
-    //     opacity: 0;
-    //     transition: transform 0.275s ease-out 0.05s, opacity 0.275s ease-out 0s;
-    // }
+    @extend .point-link;
+    &::after {
+        content: "}" !important;
+        opacity: 0;
+        // transition: transform 0.275s ease-out 0.05s, opacity 0.275s ease-out 0s;
+    }
 
     &:hover {
         &::after {
@@ -178,9 +146,13 @@
 }
 
 .link-move {
-    transition: transform 0.275s ease 0s;
-
+    display: inline-block;
     &:hover {
-        transform: translateX(6%);
+        translate: 6%;
     }
+}
+
+.transitions {
+    transition: translate 0.25s ease, color 0.25s ease,
+        background-color 0.25s ease, opacity, 0.275s ease 0s;
 }

@@ -2,11 +2,13 @@
     <a
         :href="href"
         :class="{
-            'underline-primary': primary,
-            'underline-secondary': secondary,
-            animating: isAnimating,
+            'underline-primary': primary && noUnderline === false,
+            'underline-secondary': secondary && noUnderline === false,
+            'link-primary': primary,
+            'link-move': move,
+            animating: (primary && isAnimating) || (secondary && isAnimating),
         }"
-        class="link-primary"
+        class="transitions"
         @mouseover="animationStart"
         @animationend="animationEnd"
         ><span :class="{ 'point-link': point }">{{ text }}</span></a
@@ -32,6 +34,13 @@ export default {
         },
         point: {
             type: Boolean,
+        },
+        move: {
+            type: Boolean,
+        },
+        noUnderline: {
+            type: Boolean,
+            default: () => false,
         },
     },
     methods: {
