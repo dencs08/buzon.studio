@@ -1,0 +1,22 @@
+h3 {
+    transition: translate 0.3s ease;
+}
+
+.small {
+    font-size: clamp(1rem, 2.5vw, 3rem);
+    line-height: clamp(1rem, 2vw, 7rem);
+}
+
+.normal {
+    font-size: clamp(2rem, 3vw, 4rem);
+    line-height: clamp(2rem, 2.5vw, 7rem);
+}
+
+.big {
+    font-size: clamp(2rem, 5.5vw, 7rem);
+    line-height: clamp(2rem, 4.5vw, 7rem);
+}
+
+.move {
+    translate: clamp(2rem, 2.5vw, 7rem);
+}
