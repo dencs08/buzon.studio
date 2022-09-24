@@ -1,0 +1,8 @@
+.big {
+    font-size: clamp(1.8rem, 6vw, 6rem);
+}
+
+.break {
+    word-break: break-word;
+    word-spacing: 50000px;
+}
