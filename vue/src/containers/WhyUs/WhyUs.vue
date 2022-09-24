@@ -2,7 +2,7 @@
     <section id="offer" class="section-mb">
         <div class="container mb-8 lg:mb-12 xl:mb-20">
             <div class="mb-8 md:mb-12">
-                <h3 class="headerline">Działamy po to abyś się rozwijał</h3>
+                <SectionHeader mainHeader="Działamy po to abyś się rozwijał" />
             </div>
             <div class="grid grid-cols-2">
                 <Column
@@ -47,11 +47,12 @@
 </template>
 
 <script>
-import { Column, LinkPrimary } from "../../components";
+import { Column, LinkPrimary, SectionHeader } from "../../components";
 export default {
     components: {
         Column,
         LinkPrimary,
+        SectionHeader,
     },
 };
 </script>

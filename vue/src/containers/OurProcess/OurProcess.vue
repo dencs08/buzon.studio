@@ -2,13 +2,12 @@
     <section id="process" class="mb-16 md:mb-32">
         <div class="container">
             <div class="block md:grid md:grid-cols-2 mb-8 md:mb-20">
-                <div class="uppercase headerline">
-                    <div>
-                        <h3>Nasz</h3>
-                    </div>
-                    <div>
-                        <h3>Proces</h3>
-                    </div>
+                <div class="uppercase mb-5 md:mb-0">
+                    <SectionHeader
+                        mainHeader="Nasz Proces"
+                        :wordBreak="true"
+                        :big="true"
+                    />
                 </div>
                 <div class="space-y-8">
                     <OurProcessItem
@@ -45,11 +44,12 @@
 </template>
 
 <script>
-import { OurProcessItem, LinkPrimary } from "../../components";
+import { OurProcessItem, LinkPrimary, SectionHeader } from "../../components";
 export default {
     components: {
         OurProcessItem,
         LinkPrimary,
+        SectionHeader,
     },
 };
 </script>

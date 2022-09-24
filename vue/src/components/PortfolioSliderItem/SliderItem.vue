@@ -5,11 +5,12 @@
         >
             <div>
                 <div class="whitespace-normal relative">
-                    <h3
-                        class="font-family-header my-0 link-bracket-display link-move absolute top-[68%] left-[2%] z-[2] w-[80%]"
-                    >
-                        {{ title }}
-                    </h3>
+                    <ItemHeader
+                        :text="title"
+                        :big="true"
+                        :move="true"
+                        headerClass="absolute top-[66%] left-[2%] z-[2] inline-block"
+                    />
                     <a
                         :href="path"
                         class="portfolio-image-wrapper inline-block overflow-hidden"
@@ -40,7 +41,12 @@
 </template>
 
 <script>
+import { ItemHeader } from "../";
+
 export default {
+    components: {
+        ItemHeader,
+    },
     props: {
         title: String,
         paragraph: String,

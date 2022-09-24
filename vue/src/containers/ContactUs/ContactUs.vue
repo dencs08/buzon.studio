@@ -1,12 +1,11 @@
 <template>
     <section id="contact">
         <div class="container text-center section-mb">
-            <div>
-                <h4>Napisz do nas!</h4>
-            </div>
-            <div>
-                <h3 class="my-0">Zatrudnij nas a my zajmiemy się resztą.</h3>
-            </div>
+            <SectionHeader
+                headerLine="Napisz do nas!"
+                mainHeader="Zatrudnij nas a my zajmiemy się resztą."
+                :noAccent="true"
+            />
             <div>
                 <div class="button-trail mt-20">
                     <form>
@@ -24,7 +23,13 @@
     </section>
 </template>
 
-<script></script>
+<script>
+import { SectionHeader } from "../../components";
+
+export default {
+    components: { SectionHeader },
+};
+</script>
 
 <style lang="scss" scoped>
 @import "./contactus.scss";

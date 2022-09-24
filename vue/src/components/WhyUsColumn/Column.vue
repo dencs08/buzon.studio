@@ -6,11 +6,16 @@
                     <img src="../../assets/images/branding2.jpg" alt="" />
                 </div>
 
-                <div class="absolute top-[94%] my-0 ml-2 md:ml-0">
+                <div
+                    class="absolute top-[98%] my-0 ml-2 md:ml-4 whitespace-nowrap"
+                >
                     <a href="/oferta" class="font-family-header my-0">
-                        <h3 class="my-0 link-bracket-display link-move">
-                            {{ title }}
-                        </h3>
+                        <ItemHeader
+                            :text="title"
+                            :normal="true"
+                            :move="true"
+                            headerClass="absolute top-[66%] left-[2%] z-[2] inline-block"
+                        />
                     </a>
                 </div>
             </div>
@@ -29,11 +34,16 @@
 </template>
 
 <script>
+import { ItemHeader } from "../";
+
 export default {
     props: {
         title: String,
         paragraph: String,
         ul: Array,
+    },
+    components: {
+        ItemHeader,
     },
 };
 </script>
