@@ -17,8 +17,8 @@
                     >
                         <img src="../../assets/images/branding.png" alt="" />
                     </div>
-                    <div class="basis-11/12 px-8">
-                        <div class="my-0 ml-2 md:ml-4">
+                    <div class="basis-11/12 sm:px-8">
+                        <div class="my-0 ml-0 sm:ml-2 md:ml-4">
                             <a href="/oferta">
                                 <ItemHeader
                                     :text="title"
