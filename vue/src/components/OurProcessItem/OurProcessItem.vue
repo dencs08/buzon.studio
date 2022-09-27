@@ -10,7 +10,7 @@
             :text="title"
             :small="true"
             :move="true"
-            headerClass="font-color-secondary mb-2 ml-4"
+            headerClass="font-color-secondary mb-2 w-fit"
         />
 
         <p class="font-color-dark pr-0 md:pr-5">

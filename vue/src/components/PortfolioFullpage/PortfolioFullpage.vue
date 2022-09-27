@@ -16,9 +16,12 @@
                             :href="url"
                             class="gs gs_fromTop font-family-header my-0"
                         >
-                            <h3 class="my-0 link-bracket-display link-move">
-                                {{ title }}
-                            </h3>
+                            <ItemHeader
+                                :text="title"
+                                :big="true"
+                                :move="true"
+                                headerClass="absolute top-[77%] left-[-2%] z-[2] inline-block"
+                            />
                         </a>
                     </div>
                     <div
@@ -38,6 +41,8 @@
 </template>
 
 <script>
+import { ItemHeader } from "../";
+
 export default {
     props: {
         title: String,
@@ -52,6 +57,10 @@ export default {
         image() {
             return `/src/assets/images/portfolio/${this.title}/${this.title}_portfolio.jpg`;
         },
+    },
+
+    components: {
+        ItemHeader,
     },
 };
 </script>

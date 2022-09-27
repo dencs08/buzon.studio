@@ -9,7 +9,7 @@
                         :text="title"
                         :big="true"
                         :move="true"
-                        headerClass="absolute top-[66%] left-[2%] z-[2] inline-block"
+                        headerClass="absolute top-[69%] z-[2] inline-block"
                     />
                     <a
                         :href="path"
