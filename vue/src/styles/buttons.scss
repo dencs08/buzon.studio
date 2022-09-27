@@ -7,31 +7,11 @@
     font-family: $font-family-primary;
     font-size: clamp(0.6rem, 1vw, 1.75rem);
     border-radius: 5em;
-    padding-top: clamp(1.25em, 1.8vw, 2.5em);
-    padding-bottom: clamp(1.25em, 1.8vw, 2.5em);
-    padding-left: clamp(4em, 5vw, 6.5em);
-    padding-right: clamp(4em, 5vw, 6.5em);
+    // padding-top: clamp(1.25em, 1.8vw, 2.5em);
+    // padding-bottom: clamp(1.25em, 1.8vw, 2.5em);
+    // padding-left: clamp(4em, 5vw, 6.5em);
+    // padding-right: clamp(4em, 5vw, 6.5em);
     // padding: 1.6em 4.75em;
-}
-
-.btn-primary {
-    border: 0.5px solid #d8d8d880 !important;
-    background-color: #ffffff0d !important;
-
-    color: $font-color-primary !important;
-
-    transition: 0.5s background-color;
-
-    &:hover {
-        background: $font-color-secondary !important;
-
-        color: $body-bg !important;
-
-        .arrow-right-icon {
-            fill: $body-bg !important;
-            transition: 0.25s all;
-        }
-    }
 }
 
 .btn-submit {
