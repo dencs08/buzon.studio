@@ -26,7 +26,7 @@ export default {
     <Hero />
     <OurWorks />
     <AboutUs />
-    <WhyUs />
+    <WhyUs :buttons="true" />
     <ContactUs />
     <Collabs />
     <Footer />

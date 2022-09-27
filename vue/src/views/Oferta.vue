@@ -1,6 +1,6 @@
 <template>
     <TypedHero />
-    <WhyUs />
+    <WhyUs :buttons="false" />
     <OurProcess />
     <Collabs />
     <Footer />
