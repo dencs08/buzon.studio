@@ -14,15 +14,13 @@
             >
                 <div>
                     <div>
-                        <div class="control-group-error">
-                            <h3
-                                class="control-group-error-text font-color-dark text-center hidden"
-                            >
+                        <div class="control-group-error hidden opacity-0">
+                            <h3 class="font-color-dark text-center">
                                 Wybierz conajmniej jedną z poniższych opcji:
                             </h3>
                         </div>
                         <div
-                            class="control-group flex items-center justify-center"
+                            class="control-group flex flex-wrap items-center justify-center sm:gap-2"
                         >
                             <input
                                 class="form_subject"
@@ -97,7 +95,9 @@
                                 name="name"
                                 class="input-text js-input"
                                 type="text"
+                                placeholder=" "
                                 required
+                                pattern="[a-zA-Z]{2,}"
                             />
                             <label for="name">Imię</label>
                             <!-- @error('name') -->
@@ -115,6 +115,7 @@
                                 name="email"
                                 class="input-text js-input"
                                 type="email"
+                                placeholder=" "
                                 required
                             />
                             <label for="email">E-mail</label>
@@ -135,6 +136,8 @@
                             class="input-text js-input"
                             cols="30"
                             rows="10"
+                            placeholder=" "
+                            minlength="10"
                             required
                         ></textarea>
                         <label for="message">Wiadomość</label>

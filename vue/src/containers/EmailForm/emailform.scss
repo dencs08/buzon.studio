@@ -1,12 +1,9 @@
 @import "../../styles/_variables.scss";
 
 .control-group-error {
-    display: none;
-    opacity: 0;
-}
-
-.control-group-error-text {
-    font-size: clamp(0.9rem, 1.9vw, 2rem);
+    h3 {
+        font-size: clamp(0.9rem, 1.9vw, 2rem);
+    }
 }
 
 #thanks-email {
@@ -80,7 +77,7 @@
         label {
             position: absolute;
             left: 30px;
-            top: 23px;
+            top: 33px;
 
             font-size: $font-size-base !important;
             line-height: 26px;
@@ -112,23 +109,45 @@
             border: solid 1px $primary-color !important;
             transition: all 0.25s;
         }
-
-        &:focus,
-        &.not-empty {
-            + label {
-                transform: translateY(-55px);
-                font-size: $font-size-base * 1.2;
-                color: $font-color-tertiary !important;
-                font-weight: 500;
-                transition: all 0.25s;
-            }
-        }
     }
 
     textarea {
         max-width: 100%;
         border-radius: 35px !important;
         font-family: $font-family-primary !important;
+    }
+
+    textarea:focus ~ label,
+    textarea:valid ~ label,
+    input:focus ~ label,
+    input:valid ~ label {
+        top: -28px;
+        font-size: 14px;
+        color: $primary-color;
+        font-size: $font-size-base * 1.2;
+        font-weight: 500;
+        input {
+            border: $primary-color 1px solid !important;
+        }
+    }
+
+    input:not(:placeholder-shown):not(:focus):invalid {
+        border: 1px solid red !important;
+        color: red;
+    }
+    input:not(:placeholder-shown):not(:focus):invalid ~ label {
+        color: red;
+        font-size: 14px;
+        top: -28px;
+    }
+    textarea:not(:placeholder-shown):not(:focus):invalid {
+        border: 1px solid red !important;
+        color: red;
+    }
+    textarea:not(:placeholder-shown):not(:focus):invalid ~ label {
+        color: red;
+        font-size: 14px;
+        top: -28px;
     }
 }
 
@@ -144,11 +163,11 @@
     .contact-form {
         .form-field {
             position: relative;
-            margin: 18px 0;
+            margin: 30px 0;
 
             label {
                 position: absolute;
-                top: 15px;
+                top: 25px;
 
                 font-size: $font-size-base * 0.8;
                 line-height: 16px;
@@ -162,7 +181,7 @@
             &:focus,
             &.not-empty {
                 + label {
-                    transform: translate(-5px, -40px);
+                    transform: translate(-5px, 8px);
                     font-size: $font-size-base * 0.85;
                 }
             }
