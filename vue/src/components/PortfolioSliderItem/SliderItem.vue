@@ -23,15 +23,15 @@
                     </a>
                     <div class="mt-7 px-5">
                         <p
-                            class="font-family-primary font-color-secondary mt-0 mb-2"
+                            class="font-family-primary font-color-secondary mt-0"
                         >
                             {{ paragraph }}
                         </p>
                         <span
                             v-for="item in category"
-                            class="font-family-primary font-color-dark"
+                            class="font-family-primary font-color-darker bg-gray-200 px-3 mx-1 rounded-full"
                         >
-                            {{ item }},
+                            {{ item }}
                         </span>
                     </div>
                 </div>
