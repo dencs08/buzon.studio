@@ -1,33 +1,40 @@
 <template>
-    <div :class="headerClass" class="flex">
-        <div>
+    <div
+        id="wrapper"
+        :class="`${headerClass} ${move ? 'move' : ''} ${
+            small ? 'ml-[-2vw]' : ''
+        } ${normal ? 'ml-[-2vw]' : ''} ${big ? 'ml-[-2vw]' : ''}`"
+        class="flex items-center"
+        @mouseover="animateIn"
+        @mouseleave="animateOut"
+    >
+        <div id="logoWrapper" ref="logoWrapper" class="opacity-0">
             <Logo
-                class="duration-[250ms]"
-                :class="[
-                    isAnimating && move
-                        ? 'opacity-1 translate-x-[0px]'
-                        : 'opacity-0 translate-x-[30px]',
-                ]"
+                class=""
                 :small="small ? true : false"
                 :normal="normal ? true : false"
                 :big="big ? true : false"
             />
         </div>
-        <h3
-            class="font-family-header translate-x-[-35px]"
-            :class="`${small ? 'small' : ''} ${normal ? 'normal' : ''} ${
-                big ? 'big' : ''
-            } ${isAnimating && move ? 'move' : ''}`"
-            @mouseover="mouseOver"
-            @mouseleave="mouseLeave"
-        >
-            {{ text }}
-        </h3>
+        <div id="headerWrapper">
+            <h3
+                class="font-family-header"
+                :class="`${small ? 'small' : ''} ${normal ? 'normal' : ''} ${
+                    big ? 'big' : ''
+                }`"
+                id="header"
+                ref="header"
+            >
+                {{ text }}
+            </h3>
+        </div>
     </div>
 </template>
 
 <script>
+import { gsap } from "gsap";
 import { Logo } from "../../";
+
 export default {
     data() {
         return {
@@ -55,11 +62,28 @@ export default {
     },
 
     methods: {
-        mouseOver() {
-            this.isAnimating = true;
+        animateIn() {
+            gsap.to(this.$refs.header, {
+                duration: 0.2,
+                x: "1.75vw",
+            });
+            gsap.to(this.$refs.logoWrapper, {
+                duration: 0.2,
+                x: "1.75vw",
+                opacity: 1,
+            });
         },
-        mouseLeave() {
-            this.isAnimating = false;
+        animateOut() {
+            gsap.to(this.$refs.logoWrapper, {
+                duration: 0.2,
+                x: "0",
+                opacity: 0,
+            });
+            gsap.to(this.$refs.header, {
+                duration: 0.2,
+                x: "0",
+                delay: 0.125,
+            });
         },
     },
 
