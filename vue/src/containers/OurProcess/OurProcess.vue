@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <a href="/kontakt" class="link-activate-wrapper-paragraph">
+            <!-- <a href="/kontakt" class="link-activate-wrapper-paragraph">
                 <span class="font-color-darker">
                     Jeśli jesteś zainteresowany
                 </span>
@@ -38,18 +38,50 @@
                     text="zdzwońmy się."
                     :primary="true"
                 />
-            </a>
+            </a> -->
+            <LinkParagraph href="/kontakt">
+                <span class="font-color-darker" paragraph-span
+                    >Jeśli jesteś zainteresowany</span
+                >{{}}
+                <LinkPrimary
+                    href="/kontakt"
+                    text="zdzwońmy się."
+                    :primary="true"
+                    class="font-color-dark"
+                    paragraph-link
+                />
+                {{}}<span class="font-color-darker" paragraph-span
+                    >testowanie1</span
+                >{{}}
+                <LinkPrimary
+                    href="/kontakt"
+                    text="testowanielink2"
+                    :primary="true"
+                    class="font-color-dark"
+                    paragraph-link
+                />
+            </LinkParagraph>
         </div>
     </section>
 </template>
 
 <script>
-import { OurProcessItem, LinkPrimary, SectionHeader } from "../../components";
+import {
+    OurProcessItem,
+    LinkPrimary,
+    SectionHeader,
+    LinkParagraph,
+} from "../../components";
+
 export default {
+    data() {
+        return { child_component: "linkparagraph" };
+    },
     components: {
         OurProcessItem,
         LinkPrimary,
         SectionHeader,
+        LinkParagraph,
     },
 };
 </script>
