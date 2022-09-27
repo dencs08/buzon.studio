@@ -1,5 +1,7 @@
+@import "../../styles/variables";
+
 #footer {
-    h3 {
+    .contact {
         font-size: clamp(1.35rem, 7vw, 10rem);
     }
 
@@ -11,10 +13,25 @@
         font-size: clamp(1.1rem, 2.1vw, 6rem);
     }
 
-    .footer-social-icons {
-        img {
-            height: clamp(25px, 2.5vw, 60px);
-            width: clamp(25px, 2.5vw, 60px);
+    svg {
+        height: clamp(25px, 2.5vw, 60px);
+        width: clamp(25px, 2.5vw, 60px);
+
+        transition: scale 0.2s;
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    .icon-wrapper {
+        .icon {
+            transition: fill 0.5s;
+        }
+
+        &:hover {
+            .icon {
+                fill: $primary-color;
+            }
         }
     }
 

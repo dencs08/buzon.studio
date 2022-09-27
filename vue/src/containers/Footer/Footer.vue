@@ -4,14 +4,15 @@
             <hr class="section-divider mt-6 mb-10" />
             <section>
                 <div class="container text-center md:text-left">
-                    <a
+                    <LinkPrimary
+                        text="Zostańmy w kontakcie"
+                        class="font-family-header contact cursor-pointer"
+                        :primary="true"
+                        :noUnderline="true"
+                        :point="true"
                         href="/kontakt"
-                        class="font-family-header text-uppercase lh-none link-primary"
-                    >
-                        <h3 class="my-2 my-md-0 link-bracket-display">
-                            Zostańmy w kontakcie
-                        </h3>
-                    </a>
+                    />
+
                     <div>
                         <div>
                             <LinkPrimary
@@ -22,7 +23,7 @@
                             />
 
                             <h4
-                                class="phone-number font-color-dark fw-medium mb-2 mt-2"
+                                class="phone-number font-color-dark font-medium mb-2 mt-2"
                             >
                                 {{ phone }}
                             </h4>
@@ -31,29 +32,20 @@
                                 class="footer-social-icons mt-3 md:mt-5 space-x-2 md:space-x-4"
                             >
                                 <a href="/start">
-                                    <div class="inline-block link-primary">
-                                        <img
-                                            src="../../assets/images/logos/favicon/buzonstudio_favicon_white.svg"
-                                            alt="logotyp buzonstudio"
-                                        />
+                                    <div class="inline-block icon-wrapper">
+                                        <LogoWhite />
                                     </div>
                                 </a>
 
                                 <a :href="fb" rel="noreferrer" target="_blank">
-                                    <div class="inline-block link-primary">
-                                        <img
-                                            src="../../assets/images/social/fb.svg"
-                                            alt="buzonstudio facebook"
-                                        />
+                                    <div class="inline-block icon-wrapper">
+                                        <FB />
                                     </div>
                                 </a>
 
                                 <a :href="ig" rel="noreferrer" target="_blank">
-                                    <div class="inline-block link-primary">
-                                        <img
-                                            src="../../assets/images/social/ig.svg"
-                                            alt="buzonstudio instagram"
-                                        />
+                                    <div class="inline-block icon-wrapper">
+                                        <IG />
                                     </div>
                                 </a>
                             </div>
@@ -134,7 +126,7 @@ let phone = import.meta.env.VITE_PHONE;
 let fb = import.meta.env.VITE_FB;
 let ig = import.meta.env.VITE_IG;
 
-import { LinkPrimary } from "../../components";
+import { LinkPrimary, FB, IG, LogoWhite } from "../../components";
 
 export default {
     data() {
@@ -149,10 +141,13 @@ export default {
 
     components: {
         LinkPrimary,
+        FB,
+        IG,
+        LogoWhite,
     },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "./Footer.scss";
 </style>
