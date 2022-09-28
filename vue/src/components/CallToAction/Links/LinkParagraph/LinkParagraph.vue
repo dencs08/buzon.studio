@@ -19,12 +19,6 @@ export default {
                     let element = child.children[j];
                     if (element.tagName == "SPAN") {
                         _this.addClass(element);
-                    } else {
-                        // console.log(_this.$children);
-                        // element.setAttribute("isAnimating", "true");
-                        // console.log(this.$parent.$slots.default);
-                        // this.$parent.$refs.PrimaryLink.animationStart();
-                        // _this.accessChildren();
                     }
                 }
             });
@@ -34,12 +28,6 @@ export default {
                     let element = child.children[j];
                     if (element.tagName == "SPAN") {
                         _this.removeClass(element);
-                    } else {
-                        // console.log(_this.$children);
-                        // element.setAttribute("isAnimating", "false");
-                        // console.log(this.$parent.$slots.default);
-                        // this.$parent.$refs.PrimaryLink.animationEnd();
-                        // _this.accessChildren();
                     }
                 }
             });
