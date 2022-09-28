@@ -39,27 +39,22 @@
                     :primary="true"
                 />
             </a> -->
-            <LinkParagraph href="/kontakt">
-                <span class="font-color-darker" paragraph-span
-                    >Jeśli jesteś zainteresowany</span
-                >{{}}
-                <LinkPrimary
-                    href="/kontakt"
-                    text="zdzwońmy się."
-                    :primary="true"
-                    class="font-color-dark"
-                    paragraph-link
-                />
-                {{}}<span class="font-color-darker" paragraph-span
-                    >testowanie1</span
-                >{{}}
-                <LinkPrimary
-                    href="/kontakt"
-                    text="testowanielink2"
-                    :primary="true"
-                    class="font-color-dark"
-                    paragraph-link
-                />
+            <LinkParagraph
+                href="/kontakt"
+                activeFontColor="font-color-secondary"
+            >
+                <div class="inline">
+                    <span class="font-color-darker duration-150"
+                        >Jeśli jesteś zainteresowany</span
+                    >{{}}
+                    <LinkPrimary
+                        href="/kontakt"
+                        text="zdzwońmy się."
+                        :primary="true"
+                        class="font-color-dark"
+                        :accessChildren="accessChildren"
+                    />
+                </div>
             </LinkParagraph>
         </div>
     </section>
@@ -82,6 +77,9 @@ export default {
         LinkPrimary,
         SectionHeader,
         LinkParagraph,
+    },
+    methods: {
+        accessChildren() {},
     },
 };
 </script>

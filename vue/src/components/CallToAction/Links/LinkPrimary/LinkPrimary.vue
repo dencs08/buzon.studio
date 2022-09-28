@@ -9,7 +9,7 @@
             animating: (primary && isAnimating) || (secondary && isAnimating),
         }"
         class="transitions"
-        @mouseover="animationStart"
+        @mouseover="accessChildren()"
         @animationend="animationEnd"
         ><span :class="{ 'point-link': point }">{{ text }}</span></a
     >
@@ -22,6 +22,14 @@ export default {
             isAnimating: false,
         };
     },
+
+    watch: {
+        startAnim() {
+            console.log("startanim");
+            // this.isAnimating = true;
+        },
+    },
+
     props: {
         href: String,
         text: String,
@@ -42,14 +50,25 @@ export default {
             type: Boolean,
             default: () => false,
         },
+        startAnim: {
+            type: Boolean,
+        },
+        accessChildren: Function,
     },
+
     methods: {
         animationStart() {
             this.isAnimating = true;
+            console.log(this.isAnimating);
+            // this.$emit("animation-start");
         },
         animationEnd() {
             this.isAnimating = false;
+            console.log(this.isAnimating);
+            // this.$emit("animation-end");
         },
+
+        completeWish() {},
     },
 };
 </script>
