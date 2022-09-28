@@ -4,44 +4,52 @@
             <h1>BUZONSTUDIO INNOWACYJNE USŁUGI IT.</h1>
 
             <h2 class="fw-normal font-family-primary">
-                <span class="link-activate-wrapper-paragraph">
-                    <span class="activate-span font-color-darker">
-                        Jesteśmy kreatywnym studio w branży IT zajmującym sie
-                        dostarczniem najlepszych
-                    </span>
-
-                    <LinkPrimary
-                        href="/portfolio"
-                        text="produktów"
-                        :primary="true"
-                        class="font-medium"
-                    />
-                    i
-                    <LinkPrimary
-                        href="/oferta"
-                        text="usług"
-                        :primary="true"
-                        class="font-medium"
-                    />
-                </span>
-                <span class="link-activate-wrapper-paragraph">
-                    <span class="activate-span font-color-darker">
-                        IT. Tworzymy strony internetowe, wizualizacje, branding,
-                        marketing online i inne produkty cyfrowe z pomocą metody
-                    </span>
-
-                    <span
-                        data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
-                        class="text-highlight cursor-pointer"
+                <LinkParagraph href="/kontakt">
+                    <div
+                        @mouseover="$refs.link1.animationStart()"
+                        @mouseleave="$refs.link1.mouseLeave()"
+                        class="inline"
                     >
+                        <span class="font-color-darker duration-200">
+                            Jesteśmy kreatywnym studio w branży IT zajmującym
+                            sie dostarczniem najlepszych</span
+                        >{{}}
                         <LinkPrimary
-                            href="/oferta"
-                            text="All-in-One."
+                            href="/kontakt"
+                            text="produktów"
                             :primary="true"
-                            class="font-medium"
-                        />
-                    </span>
-                </span>
+                            class="font-color-dark"
+                            ref="link1"
+                        />{{}}
+                        <span class="font-color-darker duration-200">IT. </span>
+                    </div>
+                </LinkParagraph>
+
+                <LinkParagraph href="/kontakt">
+                    <div
+                        @mouseover="$refs.link3.animationStart()"
+                        @mouseleave="$refs.link3.mouseLeave()"
+                        class="inline"
+                    >
+                        <span class="font-color-darker duration-200">
+                            Tworzymy strony internetowe, wizualizacje, branding,
+                            marketing online i inne produkty cyfrowe z pomocą
+                            metody</span
+                        >{{}}
+
+                        <span
+                            data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
+                        >
+                            <LinkPrimary
+                                href="/oferta"
+                                text="All-in-One."
+                                :primary="true"
+                                class="font-medium"
+                                ref="link3"
+                            />
+                        </span>
+                    </div>
+                </LinkParagraph>
             </h2>
             <!-- <x-arrow/> -->
         </div>
@@ -49,10 +57,11 @@
 </template>
 
 <script>
-import { LinkPrimary } from "../../components";
+import { LinkPrimary, LinkParagraph } from "../../components";
 export default {
     components: {
         LinkPrimary,
+        LinkParagraph,
     },
 };
 </script>

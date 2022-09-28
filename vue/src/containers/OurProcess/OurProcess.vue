@@ -29,10 +29,7 @@
                 </div>
             </div>
 
-            <LinkParagraph
-                href="/kontakt"
-                activeFontColor="font-color-secondary"
-            >
+            <LinkParagraph href="/kontakt">
                 <div
                     @mouseover="$refs.link1.animationStart()"
                     @mouseleave="$refs.link1.mouseLeave()"
