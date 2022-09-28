@@ -37,7 +37,6 @@
     }
 
     &:hover {
-        color: $primary-color !important;
         &:after,
         &:before {
             background: $primary-color;
@@ -104,7 +103,7 @@
 
 .link-primary {
     &:hover {
-        color: $primary-color;
+        color: $primary-color !important;
     }
 }
 

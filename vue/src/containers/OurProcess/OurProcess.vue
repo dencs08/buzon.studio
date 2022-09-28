@@ -29,22 +29,16 @@
                 </div>
             </div>
 
-            <!-- <a href="/kontakt" class="link-activate-wrapper-paragraph">
-                <span class="font-color-darker">
-                    Jeśli jesteś zainteresowany
-                </span>
-                <LinkPrimary
-                    href="/kontakt"
-                    text="zdzwońmy się."
-                    :primary="true"
-                />
-            </a> -->
             <LinkParagraph
                 href="/kontakt"
                 activeFontColor="font-color-secondary"
             >
-                <div class="inline">
-                    <span class="font-color-darker duration-150"
+                <div
+                    @mouseover="$refs.link1.animationStart()"
+                    @mouseleave="$refs.link1.mouseLeave()"
+                    class="inline"
+                >
+                    <span class="font-color-darker duration-200"
                         >Jeśli jesteś zainteresowany</span
                     >{{}}
                     <LinkPrimary
@@ -52,7 +46,7 @@
                         text="zdzwońmy się."
                         :primary="true"
                         class="font-color-dark"
-                        :accessChildren="accessChildren"
+                        ref="link1"
                     />
                 </div>
             </LinkParagraph>
@@ -69,17 +63,11 @@ import {
 } from "../../components";
 
 export default {
-    data() {
-        return { child_component: "linkparagraph" };
-    },
     components: {
         OurProcessItem,
         LinkPrimary,
         SectionHeader,
         LinkParagraph,
-    },
-    methods: {
-        accessChildren() {},
     },
 };
 </script>

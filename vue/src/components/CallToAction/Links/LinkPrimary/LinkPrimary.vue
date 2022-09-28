@@ -6,11 +6,13 @@
             'underline-secondary': secondary && noUnderline === false,
             'link-primary': primary,
             'link-move': move,
+            'text-highlight': isMouseOver,
             animating: (primary && isAnimating) || (secondary && isAnimating),
         }"
         class="transitions"
-        @mouseover="accessChildren()"
+        @mouseover="animationStart"
         @animationend="animationEnd"
+        @mouseleave="mouseLeave"
         ><span :class="{ 'point-link': point }">{{ text }}</span></a
     >
 </template>
@@ -20,14 +22,8 @@ export default {
     data() {
         return {
             isAnimating: false,
+            isMouseOver: false,
         };
-    },
-
-    watch: {
-        startAnim() {
-            console.log("startanim");
-            // this.isAnimating = true;
-        },
     },
 
     props: {
@@ -50,30 +46,23 @@ export default {
             type: Boolean,
             default: () => false,
         },
-        startAnim: {
-            type: Boolean,
-        },
-        accessChildren: Function,
     },
 
     methods: {
         animationStart() {
             this.isAnimating = true;
-            console.log(this.isAnimating);
-            // this.$emit("animation-start");
+            this.isMouseOver = true;
         },
         animationEnd() {
             this.isAnimating = false;
-            console.log(this.isAnimating);
-            // this.$emit("animation-end");
         },
-
-        completeWish() {},
+        mouseLeave() {
+            this.isMouseOver = false;
+        },
     },
 };
 </script>
 
 <style lang="scss" scoped>
-// [secondary ? 'underline-secondary' : 'underline-primary']
 @import "./linkprimary.scss";
 </style>
