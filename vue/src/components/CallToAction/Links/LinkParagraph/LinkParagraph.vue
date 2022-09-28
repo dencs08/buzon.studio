@@ -4,7 +4,18 @@
 
 <script>
 export default {
-    props: { href: String, isAnimating: Boolean, activeFontColor: String },
+    props: {
+        href: String,
+        isAnimating: Boolean,
+        activeFontColor: {
+            type: String,
+            default: "font-color-secondary",
+        },
+        normalFontColor: {
+            type: String,
+            default: "font-color-darker",
+        },
+    },
 
     mounted() {
         let elements = this.$refs.slot;
@@ -17,7 +28,10 @@ export default {
             child.addEventListener("mouseover", () => {
                 for (let j = 0; j < child.children.length; j++) {
                     let element = child.children[j];
-                    if (element.tagName == "SPAN") {
+                    if (
+                        element.tagName == "SPAN" &&
+                        element.classList.contains(_this.normalFontColor)
+                    ) {
                         _this.addClass(element);
                     }
                 }
@@ -26,7 +40,10 @@ export default {
             child.addEventListener("mouseleave", () => {
                 for (let j = 0; j < child.children.length; j++) {
                     let element = child.children[j];
-                    if (element.tagName == "SPAN") {
+                    if (
+                        element.tagName == "SPAN" &&
+                        element.classList.contains(_this.activeFontColor)
+                    ) {
                         _this.removeClass(element);
                     }
                 }
