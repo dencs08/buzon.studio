@@ -16,7 +16,7 @@
                         >{{}}
                         <LinkPrimary
                             href="/kontakt"
-                            text="produktów"
+                            text="usług"
                             :primary="true"
                             class="font-color-dark"
                             ref="link1"
