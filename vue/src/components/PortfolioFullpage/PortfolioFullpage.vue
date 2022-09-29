@@ -1,13 +1,20 @@
 <template>
-    <div class="mt-10 lg:mt-0">
-        <div class="mb-6 md:mb-10 lg:mb-0 link-activate-wrapper">
+    <div class="mt-10 lg:mt-0" @mouseover="mouseOver" @mouseleave="mouseLeave">
+        <div class="mb-6 md:mb-10 lg:mb-0">
             <a :href="url">
-                <div class="portfolio-wrapper">
-                    <a :href="url" class="portfolio-item mx-auto flex">
+                <div class="portfolio-wrapper relative">
+                    <a
+                        :href="url"
+                        class="portfolio-item mx-auto flex inline-block overflow-hidden"
+                    >
                         <img
                             :src="image"
-                            alt="tworzenie logo i brandingu dla marki danfit"
-                            class="portfolio_image-item"
+                            alt=""
+                            class="w-full h-full object-cover duration-500"
+                            :class="{
+                                'scale-[1.2] brightness-110 saturate-[1.1]':
+                                    this.isMouseOver,
+                            }"
                         />
                     </a>
 
@@ -20,18 +27,22 @@
                                 :text="title"
                                 :big="true"
                                 :move="true"
-                                headerClass="absolute top-[77%] left-[-2%] z-[2] inline-block"
+                                headerClass="absolute top-[77%] left-[2%] z-[2] inline-block"
+                                ref="itemHeader"
                             />
                         </a>
                     </div>
                     <div
-                        class="info mt-6 mb:mt-1 lg:mt-2 pr-3 md:pr-0 pl-1 lg:pl-2"
+                        class="info mt-6 mb:mt-1 lg:mt-12 pr-3 md:pr-0 ml-1 lg:ml-10"
                     >
                         <p class="font-color-secondary mb-1">
                             {{ info }}
                         </p>
-                        <span v-for="item in category" class="font-color-dark">
-                            {{ item }},
+                        <span
+                            v-for="item in category"
+                            class="font-family-primary font-color-darker bg-gray-200 px-3 mr-3 rounded-full"
+                        >
+                            {{ item }}
                         </span>
                     </div>
                 </div>
@@ -44,6 +55,12 @@
 import { ItemHeader } from "../";
 
 export default {
+    data() {
+        return {
+            isMouseOver: false,
+        };
+    },
+
     props: {
         title: String,
         info: String,
@@ -62,9 +79,20 @@ export default {
     components: {
         ItemHeader,
     },
+
+    methods: {
+        mouseOver() {
+            this.$refs.itemHeader.mouseOver();
+            this.isMouseOver = true;
+        },
+        mouseLeave() {
+            this.$refs.itemHeader.mouseLeave();
+            this.isMouseOver = false;
+        },
+    },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./portfoliofullpage.scss";
 </style>
