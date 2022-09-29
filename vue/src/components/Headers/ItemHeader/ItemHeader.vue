@@ -5,8 +5,8 @@
             small ? 'ml-[-2vw]' : ''
         } ${normal ? 'ml-[-2vw]' : ''} ${big ? 'ml-[-2vw]' : ''}`"
         class="flex items-center"
-        @mouseover="animateIn"
-        @mouseleave="animateOut"
+        @mouseover="mouseOver"
+        @mouseleave="mouseLeave"
     >
         <div id="logoWrapper" ref="logoWrapper" class="opacity-0">
             <Logo
@@ -39,6 +39,8 @@ export default {
     data() {
         return {
             isAnimating: false,
+            mouseIsOver: false,
+            mouseIsLeave: true,
         };
     },
     props: {
@@ -62,28 +64,39 @@ export default {
     },
 
     methods: {
-        animateIn() {
+        mouseOver() {
+            this.killTweens();
             gsap.to(this.$refs.header, {
-                duration: 0.2,
+                duration: 0.25,
                 x: "1.75vw",
             });
             gsap.to(this.$refs.logoWrapper, {
                 duration: 0.2,
                 x: "1.75vw",
                 opacity: 1,
+                delay: 0.1,
+                ease: "power1.out",
             });
         },
-        animateOut() {
+
+        mouseLeave() {
+            this.killTweens();
             gsap.to(this.$refs.logoWrapper, {
-                duration: 0.2,
+                duration: 0.25,
                 x: "0",
                 opacity: 0,
+                ease: "power1.out",
             });
             gsap.to(this.$refs.header, {
                 duration: 0.2,
                 x: "0",
-                delay: 0.125,
+                delay: 0.1,
             });
+        },
+
+        killTweens() {
+            gsap.killTweensOf(this.$refs.logoWrapper);
+            gsap.killTweensOf(this.$refs.header);
         },
     },
 
