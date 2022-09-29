@@ -29,7 +29,7 @@
                         </p>
                         <span
                             v-for="item in category"
-                            class="font-family-primary font-color-darker bg-gray-200 px-3 mx-1 rounded-full"
+                            class="font-family-primary font-color-darker bg-gray-200 px-3 mr-3 rounded-full"
                         >
                             {{ item }}
                         </span>
