@@ -10,6 +10,7 @@ export { default as PrimaryButton } from './CallToAction/Buttons/PrimaryButton/P
 export { default as ItemHeader } from './Headers/ItemHeader/ItemHeader.vue'
 export { default as SectionHeader } from './Headers/SectionHeader/SectionHeader.vue'
 
+export { default as ImageShowcase } from './ImageShowcase/ImageShowcase.vue'
 export { default as SliderItem } from './PortfolioSliderItem/SliderItem.vue'
 export { default as Column } from './WhyUsColumn/Column.vue'
 export { default as CollabItem } from './CollabItem/CollabItem.vue'
