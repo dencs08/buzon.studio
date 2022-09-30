@@ -2,7 +2,7 @@
     <div id="fullpage">
         <div
             section
-            class="grid container grid-cols-1 md:grid-cols-2 h-screen place-items-center"
+            class="grid container grid-cols-1 md:grid-cols-2 md:h-screen place-items-center"
         >
             <PortfolioFullpage
                 title="bielanypark"

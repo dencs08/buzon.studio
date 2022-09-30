@@ -1,6 +1,6 @@
 <template>
     <section id="landing-page" class="flex items-center">
-        <div class="container">
+        <div class="container my-[110px] md:my-0">
             <h1>
                 <div>
                     <span id="typed"></span>

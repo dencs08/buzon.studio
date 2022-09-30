@@ -1,6 +1,6 @@
 <template>
     <section id="aboutUs">
-        <div class="container my-28 grid grid-cols-8">
+        <div class="container my-28 md:grid grid-cols-8">
             <div class=""></div>
             <div class="col-start-6 col-end-9">
                 <p class="font-color-dark">

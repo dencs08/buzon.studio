@@ -3,7 +3,7 @@
         <div class="container">
             <h4 class="mb-2">Oni juz nam zaufali:</h4>
             <div
-                class="[&>*]:pt-4 grid grid-cols-2 md:grid-cols-6 lg:grid-cols-5"
+                class="[&>*]:p-4 grid grid-cols-2 md:grid-cols-6 lg:grid-cols-5"
             >
                 <CollabItem
                     img="src/assets/images/logos/client/danfit.svg"
