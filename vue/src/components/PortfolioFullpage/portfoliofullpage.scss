@@ -4,16 +4,3 @@
 [section] {
     margin: auto;
 }
-
-.portfolio-item {
-    width: clamp(150px, 95%, 100%);
-    height: auto;
-
-    aspect-ratio: 10/7;
-}
-
-.portfolio-wrapper {
-    p {
-        font-size: clamp(0.8rem, 1.05vw, 2.75rem);
-    }
-}
