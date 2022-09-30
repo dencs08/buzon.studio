@@ -4,7 +4,7 @@
             <h1>BUZONSTUDIO INNOWACYJNE USŁUGI IT.</h1>
 
             <h2 class="fw-normal font-family-primary">
-                <LinkParagraph href="/kontakt">
+                <LinkParagraph href="/oferta">
                     <div
                         @mouseover="$refs.link1.animationStart()"
                         @mouseleave="$refs.link1.mouseLeave()"
@@ -15,7 +15,7 @@
                             sie dostarczniem najlepszych</span
                         >{{}}
                         <LinkPrimary
-                            href="/kontakt"
+                            href="/oferta"
                             text="usług"
                             :primary="true"
                             class="font-color-dark"
@@ -25,7 +25,7 @@
                     </div>
                 </LinkParagraph>
 
-                <LinkParagraph href="/kontakt">
+                <LinkParagraph href="/oferta">
                     <div
                         @mouseover="$refs.link3.animationStart()"
                         @mouseleave="$refs.link3.mouseLeave()"
