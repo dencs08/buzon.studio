@@ -2,7 +2,7 @@
     <div
         class="px-0 md:px-3 lg:px-5 mb-4 md:mb-0 link-activate-wrapper md:h-[80vh]"
     >
-        <a href="/oferta">
+        <a href="/oferta" @mouseover="mouseOver" @mouseleave="mouseLeave">
             <div class="offer-wrapper relative">
                 <div
                     :class="{ 'flex-row-reverse': reverse }"
@@ -25,6 +25,7 @@
                                     :normal="true"
                                     :move="true"
                                     headerClass="inline-block"
+                                    ref="itemHeader"
                                 />
                             </a>
                             <div class="mt-3 pr-3 md:pr-0 ml-2 md:ml-0">
@@ -55,6 +56,12 @@
 import { ItemHeader, PrimaryButton } from "../";
 
 export default {
+    data() {
+        return {
+            isMouseOver: false,
+        };
+    },
+
     props: {
         title: String,
         paragraph: String,
@@ -71,6 +78,17 @@ export default {
     components: {
         ItemHeader,
         PrimaryButton,
+    },
+
+    methods: {
+        mouseOver() {
+            this.$refs.itemHeader.mouseOver();
+            this.isMouseOver = true;
+        },
+        mouseLeave() {
+            this.$refs.itemHeader.mouseLeave();
+            this.isMouseOver = false;
+        },
     },
 };
 </script>
