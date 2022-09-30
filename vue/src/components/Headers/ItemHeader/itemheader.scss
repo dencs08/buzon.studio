@@ -12,3 +12,16 @@
     font-size: clamp(2rem, 5.5vw, 7rem);
     line-height: clamp(2rem, 4.5vw, 7rem);
 }
+
+#logoWrapper {
+    transition: opacity 0.2s, transform 0.25s;
+}
+
+#header {
+    transition: transform 0.25s;
+}
+
+.isMouseOver {
+    opacity: 1;
+    transform: translateX(25px);
+}

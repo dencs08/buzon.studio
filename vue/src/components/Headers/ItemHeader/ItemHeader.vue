@@ -8,7 +8,12 @@
         @mouseover="mouseOver"
         @mouseleave="mouseLeave"
     >
-        <div id="logoWrapper" ref="logoWrapper" class="opacity-0">
+        <div
+            id="logoWrapper"
+            ref="logoWrapper"
+            class="opacity-0"
+            :class="`${this.mouseIsOver ? 'isMouseOver' : ''}`"
+        >
             <Logo
                 class=""
                 :small="small ? true : false"
@@ -21,7 +26,8 @@
                 class="font-family-header"
                 :class="`${small ? 'small' : ''} ${normal ? 'normal' : ''} ${
                     big ? 'big' : ''
-                }`"
+                } ${this.mouseIsOver ? 'isMouseOver' : ''}
+                `"
                 id="header"
                 ref="header"
             >
@@ -34,13 +40,13 @@
 <script>
 import { gsap } from "gsap";
 import { Logo } from "../../";
+var tl = gsap.timeline();
 
 export default {
     data() {
         return {
             isAnimating: false,
             mouseIsOver: false,
-            mouseIsLeave: true,
         };
     },
     props: {
@@ -65,38 +71,11 @@ export default {
 
     methods: {
         mouseOver() {
-            this.killTweens();
-            gsap.to(this.$refs.header, {
-                duration: 0.25,
-                x: "1.75vw",
-            });
-            gsap.to(this.$refs.logoWrapper, {
-                duration: 0.2,
-                x: "1.75vw",
-                opacity: 1,
-                delay: 0.1,
-                ease: "power1.out",
-            });
+            this.mouseIsOver = true;
         },
 
         mouseLeave() {
-            this.killTweens();
-            gsap.to(this.$refs.logoWrapper, {
-                duration: 0.25,
-                x: "0",
-                opacity: 0,
-                ease: "power1.out",
-            });
-            gsap.to(this.$refs.header, {
-                duration: 0.2,
-                x: "0",
-                delay: 0.1,
-            });
-        },
-
-        killTweens() {
-            gsap.killTweensOf(this.$refs.logoWrapper);
-            gsap.killTweensOf(this.$refs.header);
+            this.mouseIsOver = false;
         },
     },
 
