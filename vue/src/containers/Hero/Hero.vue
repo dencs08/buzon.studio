@@ -4,7 +4,7 @@
             <h1>BUZONSTUDIO INNOWACYJNE USŁUGI IT.</h1>
 
             <h2 class="fw-normal font-family-primary">
-                <LinkParagraph href="/oferta">
+                <LinkParagraph to="Oferta">
                     <div
                         @mouseover="$refs.link1.animationStart()"
                         @mouseleave="$refs.link1.mouseLeave()"
@@ -15,7 +15,7 @@
                             sie dostarczniem najlepszych</span
                         >{{}}
                         <LinkPrimary
-                            href="/oferta"
+                            to="Oferta"
                             text="usług"
                             :primary="true"
                             class="font-color-dark"
@@ -25,7 +25,7 @@
                     </div>
                 </LinkParagraph>
 
-                <LinkParagraph href="/oferta">
+                <LinkParagraph to="Oferta">
                     <div
                         @mouseover="$refs.link3.animationStart()"
                         @mouseleave="$refs.link3.mouseLeave()"
@@ -41,7 +41,7 @@
                             data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
                         >
                             <LinkPrimary
-                                href="/oferta"
+                                to="Oferta"
                                 text="All-in-One."
                                 :primary="true"
                                 class="font-medium"

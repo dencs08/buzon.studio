@@ -31,11 +31,11 @@
                             <div
                                 class="footer-social-icons mt-3 md:mt-5 space-x-2 md:space-x-4"
                             >
-                                <a href="/start">
+                                <router-link to="Start">
                                     <div class="inline-block icon-wrapper">
                                         <LogoWhite />
                                     </div>
-                                </a>
+                                </router-link>
 
                                 <a :href="fb" rel="noreferrer" target="_blank">
                                     <div class="inline-block icon-wrapper">
@@ -54,28 +54,28 @@
                                 <ul class="space-y-2">
                                     <li>
                                         <LinkPrimary
-                                            href="/start"
+                                            to="Start"
                                             text="start"
                                             :secondary="true"
                                         />
                                     </li>
                                     <li>
                                         <LinkPrimary
-                                            href="/oferta"
+                                            to="Oferta"
                                             text="oferta"
                                             :secondary="true"
                                         />
                                     </li>
                                     <li>
                                         <LinkPrimary
-                                            href="/portfolio"
+                                            to="Portfolio"
                                             text="portfolio"
                                             :secondary="true"
                                         />
                                     </li>
                                     <li>
                                         <LinkPrimary
-                                            href="/kontakt"
+                                            to="Kontakt"
                                             text="kontakt"
                                             :secondary="true"
                                         />

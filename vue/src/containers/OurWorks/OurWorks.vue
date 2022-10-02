@@ -33,10 +33,10 @@
                 />
             </div>
         </div>
-        <div class="portfolio-btn-container container">
+        <div class="portfolio-container container">
             <div>
                 <LinkPrimary
-                    href="/portfolio"
+                    to="Portfolio"
                     text="Więcej prac"
                     :primary="true"
                     :point="true"

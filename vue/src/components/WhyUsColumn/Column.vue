@@ -1,8 +1,13 @@
 <template>
     <div
-        class="px-0 md:px-3 lg:px-5 mb-4 md:mb-0 link-activate-wrapper md:h-[80vh]"
+        class="px-0 lg:px-5 mb-4 md:mb-0 link-activate-wrapper md:h-[60vh]"
+        :class="{ 'mt-20': reverse }"
     >
-        <a href="/oferta" @mouseover="mouseOver" @mouseleave="mouseLeave">
+        <router-link
+            :to="{ name: 'Oferta' }"
+            @mouseover="mouseOver"
+            @mouseleave="mouseLeave"
+        >
             <div class="offer-wrapper relative">
                 <div
                     :class="{ 'flex-row-reverse': reverse }"
@@ -17,9 +22,9 @@
                     >
                         <img src="../../assets/images/branding.png" alt="" />
                     </div>
-                    <div class="basis-11/12 sm:px-8">
+                    <div class="basis-11/12 px-0 sm:px-2 md:px-4 lg:px-10">
                         <div class="my-0 ml-0 sm:ml-2 md:ml-4">
-                            <a href="/oferta">
+                            <router-link :to="{ name: 'Oferta' }">
                                 <ItemHeader
                                     :text="title"
                                     :normal="true"
@@ -27,7 +32,7 @@
                                     headerClass="inline-block"
                                     ref="itemHeader"
                                 />
-                            </a>
+                            </router-link>
                             <div class="mt-3 pr-3 md:pr-0 ml-2 md:ml-0">
                                 <p class="font-color-dark">
                                     {{ paragraph }}
@@ -37,10 +42,11 @@
                                         {{ item }}
                                     </li>
                                 </ul>
-                                <PrimaryButton
+                                <Button
                                     text="Oferta"
-                                    :normal="true"
                                     class="mt-6"
+                                    :arrow="true"
+                                    :secondary="true"
                                     v-if="buttons"
                                 />
                             </div>
@@ -48,12 +54,12 @@
                     </div>
                 </div>
             </div>
-        </a>
+        </router-link>
     </div>
 </template>
 
 <script>
-import { ItemHeader, PrimaryButton } from "../";
+import { ItemHeader, Button } from "../";
 
 export default {
     data() {
@@ -77,7 +83,7 @@ export default {
     },
     components: {
         ItemHeader,
-        PrimaryButton,
+        Button,
     },
 
     methods: {
