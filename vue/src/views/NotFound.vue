@@ -5,16 +5,24 @@
             <h2>Niestety nie znaleźliśmy tej strony...</h2>
             <h3 class="font-color-dark">
                 Powrót na stronę główną
-                <a
-                    href="/start"
-                    class="underline-dark link-primary font-color-primary"
-                    >tutaj.</a
-                >
+                <LinkPrimary
+                    text="tutaj."
+                    to="Start"
+                    :primary="true"
+                    class="font-color-primary"
+                />
             </h3>
         </div>
     </div>
 </template>
 
-<script></script>
+<script>
+import { LinkPrimary } from "../components";
+export default {
+    components: {
+        LinkPrimary,
+    },
+};
+</script>
 
 <style></style>
