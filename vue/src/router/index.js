@@ -40,11 +40,11 @@ const routes = [
         ]
     },
     {
-        path: '/portfolio/:name',
+        path: '/portfolio/:projectName',
         // name: 'Projekt',
         component: DefaultLayout,
         children: [
-            { path: '/portfolio/:name', name: 'Projekt', component: Projekt }
+            { path: '/portfolio/:projectName', name: 'Projekt', component: Projekt }
         ]
     },
     {
@@ -61,6 +61,10 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
+    scrollBehavior(to, from, savedPosition) {
+        // always scroll to top
+        return { top: 0 }
+    },
     routes
 })
 

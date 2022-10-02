@@ -1,8 +1,11 @@
 <template>
-    <a :href="url" @mouseover="mouseOver" @mouseleave="mouseLeave">
+    <router-link
+        :to="'/portfolio/' + title"
+        @mouseover="mouseOver"
+        @mouseleave="mouseLeave"
+    >
         <div class="portfolio-wrapper relative whitespace-normal">
-            <a
-                :href="url"
+            <div
                 class="portfolio-item mx-auto flex inline-block overflow-hidden"
             >
                 <img
@@ -14,10 +17,10 @@
                             this.isMouseOver,
                     }"
                 />
-            </a>
+            </div>
 
             <div class="info ml-4 sm:ml-8 lg:ml-10">
-                <a :href="url" class="gs gs_fromTop font-family-header my-0">
+                <div class="gs gs_fromTop font-family-header my-0">
                     <ItemHeader
                         :text="title"
                         :big="true"
@@ -25,8 +28,8 @@
                         headerClass="mt-[-15px] md:mt-[-20px] lg:mt-[-30px] xl:mt-[-40px] ml-[-15px] sm:ml-[-30px] md:ml-[-35px] lg:ml-[-50px] z-[2] inline-block"
                         ref="itemHeader"
                     />
-                </a>
-                <p class="font-color-secondary mb-1">
+                </div>
+                <p class="font-color-secondary mb-6">
                     {{ info }}
                 </p>
                 <span
@@ -37,7 +40,7 @@
                 </span>
             </div>
         </div>
-    </a>
+    </router-link>
 </template>
 
 <script>

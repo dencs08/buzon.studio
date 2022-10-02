@@ -1,5 +1,5 @@
 <template>
-    <ProjectHero :name="$route.params.name" :image="image" />
+    <ProjectHero :name="$route.params.projectName" :image="image" />
     <ProjectInfo />
     <ProjectImages />
     <Footer />
@@ -12,7 +12,7 @@ export default {
     components: { Footer, ProjectHero, ProjectInfo, ProjectImages },
     computed: {
         image() {
-            return `../src/assets/images/portfolio/${this.$route.params.name}/${this.$route.params.name}_portfolio.jpg`;
+            return `../src/assets/images/portfolio/${this.$route.params.projectName}/${this.$route.params.projectName}_portfolio.jpg`;
         },
     },
 };
