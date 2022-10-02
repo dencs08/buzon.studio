@@ -1,10 +1,23 @@
 <template>
-    <a class="LinkParagraph" ref="slot" :href="href"><slot> </slot></a>
+    <span>
+        <router-link
+            v-show="to"
+            :to="{ name: to }"
+            ref="slot"
+            class="LinkParagraph"
+            ><slot> </slot
+        ></router-link>
+
+        <a v-show="href" class="LinkParagraph" ref="slot" :href="href"
+            ><slot> </slot
+        ></a>
+    </span>
 </template>
 
 <script>
 export default {
     props: {
+        to: String,
         href: String,
         isAnimating: Boolean,
         activeFontColor: {
@@ -29,8 +42,9 @@ export default {
                 for (let j = 0; j < child.children.length; j++) {
                     let element = child.children[j];
                     if (
-                        element.tagName == "SPAN" &&
-                        element.classList.contains(_this.normalFontColor)
+                        // element.tagName == "SPAN" &&
+                        // element.classList.contains(_this.normalFontColor)
+                        1 == 1
                     ) {
                         _this.addClass(element);
                     }
@@ -41,8 +55,9 @@ export default {
                 for (let j = 0; j < child.children.length; j++) {
                     let element = child.children[j];
                     if (
-                        element.tagName == "SPAN" &&
-                        element.classList.contains(_this.activeFontColor)
+                        // element.tagName == "SPAN" &&
+                        // element.classList.contains(_this.activeFontColor)
+                        1 == 1
                     ) {
                         _this.removeClass(element);
                     }

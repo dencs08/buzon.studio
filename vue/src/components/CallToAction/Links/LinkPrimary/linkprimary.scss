@@ -107,43 +107,6 @@
     }
 }
 
-.point-link {
-    &::after {
-        display: inline-block;
-
-        font-weight: inherit;
-
-        margin-left: 0.35em;
-
-        content: "\279D";
-
-        transition: transform 0.275s ease-out 0.05s;
-    }
-
-    &:hover {
-        &::after {
-            transform: translateX(38.2%);
-        }
-    }
-}
-
-.link-bracket-display {
-    @extend .point-link;
-    &::after {
-        content: "}" !important;
-        opacity: 0;
-        // transition: transform 0.275s ease-out 0.05s, opacity 0.275s ease-out 0s;
-    }
-
-    &:hover {
-        &::after {
-            opacity: 1;
-
-            transform: translateX(-38.2%);
-        }
-    }
-}
-
 .link-move {
     display: inline-block;
     &:hover {
