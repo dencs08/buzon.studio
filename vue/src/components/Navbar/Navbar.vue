@@ -1,86 +1,78 @@
 <template>
-    <header g-component="Navbar" data-header class="fixed z-[9999]">
-        <div class="px-1 md:px-3 w-screen flex grow h-[100px]">
+    <header class="fixed w-screen z-[9999]">
+        <div class="flex min-h-[40px] h-[8vh]">
             <div class="flex items-center">
-                <a href="/start">
+                <router-link :to="{ name: 'Start' }">
                     <img
                         src="../../assets/images/logos/buzonstudio_white_cropped.svg"
-                        class="h-[35px] sm:h-[40px] md:h-[50px]"
+                        class="h-[30px] sm:h-[35px] md:h-[40px]"
                         alt="buzonstudio logo (branding)"
                     />
-                </a>
+                </router-link>
             </div>
             <div class="flex grow items-center justify-end">
                 <button
-                    data-hamburger
-                    class="hamburger hamburger--collapse p-0 flex items-center"
+                    class="hamburger w-[35px] h-[35px] flex items-center"
                     type="button"
                     aria-label="Menu"
                     aria-controls="navigation"
                     aria-expanded="false"
+                    @click="toggleNav"
                 >
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
+                    <span :class="{ active: isNavToggled }"></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <nav data-navigation id="navigation" class="fixed hidden">
-        <div class="wrapper flex">
-            <div class="container">
+    <nav
+        class="fixed w-screen h-screen"
+        :class="{ active: isNavToggled }"
+        v-show="isNavToggled"
+    >
+        <div class="wrapper fixed top-0 left-0 flex flex-col">
+            <div class="h-[94vh]">
                 <div
-                    class="w-full h-[90%] content-center grid lg:gap-4 lg:grid-cols-2"
+                    class="container w-[100vw] h-[100%] grid content-center sm:grid-cols-2"
                 >
-                    <div
-                        class="flex justify-start lg:justify-center items-center"
-                    >
+                    <div class="flex sm:justify-center">
                         <ul class="pl-0">
                             <li>
                                 <span class="nav-number">01</span>
-                                <a
-                                    web-link
-                                    href="/start"
-                                    class="link-primary font-family-header"
-                                >
-                                    Strona Główna
-                                </a>
+                                <LinkPrimary
+                                    to="Start"
+                                    text="Strona Główna"
+                                    class="font-family-header"
+                                />
                             </li>
                             <li>
                                 <span class="nav-number">02</span>
-                                <a
-                                    web-link
-                                    href="/oferta"
-                                    class="link-primary font-family-header"
-                                >
-                                    Oferta
-                                </a>
+                                <LinkPrimary
+                                    to="Oferta"
+                                    text="Oferta"
+                                    class="font-family-header"
+                                />
                             </li>
                             <li>
                                 <span class="nav-number">03</span>
-                                <a
-                                    web-link
-                                    href="/portfolio"
-                                    class="link-primary font-family-header"
-                                >
-                                    Portfolio
-                                </a>
+                                <LinkPrimary
+                                    to="Portfolio"
+                                    text="Portfolio"
+                                    class="font-family-header"
+                                />
                             </li>
                             <li>
                                 <span class="nav-number">04</span>
-                                <a
-                                    web-link
-                                    href="/kontakt"
-                                    class="link-primary font-family-header"
-                                >
-                                    Kontakt
-                                </a>
+                                <LinkPrimary
+                                    to="Kontakt"
+                                    text="Kontakt"
+                                    class="font-family-header"
+                                />
                             </li>
                         </ul>
                     </div>
                     <div
-                        class="nav-contact flex justify-start lg:justify-center items-center mt-6 lg:mt-0"
+                        class="nav-contact flex sm:justify-center items-center mt-6 lg:mt-0"
                     >
                         <div class="my-0 font-color-secondary">
                             <a
@@ -89,19 +81,31 @@
                             >
                             </a>
                         </div>
-                        <div class="my-0 font-color-dark"></div>
+                        <div class="my-0 font-color-dark">
+                            <LinkPrimary
+                                :href="`mailto:${email}?subject = Oferta&body = Wiadomość`"
+                                :text="email"
+                                :primary="true"
+                                class="font-medium font-color-primary"
+                            />
+                            <h4
+                                class="phone-number font-color-dark font-medium mb-2 mt-2"
+                            >
+                                {{ phone }}
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center items-end space-x-8">
+            <div class="flex justify-center space-x-5">
                 <div class="icon-wrapper inline-block">
-                    <a href="" rel="noreferrer" target="_blank">
-                        <img src="" alt="" />
+                    <a :href="fb" rel="noreferrer" target="_blank">
+                        <FB />
                     </a>
                 </div>
                 <div class="icon-wrapper inline-block">
-                    <a href="" rel="noreferrer" target="_blank">
-                        <img src="" alt="" />
+                    <a :href="ig" rel="noreferrer" target="_blank">
+                        <IG />
                     </a>
                 </div>
             </div>
@@ -109,8 +113,41 @@
     </nav>
 </template>
 
-<script></script>
+<script>
+import { LinkPrimary, FB, IG } from "../";
+
+let name = import.meta.env.VITE_NAME;
+let email = import.meta.env.VITE_EMAIL;
+let phone = import.meta.env.VITE_PHONE;
+let fb = import.meta.env.VITE_FB;
+let ig = import.meta.env.VITE_IG;
+
+export default {
+    data() {
+        return {
+            isNavToggled: false,
+
+            name: name,
+            email: email,
+            phone: phone,
+            fb: fb,
+            ig: ig,
+        };
+    },
+    methods: {
+        toggleNav() {
+            this.isNavToggled = !this.isNavToggled;
+        },
+    },
+
+    components: {
+        LinkPrimary,
+        FB,
+        IG,
+    },
+};
+</script>
 
 <style lang="scss">
-/* @import "./navbar.scss"; */
+@import "./navbar.scss";
 </style>
