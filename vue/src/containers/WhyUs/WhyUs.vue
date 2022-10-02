@@ -36,22 +36,36 @@
             />
         </div>
 
-        <div v-if="contactParagraph" class="container">
-            <a href="/kontakt" class="link-activate-wrapper-paragraph contact">
-                <LinkPrimary
-                    href="/kontakt"
-                    text="Napisz do nas"
-                    :primary="true"
-                    class=""
-                />
-                <span class="font-color-darker"> i stwórzmy coś razem.</span>
-            </a>
+        <div v-if="contactParagraph" class="container contact">
+            <LinkParagraph href="/kontakt">
+                <div
+                    @mouseover="$refs.link1.animationStart()"
+                    @mouseleave="$refs.link1.mouseLeave()"
+                    class="inline"
+                >
+                    <LinkPrimary
+                        href="/kontakt"
+                        text="Napisz do nas"
+                        :primary="true"
+                        ref="link1"
+                    />{{}}
+
+                    <span class="font-color-darker duration-200">
+                        i stwórzmy coś razem.</span
+                    >
+                </div>
+            </LinkParagraph>
         </div>
     </section>
 </template>
 
 <script>
-import { Column, LinkPrimary, SectionHeader } from "../../components";
+import {
+    Column,
+    LinkPrimary,
+    SectionHeader,
+    LinkParagraph,
+} from "../../components";
 export default {
     props: {
         header: {
@@ -70,6 +84,7 @@ export default {
         Column,
         LinkPrimary,
         SectionHeader,
+        LinkParagraph,
     },
 };
 </script>

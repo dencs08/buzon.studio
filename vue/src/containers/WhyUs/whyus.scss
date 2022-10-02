@@ -1,11 +1,9 @@
 #offer {
     .contact {
-        width: fit-content;
-
         font-size: clamp(1rem, 1.4vw, 3rem);
     }
 }
 
 .container {
-    padding: 0vw 5vw !important;
+    padding-inline: clamp(20px, 5vw, 300px) !important;
 }
