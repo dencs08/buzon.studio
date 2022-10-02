@@ -1,0 +1,78 @@
+@import "../../../../styles/_variables.scss";
+
+$btn-primary-bg: #ffffff0d;
+
+.btn-primary {
+    border: 0.5px solid #d8d8d880 !important;
+
+    background: #ffffff0d !important;
+
+    color: $font-color-primary;
+
+    transition: 0.5s background, color 0.2s;
+
+    &:hover {
+        background: $font-color-secondary !important;
+        color: $font-color-fourth !important;
+    }
+}
+
+.btn-secondary {
+    background: linear-gradient(
+        60deg,
+        $btn-primary-bg 0%,
+        $btn-primary-bg 50%,
+        rgb(19, 75, 56) 75%,
+        $primary-color 100%
+    );
+    background-position: 30% 0;
+    background-size: 500% 200%;
+
+    transition: 0.75s cubic-bezier(0.22, 1, 0.36, 1) background, color 0.5s;
+
+    &:hover {
+        background-position: 100% 0;
+    }
+}
+
+.btn-submit {
+    border: none;
+    background: $primary-color !important;
+    color: $body-bg !important;
+
+    transition: 0.5s all;
+
+    &:hover {
+        background: $primary-color-dark !important;
+
+        transform: scale(0.9);
+    }
+}
+
+.small {
+    padding-top: clamp(5px, 0.8vw, 30px);
+    padding-bottom: clamp(5px, 0.8vw, 30px);
+    padding-left: clamp(5px, 1.5vw, 30px);
+    padding-right: clamp(5px, 1.5vw, 30px);
+}
+
+.normal {
+    padding-top: clamp(5px, 1.2vw, 60px);
+    padding-bottom: clamp(5px, 1.2vw, 60px);
+    padding-left: clamp(5px, 2.85vw, 60px);
+    padding-right: clamp(5px, 2.85vw, 60px);
+}
+
+.big {
+    padding-top: clamp(5px, 1.75vw, 100px);
+    padding-bottom: clamp(5px, 1.75vw, 100px);
+    padding-left: clamp(5px, 4.25vw, 100px);
+    padding-right: clamp(5px, 4.25vw, 100px);
+}
+
+@media (max-width: $sm-screen-size) {
+    .btn {
+        width: 100%;
+        padding: 1em 3em;
+    }
+}
