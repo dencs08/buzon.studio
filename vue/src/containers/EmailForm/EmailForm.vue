@@ -49,11 +49,11 @@
                             <input
                                 class="form_subject"
                                 type="checkbox"
-                                id="app"
+                                id="Aplikacja"
                                 name="controlInfo[]"
                                 value="Aplikacja"
                             />
-                            <label cursor-shrink for="app">
+                            <label cursor-shrink for="Aplikacja">
                                 <span class="label-name">Aplikacja</span>
                             </label>
 
@@ -97,7 +97,7 @@
                                 type="text"
                                 placeholder=" "
                                 required
-                                pattern="[a-zA-Z]{2,}"
+                                pattern="[a-zA-Z ]{2,}"
                             />
                             <label for="name">Imię</label>
                             <!-- @error('name') -->
@@ -131,8 +131,8 @@
                         data-validate="To pole jest wymagane!"
                     >
                         <textarea
-                            id="content"
-                            name="content"
+                            id="message"
+                            name="message"
                             class="input-text js-input"
                             cols="30"
                             rows="10"
@@ -147,15 +147,12 @@
                     </div>
                 </div>
                 <div>
-                    <div
-                        class="form-field text-center submit-container mt-2 mt-md-4 mt-lg-5 mb-3 mb-md-5"
-                    >
-                        <input
-                            cursor-action
-                            data-cursor-label="⟶"
+                    <div class="form-field mt-2 mt-md-4 mt-lg-5 mb-3 mb-md-5">
+                        <Button
                             type="submit"
-                            value="WYŚLIJ"
-                            class="btn btn-submit color"
+                            text="Wyślij"
+                            :submit="true"
+                            class="sm:w-2/6"
                         />
                     </div>
                 </div>
@@ -164,7 +161,12 @@
     </section>
 </template>
 
-<script></script>
+<script>
+import { Button } from "../../components";
+export default {
+    components: { Button },
+};
+</script>
 
 <style lang="scss" scoped>
 @import "./emailform.scss";
