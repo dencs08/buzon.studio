@@ -6,28 +6,18 @@
                 mainHeader="Zatrudnij nas a my zajmiemy się resztą."
                 :noAccent="true"
             />
-            <div>
-                <div class="button-trail mt-20">
-                    <form>
-                        <a href="/kontakt">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Porozmawiajmy!
-                        </a>
-                    </form>
-                </div>
+            <div class="mt-20">
+                <ButtonTrail text="Porozmawiajmy!" />
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import { SectionHeader } from "../../components";
+import { SectionHeader, ButtonTrail } from "../../components";
 
 export default {
-    components: { SectionHeader },
+    components: { SectionHeader, ButtonTrail },
 };
 </script>
 
