@@ -34,15 +34,13 @@
             </div>
         </div>
         <div class="portfolio-container container">
-            <div>
-                <LinkPrimary
-                    to="Portfolio"
-                    text="Więcej prac"
-                    :primary="true"
-                    :point="true"
-                    class="my-4 uppercase"
-                />
-            </div>
+            <LinkPrimary
+                to="Portfolio"
+                text="Więcej prac"
+                :primary="true"
+                :point="true"
+                class="my-4 uppercase"
+            />
         </div>
     </section>
 </template>

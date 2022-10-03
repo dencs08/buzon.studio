@@ -29,23 +29,21 @@
                 </div>
             </div>
 
-            <LinkParagraph href="/kontakt">
-                <div
-                    @mouseover="$refs.link1.animationStart()"
-                    @mouseleave="$refs.link1.mouseLeave()"
-                    class="inline"
-                >
-                    <span class="font-color-darker duration-200"
-                        >Jeśli jesteś zainteresowany</span
-                    >{{}}
-                    <LinkPrimary
-                        href="/kontakt"
-                        text="zdzwońmy się."
-                        :primary="true"
-                        class="font-color-dark"
-                        ref="link1"
-                    />
-                </div>
+            <LinkParagraph
+                @mouseover="$refs.link1.animationStart()"
+                @mouseleave="$refs.link1.mouseLeave()"
+                to="Kontakt"
+            >
+                <span class="font-color-darker duration-200"
+                    >Jeśli jesteś zainteresowany</span
+                >{{}}
+                <LinkPrimary
+                    to="Kontakt"
+                    text="zdzwońmy się."
+                    :primary="true"
+                    class="font-color-dark"
+                    ref="link1"
+                />
             </LinkParagraph>
         </div>
     </section>

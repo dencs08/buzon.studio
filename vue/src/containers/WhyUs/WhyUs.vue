@@ -37,23 +37,21 @@
         </div>
 
         <div v-if="contactParagraph" class="container contact">
-            <LinkParagraph href="/kontakt">
-                <div
-                    @mouseover="$refs.link1.animationStart()"
-                    @mouseleave="$refs.link1.mouseLeave()"
-                    class="inline"
-                >
-                    <LinkPrimary
-                        href="/kontakt"
-                        text="Napisz do nas"
-                        :primary="true"
-                        ref="link1"
-                    />{{}}
+            <LinkParagraph
+                @mouseover="$refs.link1.animationStart()"
+                @mouseleave="$refs.link1.mouseLeave()"
+                to="Kontakt"
+            >
+                <LinkPrimary
+                    to="Kontakt"
+                    text="Napisz do nas"
+                    :primary="true"
+                    ref="link1"
+                />{{}}
 
-                    <span class="font-color-darker duration-200">
-                        i stwórzmy coś razem.</span
-                    >
-                </div>
+                <span class="font-color-darker duration-200">
+                    i stwórzmy coś razem.</span
+                >
             </LinkParagraph>
         </div>
     </section>
