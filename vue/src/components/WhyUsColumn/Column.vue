@@ -37,7 +37,9 @@
                                 <p class="font-color-dark">
                                     {{ paragraph }}
                                 </p>
-                                <ul class="uppercase font-color-darker mt-2">
+                                <ul
+                                    class="uppercase font-color-darker mt-2 dots"
+                                >
                                     <li v-for="item in ul">
                                         {{ item }}
                                     </li>

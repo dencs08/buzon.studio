@@ -17,15 +17,6 @@
 
     li {
         font-size: clamp(0.8rem, 1vw, 2.75rem);
-
-        &:before {
-            content: "•";
-            font-size: 0.6rem;
-            border-radius: 1ch;
-            padding-right: 1ch;
-            margin-right: 1ch;
-            color: $primary-color;
-        }
     }
     a {
         font-size: clamp(1rem, 1.2vw, 3rem);
