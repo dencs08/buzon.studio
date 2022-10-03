@@ -53,9 +53,6 @@
     }
 }
 
-@media (max-width: $md-screen-size) {
-    .section-divider {
-        margin-top: 40px;
-        margin-bottom: 50px;
-    }
+.clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
