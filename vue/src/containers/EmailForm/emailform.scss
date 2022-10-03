@@ -197,7 +197,7 @@
 @media (max-width: $sm-screen-size) {
     #Contact {
         input[type="checkbox"] + label {
-            width: clamp(10em, 80%, 20em);
+            width: 100%;
 
             font-size: 10px;
         }
