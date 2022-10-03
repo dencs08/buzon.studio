@@ -10,7 +10,7 @@
                         :primary="true"
                         :noUnderline="true"
                         :point="true"
-                        href="/kontakt"
+                        to="Kontakt"
                     />
 
                     <div>
@@ -28,27 +28,7 @@
                                 {{ phone }}
                             </h4>
 
-                            <div
-                                class="footer-social-icons mt-3 md:mt-5 space-x-2 md:space-x-4"
-                            >
-                                <router-link to="Start">
-                                    <div class="inline-block icon-wrapper">
-                                        <LogoWhite />
-                                    </div>
-                                </router-link>
-
-                                <a :href="fb" rel="noreferrer" target="_blank">
-                                    <div class="inline-block icon-wrapper">
-                                        <FB />
-                                    </div>
-                                </a>
-
-                                <a :href="ig" rel="noreferrer" target="_blank">
-                                    <div class="inline-block icon-wrapper">
-                                        <IG />
-                                    </div>
-                                </a>
-                            </div>
+                            <SocialIcons class="space-x-3 mt-5" />
 
                             <div class="footer-links uppercase mt-12 fw-light">
                                 <ul class="space-y-2">
@@ -86,13 +66,11 @@
                     </div>
 
                     <div
-                        data-gs
-                        data-gs_fromBottom
                         class="font-family-header uppercase text-center md:text-left mt-14 space-y-2 md:space-y-0"
                     >
                         <div class="block md:inline-block mr-0 md:mr-4">
                             <LinkPrimary
-                                href="/polityka"
+                                to="Prywatnosc"
                                 text="Polityka prywatności"
                                 :secondary="true"
                                 class="font-color-dark"
@@ -123,10 +101,8 @@
 let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
-let fb = import.meta.env.VITE_FB;
-let ig = import.meta.env.VITE_IG;
 
-import { LinkPrimary, FB, IG, LogoWhite } from "../../components";
+import { LinkPrimary, SocialIcons } from "../../components";
 
 export default {
     data() {
@@ -134,16 +110,12 @@ export default {
             name: name,
             email: email,
             phone: phone,
-            fb: fb,
-            ig: ig,
         };
     },
 
     components: {
         LinkPrimary,
-        FB,
-        IG,
-        LogoWhite,
+        SocialIcons,
     },
 };
 </script>
