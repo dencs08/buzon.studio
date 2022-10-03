@@ -1,0 +1,43 @@
+@import "../../../styles/_variables";
+
+.icon-wrapper {
+    svg {
+        transition: scale 0.2s;
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    .icon {
+        transition: fill 0.5s;
+    }
+
+    &:hover {
+        .icon {
+            fill: $primary-color;
+        }
+    }
+}
+
+div {
+    &.small {
+        svg {
+            height: clamp(25px, 1.5vw, 45px);
+            width: clamp(25px, 1.5vw, 45px);
+        }
+    }
+
+    &.normal {
+        svg {
+            height: clamp(40px, 2.5vw, 60px);
+            width: clamp(40px, 2.5vw, 60px);
+        }
+    }
+
+    &.big {
+        svg {
+            height: clamp(50px, 3.5vw, 75px);
+            width: clamp(50px, 3.5vw, 75px);
+        }
+    }
+}
