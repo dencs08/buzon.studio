@@ -1,21 +1,20 @@
 <template>
-    <span>
-        <router-link
-            v-show="to"
+    <span ref="slot" @mouseover="mouseOver" @mouseleave="mouseLeave">
+        <component
+            :is="this.defineTag()"
             :to="{ name: to }"
-            ref="slot"
-            class="LinkParagraph"
+            :href="href"
+            class="cursor-pointer"
             ><slot> </slot
-        ></router-link>
-
-        <a v-show="href" class="LinkParagraph" ref="slot" :href="href"
-            ><slot> </slot
-        ></a>
+        ></component>
     </span>
 </template>
 
 <script>
 export default {
+    data() {
+        return {};
+    },
     props: {
         to: String,
         href: String,
@@ -30,43 +29,17 @@ export default {
         },
     },
 
-    mounted() {
-        let elements = this.$refs.slot;
-        let childs = elements.children;
-        let _this = this;
-
-        for (let i = 0; i < childs.length; i++) {
-            let child = childs[i];
-
-            child.addEventListener("mouseover", () => {
-                for (let j = 0; j < child.children.length; j++) {
-                    let element = child.children[j];
-                    if (
-                        // element.tagName == "SPAN" &&
-                        // element.classList.contains(_this.normalFontColor)
-                        1 == 1
-                    ) {
-                        _this.addClass(element);
-                    }
-                }
-            });
-
-            child.addEventListener("mouseleave", () => {
-                for (let j = 0; j < child.children.length; j++) {
-                    let element = child.children[j];
-                    if (
-                        // element.tagName == "SPAN" &&
-                        // element.classList.contains(_this.activeFontColor)
-                        1 == 1
-                    ) {
-                        _this.removeClass(element);
-                    }
-                }
-            });
-        }
-    },
+    mounted() {},
 
     methods: {
+        defineTag() {
+            if (this.to) {
+                return "router-link";
+            } else {
+                return "a";
+            }
+        },
+
         addClass(element) {
             element.classList.remove("font-color-darker");
             element.classList.add(this.activeFontColor);
@@ -75,8 +48,38 @@ export default {
             element.classList.remove(this.activeFontColor);
             element.classList.add("font-color-darker");
         },
-        accessChildren() {
-            console.log("OMG");
+
+        mouseOver() {
+            let childs = this.$refs.slot.children;
+
+            for (let i = 0; i < childs.length; i++) {
+                let child = childs[i];
+                for (let j = 0; j < child.children.length; j++) {
+                    let element = child.children[j];
+                    if (
+                        element.tagName.toLowerCase() == "span" &&
+                        element.classList.contains(this.normalFontColor)
+                    ) {
+                        this.addClass(element);
+                    }
+                }
+            }
+        },
+        mouseLeave() {
+            let childs = this.$refs.slot.children;
+
+            for (let i = 0; i < childs.length; i++) {
+                let child = childs[i];
+                for (let j = 0; j < child.children.length; j++) {
+                    let element = child.children[j];
+                    if (
+                        element.tagName.toLowerCase() == "span" &&
+                        element.classList.contains(this.activeFontColor)
+                    ) {
+                        this.removeClass(element);
+                    }
+                }
+            }
         },
     },
 };
