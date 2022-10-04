@@ -1,14 +1,15 @@
 <template>
     <header class="fixed w-screen z-[9999] container">
-        <div class="flex min-h-[40px] h-[12vh]">
+        <div class="flex min-h-[40px] h-[12vh] overflow-hidden">
             <div class="flex items-center">
                 <router-link
                     :to="{ name: 'Start' }"
                     @click="this.toggleNav(true)"
+                    class="navLogoWrapper"
                 >
                     <img
                         src="../../assets/images/logos/buzonstudio_white_cropped.svg"
-                        class="min-h-[35px] h-[3.5vw] max-h-[100px]"
+                        class="min-h-[35px] h-[3.5vw] max-h-[100px] navLogo"
                         alt="buzonstudio logo (branding)"
                     />
                 </router-link>
@@ -35,14 +36,14 @@
     >
         <div
             ref="navWrapper"
-            class="wrapper fixed top-0 left-0 flex flex-col opacity-0 scale-[0.5]"
+            class="wrapper fixed top-0 left-0 flex flex-col opacity-0 scale-[0.75]"
         >
             <div class="h-[80vh] sm:h-[85vh]">
                 <div
                     class="container w-[100vw] h-[100%] grid content-center sm:grid-cols-2"
                 >
-                    <div class="flex sm:justify-center">
-                        <ul class="space-y-6">
+                    <div class="flex sm:justify-center mt-20">
+                        <ul class="space-y-4">
                             <li>
                                 <LinkPrimary
                                     to="Start"
@@ -86,16 +87,9 @@
                         </ul>
                     </div>
                     <div
-                        class="nav-contact flex sm:justify-center items-center mt-6 lg:mt-0 pl-5"
+                        class="flex sm:justify-center items-center mt-6 lg:mt-0"
                     >
-                        <div class="my-0 font-color-secondary">
-                            <a
-                                href="mailto:?subject = Oferta&body = Wiadomość"
-                                class="underline-primary mail-link font-medium font-color-secondary"
-                            >
-                            </a>
-                        </div>
-                        <div class="my-0 font-color-dark">
+                        <div class="my-0 font-color-dark nav-contact">
                             <LinkPrimary
                                 :href="`mailto:${email}?subject = Oferta&body = Wiadomość`"
                                 :text="email"
@@ -158,6 +152,8 @@
 import gsap from "gsap";
 import { LinkPrimary, SocialIcons } from "../";
 
+import calculatePageScroll from "../../js/utilities/scrollPercentage";
+
 let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
@@ -176,12 +172,12 @@ export default {
 
     methods: {
         toggleNav(nav) {
-            if (this.isAnimating) return;
             if (nav == true) {
                 this.isNavToggled = false;
                 this.animation(false);
                 return;
             }
+            if (this.isAnimating) return;
             this.isNavToggled = !this.isNavToggled;
             this.animation(this.isNavToggled);
         },
@@ -190,7 +186,7 @@ export default {
             const RouterViewWrapper = document.getElementById("routerView");
             let tl = gsap.timeline();
 
-            this.calculatePageScroll(RouterViewWrapper);
+            calculatePageScroll(RouterViewWrapper);
 
             if (open == true) {
                 this.animationOpen(tl, RouterViewWrapper);
@@ -217,7 +213,7 @@ export default {
                         opacity: 1,
                         ease: "power2.out",
                     },
-                    "-=0.4"
+                    "-=0.35"
                 )
                 .to(
                     this.$refs.navWrapper,
@@ -227,7 +223,7 @@ export default {
                         scale: 1,
                         ease: "power2.out",
                     },
-                    "-=0.55"
+                    "-=0.4"
                 )
                 .to(
                     this.$refs.hr,
@@ -236,7 +232,7 @@ export default {
                         scaleX: 1,
                         ease: "power2.out",
                     },
-                    "-=0.15"
+                    "-=0.35"
                 )
                 .to(
                     this.$refs.navFooterLinks,
@@ -246,7 +242,7 @@ export default {
                         opacity: 1,
                         ease: "power2.out",
                     },
-                    "-=0.2"
+                    "-=0.35"
                 )
                 .to(
                     this.$refs.navFooterSocial.$el.children,
@@ -259,7 +255,7 @@ export default {
                             this.isAnimating = false;
                         },
                     },
-                    "-=0"
+                    "-=0.25"
                 );
         },
 
@@ -283,9 +279,6 @@ export default {
                         opacity: 0,
                         stagger: 0.15,
                         ease: "expo",
-                        onComplete: () => {
-                            this.isAnimating = false;
-                        },
                     },
                     "0"
                 )
@@ -296,17 +289,17 @@ export default {
                         scaleX: 0,
                         ease: "expo",
                     },
-                    "-=0.3"
+                    "0"
                 )
                 .to(
                     this.$refs.navWrapper,
                     {
                         duration: 0.5,
                         opacity: 0,
-                        scale: 0.5,
+                        scale: 0.75,
                         ease: "expo",
                     },
-                    "-=0.35"
+                    "-=0.6"
                 )
                 .to(
                     this.$refs.nav,
@@ -315,32 +308,21 @@ export default {
                         opacity: 0,
                         ease: "expo",
                     },
-                    "-=0.35"
+                    "-=0.4"
                 )
-                .to(mainWrapper, {
-                    duration: 0.75,
-                    opacity: 1,
-                    scale: 1,
-                    ease: "expo",
-                    onComplete: () => {
-                        this.isAnimating = false;
+                .to(
+                    mainWrapper,
+                    {
+                        duration: 0.75,
+                        opacity: 1,
+                        scale: 1,
+                        ease: "expo",
+                        onComplete: () => {
+                            this.isAnimating = false;
+                        },
                     },
-                });
-        },
-
-        calculatePageScroll(mainWrapper) {
-            var body = document.body,
-                html = document.documentElement;
-
-            var height = Math.max(
-                body.scrollHeight,
-                body.offsetHeight,
-                html.clientHeight,
-                html.scrollHeight,
-                html.offsetHeight
-            );
-            let percentageScrolled = (window.scrollY / height) * 110;
-            mainWrapper.style.transformOrigin = `50% ${percentageScrolled}%`;
+                    "-=0.25"
+                );
         },
     },
 
