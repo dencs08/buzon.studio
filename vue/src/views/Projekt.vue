@@ -1,8 +1,10 @@
 <template>
-    <ProjectHero :name="$route.params.projectName" :image="image" />
-    <ProjectInfo />
-    <ProjectImages />
-    <Footer />
+    <main>
+        <ProjectHero :name="$route.params.projectName" :image="image" />
+        <ProjectInfo />
+        <ProjectImages />
+        <Footer />
+    </main>
 </template>
 
 <script>

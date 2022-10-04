@@ -9,7 +9,7 @@ const routes = [
         path: '/',
         // redirect: '/start',
         // name: 'Start',
-        component: DefaultLayout,
+        // component: DefaultLayout,
         children: [
             { path: '/', name: 'StartFirst', component: Start },
             { path: '/start', name: 'Start', component: Start }
@@ -18,7 +18,7 @@ const routes = [
     {
         path: '/portfolio',
         // name: 'Portfolio',
-        component: DefaultLayout,
+        // component: DefaultLayout,
         children: [
             { path: '/portfolio', name: 'Portfolio', component: Portfolio }
         ]
@@ -26,7 +26,7 @@ const routes = [
     {
         path: '/oferta',
         // name: 'Oferta',
-        component: DefaultLayout,
+        // component: DefaultLayout,
         children: [
             { path: '/oferta', name: 'Oferta', component: Oferta }
         ]
@@ -34,7 +34,7 @@ const routes = [
     {
         path: '/kontakt',
         // name: 'Kontakt',
-        component: DefaultLayout,
+        // component: DefaultLayout,
         children: [
             { path: '/kontakt', name: 'Kontakt', component: Kontakt }
         ]
@@ -42,7 +42,7 @@ const routes = [
     {
         path: '/portfolio/:projectName',
         // name: 'Projekt',
-        component: DefaultLayout,
+        // component: DefaultLayout,
         children: [
             { path: '/portfolio/:projectName', name: 'Projekt', component: Projekt }
         ]
@@ -50,7 +50,7 @@ const routes = [
     {
         path: '/polityka',
         // name: 'Prywatnosc',
-        component: DefaultLayout,
+        // component: DefaultLayout,
         children: [
             { path: '/polityka', name: 'Prywatnosc', component: Prywatnosc }
         ]
@@ -60,12 +60,15 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
     scrollBehavior(to, from, savedPosition) {
-        // always scroll to top
-        return { top: 0 }
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({ left: 0, top: 0 })
+            }, 300)
+        })
     },
-    routes
+    routes,
+    history: createWebHistory(),
 })
 
 export default router;

@@ -1,5 +1,5 @@
 <template>
-    <div id="fullpage">
+    <main id="fullpage">
         <div
             section
             class="grid container grid-cols-1 md:grid-cols-2 md:h-screen place-items-center"
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>

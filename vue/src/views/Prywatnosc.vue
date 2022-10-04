@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <div class="container pt-32">
             <h1>Polityka prywatności {{ name }}</h1>
         </div>
@@ -125,7 +125,7 @@
             </p>
         </div>
         <Footer />
-    </div>
+    </main>
 </template>
 
 <script>

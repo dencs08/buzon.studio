@@ -23,11 +23,13 @@ export default {
 </script>
 
 <template>
-    <Hero />
-    <OurWorks />
-    <AboutUs />
-    <WhyUs :buttons="true" />
-    <ContactUs />
-    <Collabs />
-    <Footer />
+    <main>
+        <Hero />
+        <OurWorks />
+        <AboutUs />
+        <WhyUs :buttons="true" />
+        <ContactUs />
+        <Collabs />
+        <Footer />
+    </main>
 </template>

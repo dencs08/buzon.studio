@@ -1,9 +1,11 @@
 <template>
-    <TypedHero />
-    <WhyUs :buttons="false" :contactParagraph="true" />
-    <OurProcess />
-    <Collabs />
-    <Footer />
+    <main>
+        <TypedHero />
+        <WhyUs :buttons="false" :contactParagraph="true" />
+        <OurProcess />
+        <Collabs />
+        <Footer />
+    </main>
 </template>
 
 <script>
