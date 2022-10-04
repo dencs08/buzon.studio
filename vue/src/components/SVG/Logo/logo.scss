@@ -1,0 +1,17 @@
+@import "../../../styles/variables";
+.small {
+    width: clamp(0.6rem, 1.25vw, 1.5rem);
+    margin-left: -1vw;
+}
+.normal {
+    width: clamp(1rem, 1.45vw, 2rem);
+    margin-left: -1.3vw;
+    margin-bottom: 1px;
+}
+.big {
+    width: clamp(1rem, 2.675vw, 3.5rem);
+    margin-left: -2.5vw;
+}
+.path {
+    fill: $primary-color;
+}

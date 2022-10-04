@@ -23,7 +23,7 @@
 }
 
 ::selection {
-    background-color: $primary-color-dark;
+    background-color: adjust-hue(darken($primary-color, 15%), 10);
     color: $font-color-secondary;
 }
 

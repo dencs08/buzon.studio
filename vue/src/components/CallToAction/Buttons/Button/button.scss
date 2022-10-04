@@ -22,7 +22,7 @@ $btn-primary-bg: #ffffff0d;
         60deg,
         $btn-primary-bg 0%,
         $btn-primary-bg 50%,
-        rgb(19, 75, 56) 75%,
+        adjust-hue(darken($primary-color, 37.5%), 10) 75%,
         $primary-color 100%
     );
     background-position: 30% 0;
@@ -43,7 +43,7 @@ $btn-primary-bg: #ffffff0d;
     transition: 0.5s all;
 
     &:hover {
-        background: $primary-color-dark !important;
+        background: darken($primary-color, 10%) !important;
 
         transform: scale(0.9);
     }
