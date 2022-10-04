@@ -7,9 +7,8 @@
                     <LinkPrimary
                         text="Zostańmy w kontakcie"
                         class="font-family-header contact cursor-pointer"
-                        :primary="true"
-                        :noUnderline="true"
                         :point="true"
+                        :split="true"
                         to="Kontakt"
                     />
 
