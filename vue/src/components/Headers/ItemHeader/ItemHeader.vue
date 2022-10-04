@@ -1,33 +1,39 @@
 <template>
     <div
         id="wrapper"
-        :class="`${headerClass} ${move ? 'move' : ''} ${
-            small ? 'ml-[-2vw]' : ''
-        } ${normal ? 'ml-[-2vw]' : ''} ${big ? 'ml-[-2vw]' : ''}`"
-        class="flex items-center"
+        class="flex items-center relative"
+        :class="`${headerClass} ${move ? 'move' : ''} ${split ? 'clip' : ''}`"
         @mouseover="mouseOver"
         @mouseleave="mouseLeave"
     >
         <div
+            v-if="move"
             id="logoWrapper"
             ref="logoWrapper"
             class="opacity-0"
-            :class="`${this.mouseIsOver ? 'isMouseOver' : ''}`"
+            :class="{ isMouseOver: this.isMouseover, move: move, split: split }"
         >
             <Logo
-                class=""
                 :small="small ? true : false"
                 :normal="normal ? true : false"
                 :big="big ? true : false"
             />
         </div>
-        <div id="headerWrapper">
+        <div
+            id="headerWrapper"
+            :class="{ isMouseOver: this.isMouseover, split: split }"
+            class="leading-[0]"
+        >
             <h3
                 class="font-family-header"
-                :class="`${small ? 'small' : ''} ${normal ? 'normal' : ''} ${
-                    big ? 'big' : ''
-                } ${this.mouseIsOver ? 'isMouseOver' : ''}
-                `"
+                :class="{
+                    small: small,
+                    normal: normal,
+                    big: big,
+                    isMouseOver: this.isMouseover,
+                    move: move,
+                    split: split,
+                }"
                 id="header"
                 ref="header"
             >
@@ -38,44 +44,58 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
 import { Logo } from "../../";
-var tl = gsap.timeline();
+
+import cloneSplit from "../../../js/cloneSplit";
+import { animateIn } from "../../../js/utilities/animateChars.js";
 
 export default {
     data() {
         return {
             isAnimating: false,
-            mouseIsOver: false,
+            isMouseover: false,
         };
     },
     props: {
         text: String,
         headerClass: String,
+        small: Boolean,
+        normal: Boolean,
+        big: Boolean,
+        split: Boolean,
+        move: Boolean,
+    },
 
-        move: {
-            type: Boolean,
-            default: () => false,
-        },
+    setup() {
+        let anim;
 
-        small: {
-            type: Boolean,
-        },
-        normal: {
-            type: Boolean,
-        },
-        big: {
-            type: Boolean,
-        },
+        return { anim };
+    },
+
+    mounted() {
+        if (!this.split) return;
+        const elementToSplit = this.$refs.header;
+        cloneSplit(elementToSplit);
+
+        this.anim = animateIn(
+            this.$refs.header.children,
+            this.$refs.header.nextSibling.nextSibling.children
+        );
     },
 
     methods: {
         mouseOver() {
-            this.mouseIsOver = true;
+            this.isMouseover = true;
+
+            if (!this.split) return;
+            this.anim.play();
         },
 
         mouseLeave() {
-            this.mouseIsOver = false;
+            this.isMouseover = false;
+
+            if (!this.split) return;
+            this.anim.reverse();
         },
     },
 
