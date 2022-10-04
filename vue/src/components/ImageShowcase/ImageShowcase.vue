@@ -24,8 +24,8 @@
                     <ItemHeader
                         :text="title"
                         :big="true"
-                        :move="true"
-                        headerClass="mt-[-15px] md:mt-[-20px] lg:mt-[-30px] xl:mt-[-40px] ml-[-15px] sm:ml-[-30px] md:ml-[-35px] lg:ml-[-50px] z-[2] inline-block"
+                        :split="true"
+                        headerClass="mt-[-15px] md:mt-[-20px] lg:mt-[-30px] xl:mt-[-40px] z-[2] inline-block"
                         ref="itemHeader"
                     />
                 </div>
