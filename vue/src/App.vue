@@ -1,4 +1,5 @@
 <template>
+    <LinkSkip />
     <Navbar />
     <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in"
@@ -8,11 +9,12 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar/Navbar.vue";
+import { Navbar, LinkSkip } from "./components";
 export default {
     name: "App",
     components: {
         Navbar,
+        LinkSkip,
     },
 };
 </script>
