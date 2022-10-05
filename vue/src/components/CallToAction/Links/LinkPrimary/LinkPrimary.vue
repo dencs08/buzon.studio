@@ -14,9 +14,9 @@
             active: isMouseOver,
         }"
         class="transitions cursor-pointer"
-        @mouseover="animationStart"
+        @mouseover="handleMouseOver"
         @animationend="animationEnd"
-        @mouseleave="mouseLeave"
+        @mouseleave="handleMouseLeave"
         ><span ref="text" :class="{ arrow: point }">{{ text }}</span>
     </component>
 </template>
@@ -50,9 +50,9 @@ export default {
     },
 
     setup() {
-        let anim;
+        let splitAnimation;
 
-        return { anim };
+        return { splitAnimation };
     },
 
     mounted() {
@@ -60,7 +60,7 @@ export default {
         const elementToSplit = this.$refs.text;
         cloneSplit(elementToSplit);
 
-        this.anim = animateIn(
+        this.splitAnimation = animateIn(
             this.$refs.text.children,
             this.$refs.text.nextSibling.nextSibling.children
         );
@@ -74,21 +74,26 @@ export default {
                 return "a";
             }
         },
-        animationStart() {
-            this.isAnimating = true;
-            this.isMouseOver = true;
 
-            if (!this.split) return;
-            this.anim.play();
+        handleMouseOver() {
+            this.isMouseOver = true;
+            this.animationStart();
         },
-        animationEnd() {
-            this.isAnimating = false;
-        },
-        mouseLeave() {
+        handleMouseLeave() {
             this.isMouseOver = false;
 
             if (!this.split) return;
-            this.anim.reverse();
+            this.splitAnimation.reverse();
+        },
+
+        animationStart() {
+            this.isAnimating = true;
+
+            if (!this.split) return;
+            this.splitAnimation.play();
+        },
+        animationEnd() {
+            this.isAnimating = false;
         },
     },
 };

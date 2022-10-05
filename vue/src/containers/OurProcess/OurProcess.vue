@@ -31,7 +31,7 @@
 
             <LinkParagraph
                 @mouseover="$refs.link1.animationStart()"
-                @mouseleave="$refs.link1.mouseLeave()"
+                @mouseleave="$refs.link1.handleMouseLeave()"
                 to="Kontakt"
             >
                 <span class="font-color-darker duration-200"

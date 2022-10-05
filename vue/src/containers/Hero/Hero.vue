@@ -5,9 +5,9 @@
 
             <h2 class="fw-normal font-family-primary">
                 <LinkParagraph
-                    @mouseover="$refs.link1.animationStart()"
-                    @mouseleave="$refs.link1.mouseLeave()"
                     to="Oferta"
+                    @mouseover="$refs.link1.animationStart()"
+                    @mouseleave="$refs.link1.handleMouseLeave()"
                 >
                     <span class="font-color-darker duration-200">
                         Jesteśmy kreatywnym studio w branży IT zajmującym sie
@@ -24,27 +24,27 @@
                 </LinkParagraph>
 
                 <LinkParagraph
-                    @mouseover="$refs.link2.animationStart()"
-                    @mouseleave="$refs.link2.mouseLeave()"
                     to="Oferta"
+                    @mouseover="$refs.link2.animationStart()"
+                    @mouseleave="$refs.link2.handleMouseLeave()"
                 >
                     <span class="font-color-darker duration-200">
                         Tworzymy strony internetowe, wizualizacje, branding,
                         marketing online i inne produkty cyfrowe z pomocą
                         metody</span
-                    >{{}}
-
-                    <span
-                        data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
                     >
-                        <LinkPrimary
-                            href="/oferta"
-                            text="All-in-One."
-                            :primary="true"
-                            class="font-medium"
-                            ref="link2"
-                        />
-                    </span>
+                    {{}}
+                    <!-- <span
+                        data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
+                    > -->
+                    <LinkPrimary
+                        href="/oferta"
+                        text="All-in-One."
+                        :primary="true"
+                        class="font-medium"
+                        ref="link2"
+                    />
+                    <!-- </span> -->
                 </LinkParagraph>
             </h2>
             <!-- <x-arrow/> -->
@@ -58,6 +58,11 @@ export default {
     components: {
         LinkPrimary,
         LinkParagraph,
+    },
+    methods: {
+        mouseOver() {
+            console.log("TEST");
+        },
     },
 };
 </script>

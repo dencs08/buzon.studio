@@ -5,9 +5,11 @@ export { default as LogoWhite } from './SVG/LogoWhite/LogoWhite.vue'
 
 export { default as LinkPrimary } from './CallToAction/Links/LinkPrimary/LinkPrimary.vue'
 export { default as LinkParagraph } from './CallToAction/Links/LinkParagraph/LinkParagraph.vue'
+export { default as LinkEmail } from './CallToAction/Links/LinkEmail/LinkEmail.vue'
 export { default as Button } from './CallToAction/Buttons/Button/Button.vue'
 export { default as ButtonTrail } from './CallToAction/Buttons/ButtonTrail/ButtonTrail.vue'
 export { default as SocialIcons } from './CallToAction/SocialIcons/SocialIcons.vue'
+export { default as ToggleThree } from './CallToAction/ToggleThree/ToggleThree.vue'
 
 export { default as ItemHeader } from './Headers/ItemHeader/ItemHeader.vue'
 export { default as SectionHeader } from './Headers/SectionHeader/SectionHeader.vue'
