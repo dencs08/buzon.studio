@@ -139,10 +139,12 @@ nav {
 }
 
 @media (max-width: $xs-screen-size) {
-    ul {
-        li {
-            a {
-                font-size: clamp(2rem, 12vw, 10rem) !important;
+    .wrapper {
+        ul {
+            li {
+                a {
+                    font-size: clamp(2rem, 12vw, 10rem) !important;
+                }
             }
         }
     }

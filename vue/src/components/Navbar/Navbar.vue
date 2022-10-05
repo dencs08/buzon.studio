@@ -43,7 +43,7 @@
                     class="container w-[100vw] h-[100%] grid content-center sm:grid-cols-2"
                 >
                     <div class="flex sm:justify-center mt-20">
-                        <ul class="space-y-4">
+                        <ul class="space-y-4 nav-links">
                             <li>
                                 <LinkPrimary
                                     to="Start"
@@ -122,11 +122,7 @@
                             @click="this.toggleNav(true)"
                         />
                     </div>
-                    <div>
-                        <span class="cursor-pointer font-color-dark"
-                            >WYŁĄCZ 3D</span
-                        >
-                    </div>
+                    <ToggleThree class="sm:pr-4" />
                     <div>
                         <span class="font-color-darker"
                             >© 2021 {{ name }} wszelkie prawa zastrzeżone.</span
@@ -150,7 +146,7 @@
 
 <script>
 import gsap from "gsap";
-import { LinkPrimary, SocialIcons } from "../";
+import { LinkPrimary, SocialIcons, ToggleThree } from "../";
 
 import calculatePageScroll from "../../js/utilities/scrollPercentage";
 
@@ -329,6 +325,7 @@ export default {
     components: {
         LinkPrimary,
         SocialIcons,
+        ToggleThree,
     },
 };
 </script>
