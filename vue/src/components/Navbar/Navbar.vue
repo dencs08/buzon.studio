@@ -122,7 +122,9 @@
                             @click="this.toggleNav(true)"
                         />
                     </div>
-                    <ToggleThree class="sm:pr-4" />
+                    <div class="w-[5vw] flex justify-center">
+                        <ToggleThree />
+                    </div>
                     <div>
                         <span class="font-color-darker"
                             >© 2021 {{ name }} wszelkie prawa zastrzeżone.</span
