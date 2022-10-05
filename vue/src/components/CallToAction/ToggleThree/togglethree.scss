@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+button {
+    &:after {
+        content: attr(data-toggle);
+
+        position: absolute;
+
+        font-size: 0.8rem;
+        color: $primary-color;
+
+        margin-left: 0.3em;
+    }
+}
