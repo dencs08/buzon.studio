@@ -17,7 +17,7 @@
                             <LinkPrimary
                                 :href="`mailto:${email}?subject = Oferta&body = Wiadomość`"
                                 :text="email"
-                                :secondary="true"
+                                :primary="true"
                                 class="mail-link fw-medium font-color-secondary"
                             />
 
@@ -75,11 +75,7 @@
                                 class="font-color-dark"
                             />
                         </div>
-                        <div class="block md:inline-block">
-                            <span class="cursor-pointer font-color-dark"
-                                >WYŁĄCZ 3D</span
-                            >
-                        </div>
+                        <ToggleThree class="md:inline-block" />
                         <div
                             class="block md:inline-block float-none md:float-right"
                         >
@@ -101,7 +97,7 @@ let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
 
-import { LinkPrimary, SocialIcons } from "../../components";
+import { LinkPrimary, SocialIcons, ToggleThree } from "../../components";
 
 export default {
     data() {
@@ -115,6 +111,7 @@ export default {
     components: {
         LinkPrimary,
         SocialIcons,
+        ToggleThree,
     },
 };
 </script>
