@@ -3,28 +3,13 @@
         <div class="container">
             <h4 class="mb-2">Oni juz nam zaufali:</h4>
             <div
-                class="[&>*]:p-4 grid grid-cols-2 md:grid-cols-6 lg:grid-cols-5"
-            >
-                <CollabItem
-                    img="src/assets/images/logos/client/danfit.svg"
-                    class="md:col-span-2 lg:col-span-1"
-                />
-                <CollabItem
-                    img="src/assets/images/logos/client/komb.svg"
-                    class="md:col-span-2 lg:col-span-1"
-                />
-                <CollabItem
-                    img="src/assets/images/logos/client/zielonewidoki.svg"
-                    class="md:col-span-2 lg:col-span-1"
-                />
-                <CollabItem
-                    img="src/assets/images/logos/client/ats.svg"
-                    class="md:col-span-3 lg:col-span-1"
-                />
-                <CollabItem
-                    img="src/assets/images/logos/client/bielany.svg"
-                    class="col-span-2 md:col-span-3 lg:col-span-1"
-                />
+                class="xs:[&>*]:px-3 xl:[&>*]:px-12 space-y-4 xs:space-y-0 flex xs:flex-row flex-col flex-wrap justify-center items-center md:flex-nowrap text-center">
+                <CollabItem name="danfit" class="grow" />
+                <CollabItem name="komb" class="grow" />
+                <CollabItem name="zielonewidoki" class="grow" />
+                <CollabItem name="aviorprojekt" class="grow" />
+                <CollabItem name="ats" class="grow" />
+                <CollabItem name="bielanypark" class="grow" />
             </div>
         </div>
     </section>
