@@ -2,103 +2,49 @@
     <header class="fixed w-screen z-[9999] container">
         <div class="flex min-h-[40px] h-[12vh] overflow-hidden">
             <div class="flex items-center">
-                <router-link
-                    :to="{ name: 'Start' }"
-                    @click="this.toggleNav(true)"
-                    class="navLogoWrapper"
-                >
-                    <img
-                        src="../../assets/images/logos/buzonstudio_white_cropped.svg"
-                        class="min-h-[35px] h-[3.5vw] max-h-[100px] navLogo"
-                        alt="buzonstudio logo (branding)"
-                    />
+                <router-link :to="{ name: 'Start' }" @click="this.toggleNav(true)" class="navLogoWrapper">
+                    <img src="../../assets/images/logos/buzonstudio_white_cropped.svg"
+                        class="min-h-[35px] h-[3.5vw] max-h-[100px] navLogo" alt="buzonstudio logo (branding)" />
                 </router-link>
             </div>
             <div class="flex grow items-center justify-end">
-                <button
-                    class="hamburger w-[35px] h-[35px] flex items-center"
-                    type="button"
-                    aria-label="Menu"
-                    aria-controls="navigation"
-                    aria-expanded="false"
-                    @click="toggleNav"
-                >
+                <button class="hamburger w-[35px] h-[35px] flex items-center" type="button" aria-label="Menu"
+                    aria-controls="navigation" aria-expanded="false" @click="toggleNav">
                     <span :class="{ active: isNavToggled }"></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <nav
-        class="fixed w-screen h-screen opacity-0"
-        :class="{ active: isNavToggled }"
-        ref="nav"
-    >
-        <div
-            ref="navWrapper"
-            class="wrapper fixed top-0 left-0 flex flex-col opacity-0 scale-[0.75]"
-        >
+    <nav class="fixed w-screen h-screen opacity-0" :class="{ active: isNavToggled }" ref="nav">
+        <div ref="navWrapper" class="wrapper fixed top-0 left-0 flex flex-col opacity-0 scale-[0.75]">
             <div class="h-[80vh] sm:h-[85vh]">
-                <div
-                    class="container w-[100vw] h-[100%] grid content-center sm:grid-cols-2"
-                >
+                <div class="container w-[100vw] h-[100%] grid content-center sm:grid-cols-2">
                     <div class="flex sm:justify-center mt-20">
                         <ul class="space-y-4 nav-links">
                             <li>
-                                <LinkPrimary
-                                    to="Start"
-                                    text="Strona Główna"
-                                    class="font-family-header"
-                                    :split="true"
-                                    data-count="01"
-                                    @click="this.toggleNav(true)"
-                                />
+                                <LinkPrimary to="Start" text="Strona Główna" class="font-family-header" :split="true"
+                                    data-count="01" @click="this.toggleNav(true)" />
                             </li>
                             <li>
-                                <LinkPrimary
-                                    to="Oferta"
-                                    text="Oferta"
-                                    class="font-family-header"
-                                    :split="true"
-                                    data-count="02"
-                                    @click="this.toggleNav(true)"
-                                />
+                                <LinkPrimary to="Oferta" text="Oferta" class="font-family-header" :split="true"
+                                    data-count="02" @click="this.toggleNav(true)" />
                             </li>
                             <li>
-                                <LinkPrimary
-                                    to="Portfolio"
-                                    text="Portfolio"
-                                    class="font-family-header"
-                                    :split="true"
-                                    data-count="03"
-                                    @click="this.toggleNav(true)"
-                                />
+                                <LinkPrimary to="Portfolio" text="Portfolio" class="font-family-header" :split="true"
+                                    data-count="03" @click="this.toggleNav(true)" />
                             </li>
                             <li>
-                                <LinkPrimary
-                                    to="Kontakt"
-                                    text="Kontakt"
-                                    class="font-family-header"
-                                    :split="true"
-                                    data-count="04"
-                                    @click="this.toggleNav(true)"
-                                />
+                                <LinkPrimary to="Kontakt" text="Kontakt" class="font-family-header" :split="true"
+                                    data-count="04" @click="this.toggleNav(true)" />
                             </li>
                         </ul>
                     </div>
-                    <div
-                        class="flex sm:justify-center items-center mt-6 lg:mt-0"
-                    >
+                    <div class="flex sm:justify-center items-center mt-6 lg:mt-0">
                         <div class="my-0 font-color-dark nav-contact">
-                            <LinkPrimary
-                                :href="`mailto:${email}?subject = Oferta&body = Wiadomość`"
-                                :text="email"
-                                :primary="true"
-                                class="font-medium font-color-primary"
-                            />
-                            <h4
-                                class="phone-number font-color-dark font-medium mb-2 mt-2"
-                            >
+                            <LinkPrimary :href="`mailto:${email}?subject = Oferta&body = Wiadomość`" :text="email"
+                                :primary="true" class="font-medium font-color-primary" />
+                            <h4 class="phone-number font-color-dark font-medium mb-2 mt-2">
                                 {{ phone }}
                             </h4>
                         </div>
@@ -107,39 +53,22 @@
             </div>
             <hr ref="hr" class="section-divider m-0 p-0 scale-x-[0]" />
             <div
-                class="px-[5vw] h-[20vh] sm:h-[15vh] grid content-center md:flex items-center justify-center md:justify-start w-full font-family-header"
-            >
-                <div
-                    ref="navFooterLinks"
-                    class="sm:flex sm:text-left text-center sm:space-x-4 space-y-1 sm:space-y-0 translate-y-[100px] opacity-0"
-                >
+                class="px-[5vw] h-[20vh] sm:h-[15vh] grid content-center md:flex items-center justify-center md:justify-start w-full font-family-header">
+                <div ref="navFooterLinks"
+                    class="sm:flex sm:text-left text-center sm:space-x-4 space-y-1 sm:space-y-0 translate-y-[100px] opacity-0">
                     <div>
-                        <LinkPrimary
-                            to="Prywatnosc"
-                            text="Polityka prywatności"
-                            :secondary="true"
-                            class="font-color-dark"
-                            @click="this.toggleNav(true)"
-                        />
+                        <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true"
+                            class="font-color-dark" @click="this.toggleNav(true)" />
                     </div>
                     <div class="w-[5vw] flex justify-center">
                         <ToggleThree />
                     </div>
                     <div>
-                        <span class="font-color-darker"
-                            >© 2021 {{ name }} wszelkie prawa zastrzeżone.</span
-                        >
+                        <span class="font-color-darker">© 2021 {{ name }} wszelkie prawa zastrzeżone.</span>
                     </div>
                 </div>
-                <div
-                    id="navFooterSocial"
-                    class="flex flex-row grow justify-center md:justify-end mt-4"
-                >
-                    <SocialIcons
-                        ref="navFooterSocial"
-                        size="small"
-                        class="space-x-3"
-                    />
+                <div id="navFooterSocial" class="flex flex-row grow justify-center md:justify-end mt-4">
+                    <SocialIcons ref="navFooterSocial" size="small" class="space-x-3" />
                 </div>
             </div>
         </div>

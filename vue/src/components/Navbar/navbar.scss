@@ -96,16 +96,37 @@ nav {
         ul {
             list-style: none;
             li {
-                a {
-                    font-size: clamp(3.5rem, 7.5vw, 10rem);
+                div {
+                    a {
+                        font-size: clamp(3.5rem, 7.5vw, 10rem);
+                        &.router-link-exact-active {
+                            color: $primary-color;
+                            &:after {
+                                content: "tu jesteś :-)";
+                                position: absolute;
+                                left: 105%;
+                                top: 5%;
+
+                                white-space: nowrap;
+
+                                font-family: $font-family-secondary;
+
+                                font-size: clamp(0.75rem, 1vw, 1rem);
+                                color: $primary-color;
+
+                                transition: opacity 0.25s ease-in-out;
+                            }
+                        }
+                    }
                     position: relative;
                     &:before {
                         content: attr(data-count);
                         position: absolute;
-                        left: -5%;
+                        left: -15%;
                         top: 0;
 
                         font-size: 1rem;
+                        color: $primary-color;
 
                         opacity: 0;
 
@@ -117,10 +138,13 @@ nav {
                             opacity: 1;
                             left: 0%;
                         }
-                    }
-
-                    &.router-link-exact-active {
-                        color: $primary-color;
+                        .router-link-exact-active {
+                            &:after {
+                                opacity: 0;
+                                left: 105%;
+                                top: 5%;
+                            }
+                        }
                     }
                 }
             }
