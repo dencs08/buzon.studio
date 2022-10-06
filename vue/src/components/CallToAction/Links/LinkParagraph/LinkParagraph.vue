@@ -1,5 +1,9 @@
 <template>
-    <span ref="slot" @mouseover="mouseOver" @mouseleave="mouseLeave">
+    <span
+        ref="slot"
+        @mouseover="this.mouseOver()"
+        @mouseleave="this.mouseLeave()"
+    >
         <component
             :is="this.defineTag()"
             :to="{ name: to }"
@@ -12,9 +16,6 @@
 
 <script>
 export default {
-    data() {
-        return {};
-    },
     props: {
         to: String,
         href: String,
@@ -29,8 +30,6 @@ export default {
         },
     },
 
-    mounted() {},
-
     methods: {
         defineTag() {
             if (this.to) {
@@ -41,12 +40,12 @@ export default {
         },
 
         addClass(element) {
-            element.classList.remove("font-color-darker");
+            element.classList.remove(this.normalFontColor);
             element.classList.add(this.activeFontColor);
         },
         removeClass(element) {
             element.classList.remove(this.activeFontColor);
-            element.classList.add("font-color-darker");
+            element.classList.add(this.normalFontColor);
         },
 
         mouseOver() {
