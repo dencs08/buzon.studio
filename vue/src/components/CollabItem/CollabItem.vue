@@ -1,21 +1,19 @@
 <template>
-    <div class="m-auto flex justify-center items-center">
-        <div class="client-logo m-0 py-0 px-1 sm:px-3 lg:px-4">
-            <img
-                :src="img"
-                alt="branding (logotyp) danfit"
-                width="350"
-                height="100"
-                class="mx-auto"
-            />
-        </div>
+    <div class="grid content-center w-[20vw]">
+        <img :src="src" :alt="`branding (logotyp) ${name}`" width="100%" height="100%" class="mx-auto max-h-[10vh]" />
     </div>
 </template>
 
 <script>
 export default {
     props: {
-        img: String,
+        name: String,
+    },
+
+    computed: {
+        src() {
+            return `/src/assets/images/logos/client/${this.name}.svg`;
+        },
     },
 };
 </script>
