@@ -1,42 +1,20 @@
 <template>
-    <div
-        id="wrapper"
-        class="flex items-center relative"
-        :class="`${headerClass} ${move ? 'move' : ''} ${split ? 'clip' : ''}`"
-        @mouseover="mouseOver"
-        @mouseleave="mouseLeave"
-    >
-        <div
-            v-if="move"
-            id="logoWrapper"
-            ref="logoWrapper"
-            class="opacity-0"
-            :class="{ isMouseOver: this.isMouseover, move: move, split: split }"
-        >
-            <Logo
-                :small="small ? true : false"
-                :normal="normal ? true : false"
-                :big="big ? true : false"
-            />
+    <div id="wrapper" class="flex items-center relative"
+        :class="`${headerClass} ${move ? 'move' : ''} ${split ? 'clip' : ''}`" @mouseover="mouseOver"
+        @mouseleave="mouseLeave">
+        <div v-if="move" id="logoWrapper" ref="logoWrapper" class="opacity-0"
+            :class="{ isMouseOver: this.isMouseover, move: move, split: split }">
+            <Logo :small="small ? true : false" :normal="normal ? true : false" :big="big ? true : false" />
         </div>
-        <div
-            id="headerWrapper"
-            :class="{ isMouseOver: this.isMouseover, split: split }"
-            class="leading-[0]"
-        >
-            <h3
-                class="font-family-header"
-                :class="{
-                    small: small,
-                    normal: normal,
-                    big: big,
-                    isMouseOver: this.isMouseover,
-                    move: move,
-                    split: split,
-                }"
-                id="header"
-                ref="header"
-            >
+        <div id="headerWrapper" :class="{ isMouseOver: this.isMouseover, split: split }" class="leading-[0]">
+            <h3 class="font-family-header" :class="{
+                small: small,
+                normal: normal,
+                big: big,
+                isMouseOver: this.isMouseover,
+                move: move,
+                split: split,
+            }" id="header" ref="header">
                 {{ text }}
             </h3>
         </div>

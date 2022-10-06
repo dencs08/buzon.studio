@@ -19,32 +19,32 @@
             </p>
             <p>
                 <strong>1. Uzywanie informacji</strong><br />
-                
+
                 Poprzez wejście na stronę oświadczasz, że możemy użyć Twoich
                 informacji do którychkolwiek z podanych poniżej powodów,
                 kiedykolwiek będzie to potrzebne bez żadnych ograniczeń:
                 Rejestrowanie, zarządzanie Twoim kontem, oraz tworzenie
                 spersonalizowanego profilu do kolejnych odwiedzin na Stronie.
                 <br />
-                <ul class="dots">
-                    <li>Zarządzanie spotkaniami i ich rezerwowanie.</li>
-                    <li>Powiadamiać Cię o nowościach.</li>
-                    <li>Używać w sprawie komunikacji user-to-user.</li>
-                    <li>
-                        Używać do jakiejkolwiek aktywności związanej z projektami{{
-                            name
-                        }}.
-                    </li>
-                    <li>
-                        Tworzenie kontentu, reklam, akcji promocyjnych i ofert
-                        rekomendowanych dla Ciebie.
-                    </li>
-                    <li>
-                        Prosić o opinię i monitorować użytkowanie Strony w celu
-                        usprawnienia Twojego doświadczenia.
-                    </li>
-                    <li>Odpowadać na zapytania klientów.</li>
-                </ul>
+            <ul class="dots">
+                <li>Zarządzanie spotkaniami i ich rezerwowanie.</li>
+                <li>Powiadamiać Cię o nowościach.</li>
+                <li>Używać w sprawie komunikacji user-to-user.</li>
+                <li>
+                    Używać do jakiejkolwiek aktywności związanej z projektami{{
+                    name
+                    }}.
+                </li>
+                <li>
+                    Tworzenie kontentu, reklam, akcji promocyjnych i ofert
+                    rekomendowanych dla Ciebie.
+                </li>
+                <li>
+                    Prosić o opinię i monitorować użytkowanie Strony w celu
+                    usprawnienia Twojego doświadczenia.
+                </li>
+                <li>Odpowadać na zapytania klientów.</li>
+            </ul>
             </p>
             <p>
                 <strong>2. Zbieranie informacji</strong><br />

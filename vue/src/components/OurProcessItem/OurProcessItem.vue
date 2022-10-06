@@ -1,16 +1,6 @@
 <template>
-    <div
-        class="link-activate-wrapper"
-        @mouseover="mouseOver"
-        @mouseleave="mouseLeave"
-    >
-        <ItemHeader
-            :text="title"
-            :small="true"
-            :move="true"
-            headerClass="font-color-secondary mb-2"
-            ref="itemHeader"
-        />
+    <div class="link-activate-wrapper" @mouseover="mouseOver" @mouseleave="mouseLeave" data-cursor>
+        <ItemHeader :text="title" :small="true" :move="true" headerClass="font-color-secondary mb-2" ref="itemHeader" />
 
         <p class="font-color-dark pr-0 md:pr-5">
             {{ paragraph }}
