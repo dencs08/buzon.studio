@@ -1,20 +1,21 @@
 <template>
-    <!-- @if (!empty($images)) -->
-    <section id="images">
+    <section v-if="images" id="images">
         <div class="container">
-            <!-- @foreach($images as $image) -->
             <div class="portfolio_image_wrapper">
-                <img
-                    src="images/portfolio/' . $name . '/' . $image . '.jpg"
-                    alt=""
-                />
+                <img src="images/portfolio/' . $name . '/' . $image . '.jpg" alt="" />
             </div>
-            <!-- @endforeach -->
         </div>
     </section>
 </template>
 
-<script></script>
+<script>
+export default {
+    props: {
+        name: String,
+        images: Array,
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "./projectimages.scss";

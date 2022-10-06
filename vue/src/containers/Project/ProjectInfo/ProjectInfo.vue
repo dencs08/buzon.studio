@@ -10,9 +10,7 @@
                 <div>
                     <div>
                         <div>
-                            <h4
-                                class="font-family-primary font-color-primary my-0"
-                            >
+                            <h4 class="font-family-primary font-color-primary my-0">
                                 Opis
                             </h4>
                         </div>
@@ -24,71 +22,55 @@
                     </div>
                 </div>
 
-                <!-- @if (!empty($responsibilities)) -->
-
-                <div>
+                <div v-if="responsibilities">
                     <div>
                         <div>
-                            <h4
-                                class="font-family-primary font-color-primary my-0"
-                            >
+                            <h4 class="font-family-primary font-color-primary my-0">
                                 Nasze zadanie
                             </h4>
                         </div>
-                        <ul>
-                            <!-- @foreach($responsibilities as $responsibility) -->
-                            <li class="font-color-dark">
-                                {{ $responsibility }}
-                            </li>
-                            <!-- @endforeach -->
+                        <ul v-for="item in responsibilities">
+                            <li>{{ item }}</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- @endif -->
-
-                <!-- @if (!empty($goals)) -->
-
-                <div>
+                <div v-if="goals">
                     <div>
                         <div>
-                            <h4
-                                class="font-family-primary font-color-primary my-0"
-                            >
+                            <h4 class="font-family-primary font-color-primary my-0">
                                 Cel
                             </h4>
                         </div>
-                        <ul>
-                            <!-- @foreach($goals as $goal) -->
-                            <li>{{ $goal }}</li>
-                            <!-- @endforeach -->
+                        <ul v-for="item in goals">
+                            <li>{{ item }}</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- @endif -->
             </div>
-            <!-- @if (!empty($website)) -->
-            <div>
+            <div v-if="website">
                 <div>
-                    <span class="uppercase website font-color-dark"
-                        >Sprawdź stronę
-                        <a
-                            target="_blank"
-                            rel="noopener"
-                            href="https://bielanypark.pl/"
-                            class="link-primary underline-primary text-uppercase"
-                            >{{ $route.params.name }}</a
-                        ></span
-                    >
+                    <span class="uppercase website font-color-dark">Sprawdź stronę
+                        <a target="_blank" rel="noopener" :href="website"
+                            class="link-primary underline-primary text-uppercase">{{website}}.pl</a></span>
                 </div>
             </div>
-            <!-- @endif -->
         </div>
     </section>
 </template>
 
-<script></script>
+<script>
+export default {
+    props: {
+        name: String,
+        info: String,
+        goals: Array,
+        responsibilities: Array,
+        website: String,
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "./projectinfo.scss";
