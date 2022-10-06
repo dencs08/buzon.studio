@@ -1,24 +1,19 @@
 <template>
-    <component
-        :is="this.defineTag()"
-        :to="{ name: to }"
-        :href="href"
-        :class="{
+    <div @mouseover="handleMouseOver" @animationend="animationEnd" @mouseleave="handleMouseLeave"
+        :class="{'clip' : split, 'active': isMouseOver}" class="inline-block">
+        <component :is="this.defineTag()" :to="{ name: to }" :href="href" :class="{
             'underline-primary': primary && noUnderline === false,
             'underline-secondary': secondary && noUnderline === false,
             'link-primary': primary,
             'link-move': move,
             'text-highlight': isMouseOver,
             animating: (primary && isAnimating) || (secondary && isAnimating),
-            'clip leading-none': split,
+            'leading-none': split,
             active: isMouseOver,
-        }"
-        class="transitions cursor-pointer"
-        @mouseover="handleMouseOver"
-        @animationend="animationEnd"
-        @mouseleave="handleMouseLeave"
-        ><span ref="text" :class="{ arrow: point }">{{ text }}</span>
-    </component>
+        }" class="transitions cursor-pointer"><span ref="text" :class="{ arrow: point }">{{ text }}</span>
+        </component>
+    </div>
+
 </template>
 
 <script>
@@ -65,7 +60,6 @@ export default {
             this.$refs.text.nextSibling.nextSibling.children
         );
     },
-
     methods: {
         defineTag() {
             if (this.to) {
@@ -87,6 +81,7 @@ export default {
         },
 
         animationStart() {
+            this.isMouseOver = true;
             this.isAnimating = true;
 
             if (!this.split) return;
