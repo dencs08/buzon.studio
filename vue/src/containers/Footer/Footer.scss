@@ -3,6 +3,7 @@
 #footer {
     .contact {
         font-size: clamp(1.35rem, 7vw, 10rem);
+        line-height: 0px !important;
     }
 
     .mail-link {
