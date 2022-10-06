@@ -11,7 +11,7 @@ const routes = [
         // name: 'Start',
         // component: DefaultLayout,
         children: [
-            { path: '/', name: 'StartFirst', component: Start },
+            { path: '/', name: 'StartFirst', component: Start, redirect: '/start' },
             { path: '/start', name: 'Start', component: Start }
         ]
     },
