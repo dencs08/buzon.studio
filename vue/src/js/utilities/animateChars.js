@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-export function animateIn(textToAnimate, textToAnimateSecond, yMove) {
+export function animateIn(textToAnimate, textToAnimateSecond) {
     let tl = gsap.timeline({ paused: true });
     tl.to(textToAnimate, {
         duration: 0.3,
