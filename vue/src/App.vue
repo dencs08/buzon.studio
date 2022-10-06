@@ -2,24 +2,24 @@
     <LinkSkip />
     <Navbar />
     <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in"
-            ><component :is="Component" id="routerView" />
+        <transition name="fade" mode="out-in">
+            <component :is="Component" id="routerView" />
         </transition>
     </router-view>
+    <Cursor />
 </template>
 
 <script>
-import { Navbar, LinkSkip } from "./components";
+import { Navbar, LinkSkip, Cursor } from "./components";
 export default {
     name: "App",
     components: {
         Navbar,
+        Cursor,
         LinkSkip,
     },
 };
 </script>
-
-<script></script>
 
 <style lang="scss">
 @import "./styles/app.scss";
