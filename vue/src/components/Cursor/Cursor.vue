@@ -4,7 +4,7 @@
              :class="{'active' : isMouseOver}">
         </div>
         <div ref="label" class="label absolute text-center uppercase font-bold pointer-events-none select-none z-[10001]" :class="{'active' : isMouseOver}">
-            {{label}}
+            <span v-show="dataCursorLabel">{{dataCursorLabel}}</span>
         </div>
     </div>
 </template>
@@ -17,9 +17,9 @@ export default {
         return { isMouseOver: false, label: null }
     },
     setup() {
-        let cursor, label, arrayOfElements;
+        let cursor, label, arrayOfElements, dataCursorLabel;
 
-        return { cursor, label, arrayOfElements }
+        return { cursor, label, arrayOfElements,dataCursorLabel }
     },
     mounted() {
         this.cursor = this.$refs.cursor;
@@ -46,14 +46,17 @@ export default {
                 element.addEventListener("mouseover", function () {
                     if(_this.isMouseOver) return;
                     _this.isMouseOver = true
-                    _this.label = element.getAttribute("data-cursor")
+                    _this.dataCursorLabel = element.getAttribute("data-cursor")
                 });
                 element.addEventListener("mouseleave", function () {
                     if(!_this.isMouseOver) return;
                     _this.isMouseOver = false
-                    _this.label = element.getAttribute("data-cursor")
                 });
             });
+        },
+
+        restartCursor(){
+            this.isMouseOver = false;
         },
 
         mobile() {
