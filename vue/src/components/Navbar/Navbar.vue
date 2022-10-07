@@ -99,7 +99,7 @@ export default {
 
     methods: {
         toggleNav(nav) {
-            if (nav == true) {
+            if (nav === true) {
                 this.isNavToggled = false;
                 this.animation(false);
                 return;
@@ -115,7 +115,7 @@ export default {
 
             calculatePageScroll(RouterViewWrapper);
 
-            if (open == true) {
+            if (open === true) {
                 this.animationOpen(tl, RouterViewWrapper);
                 return;
             } else {
