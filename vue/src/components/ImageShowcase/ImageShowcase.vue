@@ -14,7 +14,7 @@
                         headerClass="mt-[-15px] md:mt-[-20px] lg:mt-[-30px] xl:mt-[-40px] z-[2] inline-block"
                         ref="itemHeader" />
                 </div>
-                <p class="font-color-secondary mb-6">
+                <p class="font-color-secondary mb-1 md:mb-3 xl:mb-6">
                     {{ info }}
                 </p>
                 <span v-for="item in category"
