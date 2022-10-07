@@ -1,6 +1,6 @@
 <template>
-    <main>
-        <section id="landing-page">
+    <main data-scroll-container>
+        <section data-scroll-section id="landing-page">
             <div class="container pt-32 section-mb">
                 <h1 class="leading-[100%]">Zacznijmy owocną współpracę!</h1>
 

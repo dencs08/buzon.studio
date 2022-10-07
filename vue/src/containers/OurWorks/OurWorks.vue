@@ -1,9 +1,9 @@
 <template>
-    <section id="portfolio">
+    <section data-scroll-section id="portfolio">
         <div id="portfolio-content" class="container mt-5">
             <SectionHeader headerLine="Nasze prace" mainHeader="Projekty z, których jesteśmy dumni" class="mb-5" />
         </div>
-        <OurWorksSlider/>
+        <OurWorksSlider />
         <div class="portfolio-container container">
             <LinkPrimary to="Portfolio" text="Więcej prac" :primary="true" :point="true" class="my-4 uppercase" />
         </div>

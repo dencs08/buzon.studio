@@ -1,5 +1,5 @@
 <template>
-    <footer id="footer" class="mb-2 relative">
+    <footer data-scroll-section id="footer" class="mb-2 relative">
         <section>
             <hr class="section-divider mt-6 mb-10" />
             <section>

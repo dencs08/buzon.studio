@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main data-scroll-container>
         <ProjectHero :name="$route.params.projectName" :image="image" />
         <ProjectInfo />
         <ProjectImages />

@@ -1,6 +1,6 @@
 <template>
-    <main>
-        <div class="grid container grid-cols-1 md:grid-cols-2 md:h-screen place-items-center">
+    <main data-scroll-container>
+        <div data-scroll-section class="grid container grid-cols-1 md:grid-cols-2 md:h-screen place-items-center">
             <PortfolioFullpage title="bielanypark" info="info" :category="['test1', 'test2']" />
             <PortfolioFullpage title="danfit" info="info" :category="['test1', 'test2']" />
         </div>

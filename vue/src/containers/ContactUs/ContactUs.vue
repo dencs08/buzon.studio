@@ -1,11 +1,8 @@
 <template>
-    <section id="contact">
+    <section data-scroll-section id="contact">
         <div class="container text-center section-mb">
-            <SectionHeader
-                headerLine="Napisz do nas!"
-                mainHeader="Zatrudnij nas a my zajmiemy się resztą."
-                :noAccent="true"
-            />
+            <SectionHeader headerLine="Napisz do nas!" mainHeader="Zatrudnij nas a my zajmiemy się resztą."
+                :noAccent="true" />
             <div class="mt-20">
                 <ButtonTrail text="Porozmawiajmy!" />
             </div>

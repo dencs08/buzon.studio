@@ -1,5 +1,5 @@
 <template>
-    <section id="aboutUs">
+    <section data-scroll-section id="aboutUs">
         <div class="container my-28 md:grid grid-cols-8">
             <div class=""></div>
             <div class="col-start-6 col-end-9">

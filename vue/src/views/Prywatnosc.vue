@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main data-scroll-container>
         <div class="container pt-32">
             <h1>Polityka prywatności {{ name }}</h1>
         </div>

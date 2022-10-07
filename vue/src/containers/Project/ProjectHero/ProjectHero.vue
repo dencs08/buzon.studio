@@ -1,5 +1,5 @@
 <template>
-    <section id="landing-page">
+    <section data-scroll-section id="landing-page">
         <div class="container relative">
             <h1 class="absolute top-[-5%] z-50">{{ name }}</h1>
             <div class="image-wrapper">

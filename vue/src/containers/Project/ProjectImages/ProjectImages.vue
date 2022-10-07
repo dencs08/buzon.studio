@@ -1,5 +1,5 @@
 <template>
-    <section v-if="images" id="images">
+    <section data-scroll-section v-if="images" id="images">
         <div class="container">
             <div class="portfolio_image_wrapper">
                 <img src="images/portfolio/' . $name . '/' . $image . '.jpg" alt="" />

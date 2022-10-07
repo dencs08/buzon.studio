@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main data-scroll-container>
         <TypedHero />
         <WhyUs :buttons="false" :contactParagraph="true" />
         <OurProcess />

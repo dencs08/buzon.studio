@@ -10,9 +10,21 @@
 </template>
 
 <script>
+import LocomotiveScroll from "locomotive-scroll";
+
 import { Navbar, LinkSkip, Cursor } from "./components";
 export default {
     name: "App",
+
+    setup() {
+        let locoScroll;
+
+        return { locoScroll }
+    },
+    mounted() {
+        // this.locoInit()
+    },
+
     components: {
         Navbar,
         Cursor,
@@ -21,10 +33,26 @@ export default {
     methods: {
         leave() {
             this.$refs.cursor.restartCursor()
+            this.locoDestroy()
         },
         enter() {
             this.$refs.cursor.getCursorTriggers()
-            window.scrollTo(0, 0);
+            // window.scrollTo(0, 0);
+            this.locoInit()
+        },
+        locoInit() {
+            setTimeout(() => {
+                this.locoScroll = new LocomotiveScroll({
+                    el: document.querySelector("main"),
+                    smooth: true
+                });
+            }, []);
+        },
+        locoDestroy() {
+            // ScrollTrigger.removeEventListener("refresh", lsUpdate);
+            this.locoScroll.destroy();
+            this.locoScroll = null;
+            console.log("Kill", this.locoScroll);
         }
     }
 };
@@ -34,7 +62,7 @@ export default {
 @import "./styles/app.scss";
 
 main {
-    will-change: transform, opacity;
+    will-change: auto !important;
 }
 
 .fade-enter-from,
