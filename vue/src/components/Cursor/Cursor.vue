@@ -1,19 +1,25 @@
 <template>
-    <div ref="cursor"
-        class="cursor grid content-center absolute rounded-full pointer-events-none select-none z-[10000] w-[100px] h-[100px]">
-        <div ref="label" class="label text-center uppercase font-bold z-[10001] pointer-events-none opacity-1">
+    <div>
+        <div ref="cursor" class="cursor absolute grid content-center rounded-full pointer-events-none select-none z-[10000]"
+             :class="{'active' : isMouseOver}">
+        </div>
+        <div ref="label" class="label absolute text-center uppercase font-bold pointer-events-none select-none z-[10001]" :class="{'active' : isMouseOver}">
+            {{label}}
         </div>
     </div>
 </template>
 
 <script>
 import gsap from "gsap";
-import { nextTick } from "vue";
-export default {
-    setup() {
-        let cursor, label;
 
-        return { cursor, label }
+export default {
+    data() {
+        return { isMouseOver: false, label: null }
+    },
+    setup() {
+        let cursor, label, arrayOfElements;
+
+        return { cursor, label, arrayOfElements }
     },
     mounted() {
         this.cursor = this.$refs.cursor;
@@ -23,22 +29,31 @@ export default {
             this.mobile();
             return;
         }
-        this.desktop();
-    },
-
-    watch: {
-        '$route'(to, from) {
-            this.getCursorTriggers()
-        }
+        this.desktop()
     },
 
     methods: {
-        async getCursorTriggers() {
-            await nextTick();
+        getCursorTriggers() {
             setTimeout(() => {
-                var element = document.querySelectorAll('[data-cursor]');
-                console.log(element);
-            }, []);
+                this.arrayOfElements = document.querySelectorAll('[data-cursor]');
+                this.attachListeners();
+            },[] )
+        },
+
+        attachListeners() {
+            let _this = this;
+            this.arrayOfElements.forEach(element => {
+                element.addEventListener("mouseover", function () {
+                    if(_this.isMouseOver) return;
+                    _this.isMouseOver = true
+                    _this.label = element.getAttribute("data-cursor")
+                });
+                element.addEventListener("mouseleave", function () {
+                    if(!_this.isMouseOver) return;
+                    _this.isMouseOver = false
+                    _this.label = element.getAttribute("data-cursor")
+                });
+            });
         },
 
         mobile() {
@@ -49,10 +64,10 @@ export default {
         desktop() {
             let _this = this;
 
-            var posX = 0,
+            let posX = 0,
                 posY = 0;
 
-            var mouseX = 0,
+            let mouseX = 0,
                 mouseY = 0;
 
             gsap.to(_this.cursor, {
@@ -64,8 +79,8 @@ export default {
 
                     gsap.set(_this.label, {
                         css: {
-                            left: posX - 17,
-                            top: posY - 14
+                            left: mouseX,
+                            top: mouseY
                         }
                     });
 
