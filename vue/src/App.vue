@@ -1,12 +1,12 @@
 <template>
     <LinkSkip />
     <Navbar />
+    <Cursor ref="cursor" />
     <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
+        <transition name="fade" mode="out-in" @leave="leave" @enter="enter">
             <component :is="Component" id="routerView" />
         </transition>
     </router-view>
-    <Cursor />
 </template>
 
 <script>
@@ -18,6 +18,14 @@ export default {
         Cursor,
         LinkSkip,
     },
+    methods: {
+        leave() {
+            this.$refs.cursor.restartCursor()
+        },
+        enter() {
+            this.$refs.cursor.getCursorTriggers()
+        }
+    }
 };
 </script>
 
