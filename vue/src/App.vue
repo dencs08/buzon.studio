@@ -24,6 +24,7 @@ export default {
         },
         enter() {
             this.$refs.cursor.getCursorTriggers()
+            window.scrollTo(0, 0);
         }
     }
 };
