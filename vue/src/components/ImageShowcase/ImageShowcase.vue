@@ -57,10 +57,12 @@ export default {
 
     methods: {
         mouseOver() {
+            if (!this.$refs.itemHeader) return;
             this.$refs.itemHeader.mouseOver();
             this.isMouseOver = true;
         },
         mouseLeave() {
+            if (!this.$refs.itemHeader) return;
             this.$refs.itemHeader.mouseLeave();
             this.isMouseOver = false;
         },

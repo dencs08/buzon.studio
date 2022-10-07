@@ -21,9 +21,6 @@ export default {
 
         return { locoScroll }
     },
-    mounted() {
-        // this.locoInit()
-    },
 
     components: {
         Navbar,
@@ -37,7 +34,6 @@ export default {
         },
         enter() {
             this.$refs.cursor.getCursorTriggers()
-            // window.scrollTo(0, 0);
             this.locoInit()
         },
         locoInit() {
@@ -49,7 +45,6 @@ export default {
             }, []);
         },
         locoDestroy() {
-            // ScrollTrigger.removeEventListener("refresh", lsUpdate);
             this.locoScroll.destroy();
             this.locoScroll = null;
             console.log("Kill", this.locoScroll);

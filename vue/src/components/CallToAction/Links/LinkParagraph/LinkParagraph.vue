@@ -1,16 +1,8 @@
 <template>
-    <span
-        ref="slot"
-        @mouseover="this.mouseOver()"
-        @mouseleave="this.mouseLeave()"
-    >
-        <component
-            :is="this.defineTag()"
-            :to="{ name: to }"
-            :href="href"
-            class="cursor-pointer"
-            ><slot> </slot
-        ></component>
+    <span ref="slot" @mouseover="this.mouseOver()" @mouseleave="this.mouseLeave()">
+        <component :is="this.defineTag()" :to="{ name: to }" :href="href" class="cursor-pointer">
+            <slot> </slot>
+        </component>
     </span>
 </template>
 
@@ -49,6 +41,7 @@ export default {
         },
 
         mouseOver() {
+            if (!this.$refs.slot) return;
             let childs = this.$refs.slot.children;
 
             for (let i = 0; i < childs.length; i++) {
@@ -65,6 +58,7 @@ export default {
             }
         },
         mouseLeave() {
+            if (!this.$refs.slot) return;
             let childs = this.$refs.slot.children;
 
             for (let i = 0; i < childs.length; i++) {

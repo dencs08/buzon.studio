@@ -62,10 +62,12 @@ export default {
 
     methods: {
         mouseOver() {
+            if (!this.$refs.header) return
             this.$refs.header.mouseOver();
             this.isMouseOver = true;
         },
         mouseLeave() {
+            if (!this.$refs.header) return
             this.$refs.header.mouseLeave();
             this.isMouseOver = false;
         },
