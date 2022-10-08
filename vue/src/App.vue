@@ -40,8 +40,22 @@ export default {
             setTimeout(() => {
                 this.locoScroll = new LocomotiveScroll({
                     el: document.querySelector("main"),
-                    smooth: true
+                    smooth: true,
+                    multiplier: 1,
+                    lerp: 0.135,
+                    getDirection: true,
+                    reloadOnContextChange: true,
+                    smartphone: {
+                        smooth: true
+                    },
+                    tablet: {
+                        smooth: true
+                    }
                 });
+
+                this.locoScroll.on("scroll", (args) => {
+                    document.documentElement.setAttribute('data-direction', args.direction)
+                })
             }, 300);
         },
         locoDestroy() {
