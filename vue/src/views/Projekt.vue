@@ -2,7 +2,7 @@
     <main data-scroll-container>
         <ProjectHero :name="$route.params.projectName" :image="image" />
         <ProjectInfo />
-        <ProjectImages />
+        <ProjectImages :name="$route.params.projectName" :imagesCount="1" />
         <Footer />
     </main>
 </template>

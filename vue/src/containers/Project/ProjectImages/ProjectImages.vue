@@ -1,8 +1,10 @@
 <template>
-    <section data-scroll-section v-if="images" id="images">
+    <section data-scroll-section v-if="imagesCount" id="images">
         <div class="container">
             <div class="portfolio_image_wrapper">
-                <img src="images/portfolio/' . $name . '/' . $image . '.jpg" alt="" />
+                <div v-for="item in imagesCount">
+                    <img :src="src()" alt="" />
+                </div>
             </div>
         </div>
     </section>
@@ -10,9 +12,23 @@
 
 <script>
 export default {
+    setup() {
+        let imageNumber = 0;
+        return {
+            imageNumber
+        }
+    },
     props: {
         name: String,
-        images: Array,
+        imagesCount: Number,
+    },
+
+    methods: {
+        src() {
+            this.imageNumber++;
+            let number = this.imageNumber;
+            return `/src/assets/images/portfolio/${this.name}/${this.name}${this.imageNumber}.jpg`;
+        },
     }
 }
 </script>
