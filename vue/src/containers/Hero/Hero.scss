@@ -4,6 +4,22 @@
     height: clamp(75vh, 90vh, 100vh);
 }
 
+h1 {
+    font-family: $font-family-header;
+    font-size: clamp(1.75rem, 30vw, 100rem);
+    line-height: clamp(1.75rem, 24vw, 100rem);
+    // line-height: clamp(1.75rem, 10vw, 10rem);
+    // line-height: 30vw !important;
+
+    // margin: 0 !important;
+    // line-height: 0 !important;
+    // padding: 0 !important;
+}
+
+h2 {
+    font-size: clamp(1rem, 1.6vw, 3rem);
+}
+
 @media (max-width: $md-screen-size) {
     #landing-page {
         height: auto;
