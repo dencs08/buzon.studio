@@ -42,7 +42,7 @@ export default {
                     el: document.querySelector("main"),
                     smooth: true
                 });
-            }, []);
+            }, 300);
         },
         locoDestroy() {
             this.locoScroll.destroy();
@@ -55,6 +55,7 @@ export default {
 
 <style lang="scss">
 @import "./styles/app.scss";
+@import "../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
 main {
     will-change: auto !important;

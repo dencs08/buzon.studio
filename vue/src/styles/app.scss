@@ -15,8 +15,6 @@
 @import "links";
 @import "other";
 
-@import "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
-
 /* main rules*/
 *,
 *::before,
@@ -59,4 +57,10 @@ hr {
 
 img {
     width: 100%;
+}
+
+@media (max-width: $md-screen-size) {
+    body {
+        overflow-y: auto;
+    }
 }
