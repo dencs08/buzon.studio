@@ -10,17 +10,11 @@
 </template>
 
 <script>
-import LocomotiveScroll from "locomotive-scroll";
+import { locoInit, locoDestroy } from './js/utilities/locomotiveScroll'
 
 import { Navbar, LinkSkip, Cursor } from "./components";
 export default {
     name: "App",
-
-    setup() {
-        let locoScroll;
-
-        return { locoScroll }
-    },
 
     components: {
         Navbar,
@@ -30,39 +24,12 @@ export default {
     methods: {
         leave() {
             this.$refs.cursor.restartCursor()
-            this.locoDestroy()
+            // locoDestroy()
         },
         enter() {
             this.$refs.cursor.getCursorTriggers()
-            this.locoInit()
+            // locoInit(300)
         },
-        locoInit() {
-            setTimeout(() => {
-                this.locoScroll = new LocomotiveScroll({
-                    el: document.querySelector("main"),
-                    smooth: true,
-                    multiplier: 1,
-                    lerp: 0.135,
-                    getDirection: true,
-                    reloadOnContextChange: true,
-                    smartphone: {
-                        smooth: true
-                    },
-                    tablet: {
-                        smooth: true
-                    }
-                });
-
-                this.locoScroll.on("scroll", (args) => {
-                    document.documentElement.setAttribute('data-direction', args.direction)
-                })
-            }, 300);
-        },
-        locoDestroy() {
-            this.locoScroll.destroy();
-            this.locoScroll = null;
-            console.log("Kill", this.locoScroll);
-        }
     }
 };
 </script>
