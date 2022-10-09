@@ -1,7 +1,7 @@
 <template>
-    <section data-scroll-section id="landing-page" class="flex items-center">
-        <div class="container my-[110px] md:my-0">
-            <h1 ref="h1" class="mt-[18vh]">
+    <section data-scroll-section id="landing-page" class="flex items-top">
+        <div class="container md:my-0">
+            <h1 ref="h1" class=" mt-[14vh]">
                 <div>
                     BUZON
                 </div>
@@ -9,17 +9,8 @@
                 </div>
             </h1>
 
-            <div class="w-1/3 mt-8">
+            <div class="w-1/3 mt-24 px-4">
                 <h2 class="fw-normal font-family-primary relative">
-                    <LinkParagraph to="Oferta" @mouseover="$refs.link1.animationStart()"
-                        @mouseleave="$refs.link1.handleMouseLeave()">
-                        <span class="font-color-darker duration-200">
-                            Jesteśmy kreatywnym studio w branży IT zajmującym sie
-                            dostarczniem najlepszych</span>{{}}
-                        <LinkPrimary to="Oferta" text="usług" :primary="true" class="font-color-dark" ref="link1" />{{}}
-                        <span class="font-color-darker duration-200">IT. </span>
-                    </LinkParagraph>
-
                     <LinkParagraph to="Oferta" @mouseover="$refs.link2.animationStart()"
                         @mouseleave="$refs.link2.handleMouseLeave()">
                         <span class="font-color-darker duration-200">
@@ -43,6 +34,8 @@
 
 <script>
 import { LinkPrimary, LinkParagraph } from "../../components";
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 export default {
     components: {
         LinkPrimary,
@@ -58,8 +51,54 @@ export default {
 
     mounted() {
         this.h1 = this.$refs.h1;
+        gsap.registerPlugin(ScrollTrigger);
 
-        console.log(this.h1);
+        setTimeout(() => {
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: "#landing-page",
+                        // scroller: "main",
+                        scrub: 1,
+                        start: "top -10%",
+                        end: "top -1000px",
+                        pin: true,
+                        markers: true,
+                    },
+                })
+                .to(
+                    this.h1.children[0],
+                    {
+                        x: "-125%",
+                        duration: 1,
+                        ease: "expo",
+                    }
+                )
+
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: "#landing-page",
+                        // scroller: "main",
+                        scrub: 1,
+                        start: "top -10%",
+                        end: "top -1000px",
+                        // pin: true,
+                        markers: true,
+                    },
+                })
+                .to(
+                    this.h1.children[1],
+                    {
+                        x: "125%",
+                        duration: 1,
+                        ease: "expo",
+                    }
+                )
+
+            // ScrollTrigger.refresh();
+        }, 100);
+
     },
 
     methods: {
