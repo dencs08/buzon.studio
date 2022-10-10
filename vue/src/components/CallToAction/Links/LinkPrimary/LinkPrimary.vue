@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import cloneSplit from "../../../../js/cloneSplit";
-import { animateIn } from "../../../../js/utilities/animateChars.js";
+import { splitCloneToChars } from "../../../../js/cloneSplit";
+import { animateCharsIn } from "../../../../js/utilities/animateChars.js";
 
 export default {
     data() {
@@ -53,9 +53,9 @@ export default {
     mounted() {
         if (!this.split) return;
         const elementToSplit = this.$refs.text;
-        cloneSplit(elementToSplit);
+        splitCloneToChars(elementToSplit);
 
-        this.splitAnimation = animateIn(
+        this.splitAnimation = animateCharsIn(
             this.$refs.text.children,
             this.$refs.text.nextSibling.nextSibling.children
         );

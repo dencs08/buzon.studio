@@ -2,12 +2,17 @@
 
 #landing-page {
     height: clamp(75vh, 90vh, 100vh);
+
+    .word {
+        transform: translateY(-100%);
+        opacity: 0.05 !important;
+    }
 }
 
 h1 {
     font-family: $font-family-header;
-    font-size: clamp(1.75rem, 30vw, 100rem);
-    line-height: clamp(1.75rem, 24vw, 100rem);
+    font-size: clamp(1.75rem, 25vw, 100rem);
+    line-height: clamp(1.75rem, 20vw, 100rem);
     // line-height: clamp(1.75rem, 10vw, 10rem);
     // line-height: 30vw !important;
 
