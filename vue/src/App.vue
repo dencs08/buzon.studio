@@ -24,11 +24,11 @@ export default {
     methods: {
         leave() {
             this.$refs.cursor.restartCursor()
-            // locoDestroy()
+            locoDestroy()
         },
         enter() {
             this.$refs.cursor.getCursorTriggers()
-            // locoInit(300)
+            locoInit(100)
         },
     }
 };
