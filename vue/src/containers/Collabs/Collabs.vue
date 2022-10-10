@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="clients">
+    <section id="clients">
         <div class="container">
             <h4 class="mb-2">Oni juz nam zaufali:</h4>
             <div

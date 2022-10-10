@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="landing-page" class="flex items-center">
+    <section id="landing-page" class="flex items-center">
         <div class="container my-[110px] md:my-0">
             <h1>
                 <div>

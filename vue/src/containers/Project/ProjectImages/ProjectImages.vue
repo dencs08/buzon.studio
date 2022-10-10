@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section v-if="imagesCount" id="images">
+    <section v-if="imagesCount" id="images">
         <div class="container">
             <div class="portfolio_image_wrapper">
                 <div v-for="item in imagesCount">

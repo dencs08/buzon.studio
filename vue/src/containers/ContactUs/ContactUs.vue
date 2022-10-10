@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="contact">
+    <section id="contact">
         <div class="container text-center section-mb">
             <SectionHeader headerLine="Napisz do nas!" mainHeader="Zatrudnij nas a my zajmiemy się resztą."
                 :noAccent="true" />

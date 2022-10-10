@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="process" class="mb-16 md:mb-32">
+    <section id="process" class="mb-16 md:mb-32">
         <div class="container">
             <div class="block md:grid md:grid-cols-2 mb-8 md:mb-20">
                 <div class="uppercase mb-5 md:mb-0">

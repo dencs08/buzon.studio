@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="Contact">
+    <section id="Contact">
         <div class="container text-center mb-12 md:mb-32">
             <div class="mb-10">
                 <h3>Co możemy dla Ciebie zrobić?</h3>

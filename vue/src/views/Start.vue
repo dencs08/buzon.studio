@@ -1,5 +1,5 @@
 <template>
-    <main data-scroll-container>
+    <main>
         <Hero />
         <OurWorks />
         <AboutUs />

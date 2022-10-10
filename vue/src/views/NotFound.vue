@@ -1,5 +1,5 @@
 <template>
-    <main data-scroll-container>
+    <main>
         <div class="grid place-items-center h-screen">
             <div class="text-center">
                 <h1>404</h1>

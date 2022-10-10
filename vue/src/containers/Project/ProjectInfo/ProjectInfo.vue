@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="info" class="mb-10">
+    <section id="info" class="mb-10">
         <div class="container">
             <div>
                 <h3 class="headerline font-family-header mb-2">

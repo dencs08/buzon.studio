@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="portfolio">
+    <section id="portfolio">
         <div id="portfolio-content" class="container mt-5">
             <SectionHeader headerLine="Nasze prace" mainHeader="Projekty z, których jesteśmy dumni" class="mb-5" />
         </div>

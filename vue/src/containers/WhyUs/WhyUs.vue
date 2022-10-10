@@ -1,5 +1,5 @@
 <template>
-    <section data-scroll-section id="offer" class="section-mb">
+    <section id="offer" class="section-mb">
         <div class="container mb-8 lg:mb-12 xl:mb-20">
             <div class="mb-8 md:mb-12">
                 <SectionHeader v-if="header" mainHeader="Działamy po to abyś się rozwijał" />

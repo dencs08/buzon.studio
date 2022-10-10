@@ -1,10 +1,10 @@
 <template>
-    <main data-scroll-container>
-        <div data-scroll-section class="container pt-32">
+    <main>
+        <div class="container pt-32">
             <h1>Polityka prywatności {{ name }}</h1>
         </div>
 
-        <div data-scroll-section class="container space-y-8">
+        <div class="container space-y-8">
             <p>
                 Ta polityka prywatności (“<strong>Polityka</strong>”) zawarta na
                 tej Stronie zarządza prywatnością informacji naszych
