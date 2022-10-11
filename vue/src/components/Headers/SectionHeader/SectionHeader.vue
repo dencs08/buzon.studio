@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h4 :class="{ headerline: noAccent === false }">{{ headerLine }}</h4>
-        <h3 :class="{ big: big, break: wordBreak }">{{ mainHeader }}</h3>
+        <h4 class="sectionHeaderline" :class="{ headerline: noAccent === false }">{{ headerLine }}</h4>
+        <h3 class="sectionHeader" :class="{ big: big, break: wordBreak }">{{ mainHeader }}</h3>
     </div>
 </template>
 
