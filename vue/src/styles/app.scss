@@ -15,6 +15,15 @@
 @import "links";
 @import "other";
 
+@font-face {
+    font-family: "Elbaris";
+    src: url("assets/fonts/Elbaris.woff2") format("woff2"),
+        url("assets/fonts/Elbaris.woff") format("woff"),
+        url("assets/fonts/Elbaris.otf") format("otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* main rules*/
 *,
 *::before,
