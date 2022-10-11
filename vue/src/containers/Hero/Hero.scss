@@ -1,24 +1,27 @@
 @import "../../styles/_variables";
 
-#landing-page {
+#hero {
     height: clamp(75vh, 90vh, 100vh);
 
     .word {
-        transform: translateY(-100%);
-        opacity: 0.05 !important;
+        transform: translateY(100%);
     }
 }
 
 h1 {
     font-family: $font-family-header;
-    font-size: clamp(1.75rem, 25vw, 100rem);
-    line-height: clamp(1.75rem, 20vw, 100rem);
-    // line-height: clamp(1.75rem, 10vw, 10rem);
-    // line-height: 30vw !important;
 
-    // margin: 0 !important;
-    // line-height: 0 !important;
-    // padding: 0 !important;
+    .buzon {
+        font-size: clamp(1.75rem, 32vw, 100rem);
+        line-height: clamp(1.75rem, 22vw, 100rem);
+        letter-spacing: 35px;
+    }
+
+    .studio {
+        font-size: clamp(1.75rem, 22vw, 100rem);
+        line-height: clamp(1.75rem, 16vw, 100rem);
+        letter-spacing: 35px;
+    }
 }
 
 h2 {
