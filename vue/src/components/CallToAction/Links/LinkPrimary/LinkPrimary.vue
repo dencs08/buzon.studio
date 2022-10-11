@@ -10,7 +10,8 @@
             animating: (primary && isAnimating) || (secondary && isAnimating),
             'leading-none': split,
             active: isMouseOver,
-        }" class="transitions cursor-pointer"><span ref="text" :class="{ arrow: point }">{{ text }}</span>
+        }" class="transitions cursor-pointer"><span ref="text" class="linkPrimaryText" :class="{ arrow: point }">{{
+        text }}</span>
         </component>
     </div>
 
