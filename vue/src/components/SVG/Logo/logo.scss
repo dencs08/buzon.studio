@@ -1,15 +1,15 @@
 @import "../../../styles/variables";
 .small {
-    width: clamp(0.6rem, 1.25vw, 1.5rem);
+    height: clamp(0.6rem, 1.25vw, 1.5rem);
     margin-left: -1vw;
 }
 .normal {
-    width: clamp(1rem, 1.45vw, 2rem);
+    height: clamp(1rem, 2.5vw, 2.95rem);
     margin-left: -1.3vw;
-    margin-bottom: 1px;
+    margin-top: clamp(0.1rem, 0.1vw, 0.5rem);
 }
 .big {
-    width: clamp(1rem, 2.675vw, 3.5rem);
+    height: clamp(1rem, 2.675vw, 3.5rem);
     margin-left: -2.5vw;
 }
 .path {
