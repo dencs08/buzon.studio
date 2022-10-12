@@ -28,7 +28,7 @@ export default {
         },
         enter() {
             this.$refs.cursor.getCursorTriggers()
-            locoInit(100)
+            locoInit(1)
         },
     }
 };

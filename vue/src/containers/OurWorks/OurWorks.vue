@@ -24,12 +24,13 @@ export default {
     },
 
     mounted() {
+        let tlScroll = gsap.timeline({ defaults: { ease: "none" } })
+            .fromTo(this.$refs.header, { x: 0 }, { x: "-110%", duration: 20 })
+            .fromTo(this.$refs.ourWorksSlider.$el, { x: '101%' }, { x: "-200%", duration: 17 }, 12)
+
         setTimeout(() => {
+            console.log("TEST");
             if (!window.matchMedia("(min-width: 1024px)").matches) return;
-            console.log(window.innerWidth);
-            let tlScroll = gsap.timeline({ defaults: { ease: "none" } })
-                .fromTo(this.$refs.header, { x: 0 }, { x: "-110%", duration: 20 })
-                .fromTo(this.$refs.ourWorksSlider.$el, { x: '101%' }, { x: "-200%", duration: 17 }, 12)
             ScrollTrigger.create({
                 trigger: "#portfolio",
                 start: "40% 50%",
@@ -39,7 +40,7 @@ export default {
                 scrub: true,
                 pin: true,
             })
-        }, 200);
+        }, 3000);
     },
 };
 </script>

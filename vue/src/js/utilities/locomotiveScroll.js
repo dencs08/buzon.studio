@@ -27,7 +27,7 @@ export function locoInit(timeout) {
         window.locoScroll.stop()
         setTimeout(() => {
             window.locoScroll.start()
-        }, 1000);
+        }, 2000);
 
         window.locoScroll.on("scroll", (args) => {
             document.documentElement.setAttribute('data-direction', args.direction)
@@ -60,7 +60,6 @@ export function locoInit(timeout) {
             },
             pinType: document.querySelector("main").style.transform ? "transform" : "fixed"
         });
-
 
         ScrollTrigger.addEventListener("refresh", () => lsUpdate());
         ScrollTrigger.refresh();

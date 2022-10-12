@@ -72,8 +72,6 @@ export default {
             .to(this.$refs.h1.children[1].children, { y: "0", }, "<0.25")
             .to(this.words, { y: "0", stagger: 0.02 })
             .to(this.$refs.link2.$el, { opacity: "1", ease: "power2.in", onComplete: () => { this.scrollTriggerAnimations() } }, ">-0.5")
-
-
     },
 
     methods: {
@@ -84,12 +82,12 @@ export default {
             gsap.registerPlugin(ScrollTrigger)
 
             let tlScroll = gsap.timeline({ defaults: { ease: "none" } })
-                .fromTo(this.$refs.h1.children[0], { x: 0 }, { x: "-120%", duration: 5 })
-                .fromTo(this.$refs.h1.children[1], { x: 0 }, { x: "120%", duration: 3.8 }, 0)
-                .fromTo(this.words, { y: 0 }, {
+                .to(this.$refs.h1.children[0], { x: "-120%", duration: 5 })
+                .to(this.$refs.h1.children[1], { x: "120%", duration: 3.8 }, 0)
+                .to(this.words, {
                     duration: 3, y: "-100%", stagger: 0.05,
                 }, 0)
-                .fromTo(this.$refs.link2.$el.children, { y: 0 }, { y: "-110%", duration: 2.5 }, 0.8)
+                .to(this.$refs.link2.$el.children, { y: "-110%", duration: 2.5 }, 0.8)
 
             ScrollTrigger.create({
                 trigger: "#hero",
