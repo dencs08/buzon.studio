@@ -26,7 +26,7 @@ export default {
     mounted() {
         let tlScroll = gsap.timeline({ defaults: { ease: "none" } })
             .fromTo(this.$refs.header, { x: 0 }, { x: "-110%", duration: 20 })
-            .fromTo(this.$refs.ourWorksSlider.$el, { x: '101%' }, { x: "-200%", duration: 17 }, 12)
+            .fromTo(this.$refs.ourWorksSlider.$el, { x: '101%' }, { x: "-200%", duration: 17 }, 10)
 
         setTimeout(() => {
             console.log("TEST");
