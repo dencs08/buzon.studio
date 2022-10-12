@@ -4,32 +4,32 @@
     height: clamp(75vh, 90vh, 100vh);
 
     .word {
-        transform: translateY(100%);
-    }
-}
-
-h1 {
-    font-family: $font-family-header;
-
-    .buzon {
-        font-size: clamp(1.75rem, 32vw, 100rem);
-        line-height: clamp(1.75rem, 22vw, 100rem);
-        letter-spacing: 35px;
+        translate: 0px 100%;
     }
 
-    .studio {
-        font-size: clamp(1.75rem, 22vw, 100rem);
-        line-height: clamp(1.75rem, 16vw, 100rem);
-        letter-spacing: 35px;
-    }
-}
+    h1 {
+        font-family: $font-family-header;
 
-h2 {
-    font-size: clamp(1rem, 1.6vw, 3rem);
+        .buzon {
+            font-size: clamp(1.75rem, 32vw, 100rem);
+            line-height: clamp(1.75rem, 22vw, 100rem);
+            letter-spacing: 35px;
+        }
+
+        .studio {
+            font-size: clamp(1.75rem, 22vw, 100rem);
+            line-height: clamp(1.75rem, 16vw, 100rem);
+            letter-spacing: 35px;
+        }
+    }
+
+    h2 {
+        font-size: clamp(1rem, 1.6vw, 3rem);
+    }
 }
 
 @media (max-width: $md-screen-size) {
-    #landing-page {
+    #hero {
         height: auto;
 
         h2 {
