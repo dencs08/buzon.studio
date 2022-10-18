@@ -1,13 +1,13 @@
 <template>
     <div class="button-trail">
         <form>
-            <a href="/kontakt">
+            <router-link to="Kontakt">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 {{ text }}
-            </a>
+            </router-link>
         </form>
     </div>
 </template>
