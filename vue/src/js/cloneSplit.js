@@ -14,10 +14,20 @@ export function splitToWords(elementToSplit) {
     });
 }
 
+export function splitToLines(elementToSplit) {
+    const lines = new SplitType(elementToSplit, { types: 'lines' });
+
+    console.log(lines);
+    lines.lines.forEach(line => {
+        wrap(line)
+    });
+}
+
 function wrap(toWrap, wrapper) {
     wrapper = wrapper || document.createElement('span');
     toWrap.parentNode.appendChild(wrapper);
     wrapper.classList.add('clip');
+    wrapper.classList.add('inline-block');
     wrapper.append(' ')
     return wrapper.appendChild(toWrap);
 };
