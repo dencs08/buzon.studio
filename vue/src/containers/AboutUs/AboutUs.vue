@@ -1,5 +1,5 @@
 <template>
-    <section id="aboutUs">
+    <section ref="section" id="aboutUs">
         <div class="container md:flex justify-end items-center h-[30vh]">
             <div class="md:w-1/2 md:px-4">
                 <p class="font-color-dark" ref="text">
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { scrubTextReveal } from '../../js/textReveal'
 let name = import.meta.env.VITE_NAME;
 export default {
     data() {
@@ -25,6 +26,10 @@ export default {
 
     mounted() {
         let text = this.$refs.text;
+
+        setTimeout(() => {
+            scrubTextReveal(text, this.$refs.section)
+        }, 1000);
     }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
-    <section id="portfolio" class="overflow-hidden">
+    <section id="portfolio" class="overflow-hidden relative">
         <div id="portfolio-content" class="container mt-5">
-            <h3 ref="header" class="mb-5 uppercase font-bold sectionHeader absolute top-[-20%] z-[-1]">Projekty</h3>
+            <h3 ref="header" class="mb-5 uppercase font-bold sectionHeader absolute top-[-15%] z-[-1]">Projekty</h3>
         </div>
         <OurWorksSlider ref="ourWorksSlider" />
         <div class="portfolio-container container">
@@ -24,23 +24,24 @@ export default {
     },
 
     mounted() {
-        let tlScroll = gsap.timeline({ defaults: { ease: "none" } })
+        let tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true })
             .fromTo(this.$refs.header, { x: 0 }, { x: "-110%", duration: 20 })
+            .to(this.$refs.header, { color: "#555", duration: 5 }, ">-7")
             .fromTo(this.$refs.ourWorksSlider.$el, { x: '101%' }, { x: "-200%", duration: 17 }, 10)
 
         setTimeout(() => {
-            console.log("TEST");
             if (!window.matchMedia("(min-width: 1024px)").matches) return;
+            gsap.registerPlugin(ScrollTrigger)
             ScrollTrigger.create({
                 trigger: "#portfolio",
                 start: "40% 50%",
                 end: "+=5000",
-                scroller: "main",
+                scroller: "#smoothScroll",
                 animation: tlScroll,
                 scrub: true,
                 pin: true,
             })
-        }, 3000);
+        }, 100);
     },
 };
 </script>

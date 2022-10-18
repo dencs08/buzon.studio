@@ -1,5 +1,5 @@
 <template>
-    <section id="hero" class="flex items-top mb-[25vh] overflow-hidden">
+    <section id="hero" class="flex items-top overflow-hidden">
         <div class="container md:my-0">
             <h1 ref="h1" class=" mt-[14vh] kern-0">
                 <div class="clip">
@@ -53,9 +53,9 @@ export default {
     },
 
     setup() {
-        let h1, words;
+        let h1, words, tlScroll;
         return {
-            h1, words
+            h1, words, tlScroll
         }
     },
 
@@ -70,8 +70,13 @@ export default {
         let tl = gsap.timeline({ defaults: { ease: "expo.out" } });
         tl.to(this.$refs.h1.children[0].children, { y: "0", delay: 1, })
             .to(this.$refs.h1.children[1].children, { y: "0", }, "<0.25")
-            .to(this.words, { y: "0", stagger: 0.02 })
-            .to(this.$refs.link2.$el, { opacity: "1", ease: "power2.in", onComplete: () => { this.scrollTriggerAnimations() } }, ">-0.5")
+            .to(this.words, { y: "0", stagger: 0.02, onComplete: () => { this.scrollTriggerWords() } })
+            .to(this.$refs.link2.$el, { opacity: "1", ease: "power2.in" }, ">-0.5")
+
+
+        setTimeout(() => {
+            this.scrollTriggerAnimations()
+        }, 50);
     },
 
     methods: {
@@ -81,23 +86,29 @@ export default {
         scrollTriggerAnimations() {
             gsap.registerPlugin(ScrollTrigger)
 
-            let tlScroll = gsap.timeline({ defaults: { ease: "none" } })
-                .to(this.$refs.h1.children[0], { x: "-120%", duration: 5 })
-                .to(this.$refs.h1.children[1], { x: "120%", duration: 3.8 }, 0)
-                .to(this.words, {
-                    duration: 3, y: "-100%", stagger: 0.05,
-                }, 0)
-                .to(this.$refs.link2.$el.children, { y: "-110%", duration: 2.5 }, 0.8)
+            this.tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true });
+            this.tlScroll
+                .to(this.$refs.h1.children[0], { x: "-75%", duration: 3, delay: 0.25, })
+                .to(this.$refs.h1.children[1], { x: "110%", duration: 3 }, "<")
 
             ScrollTrigger.create({
                 trigger: "#hero",
-                start: "56% 50%",
+                start: "50% 50%",
                 end: "+=1000",
-                scroller: "main",
-                animation: tlScroll,
+                scroller: "#smoothScroll",
+                animation: this.tlScroll,
                 scrub: true,
                 pin: true,
             })
+        },
+
+        //separate function for adding .words into scrub timeline of hero section 
+        //(otherwise .words would jump to the end of the animation or start from the initial position if used fromTo())
+        //TODO make better solution for this...
+        scrollTriggerWords() {
+            this.tlScroll
+                .to(this.words, { duration: 2, y: "-100%", }, 1)
+                .to(this.$refs.link2.$el.children, { y: "-110%", duration: 2 }, "<")
         }
     },
 };
