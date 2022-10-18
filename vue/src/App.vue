@@ -2,11 +2,17 @@
     <LinkSkip />
     <Navbar />
     <Cursor ref="cursor" />
+
+
     <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in" @leave="leave" @enter="enter">
-            <component :is="Component" id="routerView" />
-        </transition>
+        <div id="smoothScroll">
+            <transition name="fade" mode="out-in" @leave="leave" @enter="enter">
+                <component :is="Component" id="routerView" />
+            </transition>
+        </div>
     </router-view>
+
+
 </template>
 
 <script>
@@ -23,8 +29,8 @@ export default {
     },
     methods: {
         leave() {
-            this.$refs.cursor.restartCursor()
             locoDestroy()
+            this.$refs.cursor.restartCursor()
         },
         enter() {
             this.$refs.cursor.getCursorTriggers()

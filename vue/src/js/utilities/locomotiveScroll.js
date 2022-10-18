@@ -2,14 +2,14 @@ import LocomotiveScroll from 'locomotive-scroll'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// let locoScroll;
+let locoScroll;
 // let lsUpdate;
 
 export function locoInit(timeout) {
     gsap.registerPlugin(ScrollTrigger);
     setTimeout(() => {
-        const scrollEl = document.querySelector("main");
-        window.locoScroll = new LocomotiveScroll({
+        const scrollEl = document.querySelector("#smoothScroll");
+        locoScroll = new LocomotiveScroll({
             el: scrollEl,
             smooth: true,
             multiplier: 1,
@@ -24,16 +24,16 @@ export function locoInit(timeout) {
             }
         });
 
-        window.locoScroll.stop()
+        locoScroll.stop()
         setTimeout(() => {
-            window.locoScroll.start()
+            locoScroll.start()
         }, 2000);
 
-        window.locoScroll.on("scroll", (args) => {
+        locoScroll.on("scroll", (args) => {
             document.documentElement.setAttribute('data-direction', args.direction)
         })
 
-        window.locoScroll.on("scroll", ScrollTrigger.update)
+        locoScroll.on("scroll", ScrollTrigger.update)
 
         ScrollTrigger.scrollerProxy(scrollEl, {
             scrollTop(value) {
@@ -58,7 +58,7 @@ export function locoInit(timeout) {
                 }
                 return null;
             },
-            pinType: document.querySelector("main").style.transform ? "transform" : "fixed"
+            pinType: scrollEl.style.transform ? "transform" : "fixed"
         });
 
         ScrollTrigger.addEventListener("refresh", () => lsUpdate());
@@ -68,13 +68,13 @@ export function locoInit(timeout) {
 }
 
 function lsUpdate() {
-    window.locoScroll.update();
+    locoScroll.update();
 }
 
 export function locoDestroy() {
-    if (window.locoScroll) {
+    if (locoScroll) {
         ScrollTrigger.removeEventListener("refresh", lsUpdate);
-        window.locoScroll.destroy();
-        window.locoScroll = null;
+        locoScroll.destroy();
+        locoScroll = null;
     }
 }
