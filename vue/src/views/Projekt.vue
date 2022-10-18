@@ -1,6 +1,6 @@
 <template>
     <main>
-        <ProjectHero :name="$route.params.projectName" :image="image" />
+        <ProjectHero :name="$route.params.projectName" />
         <ProjectInfo />
         <ProjectImages :name="$route.params.projectName" :imagesCount="1" />
         <Footer />
@@ -12,11 +12,6 @@ import { Footer, ProjectHero, ProjectInfo, ProjectImages } from "../containers";
 export default {
     name: "Projekt",
     components: { Footer, ProjectHero, ProjectInfo, ProjectImages },
-    computed: {
-        image() {
-            return `../src/assets/images/portfolio/${this.$route.params.projectName}/${this.$route.params.projectName}_portfolio.jpg`;
-        },
-    },
 };
 </script>
 
