@@ -39,10 +39,11 @@
 html {
     font-size: 16px;
 
-    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
-main {
+#smoothScroll {
     overflow-y: hidden !important;
 }
 
@@ -54,7 +55,7 @@ body {
     font-family: $font-family-primary;
 
     overflow-x: hidden !important;
-    overflow-y: hidden;
+    overflow-y: hidden !important;
 
     background-color: $body-bg !important;
     /*background-image: url("/images/bg_img.png") !important;
@@ -84,7 +85,9 @@ img {
 }
 
 @media (max-width: $lg-screen-size) {
+    html,
+    main,
     body {
-        overflow-y: auto;
+        overflow-y: auto !important;
     }
 }
