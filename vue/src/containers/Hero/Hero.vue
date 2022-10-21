@@ -14,10 +14,10 @@
                 <h2 id="heroH2" ref="h2" class="fw-normal font-family-primary relative">
                     <LinkParagraph to="Oferta" @mouseover="$refs.link2.animationStart()"
                         @mouseleave="$refs.link2.handleMouseLeave()">
-                        <span ref="span" :class="{'opacity-0' : isSplit}" class="font-color-darker duration-200 kern-0">
+                        <span ref="span" :class="{'opacity-0' : isSplit}"
+                            class="font-color-darker duration-200 kern-0 mr-2">
                             Tworzymy strony internetowe, wizualizacje, logo,
                             marketing online i inne produkty cyfrowe z pomocą metody</span>
-                        {{}}
                         <!-- <span
                         data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
                     > -->
@@ -61,8 +61,8 @@ export default {
     mounted() {
         this.h1 = this.$refs.h1;
 
-        const elementToSplit = this.$refs.span
-        splitToLines(elementToSplit);
+        const span = this.$refs.span
+        splitToLines(span);
         this.isSplit = false;
         this.lines = document.querySelectorAll("#heroH2 .line")
 
