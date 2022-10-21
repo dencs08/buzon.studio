@@ -15,9 +15,8 @@
                     <LinkParagraph to="Oferta" @mouseover="$refs.link2.animationStart()"
                         @mouseleave="$refs.link2.handleMouseLeave()">
                         <span ref="span" :class="{'opacity-0' : isSplit}" class="font-color-darker duration-200 kern-0">
-                            Tworzymy strony internetowe, wizualizacje, branding,
-                            marketing online i inne produkty cyfrowe z pomocą
-                            metody</span>
+                            Tworzymy strony internetowe, wizualizacje, logo,
+                            marketing online i inne produkty cyfrowe z pomocą metody</span>
                         {{}}
                         <!-- <span
                         data-tooltip="Dzięki All-in-One zaosczędzisz czas i pieniądze, nie martw się o zatrudnianie kilku zespołów osobno - my realizujemy wszystko od A do Z."
@@ -38,7 +37,7 @@ import { LinkPrimary, LinkParagraph } from "../../components";
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import { splitToWords } from "../../js/cloneSplit";
+import { splitToLines } from "../../js/cloneSplit";
 
 export default {
     components: {
@@ -53,9 +52,9 @@ export default {
     },
 
     setup() {
-        let h1, words, tlScroll;
+        let h1, lines, tlScroll;
         return {
-            h1, words, tlScroll
+            h1, lines, tlScroll
         }
     },
 
@@ -63,14 +62,14 @@ export default {
         this.h1 = this.$refs.h1;
 
         const elementToSplit = this.$refs.span
-        splitToWords(elementToSplit);
+        splitToLines(elementToSplit);
         this.isSplit = false;
-        this.words = document.querySelectorAll("#heroH2 .word")
+        this.lines = document.querySelectorAll("#heroH2 .line")
 
         let tl = gsap.timeline({ defaults: { ease: "expo.out" } });
         tl.to(this.$refs.h1.children[0].children, { y: "0", delay: 1, })
             .to(this.$refs.h1.children[1].children, { y: "0", }, "<0.25")
-            .to(this.words, { y: "0", stagger: 0.02, onComplete: () => { this.scrollTriggerWords() } })
+            .to(this.lines, { y: "0", stagger: 0.02, onComplete: () => { this.scrollTriggerLines() } })
             .to(this.$refs.link2.$el, { opacity: "1", ease: "power2.in" }, ">-0.5")
 
 
@@ -105,9 +104,9 @@ export default {
         //separate function for adding .words into scrub timeline of hero section 
         //(otherwise .words would jump to the end of the animation or start from the initial position if used fromTo())
         //TODO make better solution for this...
-        scrollTriggerWords() {
+        scrollTriggerLines() {
             this.tlScroll
-                .to(this.words, { duration: 2, y: "-100%", }, 1)
+                .to(this.lines, { duration: 2, y: "-100%", }, 1)
                 .to(this.$refs.link2.$el.children, { y: "-110%", duration: 2 }, "<")
         }
     },
