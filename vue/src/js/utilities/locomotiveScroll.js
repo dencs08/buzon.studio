@@ -31,6 +31,8 @@ export function locoInit(timeout) {
 
         locoScroll.on("scroll", (args) => {
             document.documentElement.setAttribute('data-direction', args.direction)
+
+            scrollProgress(args.scroll.y, args.limit.y)
         })
 
         locoScroll.on("scroll", ScrollTrigger.update)
@@ -70,6 +72,12 @@ export function locoInit(timeout) {
 function lsUpdate() {
     locoScroll.update();
 }
+
+export function scrollProgress(scrollY, limitY) {
+    const progress = scrollY / limitY * 100
+    document.documentElement.setAttribute('data-scroll-progress', progress)
+}
+
 
 export function locoDestroy() {
     if (locoScroll) {
