@@ -1,20 +1,12 @@
 <template>
     <Transition name="slide" mode="out-in">
-        <button
-            v-if="isToggled == true"
-            class="cursor-pointer font-color-dark bottom-0"
-            :data-toggle="isToggled ? 'ON' : 'OFF'"
-            @click="toggle"
-        >
-            <span>Włącz 3D</span>
+        <button v-if="isToggled == true" class="cursor-pointer font-color-dark bottom-0"
+            :data-toggle="isToggled ? 'ON' : 'OFF'" @click="toggle">
+            <span class="uppercase">Włącz 3D</span>
         </button>
-        <button
-            v-else-if="isToggled == false"
-            class="cursor-pointer font-color-dark"
-            :data-toggle="isToggled ? 'ON' : 'OFF'"
-            @click="toggle"
-        >
-            <span>Wyłącz 3D</span>
+        <button v-else-if="isToggled == false" class="cursor-pointer font-color-dark"
+            :data-toggle="isToggled ? 'ON' : 'OFF'" @click="toggle">
+            <span class="uppercase">Wyłącz 3D</span>
         </button>
     </Transition>
 </template>
