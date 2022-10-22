@@ -79,7 +79,7 @@
 import gsap from "gsap";
 import { LinkPrimary, SocialIcons, ToggleThree } from "../";
 
-import calculatePageScroll from "../../js/utilities/scrollPercentage";
+import { scrollProgress } from "../../js/utilities/locomotiveScroll";
 
 let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
@@ -113,7 +113,8 @@ export default {
             const RouterViewWrapper = document.getElementById("routerView");
             let tl = gsap.timeline();
 
-            calculatePageScroll(RouterViewWrapper);
+            let percentageScrolled = document.documentElement.getAttribute('data-scroll-progress')
+            RouterViewWrapper.style.transformOrigin = `50% ${percentageScrolled}%`;
 
             if (open === true) {
                 this.animationOpen(tl, RouterViewWrapper);
