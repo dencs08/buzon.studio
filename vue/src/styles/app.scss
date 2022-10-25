@@ -78,8 +78,8 @@ img {
 
 .c-scrollbar_thumb {
     background-color: $font-color-fourth !important;
-    opacity: 0.3;
-    width: 7px;
+    opacity: 0 !important;
+    width: 0px !important;
     border-radius: 10px;
     margin: 2px;
 }
