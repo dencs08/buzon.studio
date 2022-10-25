@@ -1,26 +1,23 @@
 @import "../../styles/_variables";
 
 #hero {
-    height: clamp(75vh, 100vh, 100vh);
+    .container-hero {
+        margin-right: none;
+        margin-left: none;
+        padding-left: clamp(15px, 4vw, 350px);
+        padding-right: clamp(15px, 4vw, 350px);
+    }
 
     .line {
-        translate: 0px 100%;
+        // translate: 0px 100%;
     }
 
     h1 {
         font-family: $font-family-header;
 
-        .buzon {
-            font-size: clamp(1.75rem, 32vw, 100rem);
-            line-height: clamp(1.75rem, 22vw, 100rem);
-            letter-spacing: 35px;
-        }
-
-        .studio {
-            font-size: clamp(1.75rem, 22vw, 100rem);
-            line-height: clamp(1.75rem, 16vw, 100rem);
-            letter-spacing: 35px;
-        }
+        font-size: clamp(1.75rem, 32vh, 100rem);
+        line-height: clamp(1.75rem, 24vh, 100rem);
+        letter-spacing: clamp(0.5rem, 0.5vw, 5rem);
     }
 
     h2 {
@@ -30,7 +27,13 @@
 
 @media (max-width: $md-screen-size) {
     #hero {
-        height: auto;
+        // height: auto;
+
+        h1 {
+            font-size: clamp(1.75rem, 24vw, 100rem) !important;
+            line-height: clamp(1.75rem, 18vw, 100rem) !important;
+            letter-spacing: clamp(0.5rem, 0.5vw, 5rem) !important;
+        }
 
         h2 {
             font-size: clamp(0.7rem, 2.2vw, 1.5rem);
