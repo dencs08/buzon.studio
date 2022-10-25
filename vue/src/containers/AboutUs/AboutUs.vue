@@ -1,15 +1,11 @@
 <template>
     <section ref="section" id="aboutUs">
-        <div class="container md:flex justify-end items-center h-[30vh]">
-            <div class="md:w-1/2 md:px-4">
-                <p class="font-color-dark" ref="text">
-                    <b class="uppercase font-bold">{{ name }}</b> to 5 lat
-                    doświadczenia w tworzeniu projektów i pomaganiu markom w
-                    zwiększaniu efektywności ich działania. Stawiamy czoło
-                    wyzwaniom i osiągamy cele poprzez współpracę z Wami. Dzięki
-                    wspólnej pracy, wspólnie możemy uzyskać wspaniałe efekty.
-                </p>
-            </div>
+        <div class="container w-11/12 grid content-center text-center w-screen h-screen">
+            <p class="font-color-dark" ref="text">
+                <b class="uppercase font-bold">{{ name }}</b> to 5 lat
+                doświadczenia w tworzeniu projektów i pomaganiu markom w
+                optymalizacji ich działań marketingowych. Stwórzmy coś razem!
+            </p>
         </div>
     </section>
 </template>
@@ -17,6 +13,13 @@
 <script>
 import { scrubTextReveal } from '../../js/textReveal'
 let name = import.meta.env.VITE_NAME;
+
+
+import { splitToLines } from "../../js/cloneSplit"
+
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
 export default {
     data() {
         return {
@@ -26,10 +29,35 @@ export default {
 
     mounted() {
         let text = this.$refs.text;
+        let section = this.$refs.section;
+
+        // setTimeout(() => {
+        //     scrubTextReveal(text, this.$refs.section)
+        // }, 1000);
 
         setTimeout(() => {
-            scrubTextReveal(text, this.$refs.section)
-        }, 1000);
+            splitToLines(text);
+            let lines = text.querySelectorAll(".line");
+
+            gsap.registerPlugin(ScrollTrigger)
+
+            let tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true });
+            tlScroll
+                .fromTo(lines, { y: "100%" }, { y: "0%", duration: 1, stagger: 0.05 })
+                .to(lines, { y: "0", duration: .75, stagger: 0.05 })
+                .to(lines, { y: "-100%", duration: 1, stagger: 0.05 })
+
+
+            ScrollTrigger.create({
+                trigger: section,
+                start: "50% 50%",
+                end: "+=1500",
+                scroller: "#smoothScroll",
+                animation: tlScroll,
+                scrub: 1,
+                pin: true,
+            })
+        }, 1000)
     }
 };
 </script>
