@@ -20,6 +20,7 @@ export function splitToLines(elementToSplit) {
     console.log(lines);
     lines.lines.forEach(line => {
         wrap(line)
+        line.classList.add("translate-y-[100%]")
     });
 }
 
