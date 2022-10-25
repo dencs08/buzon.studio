@@ -1,5 +1,5 @@
 <template>
-    <div class="grid-item main-track bg-transparent font-color-primary p-0 mb-10 lg:mb-16">
+    <div class="grid-item main-track bg-transparent font-color-primary p-0">
         <div class="slide-track w-full whitespace-nowrap bg-transparent">
             <SliderItem title="danfit"
                 info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis magnam delectus aliquid, officiis quibusdam."
@@ -32,6 +32,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import './ourworksslider.scss';
 </style>
