@@ -1,13 +1,15 @@
 <template>
     <section id="portfolio" class="overflow-hidden relative">
-        <div id="portfolio-content" class="container mt-5">
-            <h3 ref="header"
-                class="mb-5 uppercase font-bold sectionHeader font-family-header absolute top-[-20%] z-[-1]">Projekty
-            </h3>
-        </div>
-        <OurWorksSlider ref="ourWorksSlider" />
-        <div class="portfolio-container container">
-            <LinkPrimary to="Portfolio" text="Więcej prac" :primary="true" :point="true" class="my-4 uppercase" />
+        <div class="h-[100vh] flex items-center">
+            <div id="portfolio-content" class="container">
+                <h3 ref="header" class="uppercase font-bold sectionHeader font-family-header absolute top-[25%] z-[-1]">
+                    Projekty
+                </h3>
+                <OurWorksSlider ref="ourWorksSlider" class="" />
+
+                <LinkPrimary ref="portfolioLink" to="Portfolio" text="Więcej prac" :primary="true" :point="true"
+                    class="uppercase portfolio-link absolute bottom-[5%]" />
+            </div>
         </div>
     </section>
 </template>
@@ -28,15 +30,16 @@ export default {
     mounted() {
         let tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true })
             .fromTo(this.$refs.header, { x: 0 }, { x: "-101%", duration: 7, ease: "sine.out" })
-            .to(this.$refs.header, { color: "#555", duration: 7 }, "<0.65")
-            .fromTo(this.$refs.ourWorksSlider.$el, { x: '100%' }, { x: "-200%", duration: 8 }, "<1")
+            .to(this.$refs.header, { color: "#777777", duration: 7 }, "<2")
+            .fromTo(this.$refs.ourWorksSlider.$el, { x: '100%' }, { x: "-215%", duration: 8 }, "<-1")
+            .fromTo(this.$refs.portfolioLink.$el, { opacity: 0 }, { opacity: 1, duration: 2 }, ">-2")
 
         setTimeout(() => {
             if (!window.matchMedia("(min-width: 1024px)").matches) return;
             gsap.registerPlugin(ScrollTrigger)
             ScrollTrigger.create({
                 trigger: "#portfolio",
-                start: "40% 50%",
+                start: "50% 50%",
                 end: "+=5000",
                 scroller: "#smoothScroll",
                 animation: tlScroll,

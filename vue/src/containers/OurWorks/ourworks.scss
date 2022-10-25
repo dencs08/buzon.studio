@@ -3,8 +3,9 @@
 #portfolio {
     h3.sectionHeader {
         font-size: clamp(0.8rem, 55vw, 50rem) !important;
+        line-height: clamp(0.8rem, 39vw, 50rem);
     }
-    .portfolio-container {
+    .portfolio-link {
         font-size: clamp(0.8rem, 2vw, 3rem);
     }
 }
