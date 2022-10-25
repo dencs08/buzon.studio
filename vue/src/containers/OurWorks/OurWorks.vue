@@ -1,7 +1,9 @@
 <template>
     <section id="portfolio" class="overflow-hidden relative">
         <div id="portfolio-content" class="container mt-5">
-            <h3 ref="header" class="mb-5 uppercase font-bold sectionHeader absolute top-[-15%] z-[-1]">Projekty</h3>
+            <h3 ref="header"
+                class="mb-5 uppercase font-bold sectionHeader font-family-header absolute top-[-20%] z-[-1]">Projekty
+            </h3>
         </div>
         <OurWorksSlider ref="ourWorksSlider" />
         <div class="portfolio-container container">
@@ -25,9 +27,9 @@ export default {
 
     mounted() {
         let tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true })
-            .fromTo(this.$refs.header, { x: 0 }, { x: "-110%", duration: 20 })
-            .to(this.$refs.header, { color: "#555", duration: 5 }, ">-7")
-            .fromTo(this.$refs.ourWorksSlider.$el, { x: '101%' }, { x: "-200%", duration: 17 }, 10)
+            .fromTo(this.$refs.header, { x: 0 }, { x: "-101%", duration: 7, ease: "sine.out" })
+            .to(this.$refs.header, { color: "#555", duration: 7 }, "<0.65")
+            .fromTo(this.$refs.ourWorksSlider.$el, { x: '100%' }, { x: "-200%", duration: 8 }, "<1")
 
         setTimeout(() => {
             if (!window.matchMedia("(min-width: 1024px)").matches) return;
