@@ -11,6 +11,14 @@
         h4 {
             font-size: clamp(1.1rem, 2.5vw, 8.5rem) !important;
         }
+
+        svg {
+            display: inline-block;
+
+            width: 2vw;
+
+            margin-right: 20px;
+        }
     }
 
     .phone-number {

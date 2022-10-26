@@ -11,18 +11,23 @@
                     </div>
 
                     <div class="footer-socials space-y-2">
-                        <LinkPrimary :href="`mailto:${email}?subject = Oferta&body = Wiadomość`" :text="email"
-                            class="font-color-dark" />
+                        <div>
+                            <Icon icon="ri:mail-open-fill" />
+                            <LinkPrimary :href="`mailto:${email}?subject=Oferta&body=Wiadomość`" :text="email"
+                                class="font-color-dark" />
+                        </div>
 
                         <hr class="section-divider w-2/6 my-4 mr-auto" />
 
                         <h4 class="font-color-dark">
-                            {{ phone }}
+                            <Icon icon="ri:phone-fill" />
+                            <span> {{ phone }}</span>
                         </h4>
 
                         <hr class="section-divider w-2/6 my-4 mr-auto" />
 
                         <div>
+                            <Icon icon="ri:facebook-fill" />
                             <LinkPrimary :href="fb" rel="noreferrer" target="_blank" text="Facebook"
                                 class="font-color-dark" />
                         </div>
@@ -30,6 +35,7 @@
                         <hr class="section-divider w-2/6 my-4 mr-auto" />
 
                         <div>
+                            <Icon icon="ri:instagram-line" />
                             <LinkPrimary :href="ig" rel="noreferrer" target="_blank" text="Instagram"
                                 class="font-color-dark" />
                         </div>
@@ -102,6 +108,7 @@ let phone = import.meta.env.VITE_PHONE;
 let fb = import.meta.env.VITE_FB;
 let ig = import.meta.env.VITE_IG;
 
+import { Icon } from "@iconify/vue";
 
 import { LinkPrimary, SocialIcons, ToggleThree } from "../../components";
 
@@ -120,6 +127,7 @@ export default {
         LinkPrimary,
         SocialIcons,
         ToggleThree,
+        Icon
     },
 };
 </script>
