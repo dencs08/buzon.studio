@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <hr class="section-divider my-10 md:my-16 lg:my-20" />
+                <hr class="section-divider my-10 md:my-16 lg:my-20 w-full" />
 
                 <div class="md:grid md:grid-cols-2">
                     <div class="md:pr-5">
