@@ -2,7 +2,8 @@
     <section id="portfolio" class="overflow-hidden relative">
         <div class="h-[100vh] flex items-center">
             <div id="portfolio-content" class="container">
-                <h3 ref="header" class="uppercase font-bold sectionHeader font-family-header absolute top-[25%] z-[-1]">
+                <h3 ref="header"
+                    class="uppercase font-bold sectionHeader font-family-header absolute top-1/2 translate-y-[-50%] z-[-1]">
                     Projekty
                 </h3>
                 <OurWorksSlider ref="ourWorksSlider" class="" />
