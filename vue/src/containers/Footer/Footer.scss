@@ -21,31 +21,27 @@
         }
     }
 
-    .phone-number {
-        font-size: clamp(1.1rem, 2.1vw, 6rem);
-    }
+    // svg {
+    //     // height: clamp(25px, 2.5vw, 60px);
+    //     // width: clamp(25px, 2.5vw, 60px);
 
-    svg {
-        height: clamp(25px, 2.5vw, 60px);
-        width: clamp(25px, 2.5vw, 60px);
+    //     transition: scale 0.2s;
+    //     &:hover {
+    //         scale: 1.1;
+    //     }
+    // }
 
-        transition: scale 0.2s;
-        &:hover {
-            scale: 1.1;
-        }
-    }
+    // .icon-wrapper {
+    //     .icon {
+    //         transition: fill 0.5s;
+    //     }
 
-    .icon-wrapper {
-        .icon {
-            transition: fill 0.5s;
-        }
-
-        &:hover {
-            .icon {
-                fill: $primary-color;
-            }
-        }
-    }
+    //     &:hover {
+    //         .icon {
+    //             fill: $primary-color;
+    //         }
+    //     }
+    // }
 
     ul {
         font-size: clamp(1.15rem, 1.5vw, 2rem);
