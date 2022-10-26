@@ -19,7 +19,7 @@
                             Tworzymy strony internetowe, wizualizacje, logo,
                             marketing online i inne produkty cyfrowe z pomocą metody</span>
 
-                        <LinkPrimary id="linkHero" href="/oferta" text="All-in-One." :primary="true"
+                        <LinkPrimary id="linkHero" to="Oferta" text="All-in-One." :primary="true"
                             class="font-medium clip opacity-0" ref="link2" />
 
                     </LinkParagraph>
