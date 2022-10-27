@@ -4,10 +4,7 @@ export default function clone(obj) {
         clone,
         obj.nextSibling
     );
-    obj.parentNode.insertBefore(
-        document.createElement("br"),
-        obj.nextSibling
-    );
+    obj.nextSibling.classList.add("block")
     clone.classList.add("absolute");
     clone.classList.add("pointer-events-none");
     for (let i = 0; i < clone.children.length; i++) {
