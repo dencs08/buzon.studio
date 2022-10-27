@@ -1,11 +1,11 @@
 import gsap from "gsap";
 
-export function animateCharsIn(textToAnimate, textToAnimateSecond) {
+export function animateCharsIn(textToAnimate, textToAnimateSecond, x) {
     let tl = gsap.timeline({ paused: true });
     tl.to(textToAnimate, {
         duration: 0.3,
         y: "-100%",
-        x: "15px",
+        x: x,
         stagger: 0.02,
         ease: "power2.inOut",
     })
@@ -14,7 +14,7 @@ export function animateCharsIn(textToAnimate, textToAnimateSecond) {
             {
                 duration: 0.35,
                 y: "-100%",
-                x: "15px",
+                x: x,
                 stagger: 0.02,
                 ease: "power2",
             },
@@ -24,12 +24,12 @@ export function animateCharsIn(textToAnimate, textToAnimateSecond) {
     return tl
 }
 
-export function animateWordsIn(textToAnimate, textToAnimateSecond) {
+export function animateWordsIn(textToAnimate, textToAnimateSecond, x) {
     let tl = gsap.timeline({ paused: false });
     tl.to(textToAnimate, {
         duration: 0.3,
         y: "-100%",
-        x: "15px",
+        x: x,
         stagger: 0.02,
         ease: "power2.out",
     })
@@ -37,12 +37,12 @@ export function animateWordsIn(textToAnimate, textToAnimateSecond) {
     return tl
 }
 
-export function animateLinesIn(textToAnimate, textToAnimateSecond) {
+export function animateLinesIn(textToAnimate, textToAnimateSecond, x) {
     let tl = gsap.timeline({ paused: false });
     tl.to(textToAnimate, {
         duration: 2,
         y: "-100%",
-        x: "15px",
+        x: x,
         stagger: 0.02,
         ease: "power2.inOut",
     })
