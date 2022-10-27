@@ -11,7 +11,8 @@
             'leading-none': split,
             active: isMouseOver,
         }" class="transitions cursor-pointer"><span ref="text" class="linkPrimaryText" :class="{ arrow: point }">{{
-        text }}</span>
+        text
+}}</span>
         </component>
     </div>
 
@@ -38,6 +39,7 @@ export default {
         point: Boolean,
         move: Boolean,
         split: Boolean,
+        splitMove: Number,
 
         noUnderline: {
             type: Boolean,
@@ -58,7 +60,8 @@ export default {
 
         this.splitAnimation = animateCharsIn(
             this.$refs.text.children,
-            this.$refs.text.nextSibling.nextSibling.children
+            this.$refs.text.nextSibling.children,
+            this.splitMove
         );
     },
     methods: {
