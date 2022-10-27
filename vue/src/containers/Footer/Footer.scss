@@ -21,30 +21,21 @@
         }
     }
 
-    // svg {
-    //     // height: clamp(25px, 2.5vw, 60px);
-    //     // width: clamp(25px, 2.5vw, 60px);
+    .mail-link {
+        font-size: clamp(1.1rem, 1.5vw, 8rem);
+    }
+    .phone-number {
+        font-size: clamp(1.1rem, 1.5vw, 8rem);
+    }
 
-    //     transition: scale 0.2s;
-    //     &:hover {
-    //         scale: 1.1;
-    //     }
-    // }
-
-    // .icon-wrapper {
-    //     .icon {
-    //         transition: fill 0.5s;
-    //     }
-
-    //     &:hover {
-    //         .icon {
-    //             fill: $primary-color;
-    //         }
-    //     }
-    // }
+    .icon-wrapper {
+        .icon {
+            fill: $font-color-tertiary;
+        }
+    }
 
     ul {
-        font-size: clamp(1.15rem, 1.5vw, 2rem);
+        font-size: clamp(1.15rem, 1.3vw, 2rem);
 
         list-style-type: none;
     }

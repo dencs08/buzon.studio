@@ -1,107 +1,72 @@
 <template>
     <footer id="footer" class="mb-2 relative">
-        <section class="container">
-            <hr class="section-divider mt-6 mb-10 w-full" />
-            <div class="block md:grid grid-cols-4">
-                <div class="col-span-3">
-                    <div class="mb-6 md:mb-12">
-                        <h4 class="mb-4">Masz pomysł na projekt?</h4>
-                        <LinkPrimary text="Opowiedz nam o nim"
-                            class="contact-line cursor-pointer inline-block md:w-7/12" :point="true" to="Kontakt" />
-                    </div>
+        <section>
+            <div class="container">
+                <hr class="section-divider w-full mt-6 mb-14" />
+            </div>
+            <div class="md:grid grid-cols-12 container text-center md:text-left">
+                <div class="col-span-7 mb-8 md:mb-0">
+                    <LinkPrimary text="Powiedz nam o swoim pomyśle"
+                        class="font-family-header contact-line cursor-pointer uppercase mb-4 md:mb-12 xl:w-4/6"
+                        :point="true" to="Kontakt" />
 
-                    <div class="footer-socials space-y-2">
-                        <div>
-                            <Icon icon="ri:mail-open-fill" />
-                            <LinkPrimary :href="`mailto:${email}?subject=Oferta&body=Wiadomość`" :text="email"
-                                class="font-color-dark" />
-                        </div>
-
-                        <hr class="section-divider w-2/6 my-4 mr-auto" />
-
-                        <h4 class="font-color-dark">
-                            <Icon icon="ri:phone-fill" />
-                            <span> {{ phone }}</span>
-                        </h4>
-
-                        <hr class="section-divider w-2/6 my-4 mr-auto" />
-
-                        <div>
-                            <Icon icon="ri:facebook-fill" />
-                            <LinkPrimary :href="fb" rel="noreferrer" target="_blank" text="Facebook"
-                                class="font-color-dark" />
-                        </div>
-
-                        <hr class="section-divider w-2/6 my-4 mr-auto" />
-
-                        <div>
-                            <Icon icon="ri:instagram-line" />
-                            <LinkPrimary :href="ig" rel="noreferrer" target="_blank" text="Instagram"
-                                class="font-color-dark" />
-                        </div>
-                        <hr class="section-divider w-2/6 my-4 mr-auto" />
-
-                    </div>
-
-                    <div class="md:mt-20">
-                        <a href="">
-                            <div
-                                class="hidden md:block goUp w-[100px] h-[100px] rounded-full border-2 border-zinc-700 font-color-darker">
-                                <div class="w-full h-full grid content-center">
-                                    <Icon icon="ri:arrow-up-line" class="mx-auto" width="30px" />
-                                </div>
-                            </div>
-                        </a>
+                    <div>
+                        <router-link :to="{ name: 'Kontakt' }">
+                            <Button text="Kontakt" :point="true" :big="true" />
+                        </router-link>
                     </div>
                 </div>
 
-                <div class="block md:flex flex-col items-end justify-end md:text-right">
-                    <div class="footer-links uppercase mt-4 md:mt-12 mb-4 md:mb-0 fw-light">
-                        <ul class="space-y-2 font-color-dark">
-                            <li>
-                                <LinkPrimary to="Start" text="start" :secondary="true" />
-                            </li>
-                            <li>
-                                <LinkPrimary to="Oferta" text="oferta" :secondary="true" />
-                            </li>
-                            <li>
-                                <LinkPrimary to="Portfolio" text="portfolio" :secondary="true" />
-                            </li>
-                            <li>
-                                <LinkPrimary to="Kontakt" text="kontakt" :secondary="true" />
-                            </li>
-                        </ul>
+                <div class="col-span-5">
+                    <div class="md:grid grid-cols-2">
+                        <div class="mb-8 md:mb-0">
+                            <h4 class="md:mb-5">Kontakt</h4>
+                            <LinkPrimary :href="`mailto:${email}?subject = Oferta&body = Wiadomość`" :text="email"
+                                :primary="true" class="mail-link fw-medium font-color-dark" />
+
+                            <h4 class="phone-number font-color-dark font-medium mb-2 mt-2">
+                                {{ phone }}
+                            </h4>
+                        </div>
+
+                        <div class="font-color-dark md:pl-12">
+                            <h4 class="md:mb-5">Menu</h4>
+                            <ul class="space-y-2 uppercase">
+                                <li>
+                                    <LinkPrimary to="Start" text="start" :secondary="true" />
+                                </li>
+                                <li>
+                                    <LinkPrimary to="Oferta" text="oferta" :secondary="true" />
+                                </li>
+                                <li>
+                                    <LinkPrimary to="Portfolio" text="portfolio" :secondary="true" />
+                                </li>
+                                <li>
+                                    <LinkPrimary to="Kontakt" text="kontakt" :secondary="true" />
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
-                    <hr class="section-divider w-64 my-4 md:ml-auto hidden md:block" />
-
-                    <div class="font-family-header uppercase font-color-darker space-y-2 md:space-y-3">
-                        <div class="">
-                            <ToggleThree class="font-color-darker" />
-                        </div>
-
-                        <hr class="section-divider w-64 my-4 md:ml-auto hidden md:block" />
-
-                        <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true" />
-
-                        <hr class="section-divider w-64 my-4 md:ml-auto hidden md:block" />
-
-                        <div class="">
-                            <span>© 2021 {{ name }} wszelkie prawa
-                                zastrzeżone.</span>
-                        </div>
-
-                        <hr class="section-divider w-64 my-4 md:ml-auto hidden md:block" />
-
-                        <div class="hidden md:block">
-                            <LinkPrimary to="Start" text="BUZON.STUDIO" />
-                        </div>
-
-                    </div>
+                    <SocialIcons class="space-x-3 mt-8" />
                 </div>
             </div>
-            <div class="scroll-blocker"></div>
+
+            <AutoTextSlider text="BUZON.STUDIO" :wordAmount="3" fontSize="12vw" height="10vw" class="my-6 md:my-10" />
+
+            <div class="container font-family-header uppercase text-center md:text-left space-y-2 md:space-y-0">
+                <div class="block md:inline-block mr-0 md:mr-4">
+                    <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true"
+                        class="font-color-dark" />
+                </div>
+                <ToggleThree class="md:inline-block" />
+                <div class="block md:inline-block float-none md:float-right">
+                    <span class="font-color-darker">© 2021 {{ name }} wszelkie prawa
+                        zastrzeżone.</span>
+                </div>
+            </div>
+
         </section>
+        <div class="scroll-blocker"></div>
     </footer>
 </template>
 
@@ -109,12 +74,8 @@
 let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
-let fb = import.meta.env.VITE_FB;
-let ig = import.meta.env.VITE_IG;
 
-import { Icon } from "@iconify/vue";
-
-import { LinkPrimary, SocialIcons, ToggleThree } from "../../components";
+import { LinkPrimary, SocialIcons, ToggleThree, Button, AutoTextSlider } from "../../components";
 
 export default {
     data() {
@@ -122,8 +83,6 @@ export default {
             name: name,
             email: email,
             phone: phone,
-            fb: fb,
-            ig: ig,
         };
     },
 
@@ -131,11 +90,12 @@ export default {
         LinkPrimary,
         SocialIcons,
         ToggleThree,
-        Icon
+        Button,
+        AutoTextSlider
     },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./Footer.scss";
 </style>
