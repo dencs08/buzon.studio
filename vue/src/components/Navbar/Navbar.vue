@@ -51,7 +51,9 @@
                     </div>
                 </div>
             </div>
-            <hr ref="hr" class="section-divider m-0 p-0 scale-x-[0]" />
+            <div class="container w-full">
+                <hr ref="hr" class="section-divider m-0 p-0 scale-x-[0] w-full" />
+            </div>
             <div
                 class="px-[5vw] h-[20vh] sm:h-[15vh] grid content-center md:flex items-center justify-center md:justify-start w-full font-family-header">
                 <div ref="navFooterLinks"
