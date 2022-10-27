@@ -12,7 +12,7 @@
 
                     <div>
                         <router-link :to="{ name: 'Kontakt' }">
-                            <Button text="Kontakt" :point="true" :big="true" />
+                            <Button text="Kontakt" :point="true" :big="true" :split="true" />
                         </router-link>
                     </div>
                 </div>
