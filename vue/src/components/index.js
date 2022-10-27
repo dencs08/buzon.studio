@@ -16,6 +16,7 @@ export { default as ToggleThree } from './CallToAction/ToggleThree/ToggleThree.v
 export { default as ItemHeader } from './Headers/ItemHeader/ItemHeader.vue'
 export { default as SectionHeader } from './Headers/SectionHeader/SectionHeader.vue'
 
+export { default as AutoTextSlider } from './AutoTextSlider/AutoTextSlider.vue'
 export { default as ImageShowcase } from './ImageShowcase/ImageShowcase.vue'
 export { default as SliderItem } from './PortfolioSliderItem/SliderItem.vue'
 export { default as Column } from './WhyUsColumn/Column.vue'
