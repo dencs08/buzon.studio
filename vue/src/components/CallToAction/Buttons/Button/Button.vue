@@ -1,7 +1,7 @@
 <template>
     <button class="btn" :class="[setButtonClass(), setButtonSize(), { arrow: arrow }]" @mouseover="handleMouseOver"
         @animationend="animationEnd" @mouseleave="handleMouseLeave">
-        <div class="clip">
+        <div class="inline-block clip">
             <span ref="text">{{ text }}</span>
         </div>
     </button>
