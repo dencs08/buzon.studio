@@ -57,7 +57,7 @@ export default {
 
         this.anim = animateCharsIn(
             this.$refs.header.children,
-            this.$refs.header.nextSibling.nextSibling.children
+            this.$refs.header.nextSibling.children
         );
     },
 
