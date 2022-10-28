@@ -25,7 +25,9 @@
                     </LinkParagraph>
                 </h2>
 
-                <Button ref="button" text="Oferta" class="mt-6 opacity-0" :arrow="true" :secondary="true" />
+                <router-link :to="{ name: 'Oferta' }">
+                    <Button ref="button" text="Oferta" class="mt-6 opacity-0" :split="true" :secondary="true" />
+                </router-link>
             </div>
 
             <!-- <x-arrow/> -->
