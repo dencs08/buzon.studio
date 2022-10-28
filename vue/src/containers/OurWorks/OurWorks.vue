@@ -6,10 +6,12 @@
                     class="uppercase font-bold sectionHeader font-family-header absolute top-1/2 translate-y-[-50%] z-[-1]">
                     Projekty
                 </h3>
-                <OurWorksSlider ref="ourWorksSlider" class="" />
+                <div class="">
+                    <OurWorksSlider ref="ourWorksSlider" class="" />
+                </div>
 
                 <LinkPrimary ref="portfolioLink" to="Portfolio" text="Więcej prac" :primary="true" :point="true"
-                    class="uppercase portfolio-link absolute bottom-[5%]" />
+                    class="uppercase portfolio-link absolute bottom-[2%]" />
             </div>
         </div>
     </section>
@@ -29,14 +31,15 @@ export default {
     },
 
     mounted() {
-        let tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true })
-            .fromTo(this.$refs.header, { x: 0 }, { x: "-101%", duration: 7, ease: "sine.out" })
-            .to(this.$refs.header, { color: "#777777", duration: 7 }, "<2")
-            .fromTo(this.$refs.ourWorksSlider.$el, { x: '100%' }, { x: "-215%", duration: 8 }, "<-1")
-            .fromTo(this.$refs.portfolioLink.$el, { opacity: 0 }, { opacity: 1, duration: 2 }, ">-2")
-
         setTimeout(() => {
             if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
+            let tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true })
+                .fromTo(this.$refs.header, { x: 0 }, { x: "-101%", duration: 7, ease: "sine.out" })
+                .to(this.$refs.header, { color: "#777777", duration: 4 }, "<3")
+                .fromTo(this.$refs.ourWorksSlider.$el, { x: '200vh' }, { x: "-70%", duration: 8 }, ">-6")
+                .fromTo(this.$refs.portfolioLink.$el, { opacity: 0 }, { opacity: 1, duration: 1 }, ">-1")
+
             gsap.registerPlugin(ScrollTrigger)
             ScrollTrigger.create({
                 trigger: "#portfolio",
