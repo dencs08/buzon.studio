@@ -1,6 +1,6 @@
 <template>
-    <div ref="wrapper" class="h-[50vh] relative">
-        <div ref="grid" class="absolute md:grid grid-cols-3">
+    <div ref="wrapper" class="lg:h-[60vh] relative">
+        <div ref="grid" class="lg:absolute lg:grid grid-cols-3">
             <PortfolioColumn v-for="item in this.items" :items="item" />
         </div>
     </div>
@@ -44,6 +44,7 @@ export default {
             ]
         ]
 
+        if (!window.matchMedia("(min-width: 1024px)").matches) return;
         setTimeout(() => {
             gsap.registerPlugin(ScrollTrigger)
             let tlScroll;
