@@ -27,7 +27,7 @@ export function locoInit(timeout) {
         locoScroll.stop()
         setTimeout(() => {
             locoScroll.start()
-        }, 2000);
+        }, 1000);
 
         locoScroll.on("scroll", (args) => {
             document.documentElement.setAttribute('data-direction', args.direction)
