@@ -23,5 +23,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./portfoliofullpage.scss";
+@import "./portfolioitem.scss";
 </style>
