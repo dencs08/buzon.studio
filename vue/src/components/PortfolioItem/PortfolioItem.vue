@@ -1,8 +1,6 @@
 <template>
-    <div class="mt-10 lg:mt-0">
-        <div class="mb-6 md:mb-10 lg:mb-0">
-            <ImageShowcase :title="title" :info="info" :category="category" />
-        </div>
+    <div class="mb-6 md:mb-10 lg:mb-0 mt-10 lg:mt-0">
+        <ImageShowcase :title="title" :info="info" :category="category" :horizontal="true" />
     </div>
 </template>
 
