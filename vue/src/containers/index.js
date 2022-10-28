@@ -8,6 +8,7 @@ export { default as Footer } from './Footer/Footer.vue'
 export { default as TypedHero } from './TypedHero/TypedHero.vue'
 export { default as OurProcess } from './OurProcess/OurProcess.vue'
 export { default as EmailForm } from './EmailForm/EmailForm.vue'
+export { default as PortfolioGrid } from './PortfolioGrid/PortfolioGrid.vue'
 
 export { default as ProjectHero } from './Project/ProjectHero/ProjectHero.vue'
 export { default as ProjectInfo } from './Project/ProjectInfo/ProjectInfo.vue'
