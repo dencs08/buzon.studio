@@ -23,6 +23,7 @@ export { default as Column } from './WhyUsColumn/Column.vue'
 export { default as CollabItem } from './CollabItem/CollabItem.vue'
 export { default as OurProcessItem } from './OurProcessItem/OurProcessItem.vue'
 export { default as PortfolioItem } from './PortfolioItem/PortfolioItem.vue'
+export { default as PortfolioColumn } from './PortfolioColumn/PortfolioColumn.vue'
 export { default as OurWorksSlider } from './OurWorksSlider/OurWorksSlider.vue'
 
 export { default as Navbar } from './Navbar/Navbar.vue'
