@@ -1,6 +1,6 @@
 <template>
-    <div ref="brandNameSlider" id="brandNameSlider"
-        class="brandNameSlider w-full relative m-auto overflow-hidden select-none" :style="`height: ${height}`">
+    <div ref="brandNameSlider" class="brandNameSlider w-full relative m-auto overflow-hidden select-none"
+        :style="`height: ${height}`">
         <div class="relative font-family-header flex items-center w-full" :style="`height: ${height}`">
             <div v-for="amount in wordAmount" class="text-center absolute"><span>{{ text }}</span></div>
         </div>
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 <style lang="scss">
-#brandNameSlider {
+.brandNameSlider {
     span {
         color: rgb(20, 20, 20);
     }
