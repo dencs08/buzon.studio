@@ -3,7 +3,7 @@
         <Hero />
         <OurWorks />
         <AboutUs />
-        <WhyUs :buttons="true" />
+        <OurOffer :buttons="true" />
         <ContactUs />
         <Collabs />
         <Footer />
@@ -16,7 +16,7 @@ import {
     Hero,
     OurWorks,
     AboutUs,
-    WhyUs,
+    OurOffer,
     ContactUs,
     Collabs,
     Footer,
@@ -27,7 +27,7 @@ export default {
         Hero,
         OurWorks,
         AboutUs,
-        WhyUs,
+        OurOffer,
         ContactUs,
         Collabs,
         Footer,

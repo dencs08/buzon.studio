@@ -1,7 +1,7 @@
 <template>
     <main>
         <TypedHero />
-        <WhyUs :buttons="false" :contactParagraph="true" />
+        <OurOffer :buttons="false" :contactParagraph="true" />
         <OurProcess />
         <Collabs />
         <Footer />
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import { TypedHero, WhyUs, OurProcess, Collabs, Footer } from "../containers";
+import { TypedHero, OurOffer, OurProcess, Collabs, Footer } from "../containers";
 export default {
     name: "Oferta",
     components: {
         TypedHero,
-        WhyUs,
+        OurOffer,
         OurProcess,
         Collabs,
         Footer,
