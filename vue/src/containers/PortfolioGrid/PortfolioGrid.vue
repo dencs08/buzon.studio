@@ -1,5 +1,5 @@
 <template>
-    <div ref="wrapper" class="lg:h-[60vh] relative">
+    <div ref="wrapper" class="lg:h-[60vh] relative mb-[10vw]">
         <div ref="grid" class="lg:absolute lg:grid grid-cols-3">
             <PortfolioColumn v-for="item in this.items" :items="item" />
         </div>
@@ -57,7 +57,7 @@ export default {
             ScrollTrigger.create({
                 trigger: this.$refs.wrapper,
                 start: "180% 100%",
-                end: "1000%",
+                end: "+=1500",
                 scroller: "#smoothScroll",
                 animation: tlScroll,
                 scrub: true,
