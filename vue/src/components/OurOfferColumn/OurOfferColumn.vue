@@ -1,7 +1,7 @@
 <template>
-    <div class="md:h-screen grid content-center">
+    <div class="">
         <router-link :to="{ name: 'Oferta' }" @mouseover="mouseOver" @mouseleave="mouseLeave">
-            <div class="offer-wrapper relative">
+            <div class="offer-wrapper relative h-screen grid content-center">
                 <div class="mb-10 md:mb-0 sm:flex justify-center items-center">
                     <div class="my-0 ml-0 sm:ml-2 md:ml-4">
                         <ItemHeader :text="title" :big="true" :move="true" headerClass="inline-block uppercase"
@@ -11,11 +11,9 @@
                                 {{ paragraph }}
                             </p>
                             <Button text="Oferta" class="mt-6" :arrow="true" :secondary="true" v-if="buttons" />
-                            <AutoTextSlider :text="ul" :wordAmount="2" fontSize="12vw" height="8vw"
-                                class="my-6 md:my-10" />
-                            <AutoTextSlider :text="ul" :wordAmount="2" fontSize="12vw" height="8vw"
-                                class="my-6 md:my-10" />
-
+                            <ScrubTextSlider :text="text" fontSize="12vw" height="8vw" class="" />
+                            <ScrubTextSlider :text="textSecond" fontSize="12vw" height="8vw" class=""
+                                :isReverse="true" />
                         </div>
                     </div>
                 </div>
@@ -27,21 +25,22 @@
 import {
     ItemHeader,
     Button,
-    AutoTextSlider
+    ScrubTextSlider
 } from "../../components";
 
 export default {
     props: {
         title: String,
         paragraph: String,
-        ul: String,
+        text: Array,
+        textSecond: Array,
         buttons: Boolean,
     },
 
     components: {
         ItemHeader,
         Button,
-        AutoTextSlider
+        ScrubTextSlider
 
     },
 
