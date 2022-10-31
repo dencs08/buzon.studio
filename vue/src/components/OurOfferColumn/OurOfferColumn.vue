@@ -1,8 +1,8 @@
 <template>
-    <div class="">
+    <div>
         <router-link :to="{ name: 'Oferta' }" @mouseover="mouseOver" @mouseleave="mouseLeave">
-            <div class="offer-wrapper relative h-screen grid content-center">
-                <div class="mb-10 md:mb-0 sm:flex justify-center items-center">
+            <div class="offer-wrapper relative md:h-screen flex items-center">
+                <div class="mb-10 md:mb-0 overflow-hidden">
                     <div class="my-0 ml-0 sm:ml-2 md:ml-4">
                         <ItemHeader :text="title" :big="true" :move="true" headerClass="inline-block uppercase"
                             ref="header" />
