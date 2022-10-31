@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <router-link :to="{ name: 'Oferta' }" @mouseover="mouseOver" @mouseleave="mouseLeave">
-            <div class="offer-wrapper relative md:h-screen flex items-center">
+    <div class="md:h-screen flex flex-col justify-center">
+        <router-link :to="{ name: to }" @mouseover="mouseOver" @mouseleave="mouseLeave">
+            <div class="offer-wrapper relative">
                 <div class="mb-10 md:mb-0 overflow-hidden">
                     <div class="my-0 ml-0 sm:ml-2 md:ml-4">
                         <ItemHeader :text="title" :big="true" :move="true" headerClass="inline-block uppercase"
@@ -11,21 +11,35 @@
                                 {{ paragraph }}
                             </p>
                             <Button text="Oferta" class="mt-6" :arrow="true" :secondary="true" v-if="buttons" />
-                            <ScrubTextSlider :text="text" fontSize="12vw" height="8vw" class="" />
-                            <ScrubTextSlider :text="textSecond" fontSize="12vw" height="8vw" class=""
-                                :isReverse="true" />
+                            <div>
+                                <ScrubTextSlider :text="text" fontSize="12vw" height="8vw" class="" />
+                                <ScrubTextSlider :text="textSecond" fontSize="12vw" height="8vw" class=""
+                                    :isReverse="true" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </router-link>
+        <div class="contactUs ml-4 mt-6 md:mt-12 h-[100px]">
+            <LinkParagraph :to="to" @mouseover="$refs.link2.animationStart()"
+                @mouseleave="$refs.link2.handleMouseLeave()">
+                <span ref="span" class="font-color-darker duration-200 kern-0 mr-2">
+                    {{ bottomLinkText[0] }}</span>
+
+                <LinkPrimary :to="to" :text="bottomLinkText[1]" :primary="true" class="font-medium" ref="link2" />
+
+            </LinkParagraph>
+        </div>
     </div>
 </template>
 <script>
 import {
     ItemHeader,
     Button,
-    ScrubTextSlider
+    ScrubTextSlider,
+    LinkParagraph,
+    LinkPrimary
 } from "../../components";
 
 export default {
@@ -35,13 +49,16 @@ export default {
         text: Array,
         textSecond: Array,
         buttons: Boolean,
+        to: String,
+        bottomLinkText: Array,
     },
 
     components: {
         ItemHeader,
         Button,
-        ScrubTextSlider
-
+        ScrubTextSlider,
+        LinkParagraph,
+        LinkPrimary
     },
 
     methods: {
@@ -58,6 +75,6 @@ export default {
     },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import './ouroffercolumn.scss';
 </style>

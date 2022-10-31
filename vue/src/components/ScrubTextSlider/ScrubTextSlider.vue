@@ -37,9 +37,10 @@ export default {
 
     mounted() {
         const textToAnimate = this.$refs.TextToAnimate;
-        const parent = this.$parent.$el.children[0];
+        const parent = this.$parent.$el.parentNode;
         let tl = gsap.timeline({ defaults: { ease: 'none', duration: 5 } });
 
+        console.log(parent);
         if (this.isReverse) {
             gsap.set(textToAnimate, { x: "-50%" });
 
@@ -60,7 +61,7 @@ export default {
                 end: "+=1500",
                 scroller: "#smoothScroll",
                 animation: tl,
-                scrub: true,
+                scrub: 0.3,
                 pin: this.isReverse,
             })
         }, 1000);
