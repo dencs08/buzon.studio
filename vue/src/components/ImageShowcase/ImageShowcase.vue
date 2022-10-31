@@ -1,8 +1,8 @@
 <template>
     <router-link :to="'/portfolio/' + title" @mouseover="mouseOver" @mouseleave="mouseLeave">
         <div class="portfolio-wrapper relative whitespace-normal">
-            <div class="portfolio-item mx-auto flex inline-block overflow-hidden h-auto " :class="[horizontal ? 'aspect-[7/10]' : 'aspect-[10/7]',
-            long ? 'aspect-[6/10]' : '']">
+            <div class="portfolio-item mx-auto flex inline-block overflow-hidden" :class="[horizontal ? 'aspect-[8/10]' : 'aspect-[10/7] h-auto',
+            long ? 'aspect-[9/12]' : '']">
                 <img :src="image" alt="" class="w-full h-full object-cover duration-500 z-[-1]" :class="{
                     'scale-[1.1] brightness-110 saturate-[1.1]':
                         this.isMouseOver,
