@@ -1,7 +1,7 @@
 <template>
     <main>
         <TypedHero />
-        <OurOffer :buttons="false" to="Kontakt" :bottomLinkText="['Jeśli jesteś zainteresowany', 'napisz do nas.']" />
+        <OurOffer :buttons="false" to="Kontakt" :bottomLinkText="['Jeśli Cię zainteresowaliśmy', 'napisz do nas.']" />
         <OurProcess />
         <Collabs />
         <Footer />
