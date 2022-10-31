@@ -40,7 +40,6 @@ export default {
         const parent = this.$parent.$el.parentNode;
         let tl = gsap.timeline({ defaults: { ease: 'none', duration: 5 } });
 
-        console.log(parent);
         if (this.isReverse) {
             gsap.set(textToAnimate, { x: "-50%" });
 
