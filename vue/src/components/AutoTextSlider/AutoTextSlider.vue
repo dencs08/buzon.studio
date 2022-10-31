@@ -1,13 +1,17 @@
 <template>
     <div ref="brandNameSlider" class="brandNameSlider w-full relative m-auto overflow-hidden select-none"
         :style="`height: ${height}`">
-        <div class="relative font-family-header flex items-center w-full" :style="`height: ${height}`">
-            <div v-for="amount in wordAmount" class="text-center absolute"><span>{{ text }}</span></div>
+        <div class="relative font-family-header flex items-center w-full whitespace-nowrap"
+            :style="`height: ${height}`">
+            <div v-for="amount in wordAmount" class="text-center absolute whitespace-nowrap"><span>{{ text
+            }}</span></div>
         </div>
     </div>
 </template>
+
 <script>
 import gsap from "gsap"
+
 export default {
     props: {
         text: String,
@@ -30,11 +34,12 @@ export default {
             word.style.fontSize = this.fontSize;
         }
 
+        let tl = gsap.timeline()
         gsap.set(elementsToAnimate, {
             x: (i) => i * (brandNameSliderWidth / (elementsToAnimate.length - 1)),
         });
 
-        gsap.to(elementsToAnimate, {
+        tl.to(elementsToAnimate, {
             duration: 12,
             ease: "none",
             x: `+=${brandNameSliderWidthPlusOne}`,
