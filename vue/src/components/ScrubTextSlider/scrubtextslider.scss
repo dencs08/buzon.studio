@@ -1,0 +1,7 @@
+@import "../../styles/variables";
+
+.scrubTextSlider {
+    span {
+        font-size: clamp(1.5rem, 6.5vw, 15rem);
+    }
+}

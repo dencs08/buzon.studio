@@ -7,7 +7,7 @@
                 <span v-for="word in text" class="text-center whitespace-nowrap break-keep">
                     <span>
                         <span class="mx-5 text-highlight">·</span>
-                        <span>
+                        <span class="font-color-darker">
                             {{ word }}
                         </span>
                     </span>
@@ -68,10 +68,5 @@ export default {
 }
 </script>
 <style lang="scss">
-.scrubTextSlider {
-    span {
-        color: rgb(94, 94, 94);
-        font-size: clamp(1.5rem, 6.5vw, 15rem);
-    }
-}
+@import './scrubtextslider.scss'
 </style>
