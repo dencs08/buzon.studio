@@ -1,5 +1,5 @@
 <template>
-    <div ref="wrapper" class="lg:h-[60vh] relative mb-[10vw]">
+    <div ref="wrapper" class="lg:h-[60vh] relative mb-[12.5vw]">
         <div ref="grid" class="lg:absolute lg:grid grid-cols-3">
             <PortfolioColumn v-for="item in this.items" :items="item" />
         </div>
