@@ -1,9 +1,9 @@
 <template>
-    <section id="landing-page">
+    <section id="landing-page" class="section-mb-s mt-36">
         <div class="container relative">
             <h1 class="absolute top-[-5%] z-50">{{ name }}</h1>
-            <div class="image-wrapper">
-                <img :src="image()" alt="" />
+            <div class="image-wrapper w-full h-auto overflow-hidden aspect-[16/9] duration-300">
+                <img :src="image()" class="w-full h-full fit-cover" alt="" />
             </div>
         </div>
     </section>

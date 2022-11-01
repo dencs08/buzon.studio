@@ -1,7 +1,16 @@
 #info {
     h4 {
-        font-size: clamp(0.8rem, 1.6vw, 2rem);
+        font-size: clamp(0.8rem, 2.75vw, 7rem);
     }
+
+    h5 {
+        font-size: clamp(0.8rem, 3vw, 7rem);
+    }
+
+    li {
+        font-size: clamp(0.8rem, 1.25vw, 7rem);
+    }
+
     span.website {
         font-size: clamp(1rem, 3vw, 1.5rem);
     }
