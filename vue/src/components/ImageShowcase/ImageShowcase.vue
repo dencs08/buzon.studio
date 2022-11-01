@@ -1,9 +1,9 @@
 <template>
-    <router-link :to="'/portfolio/' + title" @mouseover="mouseOver" @mouseleave="mouseLeave">
+    <router-link :to="url()" @mouseover="mouseOver" @mouseleave="mouseLeave">
         <div class="portfolio-wrapper relative whitespace-normal">
             <div class="portfolio-item mx-auto flex inline-block overflow-hidden" :class="[horizontal ? 'aspect-[8/10]' : 'aspect-[10/7] h-auto',
             long ? 'aspect-[9/12]' : '']">
-                <img :src="image" alt="" class="w-full h-full object-cover duration-500 z-[-1]" :class="{
+                <img :src="image()" alt="" class="w-full h-full object-cover duration-500 z-[-1]" :class="{
                     'scale-[1.1] brightness-110 saturate-[1.1]':
                         this.isMouseOver,
                 }" />
@@ -45,15 +45,6 @@ export default {
         long: Boolean,
     },
 
-    computed: {
-        url() {
-            return `/portfolio/${this.title}`;
-        },
-        image() {
-            return `/src/assets/images/portfolio/${this.title}/${this.title}_portfolio.jpg`;
-        },
-    },
-
     components: {
         ItemHeader,
     },
@@ -68,6 +59,12 @@ export default {
             if (!this.$refs.itemHeader) return;
             this.$refs.itemHeader.mouseLeave();
             this.isMouseOver = false;
+        },
+        url() {
+            return `/portfolio/${this.title}`;
+        },
+        image() {
+            return `/src/assets/images/portfolio/${this.title}/${this.title}_portfolio.jpg`;
         },
     },
 };
