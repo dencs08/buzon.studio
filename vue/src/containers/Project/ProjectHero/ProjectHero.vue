@@ -1,5 +1,5 @@
 <template>
-    <section id="landing-page" class="section-mb-s mt-36">
+    <section id="landing-page" class="section-mb-s mt-[15vh]">
         <div class="container relative">
             <h1 class="absolute top-[-5%] z-50">{{ name }}</h1>
             <div class="image-wrapper w-full h-auto overflow-hidden aspect-[16/9] duration-300">
