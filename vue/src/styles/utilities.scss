@@ -8,14 +8,7 @@
 }
 
 .section-divider {
-    // display: block;
-
-    // width: 96%;
-
     float: none;
-
-    // margin-right: auto;
-    // margin-left: auto;
 
     border: 0.5px solid rgba(126, 126, 126, 0.25);
     overflow: hidden;
@@ -27,6 +20,14 @@
 
 .section-mb {
     margin-bottom: clamp(100px, 12.5vw, 400px);
+}
+
+.section-mt-s {
+    margin-top: clamp(50px, 6.5vw, 400px);
+}
+
+.section-mb-s {
+    margin-bottom: clamp(100px, 6.5vw, 400px);
 }
 
 .scroll-blocker {
