@@ -2,9 +2,10 @@
     <header class="fixed w-screen z-[9999] container">
         <div class="flex min-h-[40px] h-[12vh] overflow-hidden">
             <div class="flex items-center">
-                <router-link :to="{ name: 'Start' }" @click="this.toggleNav(true)" class="navLogoWrapper">
+                <router-link :to="{ name: 'Start' }" @click="this.toggleNav(true)"
+                    class="navLogoWrapper whitespace-nowrap overflow-hidden min-w-[13px] w-[1.5vw]">
                     <img src="../../assets/images/logos/buzonstudio_white_cropped.svg"
-                        class="min-h-[35px] h-[3.5vw] max-h-[100px] navLogo" alt="buzonstudio logo (branding)" />
+                        class="min-w-[50px] w-[5vw] max-w-[100px] navLogo" alt="buzonstudio logo (branding)" />
                 </router-link>
             </div>
             <div class="flex grow items-center justify-end">
@@ -80,8 +81,6 @@
 <script>
 import gsap from "gsap";
 import { LinkPrimary, SocialIcons, ToggleThree } from "../";
-
-import { scrollProgress } from "../../js/utilities/locomotiveScroll";
 
 let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;

@@ -69,15 +69,10 @@ header {
     }
 
     .navLogoWrapper {
-        .navLogo {
-            translate: clamp(-100px, -2.125vw, -20px);
+        transition: width 0.25s;
 
-            transition: translate 0.25s;
-        }
         &:hover {
-            .navLogo {
-                translate: 0vw;
-            }
+            width: 100% !important;
         }
     }
 }
