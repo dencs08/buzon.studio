@@ -23,6 +23,7 @@ export default {
         text: String,
         primary: Boolean,
         secondary: Boolean,
+        dark: Boolean,
         submit: Boolean,
         small: Boolean,
         normal: Boolean,
@@ -51,9 +52,10 @@ export default {
 
     methods: {
         setButtonClass() {
-            if (!this.primary && !this.secondary && !this.submit)
+            if (!this.primary && !this.secondary && !this.submit && !this.dark)
                 return "btn-primary";
             if (this.secondary) return "btn-secondary";
+            if (this.dark) return "btn-dark";
             return "btn-submit";
         },
         setButtonSize() {

@@ -1,6 +1,7 @@
 @import "../../../../styles/_variables.scss";
 
 $btn-primary-bg: #ffffff0d;
+$btn-dark-bg: #11111196;
 
 .btn-primary {
     border: 0.5px solid #d8d8d828 !important;
@@ -23,6 +24,24 @@ $btn-primary-bg: #ffffff0d;
         $btn-primary-bg 0%,
         $btn-primary-bg 50%,
         adjust-hue(darken($primary-color, 37.5%), 10) 75%,
+        $primary-color 100%
+    );
+    background-position: 30% 0;
+    background-size: 500% 200%;
+
+    transition: 0.75s cubic-bezier(0.22, 1, 0.36, 1) background, color 0.5s;
+
+    &:hover {
+        background-position: 100% 0;
+    }
+}
+
+.btn-dark {
+    background: linear-gradient(
+        60deg,
+        $btn-dark-bg 0%,
+        $btn-dark-bg 50%,
+        adjust-hue(darken($primary-color, 10.5%), 10) 75%,
         $primary-color 100%
     );
     background-position: 30% 0;
