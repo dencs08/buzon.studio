@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('project_goals', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Project::class, 'project_id');
+            $table->foreignId('project_id')->constrained();
+            $table->string('goal');
             $table->timestamps();
         });
     }
