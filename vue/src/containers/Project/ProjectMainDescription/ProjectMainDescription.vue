@@ -1,18 +1,17 @@
 <template>
-    <section class="container section-mb-s">
+    <section v-if="text" class="container section-mb-s">
         <div class="xs:grid xs:grid-cols-2">
             <div class="mb-5 xs:mb-0 pr-6 lg:pr-32 max-h-[80vh]">
                 <h3 class="font-family-header">
                     Opis {{ $route.params.projectName }}
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro incidunt qui voluptates cum earum
-                    sequi deserunt, at, est mollitia beatae quia modi? Debitis nulla a nobis ea qui explicabo ducimus?
+                <p>
+                    {{ text }}
                 </p>
             </div>
             <div class="flex items-center justify-end">
                 <div class="max-h-[80vh] h-full">
-                    <img src="/src/assets/images/portfolio/bielanypark/bielanypark2.jpg"
-                        class="w-full h-full object-cover aspect-[1/1]" alt="">
+                    <img :src="image" class="w-full h-full object-cover aspect-[1/1]" alt="">
                 </div>
             </div>
         </div>
@@ -20,7 +19,10 @@
 </template>
 <script>
 export default {
-
+    props: {
+        image: String,
+        text: String,
+    }
 }
 </script>
 <style lang="scss" scoped>

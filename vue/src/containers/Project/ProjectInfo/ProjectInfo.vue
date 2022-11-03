@@ -48,8 +48,8 @@
                     <div v-if="website">
                         <div class="mt-10 md:mt-16 lg:mt-40">
                             <span class="uppercase website font-color-dark">Sprawdź stronę
-                                <LinkPrimary :href="website" :primary="true" :text="website" target="_blank"
-                                    rel="noopener" />
+                                <LinkPrimary :href="website" :primary="true" :text="$route.params.projectName"
+                                    target="_blank" rel="noopener" />
                             </span>
                         </div>
                     </div>
@@ -64,7 +64,6 @@ import { LinkPrimary } from '../../../components'
 
 export default {
     props: {
-        name: String,
         info: String,
         goals: Array,
         responsibilities: Array,

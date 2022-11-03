@@ -1,14 +1,18 @@
 <template>
-    <section id="ProjectImageShowcase" class="space-y-2 sm:space-y-3 md:space-y-7 lg:space-y-9 section-mb-s">
-        <ScrubTextSlider :images="['bielanypark3', 'bielanypark4', 'bielanypark5', 'bielanypark6', 'bielanypark7']" />
-        <ScrubTextSlider :images="['bielanypark7', 'bielanypark6', 'bielanypark4', 'bielanypark3', 'bielanypark5']"
-            :isReverse="true" />
+    <section v-if="imageSlider1" id="ProjectImageShowcase"
+        class="space-y-2 sm:space-y-3 md:space-y-7 lg:space-y-9 section-mb-s">
+        <ScrubTextSlider :images="imageSlider1" />
+        <ScrubTextSlider v-if="imageSlider2" :images="imageSlider2" :isReverse="true" />
     </section>
 
 </template>
 <script>
 import { ScrubTextSlider } from '../../../components'
 export default {
+    props: {
+        imageSlider1: Array,
+        imageSlider2: Array,
+    },
     components: {
         ScrubTextSlider
     },

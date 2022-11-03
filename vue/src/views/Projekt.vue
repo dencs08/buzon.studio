@@ -5,10 +5,10 @@
             info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum officiis modi, odit quod quisquam voluptatum, obcaecati."
             :goals="['goal1', 'goal2', 'goal1', 'goal2', 'goal1', 'goal2']"
             :responsibilities="['responsibilites1', 'responsibilites1', 'responsibilites1', 'responsibilites1']"
-            website="www.bielanypark.pl" />
+            website="https://bielanypark.pl/" />
         <ProjectImageShowcase :name="$route.params.projectName" />
         <ProjectMainDescription />
-        <ProjectImages :name="$route.params.projectName" :imagesCount="1" />
+        <ProjectImages :name="$route.params.projectName" :images="['test', 'test', 'test', 'test']" />
         <ProjectContactUs />
         <ProjectNext />
     </main>
