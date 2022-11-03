@@ -51,7 +51,7 @@ export default {
             tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true });
             tlScroll
                 .to(this.$refs.grid.children[0], { y: "-50%", duration: 3 })
-                .to(this.$refs.grid.children[1], { y: "-84.5%", duration: 3 }, "<")
+                .to(this.$refs.grid.children[1], { y: "-79%", duration: 3 }, "<")
                 .to(this.$refs.grid.children[2], { y: "-50%", duration: 3 }, "<")
 
             ScrollTrigger.create({
@@ -63,7 +63,7 @@ export default {
                 scrub: true,
                 pin: true,
             })
-        }, 1000);
+        }, 100);
     }
 }
 </script>

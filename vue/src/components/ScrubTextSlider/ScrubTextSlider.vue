@@ -17,7 +17,8 @@
 
             <div v-if="images">
                 <div class="w-screen flex flex-row overflow-hidden relative">
-                    <div ref="imageWrapper" class="break-keep whitespace-nowrap space-x-10">
+                    <div ref="imageWrapper"
+                        class="break-keep whitespace-nowrap space-x-3 sm:space-x-5 md:space-x-8 lg:space-x-10">
                         <div v-for="image in newImagesArray"
                             class="inline-block w-[44vw] h-auto aspect-[12/8] overflow-hidden">
                             <img :src="imageSrc(image)" alt="" class="w-full h-full object-cover">
@@ -68,7 +69,7 @@ export default {
                 scrub: 0.3,
                 pin: this.pin,
             })
-        }, 1000);
+        }, 100);
     },
 
     methods: {

@@ -35,7 +35,8 @@ export default {
         let section = this.$refs.section;
         // setTimeout(() => {
         //     scrubTextReveal(text, this.$refs.section)
-        // }, 1000);
+        // }, 1000);\
+
         setTimeout(() => {
             splitToLines(text);
             let lines = text.querySelectorAll(".line");
@@ -54,7 +55,7 @@ export default {
                 scrub: 1,
                 pin: true,
             });
-        }, 1000);
+        }, 100);
     },
 };
 </script>
