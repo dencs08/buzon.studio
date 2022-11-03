@@ -27,7 +27,7 @@
 }
 
 .section-mb-s {
-    margin-bottom: clamp(100px, 6.5vw, 400px);
+    margin-bottom: clamp(50px, 6.5vw, 400px);
 }
 
 .scroll-blocker {
@@ -64,4 +64,12 @@
 
 .kern-0 {
     font-kerning: none;
+}
+
+.bg-light {
+    background-color: $body-bg-color-lighter !important;
+}
+
+.bg-dark {
+    background-color: $body-bg-color-darker !important;
 }

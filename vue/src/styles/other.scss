@@ -23,3 +23,16 @@ ul.dots {
         }
     }
 }
+
+ul.dots-dark {
+    li {
+        &:before {
+            content: "•";
+            font-size: 0.8em;
+            border-radius: 1ch;
+            padding-right: 1ch;
+            margin-right: 1ch;
+            color: darken($primary-color, 35%);
+        }
+    }
+}
