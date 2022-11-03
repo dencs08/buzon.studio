@@ -1,7 +1,9 @@
+// export { default as WhyUs } from './WhyUs/WhyUs.vue'
+
 export { default as Hero } from './Hero/Hero.vue'
+export { default as LandingPage } from './LandingPage/LandingPage.vue'
 export { default as OurWorks } from './OurWorks/OurWorks.vue'
 export { default as AboutUs } from './AboutUs/AboutUs.vue'
-export { default as WhyUs } from './WhyUs/WhyUs.vue'
 export { default as OurOffer } from './OurOffer/OurOffer.vue'
 export { default as ContactUs } from './ContactUs/ContactUs.vue'
 export { default as Collabs } from './Collabs/Collabs.vue'

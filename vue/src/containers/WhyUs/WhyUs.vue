@@ -4,7 +4,7 @@
             <div class="mb-8 md:mb-12">
                 <SectionHeader v-if="header" mainHeader="Działamy po to abyś się rozwijał" />
             </div>
-            <Column title="Produkty cyfrowe"
+            <!-- <Column title="Produkty cyfrowe"
                 paragraph="Tworzymy i rozwijamy, strony internetowe, aplikacje, wizualizacje, grafiki, projekty UI i UX adekwatnie pod Twoje potrzeby, tak abyś otrzymał najlepiej dostosowany produkt który pracuje dla Ciebie."
                 :ul="[
                     'Strony internetowe',
@@ -23,13 +23,13 @@
                     'Logotypy',
                     'Marketing',
                     'Strategie biznesowe w social mediach',
-                ]" :reverse="true" :buttons="buttons" />
+                ]" :reverse="true" :buttons="buttons" /> -->
         </div>
 
         <div v-if="contactParagraph" class="container contact">
             <LinkParagraph @mouseover="$refs.link1.animationStart()" @mouseleave="$refs.link1.handleMouseLeave()"
                 to="Kontakt">
-                <LinkPrimary to="Kontakt" text="Napisz do nas" :primary="true" ref="link1" />{{}}
+                <LinkPrimary to="Kontakt" text="Napisz do nas" :primary="true" ref="link1" />{{ }}
 
                 <span class="font-color-darker duration-200">
                     i stwórzmy coś razem.</span>
@@ -40,7 +40,7 @@
 
 <script>
 import {
-    Column,
+    // Column,
     LinkPrimary,
     SectionHeader,
     LinkParagraph,
@@ -60,7 +60,7 @@ export default {
         },
     },
     components: {
-        Column,
+        // Column,
         LinkPrimary,
         SectionHeader,
         LinkParagraph,
