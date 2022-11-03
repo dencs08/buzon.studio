@@ -1,7 +1,7 @@
 <template>
     <section class="container section-mb-s">
-        <div class="grid grid-cols-2">
-            <div class="pr-6 lg:pr-32 max-h-[80vh]">
+        <div class="xs:grid xs:grid-cols-2">
+            <div class="mb-5 xs:mb-0 pr-6 lg:pr-32 max-h-[80vh]">
                 <h3 class="font-family-header">
                     Opis {{ $route.params.projectName }}
                 </h3>
@@ -9,8 +9,8 @@
                     sequi deserunt, at, est mollitia beatae quia modi? Debitis nulla a nobis ea qui explicabo ducimus?
                 </p>
             </div>
-            <div class="flex items-end justify-end">
-                <div class="max-h-[80vh] aspect-[1/1]">
+            <div class="flex items-center justify-end">
+                <div class="max-h-[80vh] h-full">
                     <img src="/src/assets/images/portfolio/bielanypark/bielanypark2.jpg"
                         class="w-full h-full object-cover aspect-[1/1]" alt="">
                 </div>
