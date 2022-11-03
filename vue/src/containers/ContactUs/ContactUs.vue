@@ -1,6 +1,6 @@
 <template>
-    <section id="contact">
-        <div class="container text-center section-mb">
+    <section id="contact" class="md:h-[80vh] md:grid content-center">
+        <div class="container text-center">
             <SectionHeader headerLine="Napisz do nas!" mainHeader="Zatrudnij nas a my zajmiemy się resztą."
                 :noAccent="true" />
             <div class="mt-20">
