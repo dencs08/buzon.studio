@@ -1,7 +1,7 @@
 <template>
     <section id="landing-page" class="section-mb-s mt-[15vh]">
         <div class="container relative">
-            <h1 class="absolute top-[-5%] z-50">{{ name }}</h1>
+            <h1 class="absolute top-[-5%] z-50">{{ $route.params.projectName }}</h1>
             <div class="image-wrapper w-full h-auto overflow-hidden aspect-[16/9] duration-300">
                 <img :src="image()" class="w-full h-full fit-cover" alt="" />
             </div>

@@ -22,6 +22,10 @@
 import { LinkPrimary } from '../../../components'
 
 export default {
+    props: {
+        nextName: String,
+        nextImage: String,
+    },
     components: {
         LinkPrimary
     }

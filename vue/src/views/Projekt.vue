@@ -6,11 +6,11 @@
             :goals="['goal1', 'goal2', 'goal1', 'goal2', 'goal1', 'goal2']"
             :responsibilities="['responsibilites1', 'responsibilites1', 'responsibilites1', 'responsibilites1']"
             website="https://bielanypark.pl/" />
-        <ProjectImageShowcase :name="$route.params.projectName" />
-        <ProjectMainDescription />
+        <ProjectImageShowcase :imageSlider1="[]" :imageSlider2="[]" />
+        <ProjectMainDescription text="" image="" />
         <ProjectImages :name="$route.params.projectName" :images="['test', 'test', 'test', 'test']" />
         <ProjectContactUs />
-        <ProjectNext />
+        <ProjectNext nextName="" nextImage="" />
     </main>
 </template>
 
