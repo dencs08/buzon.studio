@@ -16,11 +16,11 @@ export { default as ToggleThree } from './CallToAction/ToggleThree/ToggleThree.v
 export { default as ItemHeader } from './Headers/ItemHeader/ItemHeader.vue'
 export { default as SectionHeader } from './Headers/SectionHeader/SectionHeader.vue'
 
+// export { default as Column } from './WhyUsColumn/Column.vue'
 export { default as AutoTextSlider } from './AutoTextSlider/AutoTextSlider.vue'
 export { default as ScrubTextSlider } from './ScrubTextSlider/ScrubTextSlider.vue'
 export { default as ImageShowcase } from './ImageShowcase/ImageShowcase.vue'
 export { default as SliderItem } from './OurWorksSliderItem/SliderItem.vue'
-export { default as Column } from './WhyUsColumn/Column.vue'
 export { default as OurOfferColumn } from './OurOfferColumn/OurOfferColumn.vue'
 export { default as CollabItem } from './CollabItem/CollabItem.vue'
 export { default as OurProcessItem } from './OurProcessItem/OurProcessItem.vue'

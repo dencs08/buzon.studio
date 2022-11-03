@@ -1,27 +1,33 @@
 <template>
-    <div class="md:h-screen flex flex-col justify-center">
-        <router-link :to="{ name: to }" @mouseover="mouseOver" @mouseleave="mouseLeave">
-            <div class="offer-wrapper relative">
-                <div class="mb-10 md:mb-0 overflow-hidden">
-                    <div class="my-0 ml-0 sm:ml-2 md:ml-4 md:mt-28">
-                        <ItemHeader :text="title" :big="true" :move="true" headerClass="inline-block uppercase"
-                            ref="header" />
-                        <div class="mt-3 pr-3 md:pr-0 ml-2 md:ml-0">
-                            <p class="font-color-dark lg:w-4/12">
-                                {{ paragraph }}
-                            </p>
-                            <Button text="Oferta" class="mt-6" :arrow="true" :secondary="true" v-if="buttons" />
-                            <div>
-                                <ScrubTextSlider :text="text" fontSize="12vw" height="6.5vw" class="" />
-                                <ScrubTextSlider :text="textSecond" fontSize="12vw" height="6.5vw" class=""
-                                    :isReverse="true" :pin="true" />
-                            </div>
-                        </div>
+    <div class="md:h-[100vh] flex flex-col justify-center">
+        <router-link :to="{ name: to }" @mouseover="mouseOver" @mouseleave="mouseLeave" class="h-[60%]">
+            <div>
+                <ItemHeader :text="title" :big="true" :move="true" headerClass="inline-block uppercase md:mb-12"
+                    ref="header" />
+
+                <div class="flex flex-row md:space-x-32">
+                    <div>
+                        <h4 class="font-family-header uppercase mb-3">Produkty Cyfrowe</h4>
+                        <!-- <hr class="font-color-darker" /> -->
+                        <ul class="dots space-y-1">
+                            <li v-for="item in digital">{{ item }}</li>
+                        </ul>
                     </div>
+                    <div>
+                        <h4 class="font-family-header uppercase mb-3">Branding</h4>
+                        <!-- <hr class="font-color-darker" /> -->
+                        <ul class="dots space-y-1">
+                            <li v-for="item in branding">{{ item }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div v-if="buttons" class="mt-3 pr-3 md:pr-0 ml-2 md:ml-0">
+                    <Button text="Oferta" class="mt-6" :arrow="true" :dark="true" />
                 </div>
             </div>
         </router-link>
-        <div class="contactUs ml-4 mt-6 md:mt-12 h-[100px]">
+        <div class="contactUs flex items-end">
             <LinkParagraph :to="to" @mouseover="$refs.link2.animationStart()"
                 @mouseleave="$refs.link2.handleMouseLeave()">
                 <span ref="span" class="font-color-darker duration-200 kern-0 mr-2">
@@ -45,12 +51,11 @@ import {
 export default {
     props: {
         title: String,
-        paragraph: String,
-        text: Array,
-        textSecond: Array,
+        digital: Array,
+        branding: Array,
+        bottomLinkText: Array,
         buttons: Boolean,
         to: String,
-        bottomLinkText: Array,
     },
 
     components: {
