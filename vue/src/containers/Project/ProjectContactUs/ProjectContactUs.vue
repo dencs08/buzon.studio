@@ -5,8 +5,8 @@
             <div class="link">
                 <LinkPrimary text="Zacznijmy współpracę" to="Kontakt" :primary="true" :point="true" />
             </div>
-            <AutoTextSlider text="BUZON.STUDIO" :wordAmount="3" fontSize="12vw" height="10vw" class="my-6 md:my-10" />
         </div>
+        <AutoTextSlider text="BUZON.STUDIO" :wordAmount="3" fontSize="12vw" height="10vw" class="my-6 md:my-10" />
     </section>
 </template>
 
