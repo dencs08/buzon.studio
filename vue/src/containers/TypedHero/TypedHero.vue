@@ -1,9 +1,9 @@
 <template>
-    <section id="landing-page" class="flex items-center">
-        <div class="container my-[110px] md:my-0">
+    <section id="landing-page" class="flex items-center" data-scroll data-scroll-speed="-5">
+        <div class="container pt-[15vh]">
             <h1>
                 <div>
-                    <span id="typed"></span>
+                    <span id="typed">Strony</span>
                 </div>
                 <div>Pod Twoje potrzeby.</div>
             </h1>
