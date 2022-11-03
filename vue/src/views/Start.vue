@@ -3,7 +3,7 @@
         <Hero />
         <OurWorks />
         <AboutUs />
-        <OurOffer :buttons="true" to="Oferta" :bottomLinkText="['Jeśli jesteś zainteresowany', 'napisz do nas.']" />
+        <OurOffer :buttons="false" to="Oferta" :bottomLinkText="['Jeśli jesteś zainteresowany', 'napisz do nas.']" />
         <ContactUs />
         <Collabs />
         <Footer />
