@@ -1,11 +1,13 @@
 <template>
     <section id="process" class="mb-16 md:mb-32">
         <div class="container">
-            <div class="block md:grid md:grid-cols-2 mb-8 md:mb-20">
-                <div class="uppercase mb-5 md:mb-0">
+            <div class="block md:grid md:grid-cols-12 mb-8 md:mb-20">
+
+                <div class="uppercase mb-5 md:mb-0 col-span-7">
                     <SectionHeader mainHeader="Nasz Proces" :wordBreak="true" :big="true" />
                 </div>
-                <div class="space-y-8">
+
+                <div class="space-y-14 col-span-5">
                     <OurProcessItem title="Dialog"
                         paragraph="Podstawą każdego dobrze zrealizowanego projektu jest zrozumienie Twoich potrzeb w celu realizacji odpowiedniej wizji i wymagań. Wspólnie analizujemy podstawy i kryteria, które muszą być spełnione." />
                     <OurProcessItem title="Koncepcja"
@@ -15,6 +17,7 @@
                     <OurProcessItem title="Dystrybucja"
                         paragraph="Wykonujemy końcową analizę naszej pracy i upewniamy się, że uzgodnione warunki zostały spełnione. Ostatnim krokiem jest wdrożenie Twojego nowego produktu w życie." />
                 </div>
+
             </div>
 
             <LinkParagraph @mouseover="$refs.link1.animationStart()" @mouseleave="$refs.link1.handleMouseLeave()"
