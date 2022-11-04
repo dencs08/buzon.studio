@@ -1,6 +1,6 @@
 <template>
     <div class="mb-6 md:mb-10 lg:mb-0 mt-10 lg:mt-0">
-        <ImageShowcase :title="title" :info="info" :category="category" :long="this.long" :horizontal="true" />
+        <ImageShowcase :title="title" :info="info" :category="category" :long="long" :horizontal="true" />
     </div>
 </template>
 
