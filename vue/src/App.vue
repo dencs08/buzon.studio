@@ -3,7 +3,6 @@
     <Navbar />
     <Cursor ref="cursor" />
 
-
     <router-view v-slot="{ Component }">
         <div id="smoothScroll">
             <transition name="fade" mode="out-in" @leave="leave" @enter="enter">
@@ -11,8 +10,6 @@
             </transition>
         </div>
     </router-view>
-
-
 </template>
 
 <script>
