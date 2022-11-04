@@ -22,7 +22,7 @@ export default {
     props: {
         image: String,
         text: String,
-    }
+    },
 }
 </script>
 <style lang="scss" scoped>

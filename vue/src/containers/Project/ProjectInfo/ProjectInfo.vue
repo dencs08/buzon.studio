@@ -12,14 +12,14 @@
 
                 <div class="col-span-1 mb-6 md:mb-0">
                     <div class="md:pr-10 col-span-6">
-                        <img src="/src/assets/images/portfolio/bielanypark/bielanypark2.jpg" alt="">
+                        <img :src="image" alt="">
                     </div>
                 </div>
                 <div class="col-span-1">
                     <div class="block xs:grid grid-cols-2">
 
                         <div v-if="responsibilities">
-                            <div class="mb-5 xs:mb-0">
+                            <div v-if="responsibilities.length > 0" class="mb-5 xs:mb-0">
                                 <div>
                                     <h5 class="font-family-header font-color-primary my-0 uppercase">
                                         Co zrobiliśmy
@@ -32,7 +32,7 @@
                         </div>
 
                         <div v-if="goals">
-                            <div>
+                            <div v-if="goals.length > 0">
                                 <div>
                                     <h5 class="font-family-header font-color-primary my-0 uppercase">
                                         Cel
@@ -68,6 +68,7 @@ export default {
         goals: Array,
         responsibilities: Array,
         website: String,
+        image: String,
     },
 
     components: {

@@ -6,12 +6,11 @@
             </div>
             <div class="relative">
                 <div class="link absolute top-[-25%] sm:top-[-10%]">
-                    <LinkPrimary class="uppercase font-color-primary font-family-header leading-none" to=""
-                        :text="$route.params.projectName" :split="true" :point="true" />
+                    <LinkPrimary class="uppercase font-color-primary font-family-header leading-none" :text="nextName"
+                        :split="true" :point="true" />
                 </div>
                 <div class="aspect-[3/1]">
-                    <img src="/src/assets/images/portfolio/bielanypark/bielanypark8.jpg"
-                        class="object-cover w-full h-full" alt="">
+                    <img :src="nextImage" class="object-cover w-full h-full" alt="">
                 </div>
             </div>
         </div>
@@ -28,7 +27,7 @@ export default {
     },
     components: {
         LinkPrimary
-    }
+    },
 }
 </script>
 
