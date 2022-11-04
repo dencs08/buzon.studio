@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('descLong', 1000);
             $table->string('website');
             $table->integer('importance');
-            $table->timestamps();
         });
     }
 
