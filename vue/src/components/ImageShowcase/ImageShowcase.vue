@@ -61,7 +61,7 @@ export default {
             this.isMouseOver = false;
         },
         url() {
-            return `/portfolio/${this.title}`;
+            return `/projekt/${this.title}`;
         },
         image() {
             return `/src/assets/images/portfolio/${this.title}/${this.title}_portfolio.jpg`;
