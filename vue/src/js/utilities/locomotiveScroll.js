@@ -65,7 +65,11 @@ export function locoInit(timeout) {
 
         ScrollTrigger.addEventListener("refresh", () => lsUpdate());
         ScrollTrigger.refresh();
+        setTimeout(() => {
 
+            ScrollTrigger.addEventListener("refresh", () => lsUpdate());
+            ScrollTrigger.refresh();
+        }, 500);
     }, timeout);
 }
 
