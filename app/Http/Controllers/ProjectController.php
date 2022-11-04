@@ -24,9 +24,9 @@ class ProjectController extends Controller
             $categoryArr = collect($categories)->pluck('category');
             $projectsDecoded[$i]['categories'] = $categoryArr;
 
-            $responsibilites = Project::find($i)->responsibilites;
-            $responsibilityArr = collect($responsibilites)->pluck('responsibility');
-            $projectsDecoded[$i]['responsibilites'] = $responsibilityArr;
+            $responsibilities = Project::find($i)->responsibilities;
+            $responsibilityArr = collect($responsibilities)->pluck('responsibility');
+            $projectsDecoded[$i]['responsibilities'] = $responsibilityArr;
 
             $goals = Project::find($i)->goals;
             $goalArr = collect($goals)->pluck('goal');
@@ -54,7 +54,44 @@ class ProjectController extends Controller
 
     public function showByName($name)
     {
-        return Project::get()->where('name', $name);
+        $project = Project::get()->where('name', $name);
+        $projectDecoded = json_decode($project, true);
+
+        $id = array_column($projectDecoded, 'id');
+        $id = $id[0];
+
+        $categories = Project::find($id)->categories;
+        $categoryArr = collect($categories)->pluck('category');
+        $projectDecoded[$id]['categories'] = $categoryArr;
+
+        $responsibilities = Project::find($id)->responsibilities;
+        $responsibilityArr = collect($responsibilities)->pluck('responsibility');
+        $projectDecoded[$id]['responsibilities'] = $responsibilityArr;
+
+        $goals = Project::find($id)->goals;
+        $goalArr = collect($goals)->pluck('goal');
+        $projectDecoded[$id]['goals'] = $goalArr;
+
+        $images = Project::find($id)->images;
+        $imageArr = collect($images)->pluck('image');
+        $projectDecoded[$id]['images'] = $imageArr;
+
+        return $projectDecoded[$id];
+    }
+
+    public function showNext($name)
+    {
+        $project = Project::get()->where('name', $name);
+        $projectDecoded = json_decode($project, true);
+
+        $id = array_column($projectDecoded, 'id');
+        $id = $id[0];
+
+        $next = Project::where('id', '>', $id)->orderBy('id', 'asc')->first();
+
+        if($next == null) return Project::get()->first();
+        
+        return $next;
     }
 
     public function showCategories($id)

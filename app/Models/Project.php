@@ -23,7 +23,7 @@ class Project extends Model
         return $this->hasMany(ProjectGoals::class);
     }
 
-    public function responsibilites()
+    public function responsibilities()
     {
         return $this->hasMany(ProjectResponsibilities::class);
     }
