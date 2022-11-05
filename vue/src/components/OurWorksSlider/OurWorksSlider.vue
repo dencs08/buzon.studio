@@ -30,7 +30,7 @@ export default {
 
     methods: {
         getProjects() {
-            axiosClient.get('/api/projects/best')
+            axiosClient.get('/projects/best')
                 .then(response => {
                     response.data.length = 5;
                     this.projects = response.data

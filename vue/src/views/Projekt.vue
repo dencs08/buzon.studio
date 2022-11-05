@@ -48,8 +48,8 @@ export default {
     methods: {
         async getProject() {
             const [current, next] = await Promise.all([
-                axiosClient.get('/api/project/' + this.$route.params.projectName),
-                axiosClient.get('/api/project/next/' + this.$route.params.projectName),
+                axiosClient.get('/project/' + this.$route.params.projectName),
+                axiosClient.get('/project/next/' + this.$route.params.projectName),
             ]);
 
             this.project = current.data

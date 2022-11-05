@@ -31,9 +31,9 @@ export default {
     methods: {
         async getProjects() {
             const [first, second, third] = await Promise.all([
-                axiosClient.get('/api/projects/best'),
-                axiosClient.get('/api/projects/best'),
-                axiosClient.get('/api/projects/best'),
+                axiosClient.get('/projects/best'),
+                axiosClient.get('/projects/best'),
+                axiosClient.get('/projects/best'),
             ]);
 
 
