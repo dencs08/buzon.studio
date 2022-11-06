@@ -1,5 +1,5 @@
 <template>
-    <section id="hero" class="flex overflow-hidden h-screen grid xl:grid-cols-2">
+    <section id="hero" class="flex overflow-hidden h-auto pb-24 md:pb-0 md:h-screen grid xl:grid-cols-2">
         <div class="container-hero">
             <div>
                 <h1 ref="h1" class="mt-[14vh] kern-0 mb-4">
@@ -88,6 +88,8 @@ export default {
         },
 
         scrollTriggerAnimations() {
+            if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
             gsap.registerPlugin(ScrollTrigger)
 
             this.tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true });
@@ -110,6 +112,8 @@ export default {
         //(otherwise .words would jump to the end of the animation or start from the initial position if used fromTo())
         //TODO make better solution for this...
         scrollTriggerSecond() {
+            if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
             this.tlScroll
                 .to(this.lines, { duration: 2, y: "-100%", stagger: 0.25 }, 1)
                 .to(this.$refs.link2.$el.children, { y: "-110%", duration: 2 }, "<0.5")
