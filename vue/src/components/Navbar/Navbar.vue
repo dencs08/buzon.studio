@@ -63,7 +63,7 @@
                         <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true"
                             class="font-color-dark" @click="this.toggleNav(true)" />
                     </div>
-                    <div class="w-[5vw] flex justify-center">
+                    <div class="min-w-[50px] sm:w-[5vw] flex justify-center">
                         <ToggleThree />
                     </div>
                     <div>
