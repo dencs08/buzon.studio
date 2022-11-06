@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://localhost:8000', 'https://buzon.studio','https://api.buzon.studio', 'http://localhost:5173'],
 
     'allowed_origins_patterns' => [],
 
