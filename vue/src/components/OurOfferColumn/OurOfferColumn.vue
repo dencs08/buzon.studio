@@ -1,12 +1,12 @@
 <template>
-    <div class="md:h-[100vh] flex flex-col justify-center">
-        <router-link :to="{ name: to }" @mouseover="mouseOver" @mouseleave="mouseLeave" class="h-[60%]">
+    <div class="h-[auto] py-14 md:py-0 md:h-[100vh] flex flex-col justify-center">
+        <router-link :to="{ name: to }" @mouseover="mouseOver" @mouseleave="mouseLeave" class="h-[60%] mb-12 md:mb-0">
             <div>
-                <ItemHeader :text="title" :big="true" :move="true" headerClass="inline-block uppercase md:mb-12"
-                    ref="header" />
+                <ItemHeader :text="title" :big="true" :move="true"
+                    headerClass="inline-block uppercase mb-6 sm:mb-8 md:mb-12" ref="header" />
 
-                <div class="flex flex-row md:space-x-32">
-                    <div>
+                <div class="xs:flex flex-row xs:space-x-[10vw]">
+                    <div class="mb-6 xs:mb-0">
                         <h4 class="font-family-header uppercase mb-3">Produkty Cyfrowe</h4>
                         <!-- <hr class="font-color-darker" /> -->
                         <ul class="dots space-y-1">
