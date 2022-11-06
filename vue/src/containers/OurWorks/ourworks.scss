@@ -9,3 +9,15 @@
         font-size: clamp(0.8rem, 2vw, 3rem);
     }
 }
+
+@media (max-width: $md-screen-size) {
+    #portfolio {
+        h3.sectionHeader {
+            font-size: clamp(0.8rem, 14vw, 50rem) !important;
+            line-height: clamp(0.8rem, 14vw, 50rem);
+        }
+        .portfolio-link {
+            font-size: clamp(1.4rem, 2vw, 3rem);
+        }
+    }
+}

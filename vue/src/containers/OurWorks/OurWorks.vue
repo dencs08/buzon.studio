@@ -1,9 +1,9 @@
 <template>
     <section id="portfolio" class="overflow-hidden relative">
-        <div class="h-[100vh] flex items-center">
+        <div class="lg:h-[100vh] flex items-center">
             <div id="portfolio-content" class="container">
                 <h3 ref="header"
-                    class="uppercase font-bold sectionHeader font-family-header absolute top-1/2 translate-y-[-50%] z-[-1]">
+                    class="hidden uppercase font-bold sectionHeader font-family-header lg:absolute lg:top-1/2 lg:translate-y-[-50%] z-[-1]">
                     Projekty
                 </h3>
                 <div class="">
@@ -11,7 +11,7 @@
                 </div>
 
                 <LinkPrimary ref="portfolioLink" to="Portfolio" text="Więcej prac" :primary="true" :point="true"
-                    class="uppercase portfolio-link absolute bottom-[2%]" />
+                    class="uppercase portfolio-link lg:absolute lg:bottom-[2%] mt-6 lg:mt-0" />
             </div>
         </div>
     </section>
