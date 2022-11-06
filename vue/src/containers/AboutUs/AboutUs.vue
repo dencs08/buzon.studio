@@ -1,6 +1,6 @@
 <template>
     <section ref="section" id="aboutUs">
-        <div class="container w-11/12 grid content-center text-center w-screen h-screen">
+        <div class="container w-11/12 grid content-center text-center w-screen h-[30vh] lg:h-screen">
             <p class="font-color-dark" ref="text">
                 <b class="uppercase font-bold">{{ name }}</b> to 5 lat
                 doświadczenia w tworzeniu projektów i pomaganiu markom w
@@ -38,6 +38,8 @@ export default {
         // }, 1000);\
 
         setTimeout(() => {
+            if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
             splitToLines(text);
             let lines = text.querySelectorAll(".line");
             gsap.registerPlugin(ScrollTrigger);
