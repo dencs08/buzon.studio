@@ -67,9 +67,15 @@
 }
 
 .bg-light {
-    background-color: $body-bg-color-lighter !important;
+    background-color: $body-bg-color-lighter;
 }
 
 .bg-dark {
     background-color: $body-bg-color-darker !important;
+}
+
+@media screen and (max-width: 768px) {
+    .bg-light {
+        background-color: $body-bg !important;
+    }
 }
