@@ -1,5 +1,5 @@
 <template>
-    <section id="contact" class="md:h-[80vh] md:grid content-center">
+    <section id="contact" class="h-auto py-24 md:py-0 md:h-[80vh] md:grid content-center">
         <div class="container text-center">
             <SectionHeader headerLine="Napisz do nas!" mainHeader="Zatrudnij nas a my zajmiemy się resztą."
                 :noAccent="true" />
