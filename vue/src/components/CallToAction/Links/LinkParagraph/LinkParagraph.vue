@@ -7,11 +7,15 @@
 </template>
 
 <script>
+import { textReveal } from '../../../../js/textReveal'
+
 export default {
     props: {
         to: String,
         href: String,
         isAnimating: Boolean,
+        noReveal: Boolean,
+
         activeFontColor: {
             type: String,
             default: "font-color-secondary",
@@ -20,6 +24,10 @@ export default {
             type: String,
             default: "font-color-darker",
         },
+    },
+
+    mounted() {
+        if (!this.noReveal) textReveal(this.$refs.slot, this.$refs.slot, true, false, false, false);
     },
 
     methods: {
