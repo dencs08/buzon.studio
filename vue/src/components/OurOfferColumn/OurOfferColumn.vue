@@ -1,23 +1,28 @@
 <template>
-    <div class="h-[auto] py-14 md:py-0 md:h-[100vh] flex flex-col justify-center">
-        <router-link :to="{ name: to }" @mouseover="mouseOver" @mouseleave="mouseLeave" class="h-[60%] mb-12 md:mb-0">
+    <div ref="trigger" class="h-[auto] py-14 md:py-0 md:h-[100vh] flex flex-col justify-center">
+        <router-link :to="{ name: to }" class="h-[60%] mb-12 md:mb-0">
             <div>
-                <ItemHeader :text="title" :big="true" :move="true"
-                    headerClass="inline-block uppercase mb-6 sm:mb-8 md:mb-12" ref="header" />
+                <SectionHeader ref="header" :mainHeader="title" :big="true" :move="true"
+                    class="mb-6 sm:mb-8 md:mb-14 inline-block" />
 
                 <div class="xs:flex flex-row xs:space-x-[10vw]">
                     <div class="mb-6 xs:mb-0">
-                        <h4 class="font-family-header uppercase mb-3">Produkty Cyfrowe</h4>
-                        <!-- <hr class="font-color-darker" /> -->
-                        <ul class="dots space-y-1">
-                            <li v-for="item in digital">{{ item }}</li>
+                        <!-- <h4 ref="header1" class="font-family-header uppercase mb-3">Produkty Cyfrowe</h4> -->
+
+                        <ItemHeader ref="header1" text="Produkty Cyfrowe" :normal="true" :move="true"
+                            headerClass="inline-block uppercase mb-6 sm:mb-4 font-color-dark" />
+                        <ul ref="ul1" class="dots space-y-1">
+                            <li v-for="item in digital"><span>{{ item }}</span></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-family-header uppercase mb-3">Branding</h4>
-                        <!-- <hr class="font-color-darker" /> -->
-                        <ul class="dots space-y-1">
-                            <li v-for="item in branding">{{ item }}</li>
+                        <!-- <h4 ref="header2" class="font-family-header uppercase mb-3"></h4> -->
+
+                        <ItemHeader ref="header2" text="Branding" :normal="true" :move="true"
+                            headerClass="inline-block uppercase mb-6 sm:mb-4 font-color-dark" />
+
+                        <ul ref="ul2" class="dots space-y-1">
+                            <li v-for="item in branding"><span>{{ item }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -27,7 +32,7 @@
                 </div>
             </div>
         </router-link>
-        <div class="contactUs flex items-end">
+        <div ref="contact" class="contactUs flex items-end">
             <LinkParagraph :to="to" @mouseover="$refs.link2.animationStart()"
                 @mouseleave="$refs.link2.handleMouseLeave()">
                 <span ref="span" class="font-color-darker duration-200 kern-0 mr-2">
@@ -42,11 +47,13 @@
 <script>
 import {
     ItemHeader,
+    SectionHeader,
     Button,
-    ScrubTextSlider,
     LinkParagraph,
     LinkPrimary
 } from "../../components";
+
+import { textReveal, textRevealInline } from '../../js/textReveal'
 
 export default {
     props: {
@@ -60,23 +67,20 @@ export default {
 
     components: {
         ItemHeader,
+        SectionHeader,
         Button,
-        ScrubTextSlider,
         LinkParagraph,
         LinkPrimary
     },
 
-    methods: {
-        mouseOver() {
-            if (!this.$refs.header) return
-            this.$refs.header.mouseOver();
-            this.isMouseOver = true;
-        },
-        mouseLeave() {
-            if (!this.$refs.header) return
-            this.$refs.header.mouseLeave();
-            this.isMouseOver = false;
-        },
+    mounted() {
+        let uls = [this.$refs.ul1, this.$refs.ul2]
+
+        uls.forEach(ul => {
+            ul.childNodes.forEach(li => {
+                textRevealInline(li.childNodes[0], this.$refs.trigger, true, false, false, true);
+            });
+        });
     },
 }
 </script>
