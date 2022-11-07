@@ -1,5 +1,5 @@
 <template>
-    <section ref="section" id="OurOffer" class="bg-light" data-scroll data-scroll-speed="5">
+    <section ref="section" id="OurOffer">
         <div class="container">
             <OurOfferColumn title="Nasze możliwości"
                 :digital="['Strony internetowe', 'Projekty graficzne', 'Wizualizacje 3D', 'E-commerce', 'Aplikacje', 'UI/UX']"
