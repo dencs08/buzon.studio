@@ -1,6 +1,6 @@
 <template>
-    <section id="landing-page" class="flex items-center " data-scroll data-scroll-speed="-5">
-        <div class="container py-[15vh]">
+    <section id="landing-page" class="flex items-center ">
+        <div class="container py-[17vh]">
             <h1>
                 <div>
                     <span id="typed">Strony</span>
