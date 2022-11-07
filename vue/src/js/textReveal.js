@@ -4,11 +4,22 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
 export function textReveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
+    splitToLines(text, false);
+    reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
+}
+
+
+export function textRevealInline(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
+    splitToLines(text, true);
+    reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
+}
+
+function reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
     // if (!window.matchMedia("(min-width: 1024px)").matches) return;
     if (!text) return;
     setTimeout(() => {
         if (!startOffset) startOffset = 0;
-        splitToLines(text);
+
         let start, end, ease;
         let lines = text.querySelectorAll(".line");
         let offset = Math.floor((offsetHeight(text, trigger) / trigger.offsetHeight) * 100) + (startOffset) + "%";

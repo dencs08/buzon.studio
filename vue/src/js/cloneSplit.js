@@ -14,20 +14,20 @@ export function splitToWords(elementToSplit) {
     });
 }
 
-export function splitToLines(elementToSplit) {
+export function splitToLines(elementToSplit, addInline) {
     const lines = new SplitType(elementToSplit, { types: 'lines' });
 
     lines.lines.forEach(line => {
-        wrap(line)
+        wrap(line, addInline)
         line.classList.add("translate-y-[100%]")
     });
 }
 
-function wrap(toWrap, wrapper) {
+function wrap(toWrap, addInline, wrapper) {
     wrapper = wrapper || document.createElement('span');
     toWrap.parentNode.appendChild(wrapper);
     wrapper.classList.add('clip');
-    wrapper.classList.add('inline-block');
+    if (addInline) wrapper.classList.add('inline-block');
     wrapper.append(' ')
     return wrapper.appendChild(toWrap);
 };
