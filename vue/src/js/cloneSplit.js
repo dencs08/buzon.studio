@@ -17,7 +17,6 @@ export function splitToWords(elementToSplit) {
 export function splitToLines(elementToSplit) {
     const lines = new SplitType(elementToSplit, { types: 'lines' });
 
-    console.log(lines);
     lines.lines.forEach(line => {
         wrap(line)
         line.classList.add("translate-y-[100%]")
