@@ -6,7 +6,7 @@
             :class="{ isMouseOver: this.isMouseover, move: move, split: split }">
             <Logo :small="small ? true : false" :normal="normal ? true : false" :big="big ? true : false" />
         </div>
-        <div id="headerWrapper" :class="{ isMouseOver: this.isMouseover, split: split }" class="leading-[0]">
+        <div ref="headerDiv" id="headerWrapper" :class="{ isMouseOver: this.isMouseover, split: split }" class="">
             <h3 class="font-family-header" :class="{
                 small: small,
                 normal: normal,
@@ -26,6 +26,7 @@ import { Logo } from "../../";
 
 import { splitCloneToChars } from "../../../js/cloneSplit";
 import { animateCharsIn } from "../../../js/utilities/animateChars.js";
+import { textReveal } from '../../../js/textReveal'
 
 export default {
     data() {
@@ -42,6 +43,7 @@ export default {
         big: Boolean,
         split: Boolean,
         move: Boolean,
+        noReveal: Boolean,
     },
 
     setup() {
@@ -51,6 +53,8 @@ export default {
     },
 
     mounted() {
+        if (!this.noReveal) textReveal(this.$refs.header, this.$refs.headerDiv, true, false, false, false);
+
         if (!this.split) return;
         const elementToSplit = this.$refs.header;
         splitCloneToChars(elementToSplit);
