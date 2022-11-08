@@ -1,6 +1,6 @@
 <template>
     <footer id="footer" class="mb-2 relative">
-        <section>
+        <section ref="trigger">
             <div class="container">
                 <hr class="section-divider w-full mt-6 mb-14" />
             </div>
@@ -20,17 +20,17 @@
                 <div class="col-span-5">
                     <div class="md:grid grid-cols-2">
                         <div class="mb-8 md:mb-0">
-                            <h4 class="md:mb-5">Kontakt</h4>
+                            <h4 ref="contactHeader" class="md:mb-5">Kontakt</h4>
                             <LinkPrimary :href="`mailto:${email}?subject = Oferta&body = Wiadomość`" :text="email"
                                 :primary="true" class="mail-link fw-medium font-color-dark" />
 
-                            <h4 class="phone-number font-color-dark font-medium mb-2 mt-2">
+                            <h4 ref="phone" class="phone-number font-color-dark font-medium mb-2 mt-2">
                                 {{ phone }}
                             </h4>
                         </div>
 
                         <div class="font-color-dark md:pl-12">
-                            <h4 class="md:mb-5">Menu</h4>
+                            <h4 ref="menuHeader" class="md:mb-5">Menu</h4>
                             <ul class="space-y-2 uppercase">
                                 <li>
                                     <LinkPrimary to="Start" text="start" :secondary="true" />
@@ -47,19 +47,20 @@
                             </ul>
                         </div>
                     </div>
-                    <SocialIcons class="space-x-3 mt-8" />
+                    <SocialIcons ref="social" class="space-x-3 mt-8" />
                 </div>
             </div>
 
             <AutoTextSlider text="BUZON.STUDIO" :wordAmount="3" fontSize="12vw" height="10vw" class="my-6 md:my-10" />
 
-            <div class="container font-family-header uppercase text-center md:text-left space-y-2 md:space-y-0">
-                <div class="block md:inline-block mr-0 md:mr-4">
+            <div ref="footerBottom"
+                class="container font-family-header uppercase text-center md:text-left space-y-2 md:space-y-0">
+                <div ref="privacy" class="block md:inline-block mr-0 md:mr-4">
                     <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true"
                         class="font-color-dark" />
                 </div>
-                <ToggleThree class="md:inline-block" />
-                <div class="block md:inline-block float-none md:float-right">
+                <ToggleThree ref="toggle3d" class="md:inline-block" />
+                <div ref="copyright" class="block md:inline-block float-none md:float-right">
                     <span class="font-color-darker">© 2021 {{ name }} wszelkie prawa
                         zastrzeżone.</span>
                 </div>
@@ -74,6 +75,8 @@
 let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
+
+import { textReveal } from '../../js/textReveal'
 
 import { LinkPrimary, SocialIcons, ToggleThree, Button, AutoTextSlider } from "../../components";
 
@@ -93,6 +96,18 @@ export default {
         Button,
         AutoTextSlider
     },
+
+    mounted() {
+        let arr = [this.$refs.contactHeader, this.$refs.menuHeader, this.$refs.phone]
+        arr.forEach(el => {
+            textReveal(el, this.$refs.trigger, true, false, false, false);
+        });
+
+        let bottomFooterArr = [this.$refs.copyright]
+        bottomFooterArr.forEach(el => {
+            textReveal(el, this.$refs.footerBottom, true, false, false, false, -800);
+        });
+    }
 };
 </script>
 
