@@ -1,7 +1,7 @@
 <template>
-    <div ref="wrapper" class="lg:h-[60vh] relative mb-[11vw]">
+    <div ref="wrapper" id="portfolioGrid" class="lg:min-h-[60vh] relative mb-[11vw]">
         <div ref="grid" class="lg:absolute lg:grid grid-cols-3">
-            <PortfolioColumn v-for="project in this.projects" :projects="project" />
+            <PortfolioColumn ref="col" v-for="project in this.projects" :projects="project" class="column" />
         </div>
     </div>
 </template>
@@ -14,18 +14,49 @@ import { PortfolioColumn, PortfolioItem } from '../../components'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
+const getAllProjects = async () => {
+    const projects = await Promise.all([
+        axiosClient.get('/projects/best'),
+        axiosClient.get('/projects/best'),
+        axiosClient.get('/projects/best'),
+    ]);
+
+    return projects;
+}
+import { revealElement } from '../../js/textReveal'
+
 export default {
     components: {
         PortfolioColumn,
         PortfolioItem,
     },
 
-    data() {
-        return { projects: [] }
+    async setup() {
+        const request = await getAllProjects();
+        let projects = [];
+
+        projects.push(request[0].data.slice(0, 3))
+        projects.push(request[1].data.slice(3, 7))
+        projects.push(request[2].data.slice(7, 10))
+
+        projects[1][0].long = true
+        projects[1][1].long = true
+        projects[1][2].long = true
+        projects[1][3].long = true
+
+        return {
+            projects
+        };
     },
 
     mounted() {
-        this.getProjects();
+        this.scrollTrigger();
+
+        const arr = [this.$refs.col[0].$el, this.$refs.col[1].$el, this.$refs.col[2].$el]
+
+        arr.forEach(el => {
+            revealElement(el, "#header");
+        });
     },
 
     methods: {
@@ -35,7 +66,6 @@ export default {
                 axiosClient.get('/projects/best'),
                 axiosClient.get('/projects/best'),
             ]);
-
 
             this.projects.push(first.data.slice(0, 3))
             this.projects.push(second.data.slice(3, 7))
@@ -71,10 +101,11 @@ export default {
                 })
             }, 100);
         }
-
     }
 }
 </script>
-<style lang="">
-    
+<style lang="scss" scoped>
+.column {
+    visibility: hidden
+}
 </style>
