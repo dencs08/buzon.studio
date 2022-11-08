@@ -14,6 +14,7 @@
                 isMouseOver: this.isMouseover,
                 move: move,
                 split: split,
+                'reveal': !noReveal
             }" id="header" ref="header">
                 {{ text }}
             </h3>
@@ -90,7 +91,7 @@ export default {
 <style lang="scss" scoped>
 @import "./itemheader.scss";
 
-#header {
+#header.reveal {
     visibility: hidden;
 }
 </style>
