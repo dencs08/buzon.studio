@@ -2,7 +2,7 @@
     <footer id="footer" class="mb-2 relative">
         <section ref="trigger">
             <div class="container">
-                <hr class="section-divider w-full mt-6 mb-14" />
+                <hr ref="hr" class="section-divider w-full mt-6 mb-14" />
             </div>
             <div class="md:grid grid-cols-12 container text-center md:text-left">
                 <div class="col-span-7 mb-8 md:mb-0">
@@ -76,7 +76,7 @@ let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
 
-import { textReveal } from '../../js/textReveal'
+import { textReveal, revealElement } from '../../js/textReveal'
 
 import { LinkPrimary, SocialIcons, ToggleThree, Button, AutoTextSlider } from "../../components";
 
@@ -107,10 +107,16 @@ export default {
         bottomFooterArr.forEach(el => {
             textReveal(el, this.$refs.footerBottom, true, false, false, false, -800);
         });
+
+        revealElement(this.$refs.hr, this.$refs.trigger)
     }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "./Footer.scss";
+
+hr {
+    visibility: hidden;
+}
 </style>
