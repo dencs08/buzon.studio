@@ -1,5 +1,5 @@
 <template>
-    <div @mouseover="handleMouseOver" @animationend="animationEnd" @mouseleave="handleMouseLeave"
+    <div ref="linkDiv" @mouseover="handleMouseOver" @animationend="animationEnd" @mouseleave="handleMouseLeave"
         :class="{'clip' : split, 'active': isMouseOver}" class="inline-block">
         <component :is="this.defineTag()" :to="{ name: to }" :href="href" :class="{
             'underline-primary': primary && noUnderline === false,
@@ -22,6 +22,8 @@
 import { splitCloneToChars } from "../../../../js/cloneSplit";
 import { animateCharsIn } from "../../../../js/utilities/animateChars.js";
 
+import { textRevealInline } from '../../../../js/textReveal'
+
 export default {
     data() {
         return {
@@ -39,6 +41,7 @@ export default {
         point: Boolean,
         move: Boolean,
         split: Boolean,
+        noReveal: Boolean,
         splitMove: Number,
 
         noUnderline: {
@@ -54,6 +57,8 @@ export default {
     },
 
     mounted() {
+        if (!this.noReveal) textRevealInline(this.$refs.text, this.$refs.linkDiv, true, false, false, false);
+
         if (!this.split) return;
         const elementToSplit = this.$refs.text;
         splitCloneToChars(elementToSplit);
