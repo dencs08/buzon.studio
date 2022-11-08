@@ -6,7 +6,8 @@
                 doświadczenia w tworzeniu projektów i pomaganiu markom w
                 optymalizacji ich działań marketingowych.
 
-                <LinkPrimary to="Kontakt" text="Stwórzmy coś razem!" :primary="true" class="font-medium" />
+                <LinkPrimary to="Kontakt" text="Stwórzmy coś razem!" :primary="true" :noReveal="true"
+                    class="font-medium" />
             </p>
         </div>
     </section>
@@ -15,7 +16,7 @@
 <script>
 let name = import.meta.env.VITE_NAME;
 
-import { textReveal } from '../../js/textReveal'
+import { textRevealInline } from '../../js/textReveal'
 
 import LinkPrimary from '../../components/CallToAction/Links/LinkPrimary/LinkPrimary.vue';
 
@@ -30,7 +31,7 @@ export default {
         let text = this.$refs.text;
         let section = this.$refs.section;
 
-        textReveal(text, section, false, 1, true)
+        textRevealInline(text, section, false, 1, true, false);
     },
 };
 </script>

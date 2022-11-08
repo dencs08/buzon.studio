@@ -1,8 +1,6 @@
 <template>
     <main>
-        <div class="container pt-32">
-            <h1>Polityka prywatności {{ name }}</h1>
-        </div>
+        <LandingPage :h1="`Polityka prywatności ${name}`" />
 
         <div class="container space-y-8">
             <p>
@@ -32,7 +30,7 @@
                 <li>Używać w sprawie komunikacji user-to-user.</li>
                 <li>
                     Używać do jakiejkolwiek aktywności związanej z projektami{{
-                    name
+                            name
                     }}.
                 </li>
                 <li>
@@ -129,7 +127,7 @@
 </template>
 
 <script>
-import { Footer } from "../containers";
+import { Footer, LandingPage } from "../containers";
 
 let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
@@ -139,6 +137,7 @@ let ig = import.meta.env.VITE_IG;
 
 export default {
     name: "Prywatnosc",
+    components: { Footer, LandingPage },
     data() {
         return {
             name: name,
@@ -148,6 +147,5 @@ export default {
             ig: ig,
         };
     },
-    components: { Footer },
 };
 </script>

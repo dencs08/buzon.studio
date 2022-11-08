@@ -38,7 +38,7 @@
 
         cursor: pointer;
 
-        transition: 0.5s all;
+        transition: 0.25s color, 0.25s transform, 0.25s background;
     }
 
     input[type="checkbox"] + label:hover {
@@ -84,8 +84,7 @@
             font-weight: 300;
             color: rgb(126, 126, 126);
 
-            cursor: text;
-            transition: all 0.25s ease-in-out;
+            transition: top 0.25s ease-in-out;
         }
     }
 
@@ -102,12 +101,11 @@
 
         color: $font-color-primary !important;
 
-        transition: 0.5s all;
+        transition: 0.5s border;
 
         &:focus {
             outline: none;
             border: solid 1px $primary-color !important;
-            transition: all 0.25s;
         }
     }
 

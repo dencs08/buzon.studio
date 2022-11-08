@@ -24,20 +24,20 @@
                     <div class="flex sm:justify-center mt-20">
                         <ul class="space-y-4 nav-links">
                             <li>
-                                <LinkPrimary to="Start" text="Strona Główna" class="font-family-header" :split="true"
-                                    :splitMove="40" data-count="01" @click="this.toggleNav(true)" />
+                                <LinkPrimary to="Start" text="Strona Główna" class="font-family-header" :noReveal="true"
+                                    :split="true" :splitMove="40" data-count="01" @click="this.toggleNav(true)" />
                             </li>
                             <li>
-                                <LinkPrimary to="Oferta" text="Oferta" class="font-family-header" :split="true"
-                                    :splitMove="40" data-count="02" @click="this.toggleNav(true)" />
+                                <LinkPrimary to="Oferta" text="Oferta" class="font-family-header" :noReveal="true"
+                                    :split="true" :splitMove="40" data-count="02" @click="this.toggleNav(true)" />
                             </li>
                             <li>
-                                <LinkPrimary to="Portfolio" text="Portfolio" class="font-family-header" :split="true"
-                                    :splitMove="40" data-count="03" @click="this.toggleNav(true)" />
+                                <LinkPrimary to="Portfolio" text="Portfolio" class="font-family-header" :noReveal="true"
+                                    :split="true" :splitMove="40" data-count="03" @click="this.toggleNav(true)" />
                             </li>
                             <li>
-                                <LinkPrimary to="Kontakt" text="Kontakt" class="font-family-header" :split="true"
-                                    :splitMove="40" data-count="04" @click="this.toggleNav(true)" />
+                                <LinkPrimary to="Kontakt" text="Kontakt" class="font-family-header" :noReveal="true"
+                                    :split="true" :splitMove="40" data-count="04" @click="this.toggleNav(true)" />
                             </li>
                         </ul>
                     </div>

@@ -1,5 +1,5 @@
 <template>
-    <div ref="headerDiv">
+    <div ref="headerWrapper" class="headerWrapper">
         <h4 class="sectionHeaderline" :class="{ headerline: noAccent === false }"><span ref="headerLine">{{ headerLine
         }}</span></h4>
         <h3 class="sectionHeader" :class="{ big: big, break: wordBreak }"><span ref="header">{{ mainHeader }}</span>
@@ -32,12 +32,16 @@ export default {
     },
 
     mounted() {
-        if (!this.noReveal) textReveal(this.$refs.headerLine, this.$refs.headerDiv, true, false, false, false);
-        if (!this.noReveal) textReveal(this.$refs.header, this.$refs.headerDiv, true, false, false, false);
+        if (!this.noReveal) textReveal(this.$refs.headerLine, this.$refs.headerWrapper, true, false, false, false);
+        if (!this.noReveal) textReveal(this.$refs.header, this.$refs.headerWrapper, true, false, false, false);
     }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "./sectionheader.scss";
+
+.headerWrapper span {
+    visibility: hidden;
+}
 </style>

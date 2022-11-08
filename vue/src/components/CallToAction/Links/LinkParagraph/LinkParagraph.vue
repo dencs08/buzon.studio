@@ -1,13 +1,15 @@
 <template>
-    <span ref="slot" @mouseover="this.mouseOver()" @mouseleave="this.mouseLeave()">
-        <component :is="this.defineTag()" :to="{ name: to }" :href="href" class="cursor-pointer">
-            <slot> </slot>
-        </component>
+    <span ref="slotWrapper">
+        <span ref="slot" @mouseover="this.mouseOver()" @mouseleave="this.mouseLeave()">
+            <component :is="this.defineTag()" :to="{ name: to }" :href="href" class="cursor-pointer">
+                <slot> </slot>
+            </component>
+        </span>
     </span>
 </template>
 
 <script>
-import { textReveal } from '../../../../js/textReveal'
+import { textRevealInline } from '../../../../js/textReveal'
 
 export default {
     props: {
@@ -27,7 +29,7 @@ export default {
     },
 
     mounted() {
-        if (!this.noReveal) textReveal(this.$refs.slot, this.$refs.slot, true, false, false, false);
+        if (!this.noReveal) textRevealInline(this.$refs.slotWrapper, this.$refs.slotWrapper, true, false, false, false);
     },
 
     methods: {

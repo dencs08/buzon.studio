@@ -4,17 +4,26 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
 export function textReveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
-    splitToLines(text, false);
-    reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
+    setTimeout(() => {
+        splitToLines(text, false);
+        revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
+    }, []);
 }
-
 
 export function textRevealInline(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
-    splitToLines(text, true);
-    reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
+    setTimeout(() => {
+        splitToLines(text, true);
+        revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
+    }, []);
 }
 
-function reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
+export function elementReveal(el, trigger, startOffset) {
+    setTimeout(() => {
+        reveal(el, trigger, startOffset);
+    }, []);
+}
+
+function revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
     // if (!window.matchMedia("(min-width: 1024px)").matches) return;
     if (!text) return;
     setTimeout(() => {
@@ -29,7 +38,8 @@ function reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffs
 
         let tlScroll = gsap.timeline({ defaults: { ease: ease }, paused: true });
         tlScroll
-            .fromTo(lines, { y: "100%" }, { y: "0%", duration: 1.35, stagger: 0.05 })
+            .to(text, { opacity: 1, autoAlpha: 1, duration: 0, })
+            .to(lines, { y: "0%", duration: 1.35, stagger: 0.05 })
 
         if (animateOpacity) tlScroll.fromTo(lines, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.05 }, "<");
         if (!revealOnly) tlScroll.to(lines, { y: "-100%", duration: 1, stagger: 0.05 });
@@ -49,7 +59,36 @@ function reveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffs
     }, 100);
 }
 
+export function revealElement(el, trigger, startOffset) {
+    // if (!window.matchMedia("(min-width: 1024px)").matches) return;
+    if (!el) return;
+    setTimeout(() => {
+        if (!startOffset) startOffset = 0;
+
+        let start, end, ease;
+        let offset = Math.floor((offsetHeight(el, trigger) / trigger.offsetHeight) * 100) + (startOffset) + "%";
+
+        start = `${offset} 80%`, ease = "power.out";
+
+        let tlScroll = gsap.timeline({ defaults: { ease: ease, opacity: 0 } });
+        tlScroll
+            .to(el, { autoAlpha: 1 })
+            .to(el, { opacity: 1, duration: 10, stagger: 0.1 })
+        end = 1
+
+        gsap.registerPlugin(ScrollTrigger)
+        ScrollTrigger.create({
+            trigger: trigger,
+            start: `${start}`,
+            scroller: "#smoothScroll",
+            animation: tlScroll,
+            // markers: true,
+        })
+    }, 250);
+}
+
 function offsetHeight(el, div) {
     let offset = el.offsetTop - div.offsetTop;
+
     return offset;
 }

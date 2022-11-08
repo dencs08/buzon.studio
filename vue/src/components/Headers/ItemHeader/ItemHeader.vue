@@ -6,7 +6,7 @@
             :class="{ isMouseOver: this.isMouseover, move: move, split: split }">
             <Logo :small="small ? true : false" :normal="normal ? true : false" :big="big ? true : false" />
         </div>
-        <div ref="headerDiv" id="headerWrapper" :class="{ isMouseOver: this.isMouseover, split: split }" class="">
+        <div ref="headerDiv" id="headerWrapper" :class="{ isMouseOver: this.isMouseover, split: split }">
             <h3 class="font-family-header" :class="{
                 small: small,
                 normal: normal,
@@ -89,4 +89,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "./itemheader.scss";
+
+#header {
+    visibility: hidden;
+}
 </style>

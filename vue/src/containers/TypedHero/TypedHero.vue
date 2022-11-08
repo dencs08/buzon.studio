@@ -1,14 +1,14 @@
 <template>
-    <section id="landing-page" class="flex items-center ">
+    <section ref="trigger" id="landing-page" class="flex items-center ">
         <div class="container py-[17vh]">
-            <h1>
+            <h1 ref="h1">
                 <div>
                     <span id="typed">Strony</span>
                 </div>
                 <div>Pod Twoje potrzeby.</div>
             </h1>
 
-            <h2>
+            <h2 ref="h2">
                 W naszym studio kreujemy prace które, działają, zdobywają serca
                 użytkowników i zapadają w pamięć. Tworzymy wszystko od A do Z,
                 tak jak chcesz.
@@ -18,8 +18,21 @@
     </section>
 </template>
 
-<script></script>
+<script>
+import { textReveal } from '../../js/textReveal'
+export default {
+    mounted() {
+        textReveal(this.$refs.h1, this.$refs.trigger, true, false, false, false);
+        textReveal(this.$refs.h2, this.$refs.trigger, true, false, false, false);
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "./typedhero.scss";
+
+h1,
+h2 {
+    visibility: hidden;
+}
 </style>

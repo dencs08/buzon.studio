@@ -1,8 +1,8 @@
 <template>
-    <section id="clients">
+    <section ref="clients" id="clients">
         <div class="container">
-            <h4 class="mb-2">Oni juz nam zaufali:</h4>
-            <div
+            <h4 ref="h4" class="mb-2">Oni juz nam zaufali:</h4>
+            <div ref="imgs"
                 class="[&>*]:px-3 xl:[&>*]:px-12 xs:space-y-0 flex flex-wrap justify-center items-center md:flex-nowrap text-center">
                 <CollabItem name="danfit" class="grow" />
                 <CollabItem name="komb" class="grow" />
@@ -17,10 +17,16 @@
 
 <script>
 import { CollabItem } from "../../components";
+import { textReveal } from '../../js/textReveal'
+
 export default {
     components: {
         CollabItem,
     },
+
+    mounted() {
+        textReveal(this.$refs.h4, this.$refs.clients, true, false, false, false);
+    }
 };
 </script>
 

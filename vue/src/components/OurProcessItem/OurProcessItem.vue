@@ -46,4 +46,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "./ourprocessitem.scss";
+
+span {
+    visibility: hidden;
+}
 </style>

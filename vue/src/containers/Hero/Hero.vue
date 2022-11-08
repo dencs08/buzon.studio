@@ -26,7 +26,8 @@
                 </h2>
 
                 <router-link :to="{ name: 'Oferta' }">
-                    <Button ref="button" text="Oferta" class="mt-6 opacity-0" :split="true" :secondary="true" />
+                    <Button ref="button" text="Oferta" class="mt-6 opacity-0" :noReveal="true" :split="true"
+                        :secondary="true" />
                 </router-link>
             </div>
 
@@ -66,7 +67,7 @@ export default {
         this.h1 = this.$refs.h1;
 
         const span = this.$refs.span
-        splitToLines(span);
+        splitToLines(span, true);
         this.isSplit = false;
         this.lines = document.querySelectorAll("#heroH2 .line")
 

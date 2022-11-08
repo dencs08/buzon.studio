@@ -1,5 +1,5 @@
 <template>
-    <div ref="trigger" class="h-[auto] py-14 md:py-0 md:h-[100vh] flex flex-col justify-center">
+    <div ref="trigger" class="h-[auto] py-14 md:py-0 md:h-[80vh] flex flex-col justify-between">
         <router-link :to="{ name: to }" class="h-[60%] mb-12 md:mb-0">
             <div>
                 <SectionHeader :mainHeader="title" :big="true" :move="true"
@@ -28,10 +28,10 @@
                 </div>
             </div>
         </router-link>
-        <div ref="contact" class="contactUs flex items-end">
+        <div ref="contact" class="contactUs flex">
             <LinkParagraph :to="to" @mouseover="$refs.link2.animationStart()"
                 @mouseleave="$refs.link2.handleMouseLeave()">
-                <span ref="span" class="font-color-darker duration-200 kern-0 mr-2">
+                <span class="font-color-darker duration-200 kern-0 mr-2">
                     {{ bottomLinkText[0] }}</span>
 
                 <LinkPrimary :to="to" :text="bottomLinkText[1]" :primary="true" class="font-medium" ref="link2" />
@@ -81,4 +81,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import './ouroffercolumn.scss';
+
+li span {
+    visibility: hidden;
+}
 </style>
