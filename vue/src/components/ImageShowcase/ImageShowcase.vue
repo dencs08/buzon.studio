@@ -10,7 +10,7 @@
                 }" />
             </div>
 
-            <div class="info ml-1 sm:ml-8 lg:ml-10">
+            <div class="info " :class="[horizontal ? 'ml-1 sm:ml-3 lg:ml-5' : 'ml-1 sm:ml-8 lg:ml-10']">
                 <div class="font-family-header my-0">
                     <ItemHeader ref="itemHeader" :text="title" :big="true" :split="true" :noReveal="true"
                         headerClass="mt-[-25px] md:mt-[-25px] lg:mt-[-30px] xl:mt-[-50px] z-[2] inline-block" />
