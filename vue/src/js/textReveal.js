@@ -65,8 +65,11 @@ export function revealElement(el, trigger, startOffset) {
     setTimeout(() => {
         if (!startOffset) startOffset = 0;
 
-        let start, end, ease;
-        let offset = Math.floor((offsetHeight(el, trigger) / trigger.offsetHeight) * 100) + (startOffset) + "%";
+        let start, end, ease, triggerOffsetHeight;
+
+        trigger.offsetHeight ? triggerOffsetHeight = trigger.offsetHeight : triggerOffsetHeight = 1000
+
+        let offset = Math.floor((offsetHeight(el, trigger) / triggerOffsetHeight) * 100) + (startOffset) + "%";
 
         start = `${offset} 80%`, ease = "power.out";
 
@@ -88,7 +91,10 @@ export function revealElement(el, trigger, startOffset) {
 }
 
 function offsetHeight(el, div) {
-    let offset = el.offsetTop - div.offsetTop;
+    let divOffset = div.offsetTop;;
+    if (!div.offsetTop) divOffset = 1;
+
+    let offset = el.offsetTop - divOffset;
 
     return offset;
 }
