@@ -78,4 +78,11 @@
     .bg-light {
         background-color: $body-bg !important;
     }
+
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: clamp(5vw, 2vw, 350px);
+        padding-right: clamp(5vw, 2vw, 350px);
+    }
 }
