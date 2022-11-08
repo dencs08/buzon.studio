@@ -33,7 +33,7 @@ const routes = [
     {
         path: '/projekt/:projectName',
         children: [
-            { path: '/projekt/:projectName', name: 'Projekt', component: Projekt },
+            { path: '/projekt/:projectName', name: 'Projekt', component: Projekt, meta: { transition: 'fade' }, },
         ]
     },
     {
