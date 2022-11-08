@@ -10,9 +10,10 @@
             animating: (primary && isAnimating) || (secondary && isAnimating),
             'leading-none': split,
             active: isMouseOver,
-        }" class="transitions cursor-pointer"><span ref="text" class="linkPrimaryText" :class="{ arrow: point }">{{
-        text
-}}</span>
+        }" class="transitions cursor-pointer">
+            <span ref="text" class="linkPrimaryText" :class="{ arrow: point, 'reveal': !noReveal }">
+                {{ text }}
+            </span>
         </component>
     </div>
 
@@ -105,4 +106,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "./linkprimary.scss";
+
+span.reveal {
+    visibility: hidden;
+}
 </style>
