@@ -13,14 +13,14 @@
 
                 <h2 id="heroH2" ref="h2" class="fw-normal font-family-primary relative">
                     <LinkParagraph to="Oferta" @mouseover="$refs.link2.animationStart()"
-                        @mouseleave="$refs.link2.handleMouseLeave()">
+                        @mouseleave="$refs.link2.handleMouseLeave()" :noReveal="true">
                         <span ref="span" :class="{ 'opacity-0': isSplit }"
                             class="font-color-darker duration-200 kern-0 mr-2">
                             Tworzymy strony internetowe, wizualizacje, logo,
                             marketing online i inne produkty cyfrowe z pomocą metody</span>
 
                         <LinkPrimary id="linkHero" to="Oferta" text="All-in-One." :primary="true"
-                            class="font-medium clip opacity-0" ref="link2" />
+                            class="font-medium clip opacity-0" ref="link2" :noReveal="true" />
 
                     </LinkParagraph>
                 </h2>
