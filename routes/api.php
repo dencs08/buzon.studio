@@ -8,7 +8,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/sendMail', [ProjectController::class, 'index']);
+
 Route::get('/projects', [ProjectController::class, 'index']);
+
 Route::get('/projects/best', [ProjectController::class, 'indexBest']);
 
 Route::prefix('/project')->group( function () {
