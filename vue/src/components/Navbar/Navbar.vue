@@ -1,5 +1,5 @@
 <template>
-    <header class="fixed w-screen z-[9999] container">
+    <header id="header" class="fixed w-screen z-[9999] container">
         <div class="flex min-h-[40px] h-[12vh] overflow-hidden">
             <div class="flex items-center">
                 <router-link :to="{ name: 'Start' }" @click="this.toggleNav(true)"
