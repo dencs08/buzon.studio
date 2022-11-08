@@ -3,9 +3,9 @@
     <Navbar />
     <Cursor ref="cursor" />
 
-    <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component, route }">
         <div id="smoothScroll">
-            <transition name="fade" mode="out-in" @leave="leave" @enter="enter">
+            <transition :name="route.meta.transition || 'fade'" mode="out-in" @leave="leave" @enter="enter">
                 <component :is="Component" id="routerView" />
             </transition>
         </div>
@@ -53,5 +53,16 @@ main {
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.3s ease-out;
+}
+
+.zoom-enter-from,
+.zoom-leave-to {
+    scale: 0.25;
+    opacity: 0;
+}
+
+.zoom-enter-active,
+.zoom-leave-active {
+    transition: scale 0.5s ease-in-out 30s, opacity 0.25s ease-in-out 30s;
 }
 </style>
