@@ -2,6 +2,7 @@
     <LinkSkip />
     <Navbar />
     <Cursor ref="cursor" />
+    <ThreeCanvas />
 
     <router-view v-slot="{ Component, route }">
         <div id="smoothScroll">
@@ -14,8 +15,9 @@
 
 <script>
 import { locoInit, locoDestroy } from './js/utilities/locomotiveScroll'
+import { threeInit } from './js/threeJS/three.js'
 
-import { Navbar, LinkSkip, Cursor } from "./components";
+import { Navbar, LinkSkip, Cursor, ThreeCanvas } from "./components";
 export default {
     name: "App",
 
@@ -23,7 +25,13 @@ export default {
         Navbar,
         Cursor,
         LinkSkip,
+        ThreeCanvas,
     },
+
+    mounted() {
+        threeInit();
+    },
+
     methods: {
         leave() {
             locoDestroy()
