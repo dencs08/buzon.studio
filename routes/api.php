@@ -3,12 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\EmailController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/sendMail', [ProjectController::class, 'index']);
+Route::post('/emailSend', [EmailController::class, 'emailSend']);
 
 Route::get('/projects', [ProjectController::class, 'index']);
 
