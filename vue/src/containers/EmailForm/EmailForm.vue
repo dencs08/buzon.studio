@@ -5,7 +5,8 @@
                 <SectionHeader mainHeader="Co możemy dla Ciebie zrobić?" :big="true" :noAccent="true" />
             </div>
 
-            <form id="contact-form" name="contact-form" class="contact-form validate-form" action="" method="post">
+            <form id="contact-form" name="contact-form" class="contact-form validate-form" :onSubmit="sendEmail"
+                method="post">
                 <div>
                     <div ref="booleansWrapper">
                         <div class="control-group-error hidden opacity-0">
@@ -95,9 +96,11 @@
 </template>
 
 <script>
+import axiosClient from '../../js/axios'
 import { Button, SectionHeader } from "../../components";
-
 import { revealElement } from '../../js/textReveal'
+
+import toastr from 'toastr'
 export default {
     components: { Button, SectionHeader },
 
@@ -105,6 +108,68 @@ export default {
         revealElement(this.$refs.hr, this.$refs.hr);
         revealElement(this.$refs.booleans, this.$refs.booleansWrapper);
         revealElement(this.$refs.inputsWrapper, this.$refs.inputsWrapper);
+    },
+
+    data() {
+        return { emailData: {} }
+    },
+
+    methods: {
+        sendEmail(e) {
+            e.preventDefault();
+
+            let controlInfo = [];
+            this.$refs.booleans.childNodes.forEach(el => {
+                if (el.tagName.toLowerCase() === "label") return;
+                if (el.checked == false) return;
+
+                controlInfo.push(el.value);
+            });
+
+            this.emailData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                controlInfo: controlInfo
+            };
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-full-width",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+
+            axiosClient({
+                method: 'post',
+                url: '/emailSend',
+                params: this.axiosParams(),
+            }).then(response => (
+                toastr.success('Sprawdź swoją skrzynkę po email z potwierdzeniem, do usłyszenia wkrótce! :-) ', 'Wiadomość wysłana')
+            )).catch(error => {
+                toastr.warning('Spróbuj ponownie poźniej, lub skontaktuj się bezpośrednio na hej@buzon.studio', 'Ups! Coś poszło nie tak')
+            })
+        },
+
+        axiosParams() {
+            const params = new URLSearchParams();
+            params.append('name', this.emailData['name']);
+            params.append('email', this.emailData['email']);
+            params.append('content', this.emailData['message']);
+            params.append('controlInfo', this.emailData['controlInfo']);
+            return params;
+        }
     }
 };
 </script>
