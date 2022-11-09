@@ -3,7 +3,6 @@ export { default as IG } from './SVG/IG/IG.vue'
 export { default as Logo } from './SVG/Logo/Logo.vue'
 export { default as LogoWhite } from './SVG/LogoWhite/LogoWhite.vue'
 
-
 export { default as LinkPrimary } from './CallToAction/Links/LinkPrimary/LinkPrimary.vue'
 export { default as LinkParagraph } from './CallToAction/Links/LinkParagraph/LinkParagraph.vue'
 export { default as LinkEmail } from './CallToAction/Links/LinkEmail/LinkEmail.vue'
