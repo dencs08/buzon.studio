@@ -15,28 +15,33 @@
     h1 {
         font-family: $font-family-header;
 
-        font-size: clamp(1.75rem, 32vh, 100rem);
-        line-height: clamp(1.75rem, 24vh, 100rem);
-        letter-spacing: clamp(0.5rem, 0.5vw, 5rem);
+        font-size: clamp(1.75rem, 22vw, 100rem);
+        line-height: clamp(1.75rem, 16vw, 100rem);
     }
 
     h2 {
-        font-size: clamp(1rem, 1.6vw, 3rem);
+        font-size: clamp(1rem, 1.8vw, 3rem);
     }
 }
 
 @media (max-width: $md-screen-size) {
     #hero {
-        // height: auto;
-
         h1 {
-            font-size: clamp(1.75rem, 24vw, 100rem) !important;
-            line-height: clamp(1.75rem, 18vw, 100rem) !important;
-            letter-spacing: clamp(0.5rem, 0.5vw, 5rem) !important;
+            font-size: clamp(1.75rem, 22vw, 100rem);
+            line-height: clamp(1.75rem, 14vw, 100rem);
         }
 
         h2 {
-            font-size: clamp(0.7rem, 2.2vw, 1.5rem);
+            font-size: clamp(0.7rem, 2.2vw, 2rem);
+        }
+    }
+}
+
+@media (max-width: $xs-screen-size) {
+    #hero {
+        h1 {
+            font-size: clamp(1.75rem, 18vw, 100rem);
+            line-height: clamp(1.75rem, 14vw, 100rem);
         }
     }
 }

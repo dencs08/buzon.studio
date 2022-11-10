@@ -1,38 +1,34 @@
 <template>
-    <section id="hero" class="flex overflow-hidden h-auto pb-24 md:pb-0 md:h-screen grid xl:grid-cols-2">
-        <div class="container-hero">
+    <section ref="hero" id="hero"
+        class="flex overflow-hidden pb-24 md:pb-0 min-h-[70vh] md:h-screen grid content-center">
+        <div class="container-hero text-center">
             <div>
-                <h1 ref="h1" class="mt-[14vh] kern-0 mb-4">
-                    <div class="clip-x w-fit">
-                        <div class="kern-0 translate-y-[120%]">BUZON</div>
-                    </div>
-                    <div class="clip-x w-fit">
-                        <div class="kern-0 translate-y-[120%]">STUDIO</div>
-                    </div>
+                <h1 ref="h1" class="mb-4">
+                    BUZON STUDIO
                 </h1>
-
-                <h2 id="heroH2" ref="h2" class="fw-normal font-family-primary relative">
-                    <LinkParagraph to="Oferta" @mouseover="$refs.link2.animationStart()"
-                        @mouseleave="$refs.link2.handleMouseLeave()" :noReveal="true">
-                        <span ref="span" :class="{ 'opacity-0': isSplit }"
-                            class="font-color-darker duration-200 kern-0 mr-2">
-                            Tworzymy strony internetowe, wizualizacje, logo,
-                            marketing online i inne produkty cyfrowe z pomocą metody</span>
-
-                        <LinkPrimary id="linkHero" to="Oferta" text="All-in-One." :primary="true"
-                            class="font-medium clip opacity-0" ref="link2" :noReveal="true" />
-
-                    </LinkParagraph>
-                </h2>
-
-                <router-link :to="{ name: 'Oferta' }">
-                    <Button ref="button" text="Oferta" class="mt-6 opacity-0" :noReveal="true" :split="true"
-                        :secondary="true" />
-                </router-link>
             </div>
 
-            <!-- <x-arrow/> -->
+            <h2 id="heroH2" ref="h2" class="fw-normal font-family-primary relative md:px-[10vw]">
+                <LinkParagraph to="Oferta" @mouseover="$refs.link2.animationStart()"
+                    @mouseleave="$refs.link2.handleMouseLeave()" :noReveal="true">
+
+                    <span ref="span" class="font-color-darker duration-200 kern-0 mr-2 reveal">
+                        Tworzymy strony internetowe, wizualizacje, logo,
+                        marketing online i inne produkty cyfrowe z pomocą metody
+                    </span>
+
+                    <LinkPrimary id="linkHero" to="Oferta" text="All-in-One." :primary="true"
+                        class="font-medium clip reveal" ref="link2" :noReveal="true" />
+
+                </LinkParagraph>
+            </h2>
+
+            <router-link ref="buttonWrapper" :to="{ name: 'Oferta' }">
+                <Button ref="button" text="Oferta" class="mt-6 reveal" :noReveal="true" :split="true"
+                    :secondary="true" />
+            </router-link>
         </div>
+
     </section>
 </template>
 
@@ -40,8 +36,7 @@
 import { LinkPrimary, LinkParagraph, Button } from "../../components";
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-
-import { splitToLines } from "../../js/cloneSplit";
+import { charReveal, textRevealInline, revealElement } from "../../js/textReveal";
 
 export default {
     components: {
@@ -50,41 +45,23 @@ export default {
         Button
     },
 
-    data() {
-        return {
-            isSplit: true,
-        }
-    },
-
-    setup() {
-        let h1, lines, tlScroll;
-        return {
-            h1, lines, tlScroll
-        }
-    },
-
     mounted() {
-        this.h1 = this.$refs.h1;
-
-        const span = this.$refs.span
-        splitToLines(span, true);
-        this.isSplit = false;
-        this.lines = document.querySelectorAll("#heroH2 .line")
-
-        let tl = gsap.timeline({ defaults: { ease: "expo.out" } });
-        tl.to(this.$refs.h1.children[0].children, { y: "0", delay: 0.2, })
-            .to(this.$refs.h1.children[1].children, { y: "0", }, "<0.15")
-            .to(this.lines, { y: "0", stagger: 0.02, onComplete: () => { this.scrollTriggerSecond() } })
-            .to(this.$refs.link2.$el, { opacity: "1", ease: "power2.in" }, ">-0.5")
-            .to(this.$refs.button.$el, { opacity: "1", ease: "power2.in" }, ">-0.5")
-
+        this.revealAnimations()
 
         setTimeout(() => {
             this.scrollTriggerAnimations()
-        }, 50);
+        }, 100);
     },
 
     methods: {
+        revealAnimations() {
+            charReveal(this.$refs.h1, this.$refs.hero, true, false, false, false)
+            setTimeout(() => {
+                textRevealInline(this.$refs.span, this.$refs.hero, true, false, false, false)
+                revealElement(this.$refs.button.$el, this.$refs.hero)
+                revealElement(this.$refs.link2.$el, this.$refs.hero)
+            }, 500);
+        },
         mouseOver() {
         },
 
@@ -95,8 +72,9 @@ export default {
 
             this.tlScroll = gsap.timeline({ defaults: { ease: "none" }, paused: true });
             this.tlScroll
-                .to(this.$refs.h1.children[0].children, { x: "-110%", duration: 3, delay: 0.25, })
-                .to(this.$refs.h1.children[1].children, { x: "110%", duration: 3 }, "<")
+                .to(this.$refs.h1, { y: "-110%", duration: 3, stagger: 0.05 }, "<")
+                .to(this.$refs.h2, { opacity: 0, duration: 3 }, "<")
+                .to(this.$refs.buttonWrapper.$el, { opacity: 0, duration: 3 }, "<")
 
             ScrollTrigger.create({
                 trigger: "#hero",
@@ -108,22 +86,15 @@ export default {
                 pin: true,
             })
         },
-
-        //separate function for adding .words into scrub timeline of hero section 
-        //(otherwise .words would jump to the end of the animation or start from the initial position if used fromTo())
-        //TODO make better solution for this...
-        scrollTriggerSecond() {
-            if (!window.matchMedia("(min-width: 1024px)").matches) return;
-
-            this.tlScroll
-                .to(this.lines, { duration: 2, y: "-100%", stagger: 0.25 }, 1)
-                .to(this.$refs.link2.$el.children, { y: "-110%", duration: 2 }, "<0.5")
-                .to(this.$refs.button.$el, { opacity: "0", duration: 1 }, "<0.1")
-        }
     },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./Hero.scss";
+
+h1,
+.reveal {
+    visibility: hidden
+}
 </style>

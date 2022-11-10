@@ -6,6 +6,15 @@ export function splitCloneToChars(elementToSplit) {
     clone(elementToSplit)
 }
 
+export function splitToChars(elementToSplit) {
+    const chars = new SplitType(elementToSplit, { types: "chars" });
+
+    wrap(elementToSplit)
+    chars.chars.forEach(char => {
+        char.classList.add("translate-y-[120%]")
+    });
+}
+
 export function splitToWords(elementToSplit) {
     const words = new SplitType(elementToSplit, { types: 'words' });
 

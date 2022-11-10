@@ -1,4 +1,4 @@
-import { splitToLines } from "./cloneSplit"
+import { splitToLines, splitToChars } from "./cloneSplit"
 
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -6,6 +6,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 export function textReveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
     setTimeout(() => {
         splitToLines(text, false);
+        revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
+    }, []);
+}
+
+export function charReveal(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset) {
+    setTimeout(() => {
+        splitToChars(text);
         revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset);
     }, []);
 }
@@ -30,7 +37,12 @@ function revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, start
         if (!startOffset) startOffset = 0;
 
         let start, end, ease;
-        let lines = text.querySelectorAll(".line");
+        let elements;
+
+        elements = text.querySelectorAll(".line")
+        if (elements.length == 0) elements = text.querySelectorAll(".char");
+
+
         let offset = Math.floor((offsetHeight(text, trigger) / trigger.offsetHeight) * 100) + (startOffset) + "%";
 
         if (scrub > 0 || scrub != false) start = "50% 50%", ease = "none";
@@ -39,10 +51,10 @@ function revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, start
         let tlScroll = gsap.timeline({ defaults: { ease: ease }, paused: true });
         tlScroll
             .to(text, { opacity: 1, autoAlpha: 1, duration: 0, })
-            .to(lines, { y: "0%", duration: 1.35, stagger: 0.05 })
+            .to(elements, { y: "0%", duration: 1.35, stagger: 0.05 })
 
-        if (animateOpacity) tlScroll.fromTo(lines, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.05 }, "<");
-        if (!revealOnly) tlScroll.to(lines, { y: "-100%", duration: 1, stagger: 0.05 });
+        if (animateOpacity) tlScroll.fromTo(elements, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.05 }, "<");
+        if (!revealOnly) tlScroll.to(elements, { y: "-100%", duration: 1, stagger: 0.05 });
         end = 1000
 
         gsap.registerPlugin(ScrollTrigger)
