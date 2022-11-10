@@ -1,7 +1,5 @@
-// import gsap from 'gsap'
+import gsap from 'gsap'
 import * as THREE from 'three'
-
-// init
 
 var cube, renderer, scene, camera;
 export function threeInit() {
@@ -10,12 +8,13 @@ export function threeInit() {
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xffffff, 0);
 
     let elementToAppend = document.getElementById("threeCanvas");
     elementToAppend.appendChild(renderer.domElement);
 
     var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    var material = new THREE.MeshBasicMaterial({ color: 0x222222 });
     cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
