@@ -23,9 +23,8 @@
                 </LinkParagraph>
             </h2>
 
-            <router-link ref="buttonWrapper" :to="{ name: 'Oferta' }">
-                <Button ref="button" text="Oferta" class="mt-6 reveal" :noReveal="true" :split="true"
-                    :secondary="true" />
+            <router-link ref="buttonWrapper" :to="{ name: 'Portfolio' }">
+                <Button ref="button" text="Portfolio" class="mt-6 reveal" :noReveal="true" :big="true" :split="true" />
             </router-link>
         </div>
 
