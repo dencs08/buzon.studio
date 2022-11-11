@@ -26,7 +26,7 @@ export function textRevealInline(text, trigger, revealOnly, scrub, pin, animateO
 
 export function elementReveal(el, trigger, startOffset) {
     setTimeout(() => {
-        reveal(el, trigger, startOffset);
+        revealFade(el, trigger, startOffset);
     }, []);
 }
 
@@ -34,71 +34,59 @@ function revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, start
     // if (!window.matchMedia("(min-width: 1024px)").matches) return;
     if (!text) return;
     setTimeout(() => {
-        if (!startOffset) startOffset = 0;
+        let settings = {
+            trigger: trigger,
+            start: "",
+            end: 1000,
+            animation: "",
+            ease: "none",
+            scrub: scrub,
+            pin: pin
+        };
 
-        let start, end, ease;
         let elements;
-
         elements = text.querySelectorAll(".line")
         if (elements.length == 0) elements = text.querySelectorAll(".char");
 
+        settings = defineSettings(settings, text, trigger, startOffset)
 
-        let offset = Math.floor((offsetHeight(text, trigger) / trigger.offsetHeight) * 100) + (startOffset) + "%";
-
-        if (scrub > 0 || scrub != false) start = "50% 50%", ease = "none";
-        if (scrub == 0 || scrub == false) start = `${offset} 80%`, ease = "expo";
-
-        let tlScroll = gsap.timeline({ defaults: { ease: ease }, paused: true });
+        let tlScroll = gsap.timeline({ defaults: { ease: settings.ease }, paused: true });
         tlScroll
-            .to(text, { opacity: 1, autoAlpha: 1, duration: 0, })
-            .to(elements, { y: "0%", duration: 1.35, stagger: 0.05 })
+            .to(text, { opacity: 1, autoAlpha: 1, duration: 0 })
+            .to(elements, { y: "0%", duration: 1.35, stagger: 0.05, onStart: () => { setTimeout(() => { text.classList.add("wasInView") }, 350) } })
 
+
+        if (window.getComputedStyle(text, null).getPropertyValue("content")) tlScroll.to(text, { "--pseudoOpacity": "1", duration: 1 }, "<")
         if (animateOpacity) tlScroll.fromTo(elements, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.05 }, "<");
         if (!revealOnly) tlScroll.to(elements, { y: "-100%", duration: 1, stagger: 0.05 });
-        end = 1000
 
-        gsap.registerPlugin(ScrollTrigger)
-        ScrollTrigger.create({
-            trigger: trigger,
-            start: `${start}`,
-            end: `+=${end}`,
-            scroller: "#smoothScroll",
-            animation: tlScroll,
-            scrub: scrub,
-            pin: pin,
-            // markers: true,
-        })
+        settings.animation = tlScroll;
+
+        createScrollTrigger(settings)
     }, 100);
 }
 
-export function revealElement(el, trigger, startOffset) {
-    // if (!window.matchMedia("(min-width: 1024px)").matches) return;
+function revealFade(el, trigger, startOffset) {
     if (!el) return;
     setTimeout(() => {
-        if (!startOffset) startOffset = 0;
+        let settings = {
+            trigger: trigger,
+            start: "",
+            end: 1,
+            animation: "",
+            ease: "none",
+        };
 
-        let start, end, ease, triggerOffsetHeight;
+        settings = defineSettings(settings, el, trigger, startOffset)
 
-        trigger.offsetHeight ? triggerOffsetHeight = trigger.offsetHeight : triggerOffsetHeight = 1000
-
-        let offset = Math.floor((offsetHeight(el, trigger) / triggerOffsetHeight) * 100) + (startOffset) + "%";
-
-        start = `${offset} 80%`, ease = "power.out";
-
-        let tlScroll = gsap.timeline({ defaults: { ease: ease, opacity: 0 } });
+        let tlScroll = gsap.timeline({ defaults: { ease: settings.ease, opacity: 0 }, paused: true });
         tlScroll
             .to(el, { autoAlpha: 1 })
-            .to(el, { opacity: 1, duration: 10, stagger: 0.1 })
-        end = 1
+            .to(el, { opacity: 1, duration: 1, stagger: 0.1 })
 
-        gsap.registerPlugin(ScrollTrigger)
-        ScrollTrigger.create({
-            trigger: trigger,
-            start: `${start}`,
-            scroller: "#smoothScroll",
-            animation: tlScroll,
-            // markers: true,
-        })
+        settings.animation = tlScroll;
+
+        createScrollTrigger(settings)
     }, 250);
 }
 
@@ -109,4 +97,33 @@ function offsetHeight(el, div) {
     let offset = el.offsetTop - divOffset;
 
     return offset;
+}
+
+function createScrollTrigger(settings) {
+    gsap.registerPlugin(ScrollTrigger)
+    ScrollTrigger.create({
+        trigger: settings.trigger,
+        start: settings.start,
+        end: `+=${settings.end}`,
+        scroller: "#smoothScroll",
+        animation: settings.animation,
+        scrub: settings.scrub,
+        pin: settings.pin,
+        // markers: true,
+    })
+}
+
+function defineSettings(oldSettings, el, trigger, startOffset) {
+    let newSettings = oldSettings;
+
+    if (!startOffset) startOffset = 0;
+
+    let triggerOffsetHeight;
+    trigger.offsetHeight ? triggerOffsetHeight = trigger.offsetHeight : triggerOffsetHeight = window.innerHeight
+
+    let startOffsetToApply = Math.floor((offsetHeight(el, trigger) / triggerOffsetHeight) * 100) + (startOffset) + "%";
+    if (newSettings.scrub > 0 || newSettings.scrub == '') newSettings.start = "50% 50%", newSettings.ease = "none";
+    if (newSettings.scrub == 0 || newSettings.scrub == false) newSettings.start = `${startOffsetToApply} 80%`, newSettings.ease = "expo";
+
+    return newSettings;
 }
