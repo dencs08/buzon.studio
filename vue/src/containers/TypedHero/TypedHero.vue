@@ -1,11 +1,15 @@
 <template>
-    <section ref="trigger" id="landing-page" class="flex items-center ">
-        <div class="container py-[17vh]">
+    <section ref="trigger" id="landing-page" class="flex items-center min-h-[50vh] md:h-[75vh]">
+        <div class="container">
             <h1 ref="h1">
                 <div>
-                    <span id="typed">Strony</span>
+                    <span id="typed">
+                        Strony
+                    </span>
                 </div>
-                <div>Pod Twoje potrzeby.</div>
+                <div>
+                    Pod Twoje potrzeby.
+                </div>
             </h1>
 
             <h2 ref="h2">
