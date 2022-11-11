@@ -15,7 +15,7 @@
 
 <script>
 import axiosClient from '../js/axios'
-
+import { scrollTriggerUpdate, locoStart } from '../js/utilities/locomotiveScroll'
 import {
     ProjectHero,
     ProjectInfo,
@@ -42,7 +42,10 @@ export default {
     },
 
     mounted() {
-        this.getProject()
+        this.getProject().then(response =>
+            scrollTriggerUpdate(100),
+            locoStart(850)
+        )
     },
 
     methods: {

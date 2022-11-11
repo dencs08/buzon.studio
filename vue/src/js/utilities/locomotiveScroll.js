@@ -24,10 +24,9 @@ export function locoInit(timeout) {
             }
         });
 
-        locoScroll.stop()
-        setTimeout(() => {
-            locoScroll.start()
-        }, 750);
+        locoStop()
+
+        locoStart(1000)
 
         locoScroll.on("scroll", (args) => {
             document.documentElement.setAttribute('data-direction', args.direction)
@@ -65,11 +64,7 @@ export function locoInit(timeout) {
 
         ScrollTrigger.addEventListener("refresh", () => lsUpdate());
         ScrollTrigger.refresh();
-        setTimeout(() => {
 
-            ScrollTrigger.addEventListener("refresh", () => lsUpdate());
-            ScrollTrigger.refresh();
-        }, 500);
     }, timeout);
 }
 
@@ -82,11 +77,29 @@ export function scrollProgress(scrollY, limitY) {
     document.documentElement.setAttribute('data-scroll-progress', progress)
 }
 
-
 export function locoDestroy() {
     if (locoScroll) {
         ScrollTrigger.removeEventListener("refresh", lsUpdate);
         locoScroll.destroy();
         locoScroll = null;
     }
+}
+
+export function locoStop(timeout) {
+    setTimeout(() => {
+        locoScroll.stop()
+    }, timeout);
+}
+
+export function locoStart(timeout) {
+    setTimeout(() => {
+        locoScroll.start()
+    }, timeout);
+}
+
+export function scrollTriggerUpdate(timeout) {
+    setTimeout(() => {
+        ScrollTrigger.addEventListener("refresh", () => lsUpdate());
+        ScrollTrigger.refresh();
+    }, timeout);
 }
