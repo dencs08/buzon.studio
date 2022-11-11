@@ -60,7 +60,7 @@
                 <div ref="navFooterLinks"
                     class="sm:flex sm:text-left text-center sm:space-x-4 space-y-1 sm:space-y-0 translate-y-[100px] opacity-0">
                     <div>
-                        <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true"
+                        <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true" :noReveal="true"
                             class="font-color-dark" @click="this.toggleNav(true)" />
                     </div>
                     <div class="min-w-[50px] sm:w-[5vw] flex justify-center">
