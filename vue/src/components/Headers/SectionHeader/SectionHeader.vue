@@ -41,10 +41,6 @@ export default {
         if (!this.noReveal) textReveal(this.$refs.headerLine, this.$refs.headerWrapper, true, false, false, false);
         if (!this.noReveal) textReveal(this.$refs.header, this.$refs.headerWrapper, true, false, false, false);
     },
-
-    beforeUnmount() {
-        this.observer.disconnect();
-    },
 };
 </script>
 
