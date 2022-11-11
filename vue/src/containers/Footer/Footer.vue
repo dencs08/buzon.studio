@@ -53,9 +53,8 @@
 
             <AutoTextSlider text="BUZON.STUDIO" :wordAmount="3" fontSize="12vw" height="10vw" class="my-6 md:my-10" />
 
-            <div ref="footerBottom"
-                class="container font-family-header uppercase text-center md:text-left space-y-2 md:space-y-0">
-                <div ref="privacy" class="block md:inline-block mr-0 md:mr-4">
+            <div class="container font-family-header uppercase text-center md:text-left space-y-2 md:space-y-0">
+                <div class="block md:inline-block mr-0 md:mr-4">
                     <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true"
                         class="font-color-dark" />
                 </div>
@@ -76,7 +75,7 @@ let name = import.meta.env.VITE_NAME;
 let email = import.meta.env.VITE_EMAIL;
 let phone = import.meta.env.VITE_PHONE;
 
-import { textReveal, revealElement } from '../../js/textReveal'
+import { textReveal, elementReveal } from '../../js/textReveal'
 
 import { LinkPrimary, SocialIcons, ToggleThree, Button, AutoTextSlider } from "../../components";
 
@@ -105,10 +104,10 @@ export default {
 
         let bottomFooterArr = [this.$refs.copyright]
         bottomFooterArr.forEach(el => {
-            textReveal(el, this.$refs.footerBottom, true, false, false, false, -800);
+            textReveal(el, this.$refs.trigger, true, false, false, false, -800);
         });
 
-        revealElement(this.$refs.hr, this.$refs.trigger)
+        elementReveal(this.$refs.hr, this.$refs.trigger)
     }
 };
 </script>

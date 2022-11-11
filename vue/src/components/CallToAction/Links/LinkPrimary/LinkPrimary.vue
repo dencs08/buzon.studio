@@ -1,7 +1,7 @@
 <template>
     <div ref="linkDiv" @mouseover="handleMouseOver" @animationend="animationEnd" @mouseleave="handleMouseLeave"
         :class="{'clip' : split, 'active': isMouseOver}" class="inline-block">
-        <component :is="this.defineTag()" :to="{ name: to }" :href="href" :class="{
+        <component ref="component" :is="this.defineTag()" :to="{ name: to }" :href="href" :class="{
             'underline-primary': primary && noUnderline === false,
             'underline-secondary': secondary && noUnderline === false,
             'link-primary': primary,
@@ -10,6 +10,8 @@
             animating: (primary && isAnimating) || (secondary && isAnimating),
             'leading-none': split,
             active: isMouseOver,
+            'reveal': !noReveal,
+            'before:opacity-0': (!wasInView && !noReveal)
         }" class="transitions cursor-pointer">
             <span ref="text" class="linkPrimaryText" :class="{ arrow: point, 'reveal': !noReveal }">
                 {{ text }}
@@ -30,6 +32,7 @@ export default {
         return {
             isAnimating: false,
             isMouseOver: false,
+            wasInView: false,
         };
     },
 
@@ -58,6 +61,7 @@ export default {
     },
 
     mounted() {
+        this.attachObserver()
         if (!this.noReveal) textRevealInline(this.$refs.text, this.$refs.linkDiv, true, false, false, false);
 
         if (!this.split) return;
@@ -70,6 +74,11 @@ export default {
             this.splitMove
         );
     },
+
+    beforeUnmount() {
+        this.observer.disconnect();
+    },
+
     methods: {
         defineTag() {
             if (this.to) {
@@ -100,6 +109,30 @@ export default {
         animationEnd() {
             this.isAnimating = false;
         },
+
+        onClassChange(classAttrValue) {
+            const classList = classAttrValue.split(' ');
+            if (classList.includes('wasInView')) {
+                this.wasInView = true;
+            }
+        },
+
+        attachObserver() {
+            this.observer = new MutationObserver(mutations => {
+                for (const m of mutations) {
+                    const newValue = m.target.getAttribute(m.attributeName);
+                    this.$nextTick(() => {
+                        this.onClassChange(newValue, m.oldValue);
+                    });
+                }
+            });
+
+            this.observer.observe(this.$refs.text, {
+                attributes: true,
+                attributeOldValue: true,
+                attributeFilter: ['class'],
+            });
+        }
     },
 };
 </script>

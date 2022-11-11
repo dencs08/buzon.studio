@@ -1,5 +1,5 @@
 <template>
-    <button ref="btn" class="btn" :class="[setButtonClass(), setButtonSize(), { arrow: arrow }]"
+    <button ref="btn" class="btn" :class="[setButtonClass(), setButtonSize(), { arrow: arrow, 'reveal': !noReveal }]"
         @mouseover="handleMouseOver" @animationend="animationEnd" @mouseleave="handleMouseLeave">
         <div class="inline-block clip">
             <span ref="text">{{ text }}</span>
@@ -10,7 +10,7 @@
 <script>
 import { splitCloneToChars } from "../../../../js/cloneSplit";
 import { animateCharsIn } from "../../../../js/utilities/animateChars.js";
-import { revealElement } from '../../../../js/textReveal'
+import { elementReveal } from '../../../../js/textReveal'
 
 export default {
     data() {
@@ -41,7 +41,7 @@ export default {
     },
 
     mounted() {
-        if (!this.noReveal) revealElement(this.$refs.btn, this.$refs.btn);
+        if (!this.noReveal) elementReveal(this.$refs.btn, this.$refs.btn);
 
         if (!this.split) return;
         const elementToSplit = this.$refs.text;
@@ -94,4 +94,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "./button.scss";
+
+button.reveal {
+    visibility: hidden;
+}
 </style>

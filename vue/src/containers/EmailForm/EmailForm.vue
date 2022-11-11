@@ -98,16 +98,16 @@
 <script>
 import axiosClient from '../../js/axios'
 import { Button, SectionHeader } from "../../components";
-import { revealElement } from '../../js/textReveal'
+import { elementReveal } from '../../js/textReveal'
 import { toast } from '../../js/toastNotification'
 
 export default {
     components: { Button, SectionHeader },
 
     mounted() {
-        revealElement(this.$refs.hr, this.$refs.hr);
-        revealElement(this.$refs.booleans, this.$refs.booleansWrapper);
-        revealElement(this.$refs.inputsWrapper, this.$refs.inputsWrapper);
+        elementReveal(this.$refs.hr, this.$refs.hr);
+        elementReveal(this.$refs.booleans, this.$refs.booleansWrapper);
+        elementReveal(this.$refs.inputsWrapper, this.$refs.inputsWrapper);
     },
 
     data() {

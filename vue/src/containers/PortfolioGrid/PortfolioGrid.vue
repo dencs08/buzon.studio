@@ -10,6 +10,7 @@
 import axiosClient from '../../js/axios'
 
 import { PortfolioColumn, PortfolioItem } from '../../components'
+import { elementReveal } from '../../js/textReveal'
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -23,7 +24,6 @@ const getAllProjects = async () => {
 
     return projects;
 }
-import { revealElement } from '../../js/textReveal'
 
 export default {
     components: {
@@ -55,7 +55,7 @@ export default {
         const arr = [this.$refs.col[0].$el, this.$refs.col[1].$el, this.$refs.col[2].$el]
 
         arr.forEach(el => {
-            revealElement(el, "#header");
+            elementReveal(el, "#header");
         });
     },
 

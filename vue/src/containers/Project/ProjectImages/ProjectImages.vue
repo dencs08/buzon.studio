@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { revealElement } from '../../../js/textReveal'
+import { elementReveal } from '../../../js/textReveal'
 
 export default {
     props: {
@@ -36,10 +36,10 @@ export default {
     },
     mounted() {
         // setTimeout(() => {
-        //     revealElement(this.$refs.img1, this.$refs.imagesSection);
-        //     revealElement(this.$refs.img2, this.$refs.imagesSection);
-        //     revealElement(this.$refs.img3, this.$refs.imagesSection);
-        //     revealElement(this.$refs.img4, this.$refs.imagesSection);
+        //     elementReveal(this.$refs.img1, this.$refs.imagesSection);
+        //     elementReveal(this.$refs.img2, this.$refs.imagesSection);
+        //     elementReveal(this.$refs.img3, this.$refs.imagesSection);
+        //     elementReveal(this.$refs.img4, this.$refs.imagesSection);
         // }, 1000);
     }
 }

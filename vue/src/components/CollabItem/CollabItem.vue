@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { revealElement } from '../../js/textReveal'
+import { elementReveal } from '../../js/textReveal'
 
 export default {
     props: {
@@ -14,7 +14,7 @@ export default {
     },
 
     mounted() {
-        revealElement(this.$refs.img, this.$refs.imgWrapper)
+        elementReveal(this.$refs.img, this.$refs.imgWrapper)
     },
 
     methods: {

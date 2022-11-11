@@ -73,7 +73,7 @@ export default {
         let uls = [this.$refs.ul1, this.$refs.ul2]
         uls.forEach(ul => {
             ul.childNodes.forEach(li => {
-                textRevealInline(li.childNodes[0], this.$refs.trigger, true, false, false, true);
+                if (li.tagName == "LI") textRevealInline(li, this.$refs.trigger, true, false, false, true);
             });
         });
     },
@@ -82,7 +82,12 @@ export default {
 <style lang="scss" scoped>
 @import './ouroffercolumn.scss';
 
-li span {
+li {
     visibility: hidden;
+    --pseudoOpacity: 0;
+
+    &:before {
+        opacity: var(--pseudoOpacity);
+    }
 }
 </style>

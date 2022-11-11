@@ -35,7 +35,7 @@
 import { LinkPrimary, LinkParagraph, Button } from "../../components";
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { charReveal, textRevealInline, revealElement } from "../../js/textReveal";
+import { charReveal, textRevealInline, elementReveal } from "../../js/textReveal";
 
 export default {
     components: {
@@ -57,8 +57,8 @@ export default {
             charReveal(this.$refs.h1, this.$refs.hero, true, false, false, false)
             setTimeout(() => {
                 textRevealInline(this.$refs.span, this.$refs.hero, true, false, false, false)
-                revealElement(this.$refs.button.$el, this.$refs.hero)
-                revealElement(this.$refs.link2.$el, this.$refs.hero)
+                elementReveal(this.$refs.button.$el, this.$refs.button.$el, 1000)
+                elementReveal(this.$refs.link2.$el, this.$refs.hero)
             }, 500);
         },
         mouseOver() {

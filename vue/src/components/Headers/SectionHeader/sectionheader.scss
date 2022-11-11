@@ -8,14 +8,18 @@
     word-spacing: 50000px;
 }
 
-.headerline::before {
-    display: block;
+.headerline {
+    &::before {
+        display: block;
 
-    content: "";
+        content: "";
 
-    width: 25px;
+        width: 25px;
 
-    border-top: 3px solid $primary-color;
+        border-top: 3px solid $primary-color;
 
-    padding-top: 0.5rem;
+        padding-top: 0.5rem;
+
+        transition: opacity 0.3s ease-in-out 0.01s;
+    }
 }
