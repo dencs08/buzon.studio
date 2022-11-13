@@ -1,6 +1,7 @@
 <template>
     <main>
-        <TypedHero />
+        <LandingPage h1="Usługi pod Twoje potrzeby."
+            h2="W naszym studio kreujemy prace które, działają, zdobywają serca użytkowników i zapadają w pamięć. Tworzymy wszystko od A do Z, tak jak chcesz." />
         <OurOffer :buttons="false" to="Portfolio" :bottomLinkText="['Zachęcamy do sprawdzenia', 'naszych prac.']" />
         <OurProcess />
         <Collabs />
@@ -9,11 +10,11 @@
 </template>
 
 <script>
-import { TypedHero, OurOffer, OurProcess, Collabs, Footer } from "../containers";
+import { LandingPage, OurOffer, OurProcess, Collabs, Footer } from "../containers";
 export default {
     name: "Oferta",
     components: {
-        TypedHero,
+        LandingPage,
         OurOffer,
         OurProcess,
         Collabs,
