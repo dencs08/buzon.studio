@@ -1,6 +1,6 @@
 <template>
     <section ref="hero" id="hero"
-        class="flex overflow-hidden pb-24 md:pb-0 min-h-[70vh] md:h-screen grid content-center">
+        class="flex overflow-hidden pt-14 md:pt-0 md:pb-24 md:pb-0 min-h-[40vh] md:h-screen grid content-center">
         <div class="container-hero text-center">
             <div>
                 <h1 ref="h1" class="mb-4">
