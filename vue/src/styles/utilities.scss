@@ -66,6 +66,10 @@
     font-kerning: none;
 }
 
+.bg {
+    background-color: $body-bg;
+}
+
 .bg-light {
     background-color: $body-bg-color-lighter;
 }
@@ -84,5 +88,12 @@
         margin-left: auto;
         padding-left: clamp(5vw, 2vw, 350px);
         padding-right: clamp(5vw, 2vw, 350px);
+    }
+
+    .arrow {
+        &:before,
+        &:after {
+            display: none;
+        }
     }
 }
