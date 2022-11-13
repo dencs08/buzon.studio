@@ -37,6 +37,7 @@ function wrap(toWrap, addInline, wrapper) {
     toWrap.parentNode.appendChild(wrapper);
     wrapper.classList.add('clip');
     if (addInline) wrapper.classList.add('inline-block');
+    if (!addInline) wrapper.classList.add('block')
     wrapper.append(' ')
     return wrapper.appendChild(toWrap);
 };
