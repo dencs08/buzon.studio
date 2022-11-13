@@ -8,10 +8,6 @@
         padding-right: clamp(15px, 4vw, 350px);
     }
 
-    .line {
-        // translate: 0px 100%;
-    }
-
     h1 {
         font-family: $font-family-header;
 
@@ -28,7 +24,7 @@
     #hero {
         h1 {
             font-size: clamp(1.75rem, 22vw, 100rem);
-            line-height: clamp(1.75rem, 14vw, 100rem);
+            line-height: clamp(1.75rem, 16vw, 100rem);
         }
 
         h2 {
