@@ -1,10 +1,14 @@
 import gsap from 'gsap'
 import * as THREE from 'three'
 
-var cube, renderer, scene, camera;
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+
+const gltfLoader = new GLTFLoader()
+
+var logo, renderer, scene, camera;
 export function threeInit() {
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(1, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -13,32 +17,50 @@ export function threeInit() {
     let elementToAppend = document.getElementById("threeCanvas");
     elementToAppend.appendChild(renderer.domElement);
 
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshBasicMaterial({ color: 0x222222 });
-    cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    camera.position.z = 0;
 
-    camera.position.z = 5;
+    loadModel('3d_logo_array.gltf', 0x111111, -35);
+    loadModel('3d_logo_monitor.gltf', 0x161616, -35);
 
     animate();
 }
 
-var animate = function () {
+var animate = function (time) {
     requestAnimationFrame(animate);
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    animateCamera(getScrollPos())
 
     renderer.render(scene, camera);
 };
 
-// animation
+var loadModel = function (name, color, zPos) {
+    gltfLoader.load(`../../src/assets/3d/models/${name}`, function (gltf) {
+        var material = new THREE.MeshBasicMaterial({ color: color });
 
-// function animation(time) {
+        let model = gltf.scene;
+        model.traverse((o) => {
+            if (o.isMesh) o.material = material;
+        });
+        model.position.z = zPos;
+        scene.add(model);
+    }, undefined, function (error) {
+        console.error(error);
+    });
+}
 
-//     mesh.rotation.x = time / 2000;
-//     mesh.rotation.y = time / 1000;
+let scrollProgress;
+var getScrollPos = function () {
+    scrollProgress = document.documentElement.getAttribute('data-scroll-progress');
 
-//     renderer.render(scene, camera);
+    return scrollProgress;
+}
 
-// }
+function animateCamera(scrollProgress) {
+    camera.position.z = lerp(camera.position.z, scrollProgress * 2, 0.1);
+    // camera.fov = scrollProgress;
+    // camera.updateProjectionMatrix();
+}
+
+function lerp(start, end, amt) {
+    return (1 - amt) * start + amt * end
+}
