@@ -1,10 +1,10 @@
 <template>
-    <section ref="trigger" id="landing-page" class="flex items-center min-h-[50vh] md:h-[75vh]">
+    <section ref="trigger" id="" class="flex items-center min-h-[50vh] md:h-[75vh]">
         <div class="container">
             <h1 ref="h1">
                 <div>
                     <span id="typed">
-                        Strony
+                        Usługi
                     </span>
                 </div>
                 <div>
