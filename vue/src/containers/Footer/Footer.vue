@@ -1,5 +1,5 @@
 <template>
-    <footer id="footer" class="mb-2 relative">
+    <footer id="footer" class="mb-2 relative bg">
         <section ref="trigger">
             <div class="container">
                 <hr ref="hr" class="section-divider w-full mt-6 mb-14" />
@@ -31,20 +31,20 @@
 
                         <div class="font-color-dark md:pl-12">
                             <h4 ref="menuHeader" class="md:mb-5">Menu</h4>
-                            <ul class="space-y-2 uppercase">
-                                <li>
+                            <div class="space-y-2 uppercase">
+                                <div>
                                     <LinkPrimary to="Start" text="start" :secondary="true" />
-                                </li>
-                                <li>
+                                </div>
+                                <div>
                                     <LinkPrimary to="Oferta" text="oferta" :secondary="true" />
-                                </li>
-                                <li>
+                                </div>
+                                <div>
                                     <LinkPrimary to="Portfolio" text="portfolio" :secondary="true" />
-                                </li>
-                                <li>
+                                </div>
+                                <div>
                                     <LinkPrimary to="Kontakt" text="kontakt" :secondary="true" />
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <SocialIcons ref="social" class="space-x-3 mt-8" />
@@ -55,7 +55,7 @@
 
             <div class="container font-family-header uppercase text-center md:text-left space-y-2 md:space-y-0">
                 <div class="block md:inline-block mr-0 md:mr-4">
-                    <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true"
+                    <LinkPrimary to="Prywatnosc" text="Polityka prywatności" :secondary="true" :noReveal="true"
                         class="font-color-dark" />
                 </div>
                 <ToggleThree ref="toggle3d" class="md:inline-block" />
