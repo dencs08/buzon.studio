@@ -1,5 +1,5 @@
 <template>
-    <div id="threeCanvas" class="pointer-events-none z-[-99] absolute">
+    <div id="threeCanvas" class="pointer-events-none z-[-99] fixed">
     </div>
 </template>
 <script>
