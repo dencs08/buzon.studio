@@ -11,7 +11,7 @@
                 </div>
 
                 <LinkPrimary ref="portfolioLink" to="Portfolio" text="Więcej prac" :primary="true" :point="true"
-                    class="uppercase portfolio-link lg:absolute lg:bottom-[2%] mt-6 lg:mt-0" />
+                    class="uppercase portfolio-link lg:absolute lg:bottom-[2%] mt-6 lg:mt-0 reveal" />
             </div>
         </div>
     </section>
@@ -50,10 +50,18 @@ export default {
                 pin: true,
             })
         }, 100);
+
+        if (window.matchMedia("(max-width: 1024px)").matches) setTimeout(() => { gsap.to(this.$refs.portfolioLink.$el, { autoAlpha: 1, opacity: 1 }); }, 500);
     },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "./ourworks.scss";
+
+@media screen and (max-width: 1024px) {
+    .reveal {
+        visibility: hidden;
+    }
+}
 </style>
