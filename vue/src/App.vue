@@ -2,12 +2,12 @@
     <LinkSkip />
     <Navbar />
     <Cursor ref="cursor" />
-    <ThreeCanvas />
+    <ThreeCanvas :showAnimationDelay=1.25 />
 
     <router-view v-slot="{ Component, route }">
         <div id="smoothScroll">
             <transition :name="route.meta.transition || 'fade'" mode="out-in" @leave="leave" @enter="enter">
-                <component :is="Component" id="routerView" />
+                <component :is="Component" id="routerView" :class="{ hideBody: !loadedNewPage }" />
             </transition>
         </div>
     </router-view>
@@ -15,7 +15,7 @@
 
 <script>
 import { locoInit, locoDestroy } from './js/utilities/locomotiveScroll'
-import { threeInit } from './js/threeJS/three.js'
+import { threeInit } from './js/threeJS/three.ts'
 
 import { Navbar, LinkSkip, Cursor, ThreeCanvas } from "./components";
 export default {
@@ -28,16 +28,24 @@ export default {
         ThreeCanvas,
     },
 
+    data() {
+        return {
+            loadedNewPage: false
+        }
+    },
+
     mounted() {
         threeInit();
     },
 
     methods: {
         leave() {
+            this.loadedNewPage = false;
             locoDestroy()
             this.$refs.cursor.restartCursor()
         },
         enter() {
+            setTimeout(() => { this.loadedNewPage = true }, 50)
             this.$refs.cursor.getCursorTriggers()
             locoInit(1)
         },
@@ -72,5 +80,9 @@ main {
 .zoom-enter-active,
 .zoom-leave-active {
     transition: scale 0.5s ease-in-out 30s, opacity 0.25s ease-in-out 30s;
+}
+
+.hideBody {
+    visibility: hidden;
 }
 </style>
