@@ -1,5 +1,5 @@
 <template>
-    <div :class="defineSize()">
+    <div ref="icons" :class="defineSize()">
         <router-link to="Start" class="icon-wrapper">
             <div class="inline-block">
                 <LogoWhite />
@@ -22,6 +22,8 @@
 let fb = import.meta.env.VITE_FB;
 let ig = import.meta.env.VITE_IG;
 
+import { elementReveal } from '../../../js/textReveal'
+
 import { FB, IG, LogoWhite } from "../../";
 export default {
     data() {
@@ -33,12 +35,17 @@ export default {
 
     props: {
         size: String,
+        noReveal: Boolean,
     },
 
     components: {
         LogoWhite,
         FB,
         IG,
+    },
+
+    mounted() {
+        if (!this.noReveal) elementReveal(this.$refs.icons, this.$refs.icons);
     },
 
     methods: {
