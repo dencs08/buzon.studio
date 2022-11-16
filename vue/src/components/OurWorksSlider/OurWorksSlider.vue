@@ -34,7 +34,9 @@ export default {
                 .then(response => {
                     response.data.length = 5;
                     this.projects = response.data
-                    this.scrollTrigger()
+                    setTimeout(() => {
+                        this.scrollTrigger()
+                    }, 50);
                 })
                 .catch(error => {
                     console.log(error);
