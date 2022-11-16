@@ -9,8 +9,8 @@
                 </router-link>
             </div>
             <div class="flex grow items-center justify-end">
-                <button class="hamburger w-[35px] h-[35px] flex items-center pointer-events-auto" type="button"
-                    aria-label="Menu" aria-controls="navigation" aria-expanded="false" @click="toggleNav">
+                <button id="navHamburger" class="hamburger w-[35px] h-[35px] flex items-center pointer-events-auto"
+                    type="button" aria-label="Menu" aria-controls="navigation" aria-expanded="false" @click="toggleNav">
                     <span :class="{ active: isNavToggled }"></span>
                 </button>
             </div>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div id="navFooterSocial" class="flex flex-row grow justify-center md:justify-end mt-4">
-                    <SocialIcons ref="navFooterSocial" size="small" class="space-x-3" />
+                    <SocialIcons ref="navFooterSocial" size="small" class="space-x-3" :noReveal="true" />
                 </div>
             </div>
         </div>
@@ -98,6 +98,11 @@ export default {
         };
     },
 
+    mounted() {
+        document.documentElement.setAttribute('data-nav-isAnimating', this.isAnimating)
+        document.documentElement.setAttribute('data-nav-opened', this.isNavToggled)
+    },
+
     methods: {
         toggleNav(nav) {
             if (nav === true) {
@@ -108,6 +113,7 @@ export default {
             if (this.isAnimating) return;
             this.isNavToggled = !this.isNavToggled;
             this.animation(this.isNavToggled);
+            document.documentElement.setAttribute('data-nav-opened', this.isNavToggled)
         },
 
         animation(open) {
@@ -129,6 +135,10 @@ export default {
         animationOpen(tl, mainWrapper) {
             if (!this.isNavToggled) return;
             this.isAnimating = true;
+            setTimeout(() => {
+                document.documentElement.setAttribute('data-nav-opened', this.isNavToggled)
+                document.documentElement.setAttribute('data-nav-isAnimating', this.isAnimating)
+            }, 1);
             tl.to(mainWrapper, {
                 duration: 0.5,
                 opacity: 0,
@@ -182,6 +192,7 @@ export default {
                         ease: "power2.out",
                         onComplete: () => {
                             this.isAnimating = false;
+                            document.documentElement.setAttribute('data-nav-isAnimating', this.isAnimating)
                         },
                     },
                     "-=0.25"
@@ -191,6 +202,10 @@ export default {
         animationClose(tl, mainWrapper) {
             if (this.isNavToggled) return;
             this.isAnimating = true;
+            setTimeout(() => {
+                document.documentElement.setAttribute('data-nav-opened', this.isNavToggled)
+                document.documentElement.setAttribute('data-nav-isAnimating', this.isAnimating)
+            }, 1);
             tl.to(
                 this.$refs.navFooterLinks,
                 {
@@ -248,6 +263,7 @@ export default {
                         ease: "expo",
                         onComplete: () => {
                             this.isAnimating = false;
+                            document.documentElement.setAttribute('data-nav-isAnimating', this.isAnimating)
                         },
                     },
                     "-=0.25"
