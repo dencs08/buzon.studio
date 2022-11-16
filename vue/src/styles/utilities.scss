@@ -67,7 +67,14 @@
 }
 
 .bg {
-    background-color: $body-bg;
+    background: linear-gradient(
+        to bottom,
+        rgba(11, 11, 11, 0) 0%,
+        rgba(11, 11, 11, 0.75) 25%,
+        rgba(11, 11, 11, 1) 50%,
+        rgba(11, 11, 11, 1) 75%,
+        rgba(11, 11, 11, 1) 100%
+    );
 }
 
 .bg-light {
@@ -79,8 +86,15 @@
 }
 
 @media screen and (max-width: 768px) {
-    .bg-light {
-        background-color: $body-bg !important;
+    .bg {
+        background: linear-gradient(
+            to bottom,
+            rgba(11, 11, 11, 0) 0%,
+            rgba(11, 11, 11, 0.6) 25%,
+            rgba(11, 11, 11, 0.9) 50%,
+            rgba(11, 11, 11, 1) 75%,
+            rgba(11, 11, 11, 1) 100%
+        );
     }
 
     .container {
