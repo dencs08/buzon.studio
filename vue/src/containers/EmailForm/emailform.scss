@@ -23,7 +23,7 @@
     input[type="checkbox"] + label {
         display: inline-block;
         position: relative;
-        width: 20em;
+        width: clamp(20em, 22.5%, 40em);
 
         background: #ffffff0d !important;
 
@@ -76,10 +76,10 @@
 
         label {
             position: absolute;
-            left: 30px;
-            top: clamp(1rem, 2.1vw, 5rem);
+            left: clamp(2.25rem, 1.65vw, 4rem);
+            top: clamp(1rem, 2.1vw, 2.75rem);
 
-            font-size: clamp(0.9rem, 1vw, 2rem);
+            font-size: clamp(0.9rem, 1vw, 1.35rem);
             font-weight: 300;
             color: rgb(126, 126, 126);
 
