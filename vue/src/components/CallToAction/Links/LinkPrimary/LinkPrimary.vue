@@ -10,7 +10,6 @@
             animating: (primary && isAnimating) || (secondary && isAnimating),
             'leading-none': split,
             active: isMouseOver,
-            'reveal': !noReveal,
             'before:opacity-0': (!wasInView && !noReveal)
         }" class="transitions cursor-pointer">
             <span ref="text" class="linkPrimaryText" :class="{ arrow: point, 'reveal': !noReveal }">
@@ -62,7 +61,7 @@ export default {
 
     mounted() {
         this.attachObserver()
-        if (!this.noReveal) textRevealInline(this.$refs.text, this.$refs.linkDiv, true, false, false, false);
+        if (!this.noReveal) textRevealInline(this.$refs.text, this.$refs.text, true, false, false, false);
 
         if (!this.split) return;
         const elementToSplit = this.$refs.text;
@@ -115,6 +114,7 @@ export default {
             if (classList.includes('wasInView')) {
                 this.wasInView = true;
             }
+
         },
 
         attachObserver() {
@@ -140,7 +140,7 @@ export default {
 <style lang="scss" scoped>
 @import "./linkprimary.scss";
 
-span.reveal {
+.reveal {
     visibility: hidden;
 }
 </style>
