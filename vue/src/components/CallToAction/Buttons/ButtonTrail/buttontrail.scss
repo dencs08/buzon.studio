@@ -4,16 +4,7 @@ $button-color: adjust-hue(darken($primary-color, 15%), 2);
 
 .button-trail {
     a {
-        position: relative;
-        display: inline-block;
-        padding: 1em 1.8em;
-        color: $primary-color;
-        font-size: clamp(0.6rem, 1.5vw, 1.3rem);
-        text-decoration: none;
-        text-transform: uppercase;
-        overflow: hidden;
-        transition: 0.5s;
-        letter-spacing: 4px;
+        font-size: clamp(0.9rem, 1.5vw, 1.3rem);
 
         &:hover {
             background: $button-color;
