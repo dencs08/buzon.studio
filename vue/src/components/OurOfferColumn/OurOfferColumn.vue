@@ -8,17 +8,17 @@
                 <div class="xs:flex flex-row xs:space-x-[10vw]">
                     <div class="mb-6 xs:mb-0">
                         <ItemHeader text="Produkty Cyfrowe" :normal="true" :move="true"
-                            headerClass="inline-block uppercase mb-6 sm:mb-4 font-color-dark" />
-                        <ul ref="ul1" class="dots space-y-1">
-                            <li v-for="item in digital"><span>{{ item }}</span></li>
+                            headerClass="inline-block uppercase mb-6 sm:mb-4 font-color-dark whitespace-nowrap" />
+                        <ul ref="ul1" class="dots space-y-1 whitespace-nowrap">
+                            <li v-for="item in digital" class="whitespace-nowrap"><span>{{ item }}</span></li>
                         </ul>
                     </div>
                     <div>
                         <ItemHeader text="Branding" :normal="true" :move="true"
-                            headerClass="inline-block uppercase mb-6 sm:mb-4 font-color-dark" />
+                            headerClass="inline-block uppercase mb-6 sm:mb-4 font-color-dark whitespace-nowrap" />
 
-                        <ul ref="ul2" class="dots space-y-1">
-                            <li v-for="item in branding"><span>{{ item }}</span></li>
+                        <ul ref="ul2" class="dots space-y-1 whitespace-nowrap">
+                            <li v-for="item in branding" class="whitespace-nowrap"><span>{{ item }}</span></li>
                         </ul>
                     </div>
                 </div>
