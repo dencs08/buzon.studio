@@ -3,7 +3,7 @@
         <div class="lg:h-[100vh] flex items-center">
             <div id="portfolio-content" class="container">
                 <h3 ref="header"
-                    class="hidden lg:block uppercase font-bold sectionHeader font-family-header lg:absolute lg:top-1/2 lg:translate-y-[-50%] z-[-1]">
+                    class="hidden lg:block uppercase font-bold sectionHeader font-family-header lg:absolute lg:top-[52%] lg:translate-y-[-50%] z-[-1]">
                     Projekty
                 </h3>
                 <div class="">
