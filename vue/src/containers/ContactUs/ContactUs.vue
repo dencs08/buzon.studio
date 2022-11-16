@@ -3,7 +3,7 @@
         <div class="container text-center">
             <SectionHeader headerLine="Napisz do nas!" mainHeader="Zatrudnij nas a my zajmiemy się resztą."
                 :noAccent="true" />
-            <div class="mt-20">
+            <div class="mt-10 md:mt-14 lg:mt-20">
                 <ButtonTrail text="Porozmawiajmy!" />
             </div>
         </div>
