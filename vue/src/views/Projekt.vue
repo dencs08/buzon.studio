@@ -5,7 +5,7 @@
             :responsibilities="this.project.responsibilities" :website="this.project.website" :image="this.imageInfo" />
         <ProjectImageShowcase :imageSlider1="this.imagesSlider1" :imageSlider2="this.imagesSlider2" />
         <ProjectMainDescription :text="this.project.descLong" :image="this.imageMainDesc" />
-        <ProjectImages :name="$route.params.projectName" :images="this.imagesMain" />
+        <ProjectImages :name="$route.params.projectName" :images="this.imagesGrid" />
         <div class="bg">
             <ProjectContactUs />
             <a :href="nextProjectUrl">
@@ -40,7 +40,7 @@ export default {
     },
 
     data() {
-        return { project: [], imageInfo: '', imagesSlider1: [], imagesSlider2: [], imageMainDesc: '', imagesMain: [], nextProject: [], nextProjectImg: '', nextProjectUrl: '' }
+        return { project: [], imageInfo: '', imagesSlider1: [], imagesSlider2: [], imageMainDesc: '', imagesMain: [], imagesGrid: [], nextProject: [], nextProjectImg: '', nextProjectUrl: '' }
     },
 
     mounted() {
@@ -68,10 +68,12 @@ export default {
             }
 
             this.imagesSlider1 = this.imagesMain.slice(1);
-            this.imagesSlider1.length > 5 ? this.imagesSlider1.length = 5 : this.imagesSlider1.length = this.imagesSlider1.length
+            this.imagesSlider1.length >= 4 ? this.imagesSlider1.length = 4 : this.imagesSlider1.length = 0;
 
             this.imagesSlider2 = this.imagesMain.slice(5);
-            this.imagesSlider2.length > 5 ? this.imagesSlider2.length = 5 : this.imagesSlider2.length = this.imagesSlider2.length;
+            this.imagesSlider2.length >= 4 ? this.imagesSlider2.length = 4 : this.imagesSlider2.length = 0;
+
+            this.imagesGrid = this.imagesMain.slice(2).reverse();
 
             this.nextProject = next.data;
             this.nextProjectImg = this.src(this.nextProject.name, this.nextProject.name + '_portfolio');
