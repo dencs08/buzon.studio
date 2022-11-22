@@ -1,7 +1,8 @@
 #landing-page {
     .image-wrapper {
         &:hover {
-            filter: brightness(110%) saturate(110%);
+            // scale: 1.01;
+            filter: saturate(125%);
         }
     }
 }
