@@ -19,7 +19,8 @@
                 <div class="w-screen flex flex-row overflow-hidden relative">
                     <div ref="imageWrapper"
                         class="break-keep whitespace-nowrap space-x-3 sm:space-x-5 md:space-x-8 lg:space-x-10">
-                        <div v-for="image in images" class="inline-block w-[44vw] h-auto aspect-[12/8] overflow-hidden">
+                        <div v-for="image in images"
+                            class="inline-block w-[85vw] sm:w-[75vw] md:w-[65vw] lg:w-[44vw] aspect-[12/8] overflow-hidden">
                             <img :src="image" alt="" class="w-full h-full object-cover">
                         </div>
                     </div>
