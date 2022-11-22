@@ -11,8 +11,8 @@
             <div class="md:grid grid-cols-2 mb-5">
 
                 <div class="col-span-1 mb-6 md:mb-0">
-                    <div class="md:pr-10 col-span-6">
-                        <img :src="image" alt="">
+                    <div class="md:pr-10 col-span-6 overflow-hidden">
+                        <img class="aspect-[8/8] object-cover w-full h-full" :src="image" alt="">
                     </div>
                 </div>
                 <div class="col-span-1">
