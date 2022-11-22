@@ -12,13 +12,13 @@
                     <div v-if="images[1]" class="aspect-[2/1]">
                         <img ref="img2" :src="images[1]" class="object-cover w-full h-full" alt="">
                     </div>
-                    <div v-if="images[2]" class="aspect-[4/3]">
-                        <img ref="img3" :src="images[2]" class="object-cover w-full h-full" alt="">
+                    <div v-if="images[3]" class="aspect-[4/3]">
+                        <img ref="img3" :src="images[3]" class="object-cover w-full h-full" alt="">
                     </div>
                 </div>
                 <div>
-                    <div v-if="images[3]" class="pl-2 md:pl-5 lg:pl-8 h-full">
-                        <img ref="img4" :src="images[3]" class="object-cover w-full h-full" alt="">
+                    <div v-if="images[2]" class="pl-2 md:pl-5 lg:pl-8 h-full">
+                        <img ref="img4" :src="images[2]" class="object-cover w-full h-full" alt="">
                     </div>
                 </div>
             </div>
