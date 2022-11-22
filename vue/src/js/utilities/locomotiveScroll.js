@@ -26,7 +26,7 @@ export function locoInit(timeout) {
 
         locoStop()
 
-        locoStart(1000)
+        // locoStart(1000)
 
         locoScroll.on("scroll", (args) => {
             document.documentElement.setAttribute('data-direction', args.direction)
@@ -62,13 +62,13 @@ export function locoInit(timeout) {
             pinType: scrollEl.style.transform ? "transform" : "fixed"
         });
 
-        ScrollTrigger.addEventListener("refresh", () => lsUpdate());
+        ScrollTrigger.addEventListener("refresh", () => lsUpdate(), locoStart(1000));
         ScrollTrigger.refresh();
-
+        console.log("locoInited");
     }, timeout);
 }
 
-function lsUpdate() {
+export function lsUpdate() {
     locoScroll.update();
 }
 
@@ -99,7 +99,7 @@ export function locoStart(timeout) {
 
 export function scrollTriggerUpdate(timeout) {
     setTimeout(() => {
-        ScrollTrigger.addEventListener("refresh", () => lsUpdate());
+        // ScrollTrigger.addEventListener("refresh", () => lsUpdate());
         ScrollTrigger.refresh();
     }, timeout);
 }
