@@ -1,6 +1,6 @@
 <template>
     <section id="portfolio" class="overflow-hidden relative">
-        <div class="lg:h-[100vh] flex items-center">
+        <div class="min-h-[90vh] lg:h-[100vh] flex items-center">
             <div id="portfolio-content" class="container">
                 <h3 ref="header"
                     class="hidden lg:block uppercase font-bold sectionHeader font-family-header lg:absolute lg:top-[52%] lg:translate-y-[-50%] z-[-1]">
