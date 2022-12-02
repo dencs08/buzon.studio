@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import {
     Hero,
     OurWorks,
@@ -21,8 +20,8 @@ import {
     Collabs,
     Footer,
 } from "../containers";
+
 export default {
-    name: "Start",
     components: {
         Hero,
         OurWorks,
