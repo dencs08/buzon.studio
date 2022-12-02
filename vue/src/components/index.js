@@ -31,3 +31,6 @@ export { default as OurWorksSlider } from './OurWorksSlider/OurWorksSlider.vue'
 
 export { default as Navbar } from './Navbar/Navbar.vue'
 export { default as Cursor } from './Cursor/Cursor.vue'
+
+export { default as InputText } from './Input/InputText.vue'
+export { default as SecretComponent } from './Auth/SecretComponent.vue'
