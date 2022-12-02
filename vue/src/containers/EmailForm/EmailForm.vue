@@ -57,9 +57,6 @@
                                 <input id="name" name="name" class="input-text js-input" type="text" placeholder=" "
                                     required pattern="[a-zA-Z ]{2,}" />
                                 <label for="name">Imię</label>
-                                <!-- @error('name') -->
-                                <!-- <span class="mt-3 text-alert"> {{ $message }} </span> -->
-                                <!-- @enderror -->
                             </div>
                         </div>
                         <div class="md:pl-5">
@@ -67,9 +64,6 @@
                                 <input id="email" name="email" class="input-text js-input" type="email" placeholder=" "
                                     required />
                                 <label for="email">E-mail</label>
-                                <!-- @error('email') -->
-                                <!-- <span class="mt-3 text-alert"> {{ $message }} </span> -->
-                                <!-- @enderror -->
                             </div>
                         </div>
                     </div>
@@ -78,9 +72,6 @@
                             <textarea id="message" name="message" class="input-text js-input" cols="30" rows="10"
                                 placeholder=" " minlength="10" required></textarea>
                             <label for="message">Wiadomość</label>
-                            <!-- @error('content') -->
-                            <!-- <span class="mt-3 text-alert"> {{ $message }} </span> -->
-                            <!-- @enderror -->
                         </div>
                     </div>
                 </div>
