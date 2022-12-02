@@ -4,10 +4,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\SecretController;
+use App\Http\Controllers\LoginController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/secrets', [SecretController::class, 'index']);
 
 Route::post('/emailSend', [EmailController::class, 'emailSend']);
 
