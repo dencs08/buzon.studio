@@ -3,8 +3,11 @@
 </template>
 
 <script>
+export default {
+    name: "AdminLayout",
+}
 </script>
 
-<style lang="scss">
-@import "./styles/app.scss";
+<style>
+
 </style>

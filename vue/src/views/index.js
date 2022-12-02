@@ -5,3 +5,6 @@ export { default as Portfolio } from './Portfolio.vue'
 export { default as Projekt } from './Projekt.vue'
 export { default as Prywatnosc } from './Prywatnosc.vue'
 export { default as NotFound } from './NotFound.vue'
+
+export { default as Login } from './Login.vue'
+export { default as Dashboard } from './Dashboard.vue'
