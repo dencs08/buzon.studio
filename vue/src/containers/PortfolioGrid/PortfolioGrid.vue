@@ -99,7 +99,7 @@ export default {
                     scrub: true,
                     pin: true,
                 })
-            }, 100);
+            }, 250);
         }
     }
 }

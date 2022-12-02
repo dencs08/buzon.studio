@@ -108,7 +108,7 @@ function createScrollTrigger(settings) {
             pin: settings.pin,
             // markers: true,
         })
-    }, 150);
+    }, 250);
 }
 
 function defineSettings(oldSettings, el, trigger, startOffset) {

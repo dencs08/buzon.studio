@@ -26,8 +26,6 @@ export function locoInit(timeout) {
 
         locoStop()
 
-        // locoStart(1000)
-
         locoScroll.on("scroll", (args) => {
             document.documentElement.setAttribute('data-direction', args.direction)
 
@@ -79,6 +77,7 @@ export function scrollProgress(scrollY, limitY) {
 
 export function locoDestroy() {
     if (locoScroll) {
+        console.log("locodestroyed");
         ScrollTrigger.removeEventListener("refresh", lsUpdate);
         locoScroll.destroy();
         locoScroll = null;
