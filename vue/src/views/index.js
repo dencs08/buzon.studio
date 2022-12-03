@@ -8,3 +8,8 @@ export { default as NotFound } from './NotFound.vue'
 
 export { default as Login } from './Login.vue'
 export { default as Dashboard } from './Dashboard.vue'
+
+export { default as Overview } from './Admin/Overview.vue'
+export { default as Emailing } from './Admin/Emailing.vue'
+export { default as Analitics } from './Admin/Analitics.vue'
+export { default as ExternalLinks } from './Admin/ExternalLinks.vue'
