@@ -78,7 +78,11 @@
 }
 
 .bg-light {
-    background-color: $body-bg-color-lighter;
+    // background-color: $body-bg-color-lighter;
+}
+
+.bg-lighter {
+    background-color: lighten($body-bg, 4%);
 }
 
 .bg-dark {
