@@ -3,7 +3,9 @@ import { createRouter, createWebHistory } from "vue-router";
 import DefaultLayout from '../Layouts/DefaultLayout.vue'
 import AdminLayout from '../Layouts/AdminLayout.vue'
 
-import { Start, Portfolio, Oferta, Kontakt, Prywatnosc, Projekt, NotFound, Dashboard, Login } from '../views'
+import { Start, Portfolio, Oferta, Kontakt, Prywatnosc, Projekt, NotFound, Dashboard, Login, Overview, Emailing, Analitics, ExternalLinks } from '../views'
+
+import { axiosAuthenticator } from '../js/axios'
 
 const routes = [
     {
@@ -70,9 +72,49 @@ const routes = [
     {
         component: AdminLayout,
         path: '/admin',
+        redirect: '/dashboard',
         children: [
-            { path: '/admin', component: Dashboard },
-            { path: '/login', component: Login }
+            {
+                path: '/dashboard/',
+                component: Dashboard,
+                name: 'Dashboard',
+                redirect: '/dashboard/overview',
+                beforeEnter: (to, from, next) => {
+                    axiosAuthenticator.get('/api/authenticated').then(() => {
+                        next()
+                    }).catch(() => {
+                        return next({ name: 'Login' })
+                    })
+                },
+
+                children: [
+                    {
+                        path: '/dashboard/overview',
+                        component: Overview,
+                        name: 'Overview'
+                    },
+                    {
+                        path: '/dashboard/emailing',
+                        component: Emailing,
+                        name: 'Emailing'
+                    },
+                    {
+                        path: '/dashboard/analitics',
+                        component: Analitics,
+                        name: 'Analitics'
+                    },
+                    {
+                        path: '/dashboard/externallinks',
+                        component: ExternalLinks,
+                        name: 'ExternalLinks'
+                    }
+                ]
+            },
+            {
+                path: '/login',
+                name: 'Login',
+                component: Login,
+            }
         ]
     }
 
