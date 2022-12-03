@@ -11,16 +11,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:sanctum')->get('/authenticated', function () {
+    return true;
+});
+
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/secrets', [SecretController::class, 'index']);
 
 Route::post('/emailSend', [EmailController::class, 'emailSend']);
 
 Route::get('/projects', [ProjectController::class, 'index']);
-
 Route::get('/projects/best', [ProjectController::class, 'indexBest']);
-
 Route::prefix('/project')->group( function () {
         Route::get('/{name}', [ProjectController::class, 'showByName']);
         Route::get('/categories/{id}', [ProjectController::class, 'showCategories']);
