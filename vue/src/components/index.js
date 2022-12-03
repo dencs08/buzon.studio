@@ -34,3 +34,6 @@ export { default as Cursor } from './Cursor/Cursor.vue'
 
 export { default as InputText } from './Input/InputText.vue'
 export { default as SecretComponent } from './Auth/SecretComponent.vue'
+
+export { default as Sidebar } from './Admin/Sidebar.vue'
+export { default as NavbarAdmin } from './Admin/Navbar.vue'
