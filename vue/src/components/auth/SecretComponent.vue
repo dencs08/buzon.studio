@@ -1,13 +1,14 @@
 <template>
     <section>
         <div class="container">
-            <div class="p-10 bg-gray-900 rounded-xl">
-                <form action="#" @submit.prevent="handleLogin" class="space-y-9">
+            <div class="p-10 bg-zinc-900 rounded-xl sm:min-w-[450px] w-[95vw] sm:w-full">
+                <h4 class="mb-8">Zaloguj sie.</h4>
+                <form class="space-y-8">
                     <div class="form-field">
-                        <input id="email" name="email" v-model="formData.email" class="input-text js-input" type="text"
+                        <input id="name" name="name" v-model="formData.name" class="input-text js-input" type="text"
                             placeholder=" " required />
-                        <label for="email">
-                            email
+                        <label for="name">
+                            name
                         </label>
                     </div>
 
@@ -20,7 +21,8 @@
                     </div>
 
                     <div>
-                        <Button text="Login" type="submit" :primary="true" :small="true" :noReveal="true" />
+                        <Button text="Login" type="submit" @click="handleLogin" :primary="true" :small="true"
+                            :noReveal="true" />
                     </div>
                 </form>
             </div>
@@ -28,9 +30,8 @@
     </section>
 </template>
 <script>
-import axios from 'axios';
 import { Button, InputText } from '../../components'
-import axiosClient from '../../js/axios'
+import { axiosAuthenticator } from '../../js/axios'
 
 export default {
     components: {
@@ -41,7 +42,7 @@ export default {
         return {
             secrets: [],
             formData: {
-                email: '',
+                name: '',
                 password: ''
             }
         }
@@ -51,24 +52,20 @@ export default {
     },
 
     methods: {
-        handleLogin() {
-            const axiosLogin = axios.create({
-                baseURL: 'http://localhost:8000',
-                headers: {
-                    'X-Xsrf-Token': `Bearer ${localStorage.getItem("access_token")}`,
-                    'Authorization': 'Basic: ' + btoa('<secretName>:<secretPass>'),
-                    'Content-Type': 'multipart/form-data',
-                    'Accept': 'application/json'
-                }
-            })
+        handleLogin(e) {
+            e.preventDefault();
 
-            axiosLogin.get('/sanctum/csrf-cookie').then(response => {
-                console.log(response);
-                axiosLogin.post('/api/login/', this.formData).then(response => {
-                    console.log(response);
-                })
+            axiosAuthenticator.get('/sanctum/csrf-cookie').then(response => {
+                axiosAuthenticator.post('/api/login', this.formData)
+                    .then(response => {
+                        console.log(response);
+                        this.$router.push({ path: '/dashboard' })
+                    })
+                    .catch(error => {
+                        // console.error(error);
+                    })
             });
-        }
+        },
     }
 }
 </script>
@@ -78,7 +75,6 @@ export default {
 
 .form-field {
     position: relative;
-    margin: 32px 0;
 
     .input-text {
         display: block;
@@ -87,10 +83,10 @@ export default {
         border: 1px solid #6b6b6b80 !important;
         border-radius: 100px;
 
-        padding-top: clamp(1em, 1.5vw, 3em);
-        padding-bottom: clamp(1em, 1.5vw, 3em);
-        padding-left: clamp(1em, 1.5vw, 3em);
-        padding-right: clamp(1em, 1.5vw, 3em);
+        padding-top: clamp(1em, 1.1vw, 3em);
+        padding-bottom: clamp(1em, 1.1vw, 3em);
+        padding-left: clamp(1em, 1.1vw, 3em);
+        padding-right: clamp(1em, 1.1vw, 3em);
 
         background-color: #ffffff0d !important;
 
@@ -108,7 +104,7 @@ export default {
     label {
         position: absolute;
         left: clamp(2.25rem, 1.65vw, 4rem);
-        top: clamp(1rem, 1.6vw, 2.75rem);
+        top: clamp(1rem, 1.1vw, 2.75rem);
 
         font-size: clamp(0.9rem, 1vw, 1.35rem);
         font-weight: 300;
@@ -139,7 +135,24 @@ export default {
         color: red;
         font-size: 14px;
         left: 10px;
-        top: -24px;
+        top: -20px;
+    }
+}
+
+
+@media (max-width: $lg-screen-size) {
+    .form-field {
+        label {
+            top: 17px;
+        }
+    }
+}
+
+@media (max-width: $md-screen-size) {
+    .form-field {
+        label {
+            top: 19px;
+        }
     }
 }
 </style>
