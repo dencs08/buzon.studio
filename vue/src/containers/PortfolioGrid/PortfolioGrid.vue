@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import axiosClient from '../../js/axios'
+import { axiosClient } from '../../js/axios'
 
 import { PortfolioColumn, PortfolioItem } from '../../components'
 import { elementReveal } from '../../js/textReveal'

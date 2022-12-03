@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import axiosClient from '../../js/axios'
+import { axiosClient } from '../../js/axios'
 
 import { SliderItem } from '../'
 

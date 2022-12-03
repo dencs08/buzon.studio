@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import axiosClient from '../../js/axios'
+import { axiosClient } from '../../js/axios'
 import { Button, SectionHeader } from "../../components";
 import { elementReveal } from '../../js/textReveal'
 import { toast } from '../../js/toastNotification'
