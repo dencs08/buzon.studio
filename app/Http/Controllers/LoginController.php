@@ -15,10 +15,12 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        if(Auth::attempt($request->only(['name', 'password']))){
+        if(Auth::attempt($credentials)){
             return response()->json(Auth::user(), 200);
+        } else{
+            // Authentication failed...
+            return response()->json(['message' => 'Invalid email or password.'], 401);
         }
-        throw ValidtionalException::create(['name' => ['you are not allowed to login!']]);
     }
 
     public function logout(){
