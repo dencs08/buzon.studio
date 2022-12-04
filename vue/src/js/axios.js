@@ -9,13 +9,8 @@ export const axiosClient = axios.create({
 export const axiosAuthenticator = axios.create({
     baseURL: `${import.meta.env.VITE_API_BASE_URL}`,
     withCredentials: true,
-    headers: {
-        'Authorization': 'Basic: ' + btoa('<secretName>:<secretPass>'),
-        'Content-Type': 'multipart/form-data',
-        'Accept': 'application/json'
-    }
+    headers: { 'Content-Type': 'application/json' },
 })
-
 
 axiosClient.interceptors.request.use(config => {
     return config;
