@@ -37,7 +37,7 @@ export default {
         }
     },
     mounted() {
-        axiosAuthenticator.get('/api/user/').then((response) => {
+        axiosAuthenticator.get('/api/user').then((response) => {
             this.user = response.data;
         })
     },
