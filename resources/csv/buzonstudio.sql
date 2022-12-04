@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Czas generowania: 22 Lis 2022, 22:13
+-- Czas generowania: 03 Gru 2022, 18:27
 -- Wersja serwera: 5.7.33
 -- Wersja PHP: 8.1.2
 
@@ -62,7 +62,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (47, '2022_11_03_225306_create_project_responsibilities_table', 1),
 (48, '2022_11_03_225315_create_project_goals_table', 1),
 (49, '2022_11_03_225328_create_project_categories_table', 1),
-(50, '2022_11_03_225616_create_project_images_table', 1);
+(50, '2022_11_03_225616_create_project_images_table', 1),
+(51, '2022_12_01_130442_create_secrets_table', 2);
 
 -- --------------------------------------------------------
 
@@ -94,6 +95,39 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `personal_access_tokens`
+--
+
+INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
+(1, 'App\\Models\\User', 1, 'MyApp', '6f2d51cd4b88ac9e83b99fa83006dba70d9f89b19366888a99247370317a8ff0', '[\"*\"]', NULL, NULL, '2022-12-02 11:51:30', '2022-12-02 11:51:30'),
+(2, 'App\\Models\\User', 1, 'MyApp', '84eb8c6867c4f4fc8a860ea3ed81ee7de228dd18664168bcca2a9803c9960900', '[\"*\"]', NULL, NULL, '2022-12-02 12:10:17', '2022-12-02 12:10:17'),
+(3, 'App\\Models\\User', 1, 'MyApp', 'a74dd92cb7d4bc353191f5397ee0ec6e9445d88d2fd26565f3014105feb51793', '[\"*\"]', NULL, NULL, '2022-12-02 12:10:37', '2022-12-02 12:10:37'),
+(4, 'App\\Models\\User', 1, 'MyApp', '0b95833d496708e5943bda2de45c22852f2ea9dc2a65069c877aeba506b076ec', '[\"*\"]', NULL, NULL, '2022-12-02 12:10:47', '2022-12-02 12:10:47'),
+(5, 'App\\Models\\User', 1, 'MyApp', '99da49feb0ba279c7ab0aa64d0f0667f7fb9c2d08737ad27bd3dc034f60d5fbc', '[\"*\"]', NULL, NULL, '2022-12-02 12:11:04', '2022-12-02 12:11:04'),
+(6, 'App\\Models\\User', 1, 'MyApp', '20b368a02f542b2bae46a945fd775d4df37f8c2cb6956e669e0c54eec287f92e', '[\"*\"]', NULL, NULL, '2022-12-02 12:11:30', '2022-12-02 12:11:30'),
+(7, 'App\\Models\\User', 1, 'MyApp', '4a1050d0de8f745dcb4c25426bac6faa2428b0b39ffd1fdcf3aebae28ea5a20d', '[\"*\"]', NULL, NULL, '2022-12-02 12:11:34', '2022-12-02 12:11:34'),
+(8, 'App\\Models\\User', 1, 'MyApp', 'd49f98ee3d6cbbdec42a4eb4add591d4896bc1368c4cc8cebd016f2ae99f87ba', '[\"*\"]', NULL, NULL, '2022-12-02 12:12:36', '2022-12-02 12:12:36'),
+(9, 'App\\Models\\User', 1, 'MyApp', '408516414bceba40f0243b1ab60a3579722d5b71ff794579a60e6fd9ba044578', '[\"*\"]', NULL, NULL, '2022-12-02 12:12:41', '2022-12-02 12:12:41'),
+(10, 'App\\Models\\User', 1, 'MyApp', '0716e8374a80c5228a4960a4d9093ed1e39a8e6693ecd8f0f42fe4ab2cfddf24', '[\"*\"]', NULL, NULL, '2022-12-02 12:17:48', '2022-12-02 12:17:48'),
+(11, 'App\\Models\\User', 1, 'MyApp', 'b0ee349b4d3bf403734d9c40eabdce288ec9396aedd1a715ea62fdda87c6a13e', '[\"*\"]', NULL, NULL, '2022-12-02 12:18:10', '2022-12-02 12:18:10'),
+(12, 'App\\Models\\User', 1, 'MyApp', 'a6d69c9f0859d05f73130061a5135563577031e16435f2ac2bd7397fde0edb84', '[\"*\"]', NULL, NULL, '2022-12-02 20:23:08', '2022-12-02 20:23:08'),
+(13, 'App\\Models\\User', 1, 'MyApp', '4deaa9496476a0c5d25e106fb630703e7b66f513e40a519ef094e9b77ddae48f', '[\"*\"]', NULL, NULL, '2022-12-02 20:23:21', '2022-12-02 20:23:21'),
+(14, 'App\\Models\\User', 1, 'MyApp', '63199c93a5cecd1e9dc3a2bff8632c7e2d2503853f725536450e99c2ee72a452', '[\"*\"]', NULL, NULL, '2022-12-02 20:24:00', '2022-12-02 20:24:00'),
+(15, 'App\\Models\\User', 1, 'MyApp', '2e8c12e8dd4d412fc553096b7600558070b6f3d37aa908dd2664c6b81df9f74c', '[\"*\"]', NULL, NULL, '2022-12-02 20:26:29', '2022-12-02 20:26:29'),
+(16, 'App\\Models\\User', 1, 'MyApp', 'd2f130ce213e45973f7dbbd1420789d03fc09e02cf5d06bf612da701ec75f6b1', '[\"*\"]', NULL, NULL, '2022-12-02 20:35:46', '2022-12-02 20:35:46'),
+(17, 'App\\Models\\User', 1, 'MyApp', '208db9dd9df88652ba788f44ffca6802adbf3c4894e5946077f231f46fbd0766', '[\"*\"]', NULL, NULL, '2022-12-02 20:38:27', '2022-12-02 20:38:27'),
+(18, 'App\\Models\\User', 1, 'MyApp', 'e048839c14d2b0727a618d9245927cca6109cc361d7842074672e595f647f41f', '[\"*\"]', NULL, NULL, '2022-12-02 20:38:51', '2022-12-02 20:38:51'),
+(19, 'App\\Models\\User', 1, 'MyApp', 'ed4841d6e85c401f104abb839ba90d554496af3ad782875cafa1c2a6bc3caf8c', '[\"*\"]', NULL, NULL, '2022-12-02 20:46:05', '2022-12-02 20:46:05'),
+(20, 'App\\Models\\User', 1, 'MyApp', 'a294c7629354102d9291633d4f5f3b52fcde0d92c1dfa9a444b1f11cb95f5c69', '[\"*\"]', NULL, NULL, '2022-12-02 20:46:10', '2022-12-02 20:46:10'),
+(21, 'App\\Models\\User', 1, 'MyApp', 'abdd8404cdd294db174b9163444c4052b51b4e47d061e6eab4429a3c187301c2', '[\"*\"]', NULL, NULL, '2022-12-02 20:46:46', '2022-12-02 20:46:46'),
+(22, 'App\\Models\\User', 1, 'MyApp', '43d1a86d93fc19813eec576e9e75d9bc145af6eab20a63b80148920bc334d5c1', '[\"*\"]', NULL, NULL, '2022-12-02 20:48:08', '2022-12-02 20:48:08'),
+(23, 'App\\Models\\User', 1, 'MyApp', 'ee60e44c356389482e5fb391c575d083e75468c4a14636da572c43645b4efa9f', '[\"*\"]', NULL, NULL, '2022-12-02 20:51:59', '2022-12-02 20:51:59'),
+(24, 'App\\Models\\User', 1, 'MyApp', '2391feeb8fa1e7aefeb3d38e96c750679213862e88db0845cc3600220be2a0e9', '[\"*\"]', NULL, NULL, '2022-12-02 20:52:42', '2022-12-02 20:52:42'),
+(25, 'App\\Models\\User', 1, 'MyApp', 'c496b434dac023ccb34ff6da26633cbd25ba0bd132a0b08ada54054baaaab657', '[\"*\"]', NULL, NULL, '2022-12-02 20:53:14', '2022-12-02 20:53:14'),
+(26, 'App\\Models\\User', 1, 'MyApp', '8fbee7a4c69851bc5d8d41c106906a6b5da9b25f8b49744c9f1e8bc8cdccf84e', '[\"*\"]', NULL, NULL, '2022-12-02 20:54:27', '2022-12-02 20:54:27'),
+(27, 'App\\Models\\User', 1, 'MyApp', 'd458248645a641667cc124744b30ce30f0935cf007ad9c83fba5e913775a545b', '[\"*\"]', NULL, NULL, '2022-12-02 20:54:47', '2022-12-02 20:54:47');
 
 -- --------------------------------------------------------
 
@@ -306,6 +340,30 @@ INSERT INTO `project_responsibilities` (`id`, `project_id`, `responsibility`) VA
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `secrets`
+--
+
+CREATE TABLE `secrets` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `secret` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `secrets`
+--
+
+INSERT INTO `secrets` (`id`, `user_id`, `secret`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Aut veniam excepturi molestiae maiores totam. Eligendi hic totam dolores aut non qui veritatis. Autem molestiae eius odio delectus quo fuga.', '2022-12-01 12:14:52', '2022-12-01 12:14:52'),
+(2, 1, 'Quas est aut nisi quas quas in et. Error praesentium adipisci itaque. Dolores et et rerum nostrum voluptates ut sit. Dolores omnis ipsum velit et fugiat doloremque repellat.', '2022-12-01 12:16:25', '2022-12-01 12:16:25'),
+(3, 2, 'Ipsum ullam odio aut necessitatibus corporis fugit. Similique similique perspiciatis officia est aliquam. Natus nisi temporibus soluta ad. Praesentium id repellendus accusantium repudiandae.', '2022-12-01 12:16:40', '2022-12-01 12:16:40'),
+(4, 2, 'Voluptatem labore autem maxime aut quidem. Quod enim accusantium ipsa laboriosam repellat. Hic sint ea magnam omnis pariatur voluptatem et. Quo occaecati modi et sint vero accusamus nesciunt sint.', '2022-12-01 12:16:40', '2022-12-01 12:16:40');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `users`
 --
 
@@ -319,6 +377,13 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'bs', 'hej@buzon.studio', '2022-12-01 12:13:44', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'A6T2eGa5cOdc7BlziwXk0PSyWxAoojA1tgLYpODqS6ZSqITqAipbHtrDm12x', '2022-12-01 12:13:44', '2022-12-01 12:13:44');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -386,6 +451,12 @@ ALTER TABLE `project_responsibilities`
   ADD KEY `project_responsibilities_project_id_foreign` (`project_id`);
 
 --
+-- Indeksy dla tabeli `secrets`
+--
+ALTER TABLE `secrets`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
@@ -406,13 +477,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT dla tabeli `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT dla tabeli `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT dla tabeli `projects`
@@ -445,10 +516,16 @@ ALTER TABLE `project_responsibilities`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
+-- AUTO_INCREMENT dla tabeli `secrets`
+--
+ALTER TABLE `secrets`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ograniczenia dla zrzutów tabel
