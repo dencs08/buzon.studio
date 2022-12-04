@@ -15,7 +15,7 @@ Route::middleware('auth:sanctum')->get('/authenticated', function () {
     return true;
 });
 
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/secrets', [SecretController::class, 'index']);
