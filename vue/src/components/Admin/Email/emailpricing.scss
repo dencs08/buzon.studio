@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+}
+
+table {
+    border-spacing: 0;
+}
+
+td {
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    color: #60de9f !important;
+}
+
+/* Typhography */
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 30px 15px 30px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 8px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+.font-family-primary {
+    font-family: "Poppins", sans-serif;
+}
+
+.font-family-secondary {
+    font-family: "Source Sans Pro";
+}
+
+.font-size-primary {
+    font-size: 16px;
+}
+
+.font-size-secondary {
+    font-size: 13px;
+}
+
+.font-size-tertiary {
+    font-size: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+/* Main classes */
+.wrapper {
+    width: 100%;
+    table-layout: fixed;
+    background-color: #dadada;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    font-family: sans-serif;
+}
+
+.main {
+    width: 100%;
+    max-width: 600px;
+    color: #ffffff;
+    background: rgb(41, 41, 41);
+    font-family: sans-serif;
+}
+
+/* NAV */
+.nav {
+    background-color: #1b1b1b;
+    padding: 20px 20px 20px 20px;
+    height: 50px;
+    padding: 30px;
+}
+
+.nav img {
+    float: left;
+    width: 50px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    list-style-type: none;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+.nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav li {
+    list-style-type: none;
+    float: right;
+}
+
+.hero {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.pricing-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pricing-table td,
+th {
+    text-align: left;
+    padding: 16px 15px 16px 15px;
+}
+
+.pricing-table tr:nth-child(even) {
+    background-color: #363636;
+}
+
+.pricing-table tr:nth-child(odd) {
+    background-color: #222222;
+}
+
+.social {
+    margin: 25px 0 0 0;
+    padding: 0;
+}
+
+.social li {
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px 0 10px;
+
+    width: 50px;
+}
+
+.footer {
+    color: #f8f3f1;
+    text-align: center;
+}
+
+.footer a {
+    color: rgb(124, 224, 93);
+    text-decoration: none;
+}
