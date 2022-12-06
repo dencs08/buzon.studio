@@ -37,3 +37,6 @@ export { default as SecretComponent } from './Auth/SecretComponent.vue'
 
 export { default as Sidebar } from './Admin/Sidebar.vue'
 export { default as NavbarAdmin } from './Admin/Navbar.vue'
+
+export { default as EmailPricing } from './Admin/Email/EmailPricing.vue'
+export { default as EmailResponse } from './Admin/Email/EmailResponse.vue'
