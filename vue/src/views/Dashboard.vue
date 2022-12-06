@@ -27,6 +27,8 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../styles/admin.scss';
+
 .quickFade-enter-from,
 .quickFade-leave-to {
     opacity: 0;

@@ -23,7 +23,7 @@ export default {
         return {
             links: [
                 { text: 'Round Cube email', to: 'https://roundcube.pl/?_task=mail&_mbox=INBOX' },
-                { text: 'Google analitics', to: 'https://analytics.google.com/analytics/web/?authuser=1&pli=1#/p291792936/realtime/overview?params=_u..nav%3Dmaui%3Fauthuser%253D1%3Fauthuser%253D1%3Fauthuser%253D1' },
+                { text: 'Google analitics', to: 'https://analytics.google.com/analytics/web/?authuser=1&pli=1#/p342741813/reports/intelligenthome?params=_u..pageSize%3D25%26_u..nav%3Dmaui' },
                 { text: 'Facebook', to: 'https://www.facebook.com/buzonstudio' },
                 { text: 'Instagram', to: 'https://www.instagram.com/buzonstudio/' },
             ]
