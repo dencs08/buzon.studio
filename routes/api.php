@@ -21,6 +21,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/secrets', [SecretController::class, 'index']);
 
 Route::post('/emailSend', [EmailController::class, 'emailSend']);
+Route::post('/emailResponse', [EmailController::class, 'emailResponse']);
+Route::post('/emailPricing', [EmailController::class, 'emailPricing']);
 
 Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/projects/best', [ProjectController::class, 'indexBest']);
