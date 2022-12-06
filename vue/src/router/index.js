@@ -5,6 +5,8 @@ import AdminLayout from '../Layouts/AdminLayout.vue'
 
 import { Start, Portfolio, Oferta, Kontakt, Prywatnosc, Projekt, NotFound, Dashboard, Login, Overview, Emailing, Analitics, ExternalLinks } from '../views'
 
+import { EmailPricing, EmailResponse } from '../components'
+
 import { axiosAuthenticator } from '../js/axios'
 
 const routes = [
@@ -96,7 +98,18 @@ const routes = [
                     {
                         path: '/dashboard/emailing',
                         component: Emailing,
-                        name: 'Emailing'
+                        name: 'Emailing',
+                        redirect: '/dashboard/emailing/pricing',
+                        children: [{
+                            path: '/dashboard/emailing/pricing',
+                            component: EmailPricing,
+                            name: 'EmailPricing'
+                        },
+                        {
+                            path: '/dashboard/emailing/response',
+                            component: EmailResponse,
+                            name: 'EmailResponse'
+                        }]
                     },
                     {
                         path: '/dashboard/analitics',
